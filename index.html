@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="menu.js"></script>
+    </head>
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+
+            <label for="navi--toggle" class="navigation__button">
+
+             <div class="navigation__menu-box ">
+            <img src="img/menu.png" alt="menu" class="navigation__menu" />
+             </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="#section-about"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            >HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-features"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            >History</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-tours"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            >FOLK DANCE</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-stories"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            >COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-book"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            >OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="img/logo.png" alt="Logo" class="header__logo" />
+            </div>
+        </header>
+        <main>
+            <section class="section-main" id="section-main">
+            <div class="header__main">
+                <div class="header__main-box">
+                    <video class="header__main-video" autoplay muted loop>
+                        <!--                       controls 붙이고 muted지우면 한번 됐는데 또 안돼고 루프 안됌..-->
+                        <source
+                            src="img/main_video.mp4"
+                            type="video/mp4"
+                        />
+                        Your browser is not supported!
+                    </video>
+                </div>
+            </div>
+
+
+            <div class="header__logo-box-2">
+                <img
+                    src="img/logo_sti.png"
+                    alt="Full logo"
+                    class="header__logo-2"
+                />
+            </div>
+
+
+            </section>
+
+
+
+
+        </main>
+        <footer class="footer">
+            <div class="row clearfix">
+                <div class="col-1-of-3-1">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >HISTORY</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >folk dance</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >costume</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2-of-3-2">
+                    <div class="footer__copyright">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Recusandae voluptatibus praesentium dignissimos.
+                        Repellendus dolor esse cupiditate fugiat dolores. Eum
+                        placeat, rem iusto fugit distinctio a architecto labore
+                        debitis amet accusantium hic, rerum voluptas modi
+                        asperiores quibusdam explicabo facere dicta quisquam id
+                        impedit. Aut magni, Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Veritatis, fuga!
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

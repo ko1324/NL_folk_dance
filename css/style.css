@@ -1,0 +1,637 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgb(0);
+    padding: 30px;
+}
+
+/* Navigation */
+.navigation__menu {
+    height: 6.2rem;
+    z-index: 2500;
+    opacity: 1;
+}
+
+.navigation__menu-box {
+    position: absolute;
+    top: 0rem;
+    right: -1rem;
+
+}
+
+.navigation__background {
+    background: 6rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 5rem;
+    right: 5.3rem;
+    background-color: transparent;
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+/*     transform: scale(50); */
+}
+
+
+
+
+.navigation__button {
+
+    background-color: transparent;
+
+    height: 6.5rem;
+    width: 6.5rem;
+    position: fixed;
+    top: 3rem;
+    right: 5rem;
+
+    border-radius: 50%;
+    z-index: 2000;
+
+
+
+    text-align: center;
+    cursor: pointer;
+}
+
+.navigation__checkbox {
+    display: none;
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(25);
+    background-color: black;
+}
+
+.navigation__checkbox:checked ~ .navigation__button{
+border: 6px solid white;
+
+}
+
+
+
+.navigation__checkbox:checked ~ .navigation__nav {
+    width: 50%;
+    opacity: 1;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__nav {
+    height: 100vh;
+    width: 0%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* left로 바꾸면 왼쪽에서 메뉴가 나오는 효과가난다 */
+    /* left: 0; */
+    z-index: 1500;
+
+    opacity: 0;
+/*    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);*/
+/*    2.들어가는거, 나오는거 제어하려면 어떻게???*/
+}
+
+.navigation__list {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+.navigation__link,
+.navigation__link:link,
+.navigation__link:visited {
+    line-height: 0.9;
+    display: inline-block;
+    font-size: 5rem;
+    font-weight: 400;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-size: 230%;
+    transition: all 0.4s;
+}
+
+.navigation__link span,
+.navigation__link:link span,
+.navigation__link:visited span {
+
+    margin-right: 1.5rem;
+    font-size: 6rem;
+    display: inline-block;
+    color:transparent;
+}
+
+.navigation__link span,
+.navigation__link:active span,
+.navigation__link:hover span {
+    margin-right: 1.5rem;
+    font-weight: 600;
+    display: inline-block;
+    color:orangered;
+}
+
+.navigation__link:hover,
+.navigation__link:active {
+    color: orangered;
+    transform: translateX(1rem);
+}
+
+.navigation__icon {
+    position: relative;
+    top: 46%;
+    right: 3%;
+    transform: translateY(-1px);
+}
+
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+    opacity: 0;
+    width: 5.7rem;
+    height: 7px;
+    background-color: white;
+    display: inline-block;
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+}
+
+.navigation__icon::before {
+
+    top: -0.8rem;
+}
+
+.navigation__icon::after {
+
+    top: 0.8rem;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+    background-color: transparent;
+    opacity: 1;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+    opacity: 1;
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+    opacity: 1;
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__menu-box .navigation__menu {
+    visibility: hidden;
+}
+
+.header {
+    height: 20vh;
+    background-color: white;
+    background-size: cover;
+    /* image가 화면크기에 따라서 어떻게 줄어드는지 보여준다. 그때 기준 (top, bottom, center) */
+    background-position: top;
+
+    position: relative;
+}
+
+/* LOGO */
+.header__logo-box {
+    position: absolute;
+    top: -0.1rem;
+    left: -0.4rem;
+    z-index: 10000;
+
+}
+
+.header__logo {
+    height: 11.5rem;
+}
+
+
+/*main*/
+/*section-main*/
+.section-main {
+  height: 88vh;
+    background-color: white;
+    background-size: cover;
+    /* image가 화면크기에 따라서 어떻게 줄어드는지 보여준다. 그때 기준 (top, bottom, center) */
+    background-position: top;
+
+    position: relative;
+
+    margin-bottom: 30vh;
+
+}
+
+
+.header__main-box {
+    position: absolute;
+    transition: all 0.2s;
+    margin-top: 1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header__main-video {
+    position: relative;
+    top: -5rem;
+    width: 90rem;
+    background-position: top;
+    clip-path: circle(34.6% at 50% 50%);
+}
+
+
+.header__logo-box-2 {
+    position: relative;
+    top: 58rem;
+
+}
+
+.header__logo-2 {
+    width: 20rem;
+    /*  height: auto;*/
+}
+
+
+/*section-dance*/
+
+.section-dance {
+/*    height: 20rem;*/
+    background-color: white;
+
+
+    padding: 0 3rem 25rem;
+
+
+
+}
+
+.arrow__left-box, .arrow__right-box{
+    width: 3.5rem;
+    z-index: 1000;
+    position: absolute;
+/*    right: 10px;*/
+/*    비디오 앞에 올 순 없는건가..*/
+}
+/*1.svg 소스 추가시 크기 변환*/
+
+.arrow__left-box {
+    left: 10px;
+}
+
+.arrow__right-box {
+    right: 10px;
+}
+
+.dance-video-1 {
+    position: relative;
+    top: -3rem;
+    width: 95%;
+    z-index: 100;
+/*    background-position: top;*/
+
+}
+.section-dance-video{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.heading-classify {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  display: inline-block;
+  color: black;
+/*  letter-spacing: 2px;*/
+line-height: 0.01rem;
+}
+
+.heading-dance-name {
+  font-size: 5.5rem;
+  margin-left: -0.37rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  color: black;
+  line-height: 4rem;
+  padding: 0 0 4rem;
+/*  letter-spacing: 2px;*/
+
+}
+
+.paragraph {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+  padding: 0 0 4rem;
+}
+
+.paragraph1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+
+}
+
+.paragraph__year {
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3rem;
+}
+.heading-note{
+    margin-bottom: 2rem;
+
+}
+.btn,
+.btn:link,
+.btn:visited {
+/*  text-transform: uppercase;*/
+  text-decoration: none;
+  padding: 1rem 1.1rem;
+  /* 기본적으로 inline 요소는 해당요소 자체의 높이를 가지지 못한다 */
+  display: inline-block;
+  border-radius: 20rem;
+  transition: all 0.2s;
+
+  position: relative;
+  border: 3rem;
+  cursor: pointer;
+  margin-bottom: 0.3rem;
+}
+
+.btn:hover {
+
+  background-color:orangered;
+  color: white;
+}
+
+
+.btn--black {
+  background-color:black;
+  color: white;
+}
+.dance__detail{
+    display: flex;
+/*    flex-direction:*/
+}
+.dance__flex-1{
+    display: flex;
+    flex: 0 0 48%;
+    flex-direction: column;
+    margin-right: 5rem;
+
+}
+
+.dance__text{
+    display: flex;
+}
+
+.dance__year-finder{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.flex-container{
+    width:48rem;
+}
+
+
+.dance__flex-2{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+
+}
+
+
+.text-related{
+    margin-bottom: 1rem;
+}
+/*2.안먹음*/
+
+
+.video_wrap{
+    position:relative;
+    width:102%;
+    height:0;
+    padding-bottom:57.4%;
+
+
+}
+
+
+
+iframe {
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+}
+
+
+
+
+.row {
+    max-width: 114rem;
+    /* background-color: #eee; */
+    /* block element 사이에 (부모 - 자식) 가운데 위치로 브라우저가 잡아준다 */
+    /* margin : 0 auto; */
+    margin: 0 auto;
+}
+
+.row:not(:last-child) {
+    margin-bottom: 3rem;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class^="col-"] {
+    float: left;
+}
+
+/* 1/2 Layout */
+.row .col-1-of-2 {
+    width: calc((100% - 3rem) / 2);
+}
+
+.row .col-1-of-2:not(:last-child) {
+    margin-right: 3rem;
+}
+
+/* 1/3 Layout */
+.row .col-1-of-3 {
+    width: calc((100% - 6rem) / 3);
+}
+
+.row .col-1-of-3:not(:last-child) {
+    margin-right: 3rem;
+}
+
+/* 1/3 2/3 Layout */
+
+.row .col-1-of-3-1 {
+    width: calc(((100% - 1rem) / 6) * 2);
+
+    /* float: left; */
+}
+
+.row .col-1-of-3-1:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.row .col-2-of-3-2 {
+    width: calc(((100% - 1rem) / 6) * 4);
+}
+
+/* 2/4 1/4 Layout */
+
+.row .col-2-of-4-1 {
+    width: calc(((100% - 12rem) / 4));
+
+    /* float: left; */
+}
+
+.row .col-1-of-4-1:not(:last-child) {
+    margin-right: 4rem;
+}
+
+.row .col-1-of-4-2 {
+    width: calc(((100% - 12rem) / 4)*2);
+}
+
+
+/* 1/4 Layout */
+.row .col-1-of-4 {
+    width: calc((100% - 9rem) / 4);
+}
+
+.row .col-1-of-4:not(:last-child) {
+    margin-right: 3rem;
+}
+
+
+
+
+
+/* utility class */
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-2 {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-4 {
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem !important;
+}
+
+.u-margin-top-8 {
+  margin-top: 8rem !important;
+}
+
+
+
+
+/* footer */
+.footer {
+    background-color: black;
+    padding: 1rem 3rem 10rem;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.footer__navigation {
+    padding-top: 2rem;
+    display: inline-block;
+}
+
+.footer__list {
+    list-style: none;
+}
+
+.footer__item {
+    display: inline-block;
+}
+
+.footer__item:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.footer__link,
+.footer__link:link,
+.footer__link:visited {
+    color: #f7f7f7;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.footer__link:hover {
+    color: orange;
+    /* box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); */
+    background-color: transparent;
+}
+
+.footer__copyright {
+    color: #f7f7f7;
+
+    padding-top: 2rem;
+
+    float: right;
+}
+
+#Layer_1 {
+    width:40rem;
+}
+#Layer_1 #path2894:hover {
+    fill: red;
+}
