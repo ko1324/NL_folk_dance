@@ -202,15 +202,15 @@
                             </h3>
                             <div class="history_comp_left_content">
 
-                            <div class="history_img_icon_box">
+                            <button class="history_img_icon_box open_toggles" data-type="elites">
 
                              <img src="img/icon-09.svg" alt="1914" class="icon icon_1914" />
-                            <span class="tag"> 1914<br>tone:-0.7</span></div>
+                            <span class="tag"> 1914<br>tone:-0.7</span></button>
 
 
-                            <div class="history_img_icon_box">
+                            <button class="history_img_icon_box">
                              <img src="img/icon-10.svg" alt="1917" class="icon icon_1917" />
-                            <span class="tag"> 1917<br>tone:-0.5</span></div>
+                            <span class="tag"> 1917<br>tone:-0.5</span></button>
                             <!--
                             <div class="history_img_icon_box">
                              <img src="img/icon-11.svg" alt="1918" class="icon icon_1918" />
@@ -388,7 +388,7 @@
 
                         </div>
                         <div id="collapsibleContent">
-
+<!--                        로딩 이미지 ,부트스트랩 loading-->
                         </div>
                     </div>
                 </div>
@@ -443,6 +443,7 @@
         })
         $('.open_toggles').click(function () {
             var type = $(this).data("type").toLowerCase();
+            console.log(type);
             openToggles(type);
             // for (i = 0; i < coll.length; i++) {
             //     coll[i].classList.remove("active");

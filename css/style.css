@@ -883,14 +883,14 @@ iframe {
 }
 /*한세트*/
 .icon_1914{
-    position: absolute;
+/*    position: absolute;*/
     top: 8.5rem;
     left: 0rem;
 /*    0.5가 중심, 4rem씩*/
 }
 
 .icon_1914 + span.tag {
-  position: absolute;
+/*  position: absolute;*/
   top: 30.8rem;
   left: 17.5rem;
   display: none;
@@ -1127,4 +1127,10 @@ input[type="radio"]:checked + label {
   padding-top: 22px;
   cursor: pointer;
   background: orangered;
+}
+
+.open_toggles {
+    background: transparent;
+    border: none;
+    outline: none;
 }
