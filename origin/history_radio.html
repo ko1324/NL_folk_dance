@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>MOVE AROUND</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- 부트스트랩 css 설정 붙여넣기-->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- 부트스트랩 js 설정 붙여넣기-->
+
+    <!-- firebase 관련 함수 불러오기 -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <!-- firebase 관련 함수 불러오기 -->
+
+    <style>
+        #section-history .history_legend input[type=radio] {
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var firebaseConfig = {
+                apiKey: "AIzaSyBXaxChS9PAKkP9QtF6LnzKpC_EDq6C5zQ",
+                authDomain: "dutch-folk-dance.firebaseapp.com",
+                databaseURL: "https://dutch-folk-dance.firebaseio.com",
+                projectId: "dutch-folk-dance",
+                storageBucket: "dutch-folk-dance.appspot.com",
+                messagingSenderId: "317855707149",
+                appId: "1:317855707149:web:47bc566b359ee0456be544",
+                measurementId: "G-8ZP99DRQPE"
+            };
+
+
+            firebase.initializeApp(firebaseConfig);
+            var firestore = firebase.firestore();
+            var docRef = firestore.doc("arts/history");
+            var docColl = firestore.collection("arts");
+//            var docCollectionbyYear = docRef.collection("1900");
+
+            /* 데이터 불러오기 */
+            function loadDataFromCollection(year) {
+
+                //+
+               docRef.collection(year)
+                    // .orderBy("year", "desc")
+                    .get()
+                    .then(function (querySnapshot) {
+                        console.log(querySnapshot);
+                        //get()일단 싹 긁어옴, querySnapshot(firebase에서 전달해주는 역할, 이 안에 데이터들이 다 들어있다 )
+
+                        var html = "";
+                        //+
+                        var historyHtml = "";
+
+                        //버튼 저장할때 이름, add할때 이름, 업데이트할때 이름, 즉 보라색 이름이 대소문자 같아야 로드할 수 있음
+                        //add -> description: desc
+                        //data-뒤에잇는이름 , 헷갈리니까 그냥 이름 전체 통일
+                        querySnapshot.forEach(function (doc) {
+                            let group = doc.data().group;
+                            // console.log(group.split(","));
+                            html += `<tr>
+                <th scope="row">${doc.id}</th>
+                <td>${doc.data().name}</td>
+                <td>${doc.data().description}</td>
+                <td>${doc.data().quote}</td>
+                <td>${doc.data().sentiment}</td>
+                <td>${doc.data().image}</td>
+                <td>${doc.data().group}</td>
+                <td>${doc.data().movement}</td>
+                <td>${doc.data().ideologie}</td>
+
+
+                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+
+                <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
+
+            </tr>`;
+
+                            historyHtml +=
+                                `<button class="collapsible ${doc.data().group && doc.data().group.join(" ")} ${doc.data().movement && doc.data().movement.join(" ")} ${doc.data().ideologie && doc.data().ideologie.join(" ")}">${doc.data().name}</button>
+
+            <div class="content">
+            <p>${doc.data().description}</p>
+            <p>${doc.data().quote}</p>
+            </div>`;
+
+                            console.log(doc.id);
+                        })
+
+
+
+                        $('.table tbody').html(html);
+                        $('#collapsibleContent').append(historyHtml);
+
+
+                        var coll = document.getElementsByClassName("collapsible");
+
+                        for (var i = 0; i < coll.length; i++) {
+                            coll[i].addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var content = this.nextElementSibling;
+                                if (content.style.maxHeight) {
+                                    content.style.maxHeight = null;
+                                } else {
+                                    content.style.maxHeight = content.scrollHeight + "px";
+                                }
+                            });
+                        }
+                    })
+            }
+            ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'].forEach(function(year){
+                loadDataFromCollection(year);
+            })
+
+            /* 데이터 불러오기 */
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi--toggle" />
+
+        <label for="navi--toggle" class="navigation__button">
+            <div class="navigation__menu-box ">
+                <img src="img/menu.png" alt="menu" class="navigation__menu" />
+            </div>
+            <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <a href="#section-about" class="navigation__link" onClick="gotoMenu(this)"><img
+                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
+
+                        HOME</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#section-features" class="navigation__link" onClick="gotoMenu(this)"><img
+                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
+                        History</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#section-tours" class="navigation__link" onClick="gotoMenu(this)"><img
+                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
+                        FOLK DANCE</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#section-stories" class="navigation__link" onClick="gotoMenu(this)"><img
+                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
+                        COSTUMES</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#section-book" class="navigation__link" onClick="gotoMenu(this)"><img
+                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
+                        OTHER GROUPS</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <header class="header">
+        <div class="header__logo-box">
+            <img src="img/logo.png" alt="Logo" class="header__logo" />
+        </div>
+    </header>
+    <main>
+        <section class="section-history" id="section-history">
+            <div class="row clearfix">
+                <div class="col-5-of-8">
+                    <div class="u-center-text u-margin-bottom-2">
+                        <!--                           1.화살표 추가https://yeun.github.io/open-arrow/-->
+                        <div class="history_comp_left">
+
+                            <h3 class="history_comp_text">
+                                NEGATIVE &#8226;&#8213;&#8213;&#8213;&#8213;&#8226; POSITIVE
+                            </h3>
+
+                            <span class="elites"><span class="tag"> 1914<br>tone:-0.7</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3-of-8">
+                    <div class="history_comp_right">
+
+                        <h3 class="history_comp_text">
+                            LEGEND
+                        </h3>
+                        <div class="history_legend">
+
+                            <span class="elites_i">
+
+                                <input type="radio" name="toggles" value="elites" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_1">MORALISTS, ELITES, CULTURAL PESSIMISTS</label>
+
+                            </span>
+
+                            <span class="clergy_i">
+                                 <input type="radio" name="toggles" value="clergy" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_2">clergy, minister, religious authorities</label>
+                            </span>
+
+                            <span class="govern_i">
+                               <input type="radio" name="toggles" value="government" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_3">government</label>
+                            </span>
+
+                            <div class="history_legend_br">
+                                <span class="ajc_i">&nbsp;
+                                    <span class="ajc_i_hover">
+                                        <input type="radio" name="toggles" value="AJC" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_1">AJC movement</label>
+                                    </span>
+                                </span>
+
+                                <span class="heem_i">&nbsp;
+                                    <span class="heem_i_hover">
+                                        <input type="radio" name="toggles" value="Heemvaarts" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_2">Heemvaarts movement</label>
+                                    </span>
+
+                                </span>
+
+                                <span class="folk_i">&nbsp;
+                                    <span class="folk_i_hover">
+                                        <input type="radio" name="toggles" value="folklorists" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_3">folklorists movement</label>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <span class="raci_i">
+                                 <input type="radio" name="toggles" value="racism" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_1">racismS</label>
+                            </span>
+                            <span class="social_i">
+                                <input type="radio" name="toggles" value="socialism" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_2">socialism</label>
+                            </span>
+                            <span class="nazi_i">
+                                <input type="radio" name="toggles" value="nazism" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_3">nazism</label>
+                            </span>
+                            <span class="national_i">
+                               <input type="radio" name="toggles" value="nationalism" id="toggle1" /><label for="toggle1"
+                                    class="labelSpan labelSpan_4">nationalism</label>
+                            </span>
+
+                        </div>
+                        <div id="collapsibleContent">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        $('.elites_i').click(function () {
+            console.log($(this).children('input').attr('checked', true));
+        });
+    </script>
+
+
+</body>
+
+</html>

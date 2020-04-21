@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="menu.js"></script>
+        <link rel="stylesheet" href="css/icon-font.css" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <!-- 부트스트랩 css 설정 붙여넣기-->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+                <!-- 부트스트랩 js 설정 붙여넣기-->
+
+
+    </head>
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="history.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="folk_dance.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-stories"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-book"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="img/logo.png" alt="Logo" class="header__logo" />
+            </div>
+        </header>
+        <main>
+            <section class="section-history" id="section-history">
+                <div class="row clearfix">
+                    <div class="col-5-of-8">
+                        <div class="u-center-text u-margin-bottom-2">
+<!--                           1.화살표 추가https://yeun.github.io/open-arrow/-->
+                            <div class="history_comp_left">
+
+                                <h3 class="history_comp_text">
+                                 NEGATIVE	&#8226;&#8213;&#8213;&#8213;&#8213;&#8226; POSITIVE
+                                </h3>
+
+                                <span class="elites"><span class="tag"> 1914<br>tone:-0.7</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3-of-8">
+                        <div class="history_comp_right">
+
+                        <h3 class="history_comp_text">
+                                 LEGEND
+                                </h3>
+                                <div class="history_legend">
+
+                            <span class="elites_i">
+                                <span class="labelSpan labelSpan_1">
+                                MORALISTS, ELITES, CULTURAL PESSIMISTS
+                                </span>
+                            </span>
+                            <span class="clergy_i">
+                                 <span class="labelSpan labelSpan_2">
+                                 clergy, minister, religious authorities
+                                </span>
+                                </span>
+                            <span class="govern_i">
+                                <span class="labelSpan labelSpan_3">
+                                government
+                                </span>
+                            </span>
+
+                            <div class="history_legend_br">
+                              <span class="ajc_i">&nbsp;
+                              <span class="ajc_i_hover">
+                               <span class="labelSpan labelSpan_1">
+                                AJC Movement
+                                </span>
+                                </span>
+                                </span>
+
+                               <span class="heem_i">&nbsp;
+                               <span class="heem_i_hover">
+                               <span class="labelSpan labelSpan_2">
+                                Heemvaarts Movement
+                                </span>
+                                </span>
+
+                                </span>
+
+                            <span class="folk_i">&nbsp;
+                            <span class="folk_i_hover">
+                               <span class="labelSpan labelSpan_3">
+                                Folklorists Movement
+                                </span>
+                                </span>
+                            </span>
+                            </div>
+
+                            <span class="raci_i">
+                                <span class="labelSpan labelSpan_1">
+                                Racism
+                                </span>
+                            </span>
+                            <span class="social_i">
+                                <span class="labelSpan labelSpan_2">
+                                Socializm
+                                </span>
+                            </span>
+                            <span class="nazi_i">
+                                <span class="labelSpan labelSpan_3">
+                                Nazism
+                                </span>
+                            </span>
+                            <span class="national_i">
+                                <span class="labelSpan labelSpan_4">
+                                Nationalizm
+                                </span>
+                            </span>
+
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

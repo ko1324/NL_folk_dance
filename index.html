@@ -20,12 +20,14 @@
                 id="navi--toggle"
             />
 
-
             <label for="navi--toggle" class="navigation__button">
-
-             <div class="navigation__menu-box ">
-            <img src="img/menu.png" alt="menu" class="navigation__menu" />
-             </div>
+                <div class="navigation__menu-box ">
+                    <img
+                        src="img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
                 <span class="navigation__icon">&nbsp;</span>
             </label>
 
@@ -34,26 +36,42 @@
                 <ul class="navigation__list">
                     <li class="navigation__item">
                         <a
-                            href="#section-about"
+                            href="index.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                            >HOME</a
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
                         >
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="#section-features"
+                            href="history.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                            >History</a
+                        ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
                         >
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="#section-tours"
+                            href="folk_dance.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                            >FOLK DANCE</a
+                        ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
                         >
                     </li>
                     <li class="navigation__item">
@@ -61,7 +79,12 @@
                             href="#section-stories"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                            >COSTUMES</a
+                        ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
                         >
                     </li>
                     <li class="navigation__item">
@@ -69,7 +92,12 @@
                             href="#section-book"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                            >OTHER GROUPS</a
+                        ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
                         >
                     </li>
                 </ul>
@@ -83,34 +111,24 @@
         </header>
         <main>
             <section class="section-main" id="section-main">
-            <div class="header__main">
-                <div class="header__main-box">
-                    <video class="header__main-video" autoplay muted loop>
-                        <!--                       controls 붙이고 muted지우면 한번 됐는데 또 안돼고 루프 안됌..-->
-                        <source
-                            src="img/main_video.mp4"
-                            type="video/mp4"
-                        />
-                        Your browser is not supported!
-                    </video>
+                <div class="header__main">
+                    <div class="header__main-box">
+                        <video class="header__main-video" autoplay muted loop>
+                            <!--                       controls 붙이고 muted지우면 한번 됐는데 또 안돼고 루프 안됌..-->
+                            <source src="img/main_video.mp4" type="video/mp4" />
+                            Your browser is not supported!
+                        </video>
+                    </div>
                 </div>
-            </div>
 
-
-            <div class="header__logo-box-2">
-                <img
-                    src="img/logo_sti.png"
-                    alt="Full logo"
-                    class="header__logo-2"
-                />
-            </div>
-
-
+                <div class="header__logo-box-2">
+                    <img
+                        src="img/logo_sti.png"
+                        alt="Full logo"
+                        class="header__logo-2"
+                    />
+                </div>
             </section>
-
-
-
-
         </main>
         <footer class="footer">
             <div class="row clearfix">

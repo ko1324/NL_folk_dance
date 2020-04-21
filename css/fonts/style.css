@@ -608,7 +608,9 @@ iframe {
   padding: 2rem 0;
 }
 
-
+.history_comp_left {
+  position: relative;
+}
 .history_comp_text {
   font-weight: 400;
   font-size: 2.2rem;
@@ -624,62 +626,52 @@ iframe {
 }
 
 .elites_i {
-  /* position: relative;
+  position: relative;
   height: 4rem;
   width: 4rem;
   background-color: yellow;
   border-radius: 50%;
-  display: inline-block; */
+  display: inline-block;
 }
 
-.i_des {
+.labelSpan {
   font-size: 2rem;
   font-weight: 500;
   position: absolute;
   line-height: 2.6rem;
 
-  visibility: hidden;
+  display: none;
   text-transform: uppercase;
   z-index: 3000;
 }
 
-.i_des_1 {
-  /* left: 26rem; */
+.labelSpan_1 {
+  left: 26rem;
 }
-.elites_i span {
-  /* left: 26rem;
-  font-size: 2rem;
-  font-weight: 500;
-  position: absolute;
-  line-height: 2.6rem;
-  visibility: hidden;
-  text-transform: uppercase;
-  z-index: 3000; */
-}
-.i_des_2 {
+.labelSpan_2 {
   left: 20rem;
 }
-.i_des_3 {
+.labelSpan_3 {
   left: 14rem;
 }
 
-.i_des_4 {
+.labelSpan_4 {
   left: 8rem;
 }
 
-.elites_i:hover .i_des {
-  visibility: visible;
+.elites_i:hover .labelSpan {
+  display: none;;
 }
 
-.clergy_i:hover .i_des {
-  visibility: visible;
+.clergy_i:hover .labelSpan {
+  display: none;;
 }
 
-.govern_i:hover .i_des {
-  visibility: visible;
+.govern_i:hover .labelSpan {
+  display: none;;
 }
-/* 튼 수정 */
-/* .clergy_i {
+
+.clergy_i {
   position: relative;
   margin: 0 2rem;
   height: 4rem;
@@ -687,15 +679,13 @@ iframe {
   background-color: rgb(0, 255, 255);
   border-radius: 50%;
   display: inline-block;
-} */
+}
 
-.govern_i,
-.clergy_i,
-.elites_i {
+.govern_i {
   position: relative;
   height: 4rem;
   width: 4rem;
-  /* background-color: rgb(255, 139, 0); */
+  background-color: rgb(255, 139, 0);
   border-radius: 50%;
   display: inline-block;
 }
@@ -726,8 +716,8 @@ iframe {
   left: 0rem;
 }
 
-.ajc_i_hover:hover .i_des {
-  visibility: visible;
+.ajc_i_hover:hover .labelSpan {
+  display: none;;
 }
 
 .ajc_i_hover {
@@ -741,8 +731,8 @@ iframe {
   z-index: 2000;
 }
 
-.heem_i_hover:hover .i_des {
-  visibility: visible;
+.heem_i_hover:hover .labelSpan {
+  display: none;;
 }
 
 .heem_i_hover {
@@ -782,7 +772,7 @@ iframe {
   /*    원래가 뭔가 적용되어 있던걸 0으로 하니까 됌*/
 }
 
-.folk_i_hover:hover .i_des {
+.folk_i_hover:hover .labelSpan {
   visibility: visible;
 }
 
@@ -821,19 +811,19 @@ iframe {
   transform: rotate(135deg);
 }
 
-.raci_i:hover .i_des {
+.raci_i:hover .labelSpan {
   visibility: visible;
 }
 
-.social_i:hover .i_des {
+.social_i:hover .labelSpan {
   visibility: visible;
 }
 
-.nazi_i:hover .i_des {
+.nazi_i:hover .labelSpan {
   visibility: visible;
 }
 
-.national_i:hover .i_des {
+.national_i:hover .labelSpan {
   visibility: visible;
 }
 
@@ -880,85 +870,32 @@ iframe {
 }
 
 /*history_left*/
-
-.history_comp_left {
-
-
+.elites {
+  position: absolute;
+  top: 7rem;
+  /*    숫자가 클수록 년도를 의미*/
+  left: 5rem;
+  /*  33rem이 중간 -4rem: 0.1, 0.7=33-28rem */
+  height: 6.5rem;
+  width: 6.5rem;
+  background-color: yellow;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.history_img_icon_box{
-/*    position: relative;*/
-}
-
-.icon{
-    width:7.5rem;
-}
-
-.tag{
+.tag {
+  position: absolute;
+  top: 0.5rem;
+  left: 8rem;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 2rem;
   line-height: 2.5rem;
-
-}
-/*한세트*/
-.icon_1914{
-    position: relative;
-    top: 8.5rem;
-    left: -27.5rem;
-/*    0.5가 중심, 4rem씩*/
+  visibility: hidden;
 }
 
-.icon_1914 + span.tag {
-  position: absolute;
-  top: 30.8rem;
-  left: 17.5rem;
-  display: none;
-}
-
-.icon:hover + span.tag {
-  display: block;
-}
-
-
-/*한세트*/
-
-.icon_1917{
-    position: relative;
-    top: 8.5rem;
-    left: -19.5rem;
-/*    0.5가 중심, 4rem씩*/
-}
-
-.icon_1917 + span.tag {
-  position: absolute;
-  top: 38.5rem;
-  left: 25.5rem;
-  display: none;
-}
-
-.icon:hover + span.tag {
-  display: block;
-}
-
-
-
-
-
-
-
-
-.history_meter_box{
-    text-align: left;
-   position: relative;
-    top:5rem;
-    left: 0rem;
-
-
-}
-.history_meter{
-    position: absolute;
-    width:2.5rem;
+.elites:hover .tag {
+  visibility: visible;
 }
 
 /*firestore*/
@@ -1037,51 +974,4 @@ iframe {
   background-color: transparent;
   border-top: 0.1rem solid black;
   border-bottom: 0.1rem solid black;
-}
-
-input[type="radio"] + label {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  background-color: yellow;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-#section-history
-  .history_legend
-  input[type="radio"]:checked
-  + label.clergy_i:hover
-  ~ .labelSpan {
-  display: block;
-}
-
-input[type="radio"] + label.clergy_i {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  background-color: rgb(0, 255, 255);
-  border-radius: 50%;
-  display: inline-block;
-}
-
-input[type="radio"] + label.govern_i {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  background-color: rgb(255, 139, 0);
-  border-radius: 50%;
-  display: inline-block;
-}
-input[type="radio"] + label:hover {
-  cursor: pointer;
-}
-input[type="radio"]:checked + label {
-  border: 3px dashed orangered;
-  /* outline: 1px solid orangered; */
-  cursor: pointer;
-}
-
-#section-history .history_legend input[type="radio"] ~ span.labelSpan {
-  display: none;
 }

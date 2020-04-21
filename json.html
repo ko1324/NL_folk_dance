@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>MOVE AROUND</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="menu.js"></script>
+    <link rel="stylesheet" href="css/icon-font.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- 부트스트랩 css 설정 붙여넣기-->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- 부트스트랩 js 설정 붙여넣기-->
+
+    <!-- firebase 관련 함수 불러오기 -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <!-- firebase 관련 함수 불러오기 -->
+
+    <style>
+        #section-history .history_legend .elites_i {
+            z-index: 1000;
+        }
+
+        #section-history .history_legend input[type=radio] {
+            width: 100%;
+            height: 100%;
+            display: none;
+            cursor: pointer;
+            z-index: 1;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var firebaseConfig = {
+                apiKey: "AIzaSyBXaxChS9PAKkP9QtF6LnzKpC_EDq6C5zQ",
+                authDomain: "dutch-folk-dance.firebaseapp.com",
+                databaseURL: "https://dutch-folk-dance.firebaseio.com",
+                projectId: "dutch-folk-dance",
+                storageBucket: "dutch-folk-dance.appspot.com",
+                messagingSenderId: "317855707149",
+                appId: "1:317855707149:web:47bc566b359ee0456be544",
+                measurementId: "G-8ZP99DRQPE"
+            };
+            firebase.initializeApp(firebaseConfig);
+            var firestore = firebase.firestore();
+            var docRef = firestore.doc("arts/history");
+            var docColl = firestore.collection("arts");
+            var docCollectionbyYear = docRef.collection("1900");
+
+            var collapsibleContentArray = [];
+            var stackArray = [];
+            var originArray = ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'];
+            var html = "";
+            var historyHtml = "";
+            /* 데이터 불러오기 */
+            function loadDataFromCollection(year) {
+
+                //+
+                docRef.collection(year)
+                    // .orderBy("year", "desc")
+                    .get()
+                    .then(function (querySnapshot) {
+                        // console.log(querySnapshot);
+                        //get()일단 싹 긁어옴, querySnapshot(firebase에서 전달해주는 역할, 이 안에 데이터들이 다 들어있다 )
+
+                        //+
+
+                        //버튼 저장할때 이름, add할때 이름, 업데이트할때 이름, 즉 보라색 이름이 대소문자 같아야 로드할 수 있음
+                        //add -> description: desc
+                        //data-뒤에잇는이름 , 헷갈리니까 그냥 이름 전체 통일
+                        querySnapshot.forEach(function (doc) {
+                            // console.log(group.split(","));
+                            html += `<tr>
+                            <th scope="row">${doc.id}</th>
+                            <td>${doc.data().name}</td>
+                            <td>${doc.data().description}</td>
+                            <td>${doc.data().quote}</td>
+                            <td>${doc.data().sentiment}</td>
+                            <td>${doc.data().image}</td>
+                            <td>${doc.data().group}</td>
+                            <td>${doc.data().movement}</td>
+
+
+                            <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+
+                <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
+
+                        </tr>`;
+                            // console.log(year);
+                            // console.log(doc.id);
+                            if (!stackArray.includes(year)) {
+                                stackArray.push(year);
+                                collapsibleContentArray.push({
+                                    [year]: [{
+                                        name: doc.data().name,
+                                        description: doc.data().description,
+                                        quote: doc.data().quote,
+                                        sentiment: doc.data().sentiment,
+                                        image: doc.data().image,
+                                        group: doc.data().group,
+                                        movement: doc.data().movement
+                                    }]
+                                })
+                            } else {
+                                const findIndex = stackArray.findIndex(data => data === year);
+                                collapsibleContentArray[findIndex][year].push({
+                                    name: doc.data().name,
+                                    description: doc.data().description,
+                                    quote: doc.data().quote,
+                                    sentiment: doc.data().sentiment,
+                                    image: doc.data().image,
+                                    group: doc.data().group,
+                                    movement: doc.data().movement
+                                });
+                            }
+                        })
+
+                        // console.log(collapsibleContentArray);
+                        // console.log(JSON.stringify(collapsibleContentArray))
+                        // console.log(JSON.stringify(collapsibleContentArray));
+
+                        $('body').text(JSON.stringify(collapsibleContentArray))
+
+                        // $('.table tbody').html(html);
+                        // $('#collapsibleContent').append(historyHtml);
+                        var coll = document.getElementsByClassName("collapsible");
+
+                        for (var i = 0; i < coll.length; i++) {
+                            coll[i].addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var content = this.nextElementSibling;
+                                if (content.style.maxHeight) {
+                                    content.style.maxHeight = null;
+                                } else {
+                                    content.style.maxHeight = content.scrollHeight + "px";
+                                }
+                            });
+                        }
+                    }).then(() => {
+                        collapsibleContentArray.forEach(data => {
+                            historyHtml +=
+                                `<button class="collapsible ${data.group && data.group.join(" ")} ${data.movement && data.movement.join(" ")} ">${data.name}</button>
+                                <div class="content">
+                                <p>${data.description}</p>
+                                <p>${data.quote}</p>
+                                </div>`;
+                        });
+                    }
+                    )
+            }
+            // 1900 1914 1917 1918 1919 1920 1925 1926 1927 1930 1931 1932 1939-1945 1940 1944 1945 1950 1959
+            ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'].forEach(function (year) {
+                loadDataFromCollection(year);
+                // collapsibleContent += loadDataFromCollection(year);
+            });
+            /* 데이터 불러오기 */
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

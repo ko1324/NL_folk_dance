@@ -1,0 +1,124 @@
+[
+    {
+        "id": 1,
+        "year": 1914,
+        "name" : "Van Dorp",
+        "description": "Moralists were deeply worried about dancehalls. They perceived them as seats of evil, the materialization of burgeoning and fast-growing corruption and immorality",
+        "quote" : "Do you know what the tango is? It is the wringing and twisting of the body in limp turns and the skipping and rocking just like a goose.",
+        "sentiment" : "0.7",
+        "image" : "",
+        "group": "Moralists, elites, cultural pessimists",
+        "movement":"",
+        "Ideologie":""
+    },
+    {
+        "id": 2,
+        "year": 1917,
+        "name" : "Tucht-Unie",
+        "description": "Tucht-Unie;an elite nationalist society combating discipline and strengthening moral power argued that national intervention is desperately neededMoralists were deeply worried about dancehalls. They perceived them as seats of evil, the materialization of burgeoning and fast-growing corruption and immorality",
+        "quote" : " If this does not happen, then moral corruption among dutch youth, who were exposed to ‘demoralization’ and would possibly degenerate or decivilize (verwilderen) will occur.",
+        "sentiment" : "",
+        "image" : "",
+        "group": "Moralists, elites, cultural pessimists",
+        "movement":"",
+        "Ideologie":""
+    },
+    {
+        "id": 3,
+        "year": 1918,
+        "name" : "AJC",
+        "description": "The establishment of the AJC; Youth Central Workers Office by the Youth Development Committee. The AJC attempted to realize socialist cultural ideals, which promoted community consciousness by promoting activities such as folk dances, music, and songs.",
+        "quote" : "",
+        "sentiment" : "",
+        "image" : "",
+        "group": "young socialists",
+        "movement":"AJC",
+        "Ideologie":"Socialism"
+    },
+    {
+        "id": 4,
+        "year": 1919,
+        "name" : "Dirk Jan van der Ven",
+        "description": "National Historical Folk Festival (Vaderlandsch Historisch Volksfeest) that was celebrated in the Arnhem Open Air Museum",
+        "quote" : "",
+        "sentiment" : "",
+        "image" : "",
+        "group": "young socialists",
+        "movement":"Folklorists",
+        "Ideologie":"Nationalism"
+    },
+    {
+        "id": 5,
+        "year": 1920,
+        "name" : "",
+        "description": "The ﬁrst Dutch jazz bands were established",
+        "quote" : "",
+        "sentiment" : "",
+        "image" : "",
+        "group": "",
+        "movement":"",
+        "Ideologie":""
+    },
+    {
+        "id": 6,
+        "year": 1924,
+        "name" : "AN INTERNATIONAL PENTECOSTAL CAMP",
+        "description": "This organization actively resisted modern mass culture. AJC people were total abstainers, they did not smoke and did not go to the cinema or dance hall.",
+        "quote" : "",
+        "sentiment" : "",
+        "image" : "",
+        "group": "young socialist",
+        "movement":"AJC",
+        "Ideologie":"socialism"
+    },
+    {
+        "id": 7,
+        "year": 1925,
+        "name" : "Mrs. A. Sanson-Catz and Mr. A. de Koe",
+        "description": "Mrs. A. Sanson-Catz and Mr. A. de Koe started to collect and describe the Dutch folk dances, much was already lost.",
+        "quote" : "",
+        "sentiment" : "",
+        "image" : "",
+        "group": "young socialists",
+        "movement":"AJC",
+        "Ideologie":"Socialism"
+    },
+    {
+        "id": 8,
+        "year": 1926,
+        "name" : "Catholic journals Mannenadel and Vrouweneer",
+        "description": "Mrs. A. Sanson-Catz and Mr. A. de Koe started to collect and describe the Dutch folk dances, much was already lost.",
+        "quote" : "Those who danced the Charleston ‘demean themselves to the most uncivilized primordial phenomena of mankind’",
+        "sentiment" : "",
+        "image" : "",
+        "group": "clergy,minister,religious authorities",
+        "movement":"",
+        "Ideologie":""
+    },
+    {
+        "id": 9,
+        "year": 1927,
+        "name" : "Heerkens",
+        "description": "",
+        "quote" : ["The modern dance dances the movement dances the impetuosity: the impetuosity that turns into delirium, into hysteria’","‘One does not show one’s body in such a provocative and insolent fashion. One does not play with one’s instincts so utterly inhumanly, bestially, furiously, ragingly. This is the beast, the ever so human beast in man’"],
+        "sentiment" : "",
+        "image" : "",
+        "group": "clergy,minister,religious authorities",
+         "movement":"",
+        "Ideologie":""
+    },
+    {
+        "id": 10,
+        "year": 1927,
+        "name" : "Pollmann",
+        "description": "The rhythm of modern dance music causes blood flow faster, to overflow with passion and to lose all self-control. Uncontrolled bodily movements unsettled him. In addition, there were the ‘devilish’ instruments (the saxophone in particular), the extended instrumental improvisations that supposedly aroused the senses, and the questionable lyrics referring to lovemaking, and it did not take much time to offend moralists. In all his prudery, he deemed words such as ‘I love you’ to be a grave moral problem. ",
+        "quote" : ["these ‘unnatural’ rhythms caused mental and physical anxiety, and they were indicative of the poverty of modern culture.",""],
+        "sentiment" : "",
+        "image" : "",
+        "group": "Moralists, elites, cultural pessimists",
+        "movement":"",
+        "Ideologie":""
+    }
+
+]
+

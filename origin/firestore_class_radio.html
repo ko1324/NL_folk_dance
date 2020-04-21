@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <!-- 부트스트랩 css 설정 붙여넣기-->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- 부트스트랩 js설정 붙여넣기-->
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <!-- 사용하려면 두줄 추가 -->
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBXaxChS9PAKkP9QtF6LnzKpC_EDq6C5zQ",
+            authDomain: "dutch-folk-dance.firebaseapp.com",
+            databaseURL: "https://dutch-folk-dance.firebaseio.com",
+            projectId: "dutch-folk-dance",
+            storageBucket: "dutch-folk-dance.appspot.com",
+            messagingSenderId: "317855707149",
+            appId: "1:317855707149:web:47bc566b359ee0456be544",
+            measurementId: "G-8ZP99DRQPE"
+        };
+
+        // Initialize Firebase
+        //기본 세팅
+        //프로젝트 추가?-이름 정하고 - <>추가- 뜸.. - 키코드 붙여넣기
+        //데이터베이스 시작 - 프로덕트 모드
+        //콘솔로 확인
+
+
+        window.onload = function () {
+            //http://127.0.0.1:포트번호/firestore.html?name=1111&year=2014
+            //http://127.0.0.1:60137/firestore_class_copy.html?name=1111&year=2014
+
+            // *년도별 분류법 1.html에다가 앵커를 넣고
+            // *년도별 분류법 2.http://127.0.0.1:60137/firestore_class_copy.html?year=2014이 주소에서, window.location.search.split("=")[1] 이렇게 하면 콘솔에 년도만 불러오는것을 확인할 수 있다.
+            console.log(window.location.search.split("=")[1]);
+
+            var year = window.location.search.split("=")[1];
+            //그걸 year로 넣어서
+            if (!year) {
+                // window.location.href = "/";
+                // return;
+            }
+            //
+
+
+            firebase.initializeApp(firebaseConfig);
+            var firestore = firebase.firestore();
+            var docRef = firestore.doc("arts/history");
+            var docColl = firestore.collection("arts");
+            var docCollectionbyYear = docRef.collection(year);
+            // *년도별 분류법 3.넣는다
+            //`history/+${year}`더해져서 나옴
+            //("history/"+year)
+            //1? docRef_1를 계속 만들어야 하는건가? -> 위에 년도별 구성
+
+            var saveButton = document.getElementById("saveBtn");
+
+            saveButton.addEventListener("click", function () {
+
+                var name = document.getElementById("formGroupExampleInput").value;
+                var desc = document.getElementById("formGroupExampleInput2").value;
+                var quote = document.getElementById("formGroupExampleInput3").value;
+                var sentiment = document.getElementById("formGroupExampleInput4").value;
+                var image = document.getElementById("formGroupExampleInput5").value;
+                var group = document.getElementById("formGroupExampleInput6").value;
+                var movement = document.getElementById("formGroupExampleInput7").value;
+                var ideologie = document.getElementById("formGroupExampleInput8").value;
+                //id:formGroupExampleInput에 유저가(내가) 창에 무언가를 입력하고서,입력된 값을 그대로 name 이라는 변수에 담아준다. string형태로 담아줌
+
+                //var docCollectionbyYear = docRef.collection('2019')여기에 add 함수에 객체형태로 넣어줌
+                //2019폴더 안에 소분류를 넣어줌, 앞에 들어간 키값(var name, var desc)이 그대로 들어간(키캆은 유저 인풋에서 받아온것을 넣어줄거고)
+                //객체라서 ,로 구분
+                docCollectionbyYear.add({
+                    name: name,
+                    description: desc,
+                    quote: quote,
+                    sentiment: sentiment,
+                    image: image,
+                    group: group,
+                    movement: movement,
+                    ideologie: ideologie,
+                    CreatedAt: firebase.firestore.Timestamp.fromDate(
+                        new Date()
+                    )
+
+                    //?2.폴더에서 추가할때는 스트링형식말고 number로도 추가하고 했는데 여기선 스트링 형식으로만 추가된다고 했는데 어떻게 바꿈?
+
+                    //7)loadDataFromCollection으로 업로드가 됐는데, 저장을 하면 모달도 안꺼지고, 바로 업데이트가 되지 않는다.(새로고침을 해야 한다)
+                    //이 부분을 해결하려고 then. 저장누르면 모달을 숨기고, 비워라
+                }).then(function () {
+                    loadDataFromCollection();
+                    $('#exampleModal').modal('hide');
+                    document.getElementById('formGroupExampleInput').value = '';
+                    document.getElementById('formGroupExampleInput2').value = '';
+                    document.getElementById('formGroupExampleInput3').value = '';
+                    document.getElementById('formGroupExampleInput4').value = '';
+                    document.getElementById('formGroupExampleInput5').value = '';
+                    document.getElementById('formGroupExampleInput6').value = '';
+                    document.getElementById('formGroupExampleInput7').value = '';
+                    document.getElementById('formGroupExampleInput8').value = '';
+                }).catch(function () {
+                    console.log("error");
+                })
+            })
+
+
+
+
+            //?6 스크립트 끝에는 ;안붙임?
+
+            function loadDataFromCollection() {
+
+                //+
+                docCollectionbyYear
+                    // .orderBy("year", "desc")
+                    .get()
+                    .then(function (querySnapshot) {
+                        console.log(querySnapshot);
+                        //get()일단 싹 긁어옴, querySnapshot(firebase에서 전달해주는 역할, 이 안에 데이터들이 다 들어있다 )
+
+                        var html = "";
+                        //+
+                        var historyHtml = "";
+
+                        //버튼 저장할때 이름, add할때 이름, 업데이트할때 이름, 즉 보라색 이름이 대소문자 같아야 로드할 수 있음
+                        //add -> description: desc
+                        //data-뒤에잇는이름 , 헷갈리니까 그냥 이름 전체 통일
+                        querySnapshot.forEach(function (doc) {
+                            let group = doc.data().group;
+                            console.log(group);
+                            // console.log(group.split(","));
+                            html += `<tr>
+                                <th scope="row">${doc.id}</th>
+                                <td>${doc.data().name}</td>
+                                <td>${doc.data().description}</td>
+                                <td>${doc.data().quote}</td>
+                                <td>${doc.data().sentiment}</td>
+                                <td><img class="contentImg" src="${doc.data().image}" alt="이미지" /></td>
+                                <td>${doc.data().group}</td>
+                                <td>${doc.data().movement}</td>
+                                <td>${doc.data().ideologie}</td>
+
+
+                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+
+                    <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
+
+                            </tr>`;
+
+                            historyHtml +=
+                                `<button class="collapsible ${doc.data().group && doc.data().group.join(" ")} ${doc.data().movement && doc.data().movement.join(" ")} ${doc.data().ideologie && doc.data().ideologie.join(" ")}">${doc.data().name}</button>
+                            <div class="content">
+                            <p>${doc.data().description}</p>
+                            <p>${doc.data().quote}</p>
+                            </div>`;
+
+                            console.log(doc.id);
+                        })
+
+
+
+                        $('.table tbody').html(html);
+                        $('#historySection').html(historyHtml);
+                        var coll = document.getElementsByClassName("collapsible");
+
+                        for (var i = 0; i < coll.length; i++) {
+                            coll[i].addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var content = this.nextElementSibling;
+                                if (content.style.maxHeight) {
+                                    content.style.maxHeight = null;
+                                } else {
+                                    content.style.maxHeight = content.scrollHeight + "px";
+                                }
+                            });
+                        }
+                    })
+            }
+
+            loadDataFromCollection();
+            //이 함수는 2019 컬렉션을 year기준으로 내림차순으로 긁어서 querySnapshot로 데이터 모두 저장하고, querySnapshot에서 forEach 하는데, 그 안에 console.log(doc.id);를 실행한다. + tboy안에 기준점 아래로 추가한것을 화면에 보이게 추가(생성), 생성될때 버튼도 같이 생성되지
+
+            //업데이트
+
+            $('#exampleModalUpdate').on('show.bs.modal', function (e) {
+                //부트스트랩이 켜지면 실행되는 함수
+                //update버튼을 눌러서 모달이 떳을때는 원래께 입력이 되어있어야 함
+                $('#exampleModalUpdate input[type=hidden][name=id]').val(e.relatedTarget.dataset.id);
+                //모달 안에 있는 인풋태그를 제이쿼리 선택자로 선택할때 타입은 히든이고 네임은 아이디다
+                //<form> <input type="hidden" name="id" value="" /> </form>
+                //id경우는 유저가 필요가 없어서 안보이는 히든으로 했지만, 불러올때는 아이디로 불러오기 때문에 필요한 정보
+                //인풋태그들의 value는 항상 form이 전송될때 /업데이트를 누르면 폼이 전송이 될때, form안에 있는 인풋 안에 들어가 있는 벨류값들을 전송하는것, 각각의 벨류값들
+                $("#updateName").val(e.relatedTarget.dataset.name);
+                $("#updateDescription").val(e.relatedTarget.dataset.description);
+                $("#updateQuote").val(e.relatedTarget.dataset.quote);
+                $("#updateSentiment").val(e.relatedTarget.dataset.sentiment);
+                $("#updateImage").val(e.relatedTarget.dataset.image);
+                $("#updateGroup").val(e.relatedTarget.dataset.group);
+                $("#updateMovement").val(e.relatedTarget.dataset.movement);
+                $("#updateideologie").val(e.relatedTarget.dataset.ideologie);
+            })
+
+
+            //수정과 삭제
+            var updateBtn = document.getElementById('updateBtn');
+            updateBtn.addEventListener('click', function () {
+                var id = $('#exampleModalUpdate input[type=hidden][name=id]').val();
+                var name = $("#updateName").val();
+                var desc = $("#updateDescription").val();
+                var quote = $("#updateQuote").val();
+                var sent = $("#updateSentiment").val();
+                var image = $("#updateImage").val();
+                var group = $("#updateGroup").val();
+                var movement = $("#updateMovement").val();
+                var ideo = $("#updateideologie").val();
+                updateDataFromcollection(id, name, desc, quote, sent, image, group, movement, ideo);
+
+
+            })
+
+            function updateDataFromcollection(docId, docName, docDesc, docQuote, docSent, docImage, docGroup, docMovement, docIdeo) {
+                docCollectionbyYear.doc(docId).update({
+                    //?4 어디 아이디값을 받아서 , docCollectionbyYear얘는 년도인데..
+                    name: docName,
+                    description: docDesc,
+                    quote: docQuote,
+                    sentiment: docSent,
+                    image: docImage,
+                    group: docGroup,
+                    movement: docMovement,
+                    ideologie: docIdeo,
+                    CreatedAt: firebase.firestore.Timestamp.fromDate(new Date())
+                }).then(function () {
+                    loadDataFromCollection();
+                    //저장한 것을(modify)한걸 화면창에다가 보여주고
+                    $('#exampleModalUpdate').modal('hide');
+                })
+
+            }
+
+            //위랑 다른점1: 은 name, desc 넣는건 없음, id만 지우겟다
+
+            $('body').on('click', 'button.deleteItem', function (e) {
+                console.log($(e.target).data('id'));
+                deleteDocument($(e.target).data('id'));
+                //function이름
+
+            })
+
+            function deleteDocument(docId) {
+                var confirmData = confirm('정말로 삭제하시겠습니까?');
+                if (confirmData) {
+                    docCollectionbyYear.doc(docId).delete().then(function () {
+                        console.log('delete');
+                        loadDataFromCollection();
+                    }).catch(function (error) {
+                        console.log('Got delete error: ', error);
+                    })
+                }
+            }
+
+
+
+
+
+
+        };
+
+    </script>
+    <script>
+
+        var myData = '';
+        //콘솔에서 접근 가능
+        var historyHtml = '';
+        fetch('/example.json')
+            .then(function (response) {
+                return response.json();
+                //response: 전체 스트링으로 주고받고 불러온다
+                //.json()제이슨형태로 바뀌는거
+            })
+            .then(function (myJson) {
+                myData = myJson;
+                //배열로 가져온 상태에서
+                myData.forEach(function (data) {
+                    //myjson.forEach해도 되는데 콘솔에서 접근 불간으
+                    // historyHtml +=
+                    //     `<button class="collapsible">${data.year}[data1 data3]</button>
+                    // <div class="content">
+
+                    //     <p>${data.description}</p>
+                    // </div>`;
+                    // data는 한 배열
+                    //원래 버튼 형식에 맞춰서 html추가
+                });
+                // $('#historySection').html(historyHtml);
+                //중요한건 아이디로
+                //html추가
+
+                //아래있던건데 위로(순서가 꼬이기 떄문에 깜빡거림.)
+                var coll = document.getElementsByClassName("collapsible");
+
+                for (var i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.maxHeight) {
+                            content.style.maxHeight = null;
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        }
+                    });
+                }
+            });
+    </script>
+
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1900">1900</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1914">1914</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1917">1917</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1918">1918</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1919">1919</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1920">1920</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1925">1925</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1926">1926</a>
+    <a href="http://127.0.0.1:62867/firestore_class_copy.html?year=1927">1927</a>
+
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1930">1930</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1931">1931</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1932">1932</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1939">1939-1945</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1940">1940</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1944">1944</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1945">1945</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1950">1950</a>
+    <a href="http://127.0.0.1:5500/firestore_class_copy.html?year=1959">1959</a>
+
+
+    <!--       *년도별 분류법 1. 얘를 a태그로 년도로 나누고, window.onload로 -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <!-- Toast -->
+                <!-- Flexbox container for aligning the toasts -->
+                <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center"
+                    style="min-height: 0px;">
+                    <!-- Then put toasts within -->
+                    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true"
+                        style="position: absolute; top: 100px; right: 300px;" data-delay="2000">
+                        <div class="toast-header">
+                            <!-- <img src="..." class="rounded mr-2" alt="..."> -->
+                            <strong class="mr-auto">Delete</strong>
+                            <small>1 sec ago</small>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body">
+                            정상적으로 삭제되었습니다.
+                        </div>
+                    </div>
+                </div>
+                <!-- Toast -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary mt-3 mb-3" data-toggle="modal" data-target="#exampleModal">
+                    Add
+                </button>
+                <!-- Modal -->
+                <div class="modal fade mb-3" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    Modal title
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput">Name</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput"
+                                            placeholder="Name input placeholder" />
+                                        <!--                                            0? placeholder?-->
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput2">Description</label>
+                                        <!-- <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput2"
+                                                placeholder="Description input placeholder"
+                                            /> -->
+                                        <textarea rows="5" class="form-control" id="formGroupExampleInput2"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput3">Quote</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput3"
+                                            placeholder="Quote input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput4">Sentiment</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput4"
+                                            placeholder="Sentiment input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput5">Image</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput5"
+                                            placeholder="Image input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput60">Group</label>
+                                        <input type="checkbox" class="form-control" id="formGroupExampleInput61"
+                                            placeholder="Group input placeholder" />elites
+                                        <input type="checkbox" class="form-control" id="formGroupExampleInput62"
+                                            placeholder="Group input placeholder" />government
+                                        <input type="checkbox" class="form-control" id="formGroupExampleInput63"
+                                            placeholder="Group input placeholder" />ideologie
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput7">Movement</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput7"
+                                            placeholder="Movement input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput8">ideologie</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput8"
+                                            placeholder="ideologie input placeholder" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="button" class="btn btn-primary" id="saveBtn">
+                                    Save changes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+
+                <!-- Updte Modal-->
+                <div class="modal fade mb-3" id="exampleModalUpdate" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalUpdateLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalUpdateLabel">
+                                    Update Modal title
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <input type="hidden" name="id" value="" />
+                                    <div class="form-group">
+                                        <label for="updateName">Name</label>
+                                        <input type="text" class="form-control" id="updateName"
+                                            placeholder="Name input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateDescription">Description</label>
+                                        <input type="text" class="form-control" id="updateDescription"
+                                            placeholder="Description input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateQuote">Quote</label>
+                                        <input type="text" class="form-control" id="updateQuote"
+                                            placeholder="Quote input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateSentiment">Sentiment</label>
+                                        <input type="text" class="form-control" id="updateSentiment"
+                                            placeholder="Sentiment input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateImage">Image</label>
+                                        <input type="text" class="form-control" id="updateImage"
+                                            placeholder="Image input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateGroup">Group</label>
+                                        <input type="text" class="form-control" id="updateGroup"
+                                            placeholder="Group input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateMovement">Movement</label>
+                                        <input type="text" class="form-control" id="updateMovement"
+                                            placeholder="Movement input placeholder" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateideologie">ideologie</label>
+                                        <input type="text" class="form-control" id="updateideologie"
+                                            placeholder="ideologie input placeholder" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="button" class="btn btn-primary" id="updateBtn">
+                                    Update
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Updte Modal -->
+                <div id="output">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Quote</th>
+                                <th scope="col">Sentiment</th>
+                                <th scope="col">Group</th>
+                                <th scope="col">Movement</th>
+                                <th scope="col">ideologie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr>
+                                <th scope="row">${doc.id}</th>
+                                <td>${doc.data().name}</td>
+                                <td>${doc.data().description}</td>
+                                <td>${doc.data().quote}</td>
+                                <td>${doc.data().sentiment}</td>
+                                <td>${doc.data().image}</td>
+                                <td>${doc.data().group}</td>
+                                <td>${doc.data().movement}</td>
+                                <td>${doc.data().ideologie}</td>
+
+
+                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+                    <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                    <div id="historySection">
+                        <!-- 추가하는 섹션 (중요한 섹션) -->
+
+                    </div>
+                    <!-- <button class="collapsible data1 data3">
+                            Open Section 1 [data1 data3]
+                        </button>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                        </div>
+                        <button class="collapsible data1 data2">
+                            Open Section 2 [data1 data2]
+                        </button>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex
+                                ea commodo consequat.
+                            </p>
+                        </div>
+                        <button class="collapsible data2">
+                            Open Section 3 [data2]
+                        </button>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                        </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <button id="toggle1">data1</button>
+        <button id="toggle2">data2</button>
+        <button id="toggle3">data3</button> -->
+        <!--           1.라디오버튼이 레전드가 되어야 하는데..-->
+        <!--           data1이걸 클래스에 넣어야 함-->
+        <div class="row mt-3 mb-5">
+            <input type="radio" name="toggles" value="ELITES" id="toggle1" /><label for="toggle1">data1</label>
+            <input type="radio" name="toggles" value="GOVERNMENT" id="toggle2" /><label for="toggle2">data2</label>
+            <input type="radio" name="toggles" value="data3" id="toggle3" /><label for="toggle2">data3</label>
+        </div>
+    </div>
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible")
+        //위에 있는 모든 버튼 클래스 <button class="collapsible data2">를 다 긁어와서 -> 배열 형태로 coll에 일단 다 담아놈.
+        //담아논 이유는, 각각 버튼에 클릭 이벤트를 바인딩 해줄려고
+        //9? getElementsByClassName가 addEventListener같은건가?
+
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                //각각의 아코디언 [0],[1],[2]에 클릭이벤트를 달아줄건데, 누르면 함수 실행
+                this.classList.toggle("active");
+                //액티브가 눌리면 active +가 -가 되고, 색깔이 진해지는 css가 바뀌는것
+                //액티브가 안된 상태, maxHeight가 설정 안된 상태
+
+                var content = this.nextElementSibling;
+                //아코디언 본문내용(바로 다음요소 nextElementSibling:content 클래스를)을 var content로 담고,
+
+                //?9) maxHeight이 저절로 계산되는거. (열려있으면=본문의 길이) 버튼을 누르면 null로 해라(닫히게)
+                //active랑 maxHeight랑 관련 없음
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    //(열려있으면=본문의 길이) 버튼을 누르면 null로 해라(닫히게)
+
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    //원래 하이트 값이 -> 맥스 하이트값에 입력이 되면서 쭉 드러나는///
+                    //열렷다 닫혔다
+                    //maxHeight가 없을때는 scrollHeight계산된 값을 maxHeight에 넣어주겠다.
+                }
+            })
+        }
+
+        $('input:radio[name="toggles"]').click(function () {
+            //제이쿼리로 간단하게 addEventListener를
+            //라디오 버튼을 누르면
+            //10? $('#exampleModalUpdate input[type=hidden][name=id]') 선택자 차이
+            //input:type[name="toggles"]
+            var checkValue = $(this).val();
+            //checkValue는 어떻게 가져오냐
+            //클릭이벤트를 바인딩을 해줬지.. 라디오버튼이 눌리면-> 라디오버튼의 의 벨류값을 가져온다
+            //위에 라디오버튼에 <input type="radio" name="toggles" value="data1">
+            //-> 아코디언 버튼의 클래스이름이랑 맞춰줌
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].classList.remove("active");
+                var content = coll[i].nextElementSibling;
+                content.style.maxHeight = null;
+            }
+            //뭐라도 열려있으면 일단 다 닫아놓고 -> 해당걸 열어야 하니까
+
+            for (i = 0; i < coll.length; i++) {
+                if (coll[i].classList.contains(checkValue)) {
+                    //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+                    //그 버튼의 클래스리스트 안에, 체크벨류가 있으면(data1 data2) 그 요소에 +active 를 추가하고 열어라
+
+
+                    coll[i].classList.toggle("active");
+                    var content = coll[i].nextElementSibling;
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    }
+                    else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                    //열어라
+                    //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+                    //클래스를 넣어놓고
+
+                }
+
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

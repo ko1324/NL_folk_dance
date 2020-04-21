@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <!-- 부트스트랩 css 설정 붙여넣기-->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+        <!-- 부트스트랩 js설정 붙여넣기-->
+    </head>
+
+    <body>
+        <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+        <!-- 사용하려면 두줄 추가 -->
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyBXaxChS9PAKkP9QtF6LnzKpC_EDq6C5zQ",
+                authDomain: "dutch-folk-dance.firebaseapp.com",
+                databaseURL: "https://dutch-folk-dance.firebaseio.com",
+                projectId: "dutch-folk-dance",
+                storageBucket: "dutch-folk-dance.appspot.com",
+                messagingSenderId: "317855707149",
+                appId: "1:317855707149:web:47bc566b359ee0456be544",
+                measurementId: "G-8ZP99DRQPE"
+            };
+
+            // Initialize Firebase
+            //기본 세팅
+            //프로젝트 추가?-이름 정하고 - <>추가- 뜸.. - 키코드 붙여넣기
+            //데이터베이스 시작 - 프로덕트 모드
+            //콘솔로 확인
+
+            window.onload = function() {
+                //http://127.0.0.1:5500/firestore.html?name=1111&year=2014
+                console.log(window.location.search.split("=")[1]);
+                var year = window.location.search.split("=")[1] || '2014';
+
+                firebase.initializeApp(firebaseConfig);
+                var firestore = firebase.firestore();
+                var docRef= firestore.doc("arts/history");
+                var docColl = firestore.collection("arts");
+                var docCollectionbyYear= docRef.collection(year);
+                //`history/+${year}`더해져서 나옴
+                //("history/"+year)
+                //1? docRef_1를 계속 만들어야 하는건가?
+                //`
+                var saveButton = document.getElementById("saveBtn");
+
+                saveButton.addEventListener("click", function() {
+
+                    var name = document.getElementById("formGroupExampleInput")
+                        .value;
+                    var desc = document.getElementById("formGroupExampleInput2")
+                        .value;
+                    var quote = document.getElementById(
+                        "formGroupExampleInput3"
+                    ).value;
+                    var sentiment = document.getElementById(
+                        "formGroupExampleInput4"
+                    ).value;
+                    var image = document.getElementById(
+                        "formGroupExampleInput5"
+                    ).value;
+                    var group = document.getElementById(
+                        "formGroupExampleInput6"
+                    ).value;
+                    var movement = document.getElementById(
+                        "formGroupExampleInput7"
+                    ).value;
+                    var ideologie = document.getElementById(
+                        "formGroupExampleInput8"
+                    ).value;
+
+                    docCollectionbyYear.add({
+                        name: name,
+                        description: desc,
+                        quote: quote,
+                        sentiment: sentiment,
+                        image: image,
+                        group: group,
+                        movement: movement,
+                        ideologie: ideologie,
+                        CreatedAt: firebase.firestore.Timestamp.fromDate(
+                            new Date()
+                        )
+                        //?2.폴더에서 추가할때는 스트링형식말고 number로도 추가하고 했는데 여기선 스트링 형식으로만 추가된다고 했는데 어떻게 바꿈?
+                    }).then(function(){
+                       loadDataFromCollection();
+                       $('#exampleModal').modal('hide');
+                       document.getElementById('formGroupExampleInput').value = '';
+                       document.getElementById('formGroupExampleInput2').value = '';
+                        document.getElementById('formGroupExampleInput3').value = '';
+                        document.getElementById('formGroupExampleInput4').value = '';
+                        document.getElementById('formGroupExampleInput5').value = '';
+                        document.getElementById('formGroupExampleInput6').value = '';
+                        document.getElementById('formGroupExampleInput7').value = '';
+                        document.getElementById('formGroupExampleInput8').value = '';
+                    }).catch(function(){
+                        console.log("error");
+                    })
+                })
+
+                //?6 스크립트 끝에는 ;안붙임?
+
+                function loadDataFromCollection() {
+                    docCollectionbyYear
+                        // .orderBy("year", "desc")
+                        .get()
+                        .then(function(querySnapshot) {
+                            console.log(querySnapshot);
+                            //?3 orderBy가 2019폴더(docCollectionbyYear)의 안에꺼를 오더바이하는건지, 아니면 history안에 년도들이 들어있으니 history(docColl)을 orderby하는건지?
+                            var html = "";
+                            querySnapshot.forEach(function(doc) {
+                                html += `<tr>
+                                <th scope="row">${doc.id}</th>
+                                <td>${doc.data().name}</td>
+                                <td>${doc.data().description}</td>
+                                <td>${doc.data().quote}</td>
+                                <td>${doc.data().sentiment}</td>
+                                <td>${doc.data().image}</td>
+                                <td>${doc.data().group}</td>
+                                <td>${doc.data().movement}</td>
+                                <td>${doc.data().ideologie}</td>
+
+
+                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${
+                                    doc.id
+                                } data-name="${
+                                    doc.data().name
+                                }" data-description="${
+                                    doc.data().description
+                                }" data-quote="${
+                                    doc.data().quote
+                                }" data-sentiment="${
+                                    doc.data().sentiment
+                                }" data-image="${
+                                    doc.data().image
+                                }" data-group="${
+                                    doc.data().group
+                                }" data-movement="${
+                                    doc.data().movement
+                                }" data-ideologie="${
+                                    doc.data().ideologie
+                                }" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+                    <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${
+                        doc.id
+                    }>Delete</button></td>
+
+                            </tr>`;
+
+                                console.log(doc.id);
+                            })
+                            $('.table tbody').html(html);
+                        })
+                }
+
+                loadDataFromCollection();
+                //이 함수는 2019 컬렉션을 year기준으로 내림차순으로 긁어서 querySnapshot로 데이터 모두 저장하고, querySnapshot에서 forEach 하는데, 그 안에 console.log(doc.id);를 실행한다. + tboy안에 기준점 아래로 추가한것을 화면에 보이게 추가(생성), 생성될때 버튼도 같이 생성되지
+
+                //업데이트
+
+                $('#exampleModalUpdate').on('show.bs.modal', function(e){
+                //부트스트랩이 켜지면 실행되는 함수
+                //update버튼을 눌러서 모달이 떳을때는 원래께 입력이 되어있어야 함
+                $('#exampleModalUpdate input[type=hidden][name=id]').val(e.relatedTarget.dataset.id);
+                $("#updateName").val(e.relatedTarget.dataset.name);
+                $("#updateDescription").val(e.relatedTarget.dataset.description);
+                $("#updateQuote").val(e.relatedTarget.dataset.quote);
+                $("#updateSentiment").val(e.relatedTarget.dataset.sentiment);
+                $("#updateImage").val(e.relatedTarget.dataset.image);
+                $("#updateGroup").val(e.relatedTarget.dataset.group);
+                $("#updateMovement").val(e.relatedTarget.dataset.movement);
+                $("#updateideologie").val(e.relatedTarget.dataset.ideologie);
+
+                })
+
+                //수정과 삭제
+                var updateBtn = document.getElementById('updateBtn');
+                updateBtn.addEventListener('click', function(){
+                    var id = $('#exampleModalUpdate input[type=hidden][name=id]').val();
+                    var name = $("#updateName").val();
+                    var desc = $("#updateDescription").val();
+                    var quote = $("#updateQuote").val();
+                    var sent = $("#updateSentiment").val();
+                    var image = $("#updateImage").val();
+                    var group =  $("#updateGroup").val();
+                    var movement = $("#updateMovement").val();
+                    var ideo = $("#updateideologie").val();
+                    updateDataFromcollection(id,name,desc,quote,sent,image,group,movement,ideo);
+
+
+                })
+
+                function updateDataFromcollection(docId, docName, docDesc, docQuote, docSent, docImage, docGroup, docMovement, docIdeo){
+                    docCollectionbyYear.doc(docId).update({
+                        //?4 어디 아이디값을 받아서 , docCollectionbyYear얘는 년도인데..
+                        name:docName,
+                        description: docDesc,
+                        quote: docQuote,
+                        sentiment: docSent,
+                        image: docImage,
+                        group: docGroup,
+                        movement: docMovement,
+                        ideologie: docIdeo,
+                        CreatedAt: firebase.firestore.Timestamp.fromDate(new Date())
+                    }).then(function(){
+                    loadDataFromCollection();
+                    //저장한 것을(modify)한걸 화면창에다가 보여주고
+                    $('#exampleModalUpdate').modal('hide');
+                    })
+
+                }
+
+            //위랑 다른점1: 은 name, desc 넣는건 없음, id만 지우겟다
+
+             $('body').on('click', 'button.deleteItem', function(e){
+                console.log($(e.target).data('id'));
+                deleteDocument($(e.target).data('id'));
+                 //function이름
+
+             })
+
+            function deleteDocument(docId) {
+                var confirmData = confirm('정말로 삭제하시겠습니까?');
+                if (confirmData) {
+                    docCollectionbyYear.doc(docId).delete().then(function () {
+                        console.log('delete');
+                        loadDataFromCollection();
+                    }).catch(function (error) {
+                        console.log('Got delete error: ', error);
+                    })
+                }
+            }
+
+
+
+
+
+
+            };
+
+        </script>
+        <a href="http://127.0.0.1:58459/firestore.html?year=2014">2014</a>
+        <a href="http://127.0.0.1:58459/firestore.html?year=2019">2019</a>
+        <a href="http://127.0.0.1:58459/firestore.html?year=2020">2020</a>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <!-- Toast -->
+                    <!-- Flexbox container for aligning the toasts -->
+                    <div
+                        aria-live="polite"
+                        aria-atomic="true"
+                        class="d-flex justify-content-center align-items-center"
+                        style="min-height: 0px;"
+                    >
+                        <!-- Then put toasts within -->
+                        <div
+                            class="toast"
+                            role="alert"
+                            aria-live="assertive"
+                            aria-atomic="true"
+                            style="position: absolute; top: 100px; right: 300px;"
+                            data-delay="2000"
+                        >
+                            <div class="toast-header">
+                                <!-- <img src="..." class="rounded mr-2" alt="..."> -->
+                                <strong class="mr-auto">Delete</strong>
+                                <small>1 sec ago</small>
+                                <button
+                                    type="button"
+                                    class="ml-2 mb-1 close"
+                                    data-dismiss="toast"
+                                    aria-label="Close"
+                                >
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="toast-body">
+                                정상적으로 삭제되었습니다.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Toast -->
+                    <!-- Button trigger modal -->
+                    <button
+                        type="button"
+                        class="btn btn-primary mt-3 mb-3"
+                        data-toggle="modal"
+                        data-target="#exampleModal"
+                    >
+                        Add
+                    </button>
+                    <!-- Modal -->
+                    <div
+                        class="modal fade mb-3"
+                        id="exampleModal"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5
+                                        class="modal-title"
+                                        id="exampleModalLabel"
+                                    >
+                                        Modal title
+                                    </h5>
+                                    <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                    >
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput"
+                                                >Name</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput"
+                                                placeholder="Name input placeholder"
+                                            />
+                                            <!--                                            0? placeholder?-->
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2"
+                                                >Description</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput2"
+                                                placeholder="Description input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput3"
+                                                >Quote</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput3"
+                                                placeholder="Quote input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput4"
+                                                >Sentiment</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput4"
+                                                placeholder="Sentiment input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput5"
+                                                >Image</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput5"
+                                                placeholder="Image input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput6"
+                                                >Group</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput6"
+                                                placeholder="Group input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput7"
+                                                >Movement</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput7"
+                                                placeholder="Movement input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput8"
+                                                >ideologie</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="formGroupExampleInput8"
+                                                placeholder="ideologie input placeholder"
+                                            />
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-dismiss="modal"
+                                    >
+                                        Close
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        id="saveBtn"
+                                    >
+                                        Save changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+
+                    <!-- Updte Modal-->
+                    <div
+                        class="modal fade mb-3"
+                        id="exampleModalUpdate"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="exampleModalUpdateLabel"
+                        aria-hidden="true"
+                    >
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5
+                                        class="modal-title"
+                                        id="exampleModalUpdateLabel"
+                                    >
+                                        Update Modal title
+                                    </h5>
+                                    <button
+                                        type="button"
+                                        class="close"
+                                        data-dismiss="modal"
+                                        aria-label="Close"
+                                    >
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <input
+                                            type="hidden"
+                                            name="id"
+                                            value=""
+                                        />
+                                        <div class="form-group">
+                                            <label for="updateName">Name</label>
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateName"
+                                                placeholder="Name input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateDescription"
+                                                >Description</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateDescription"
+                                                placeholder="Description input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateQuote"
+                                                >Quote</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateQuote"
+                                                placeholder="Quote input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateSentiment"
+                                                >Sentiment</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateSentiment"
+                                                placeholder="Sentiment input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateImage"
+                                                >Image</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateImage"
+                                                placeholder="Image input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateGroup"
+                                                >Group</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateGroup"
+                                                placeholder="Group input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateMovement"
+                                                >Movement</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateMovement"
+                                                placeholder="Movement input placeholder"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="updateideologie"
+                                                >ideologie</label
+                                            >
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                id="updateideologie"
+                                                placeholder="ideologie input placeholder"
+                                            />
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button
+                                        type="button"
+                                        class="btn btn-secondary"
+                                        data-dismiss="modal"
+                                    >
+                                        Close
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn btn-primary"
+                                        id="updateBtn"
+                                    >
+                                        Update
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Updte Modal -->
+                    <div id="output">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Quote</th>
+                                    <th scope="col">Sentiment</th>
+                                    <th scope="col">Group</th>
+                                    <th scope="col">Movement</th>
+                                    <th scope="col">ideologie</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- <tr>
+                                <th scope="row">${doc.id}</th>
+                                <td>${doc.data().name}</td>
+                                <td>${doc.data().description}</td>
+                                <td>${doc.data().quote}</td>
+                                <td>${doc.data().sentiment}</td>
+                                <td>${doc.data().image}</td>
+                                <td>${doc.data().group}</td>
+                                <td>${doc.data().movement}</td>
+                                <td>${doc.data().ideologie}</td>
+
+
+                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+                    <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr> -->
+                            </tbody>
+                        </table>
+                        <button class="collapsible data1 data3">
+                            Open Section 1 [data1 data3]
+                        </button>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                        </div>
+                        <button class="collapsible data1 data2">
+                            Open Section 2 [data1 data2]
+                        </button>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex
+                                ea commodo consequat.
+                            </p>
+                        </div>
+                        <button class="collapsible data2">
+                            Open Section 3 [data2]
+                        </button>
+                        <div class="content">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut
+                                enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button id="toggle1">data1</button>
+        <button id="toggle2">data2</button>
+        <button id="toggle3">data3</button> -->
+            <div class="row mt-3 mb-5">
+                <input
+                    type="radio"
+                    name="toggles"
+                    value="data1"
+                    id="toggle1"
+                /><label for="toggle1">data1</label>
+                <input
+                    type="radio"
+                    name="toggles"
+                    value="data2"
+                    id="toggle2"
+                /><label for="toggle2">data2</label>
+                <input
+                    type="radio"
+                    name="toggles"
+                    value="data3"
+                    id="toggle3"
+                /><label for="toggle2">data3</label>
+            </div>
+        </div>
+    </body>
+</html>
