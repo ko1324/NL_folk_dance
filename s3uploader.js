@@ -1,6 +1,6 @@
-var albumBucketName = "pamreference";
+var albumBucketName = "t2est.com";
 var bucketRegion = "ap-northeast-2";
-var IdentityPoolId = 'ap-northeast-2:54e603c7-48d8-4d84-ae7f-1003515ceda8';
+var IdentityPoolId = 'ap-northeast-2:3a192d88-1f0f-4cef-8026-5fb8855bf8d6';
 
 AWS.config.update({
   region: bucketRegion,

@@ -75,6 +75,7 @@
                     .get()
                     .then(function (querySnapshot) {
                         querySnapshot.forEach(function (doc) {
+                            // console.log(doc.data());
                             if (!stackArray.includes(year)) {
                                 stackArray.push(year);
                                 collapsibleContentArray.push({
@@ -104,7 +105,7 @@
                     }).then(() => {
                         var historyHtml = "";
                         collapsibleContentArray.forEach(data => {
-                            historyHtml += `<span>${Object.keys(data)[0]}</span>`;
+                            historyHtml += `<span class="year_title">${Object.keys(data)[0]}</span>`;
                             data[Object.keys(data)[0]].forEach(data => {
                                 historyHtml += `<button class="collapsible ${data.group && data.group.join(" ")}${data.movement && data.movement.join(" ")}">${data.name}</button>
                                 <div class="content">
@@ -306,8 +307,8 @@
 
                             <span class="elites_i">
 
-                                <input type="radio" name="toggles" value="ELITES" id="toggle1" /><label for="toggle1"
-                                    class="">&nbsp;</label>
+                                <input type="radio" name="toggles" value="elites" id="toggle1" /><label for="toggle1"
+                                    class="elites_i">&nbsp;</label>
                                 <span class="labelSpan">
                                     MORALISTS, ELITES, CULTURAL PESSIMISTS
                                 </span>
@@ -318,7 +319,7 @@
                                 <!-- <span class="i_des i_des_2">
                                     clergy, minister, religious authorities
                                 </span> -->
-                                <input type="radio" name="toggles" value="ELITES" id="toggle2" /><label for="toggle2"
+                                <input type="radio" name="toggles" value="clergy" id="toggle2" /><label for="toggle2"
                                     class="clergy_i"></label>
                                 <span class="labelSpan">
                                     clergy, minister, religious authorities
@@ -328,7 +329,7 @@
                                 <!-- <span class="i_des i_des_3">
                                     government
                                 </span> -->
-                                <input type="radio" name="toggles" value="ELITES" id="toggle3" /><label for="toggle3"
+                                <input type="radio" name="toggles" value="government" id="toggle3" /><label for="toggle3"
                                     class="govern_i"></label>
                                 <span class="labelSpan">
                                     government
@@ -336,13 +337,15 @@
                             </span>
 
                             <div class="history_legend_br">
-                                <span class="ajc_i">&nbsp;
-                                    <span class="ajc_i_hover">
-                                        <span class="i_des i_des_1">
-                                            AJC Movement
+                                <label class="ajc_wrapper">
+                                    <span class="ajc_i">&nbsp;
+                                        <span class="ajc_i_hover">
+                                            <span class="i_des i_des_1">
+                                                AJC Movement
+                                            </span>
                                         </span>
                                     </span>
-                                </span>
+                                </label>
 
                                 <span class="heem_i">&nbsp;
                                     <span class="heem_i_hover">
@@ -394,9 +397,114 @@
         </section>
     </main>
     <script>
-        $('.elites_i').click(function () {
-            console.log($(this).find('input[type=radio]:checked').val());
-        });
+        var coll = document.getElementsByClassName("collapsible");
+        // 라디오 버튼 클릭시 해당하는 클래스가 있는지 체크하고 펼치기
+        $('input:radio[name="toggles"]').click(function () {
+            //제이쿼리로 간단하게 addEventListener를
+            //라디오 버튼을 누르면
+            //10? $('#exampleModalUpdate input[type=hidden][name=id]') 선택자 차이
+            //input:type[name="toggles"]
+            var checkValue = $(this).val().toLowerCase();
+            console.log(checkValue);
+            //checkValue는 어떻게 가져오냐
+            //클릭이벤트를 바인딩을 해줬지.. 라디오버튼이 눌리면-> 라디오버튼의 의 벨류값을 가져온다
+            //위에 라디오버튼에 <input type="radio" name="toggles" value="data1">
+            //-> 아코디언 버튼의 클래스이름이랑 맞춰줌
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].classList.remove("active");
+                var content = coll[i].nextElementSibling;
+                content.style.maxHeight = null;
+            }
+            //뭐라도 열려있으면 일단 다 닫아놓고 -> 해당걸 열어야 하니까
+
+            for (i = 0; i < coll.length; i++) {
+                if (coll[i].classList.contains(checkValue)) {
+                    //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+                    //그 버튼의 클래스리스트 안에, 체크벨류가 있으면(data1 data2) 그 요소에 +active 를 추가하고 열어라
+
+
+                    coll[i].classList.toggle("active");
+                    var content = coll[i].nextElementSibling;
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    }
+                    else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                    //열어라
+                    //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+                    //클래스를 넣어놓고
+
+                }
+
+            }
+        })
+        $('.open_toggles').click(function () {
+            var type = $(this).data("type").toLowerCase();
+            openToggles(type);
+            // for (i = 0; i < coll.length; i++) {
+            //     coll[i].classList.remove("active");
+            //     var content = coll[i].nextElementSibling;
+            //     content.style.maxHeight = null;
+            // }
+            // //뭐라도 열려있으면 일단 다 닫아놓고 -> 해당걸 열어야 하니까
+
+            // for (i = 0; i < coll.length; i++) {
+            //     if (coll[i].classList.contains(type)) {
+            //         //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+            //         //그 버튼의 클래스리스트 안에, 체크벨류가 있으면(data1 data2) 그 요소에 +active 를 추가하고 열어라
+
+
+            //         coll[i].classList.toggle("active");
+            //         var content = coll[i].nextElementSibling;
+
+            //         if (content.style.maxHeight) {
+            //             content.style.maxHeight = null;
+            //         }
+            //         else {
+            //             content.style.maxHeight = content.scrollHeight + "px";
+            //         }
+            //         //열어라
+            //         //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+            //         //클래스를 넣어놓고
+
+            //     }
+
+            // }
+        })
+        function openToggles(type) {
+            for (i = 0; i < coll.length; i++) {
+                coll[i].classList.remove("active");
+                var content = coll[i].nextElementSibling;
+                content.style.maxHeight = null;
+            }
+            //뭐라도 열려있으면 일단 다 닫아놓고 -> 해당걸 열어야 하니까
+
+            for (i = 0; i < coll.length; i++) {
+                if (coll[i].classList.contains(type)) {
+                    //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+                    //그 버튼의 클래스리스트 안에, 체크벨류가 있으면(data1 data2) 그 요소에 +active 를 추가하고 열어라
+
+
+                    coll[i].classList.toggle("active");
+                    var content = coll[i].nextElementSibling;
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    }
+                    else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                    //열어라
+                    //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
+                    //클래스를 넣어놓고
+
+                }
+
+            }
+        }
     </script>
 </body>
 
