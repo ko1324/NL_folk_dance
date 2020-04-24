@@ -342,6 +342,12 @@ body {
   padding: 0 0 4rem;
 }
 
+p{
+    display: block;
+    margin: 0em;
+}
+
+
 .paragraph1 {
   font-size: 2.5rem;
   font-weight: 500;
@@ -609,422 +615,214 @@ iframe {
 }
 
 
-.history_comp_text {
+.history_comp_text_01 {
   font-weight: 400;
   font-size: 2.2rem;
+
 }
-/*history_left_legend*/
+.history_comp_text_02 {
+  font-weight: 400;
+  font-size: 2.2rem;
+  position: absolute;
+  left: 23rem;
+  z-index: 3000;
+/* background: rgb(255,255,255,0.5);*/
+}
+
+/*history_comp_left_content*/
+/*button*/
+
+.icon{
+    width:6.3rem;
+}
+
+.tag{
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 2rem;
+  position: absolute;
+  left: 6rem;
+  top: -0.1rem;
+  text-align: left;
+  width: 13rem;
+  z-index: 1000;
+  background: rgb(255,255,255,0.8);
+  border-radius: 20rem;
+/*  text-shadow: -1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white;*/
+
+  padding: 1.1rem 1.2rem;
+
+}
+
+
+.open_toggles:focus {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.history_comp_left_content{
+       position: relative;
+}
+
+.history_img_icon_box{
+    position: absolute;
+    padding: 0;
+    display: inline-block;
+
+}
+
+.history_img_icon_box span.tag{
+    display: none;
+/*    display: block;*/
+}
+
+.history_img_icon_box:hover span.tag{
+    display: block;
+}
+
+.history_comp_left_content button.history_img_icon_box  {
+    background: transparent;
+    border: none;
+}
+
+.senti{
+    position:fixed;
+     z-index: 100000;
+    left:3rem;
+}
+
+.senti_img{
+    width:70rem;
+    display: none;
+
+}
+.history_button_1914 {
+  left: 4.3rem;
+  top: 15rem;
+}
+
+.history_button_1917 {
+  left: 11.1rem;
+  top:25rem;
+  /*0.5*/
+}
+
+.history_button_1918{
+  left: 35.6rem;
+  top:28rem;
+/* 32rem중간*/
+/*    0.2*/
+}
+
+.history_button_1919{
+  left: 28.8rem;
+  top:31rem;
+/*0*/
+}
+
+.history_button_1925{
+  left: 28.8rem;
+  top:50rem;
+/* 29rem중간*/
+/*0*/
+}
+.history_button_1926{
+  left: 21.7rem;
+  top:53rem;
+/*   -0.2 */
+}
+
+.history_button_1926_01{
+   left: 7.8rem;
+  top:53rem;
+/*    -0.6*/
+}
+.history_button_1926_01:hover{
+    z-index: 100;
+    opacity: 0.9;
+}
+
+
+
+.history_button_1927{
+  left: 7.8rem;
+  top:57rem;
+/*    -0.6*/
+    opacity: 0.9;
+}
+.history_button_1927:hover{
+    z-index: 100;
+    opacity: 0.9;
+}
+.history_button_1927_01:hover{
+    z-index: 100;
+    opacity: 0.9;
+}
+.history_button_1927_01{
+  left: 0.8rem;
+  top:57rem;
+  opacity: 0.9;
+  z-index: 1;
+/*    -0.8*/
+}
+.history_button_1927_02{
+  left: 4.5rem;
+  top:57rem;
+  opacity: 0.9;
+/*    -0.7*/
+}
+
+.history_button_1927_02:hover{
+    z-index: 100;
+    opacity: 0.9;
+}
+.history_button_1927_03{
+  left: 14.7rem;
+  top:57rem;
+  opacity: 0.9;
+  z-index: 0;
+/*    -0.4*/
+}
+
+.history_meter_box{
+    text-align: left;
+    position: absolute;
+    top:23.5rem;
+
+    left: 0rem;
+    position:absolute;
+
+/*
+  background-size: 150px;
+  width: 2rem;
+  height: 300rem;
+  background-image: url("../img/history_meter.png");
+  background-repeat: repeat-y;
+  background-size: 2rem 180rem;
+*/
+}
+
+
+.history_meter{
+    position: absolute;
+    width:2.5rem;
+
+}
+
+
+
+/*history_comp_right*/
+
 
 .history_legend_br {
-  padding: 8rem 0rem 5.5rem;
+  padding: 8rem 0rem 5rem;
 }
 
 .history_legend {
   margin-top: 2rem;
+  margin-bottom: 8rem;
     position: relative;
-}
-
-.elites_i {
-  /* position: relative;
-  height: 4rem;
-  width: 4rem;
-  background-color: yellow;
-  border-radius: 50%;
-  display: inline-block; */
-}
-
-.i_des {
-  font-size: 2rem;
-  font-weight: 500;
-  position: absolute;
-  line-height: 2.6rem;
-
-  visibility: hidden;
-  text-transform: uppercase;
-  z-index: 3000;
-}
-
-.i_des_1 {
-  /* left: 26rem; */
-}
-.elites_i span {
-  /* left: 26rem;
-  font-size: 2rem;
-  font-weight: 500;
-  position: absolute;
-  line-height: 2.6rem;
-  visibility: hidden;
-  text-transform: uppercase;
-  z-index: 3000; */
-}
-.i_des_2 {
-  left: 20rem;
-}
-.i_des_3 {
-  left: 14rem;
-}
-
-.i_des_4 {
-  left: 8rem;
-}
-
-
-/* 튼 수정 */
-/* .clergy_i {
-  position: relative;
-  margin: 0 2rem;
-  height: 4rem;
-  width: 4rem;
-  background-color: rgb(0, 255, 255);
-  border-radius: 50%;
-  display: inline-block;
-} */
-
-
-.ajc_i {
-  width: 4.4rem;
-  height: 0.75rem;
-  background-color: transparent;
-  display: inline-block;
-}
-
-.ajc_i::before,
-.ajc_i::after {
-  content: "";
-  position: absolute;
-
-  width: inherit;
-  height: inherit;
-  background-color: rgb(0, 255, 0);
-}
-.ajc_i::before {
-  transform: rotate(-135deg);
-}
-
-.ajc_i::after {
-  transform: rotate(135deg);
-  left: 0rem;
-}
-
-.ajc_i_hover:hover .i_des {
-  visibility: visible;
-}
-
-.ajc_i_hover {
-  position: absolute;
-  top: -2rem;
-  left: 0rem;
-  height: 5rem;
-  width: 5rem;
-  background-color: transparent;
-  border-radius: 50%;
-  z-index: 2000;
-}
-
-.heem_i_hover:hover .i_des {
-  visibility: visible;
-}
-
-.heem_i_hover {
-  position: absolute;
-  top: -2rem;
-  left: 6.2rem;
-  height: 5rem;
-  width: 5rem;
-  background-color: transparent;
-  border-radius: 50%;
-  z-index: 1000;
-}
-.heem_i {
-  position: absolute;
-  width: 4rem;
-  height: 0.8rem;
-  background-color: transparent;
-
-  /*  display: inline-block; */
-}
-.heem_i::before,
-.heem_i::after {
-  content: "";
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  background-color: rgb(0, 255, 0);
-  left: 6.5rem;
-}
-.heem_i::before {
-  /*    transform: rotate(-135deg);*/
-}
-
-.heem_i::after {
-  transform: rotate(90deg);
-  /*    left: 0rem;*/
-  /*    원래가 뭔가 적용되어 있던걸 0으로 하니까 됌*/
-}
-
-.folk_i_hover:hover .i_des {
-  visibility: visible;
-}
-
-.folk_i_hover {
-  position: absolute;
-  top: -2rem;
-  left: 13rem;
-  height: 5rem;
-  width: 5rem;
-  background-color: transparent;
-  border-radius: 50%;
-  z-index: 2000;
-}
-
-.folk_i {
-  position: absolute;
-  width: 4.4rem;
-  height: 0.75rem;
-  background-color: transparent;
-  display: inline-block;
-}
-.folk_i::before,
-.folk_i::after {
-  content: "";
-  position: absolute;
-  left: 12.5rem;
-  width: inherit;
-  height: inherit;
-  background-color: rgb(0, 255, 0);
-}
-.folk_i::before {
-  transform: rotate(-135deg);
-}
-
-.folk_i::after {
-  transform: rotate(135deg);
-}
-
-.raci_i:hover .i_des {
-  visibility: visible;
-}
-
-.social_i:hover .i_des {
-  visibility: visible;
-}
-
-.nazi_i:hover .i_des {
-  visibility: visible;
-}
-
-.national_i:hover .i_des {
-  visibility: visible;
-}
-
-.raci_i {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  /*  background-color: rgb(255,139,0);*/
-  border-radius: 50%;
-  border: rgb(199, 0, 255) solid 7px;
-  display: inline-block;
-}
-
-.social_i {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  /*  background-color: rgb(255,139,0);*/
-  border-radius: 50%;
-  border: rgb(255, 0, 255) solid 7px;
-  display: inline-block;
-  margin: 0 2rem;
-}
-
-.nazi_i {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  /*  background-color: rgb(255,139,0);*/
-  border-radius: 50%;
-  border: rgb(255, 0, 0) solid 7px;
-  display: inline-block;
-  margin-right: 2rem;
-}
-
-.national_i {
-  position: relative;
-  height: 4rem;
-  width: 4rem;
-  /*  background-color: rgb(255,139,0);*/
-  border-radius: 50%;
-  border: rgb(255, 103, 0) solid 7px;
-  display: inline-block;
-}
-
-/*history_left*/
-
-.history_comp_left {
-
-
-}
-
-.history_img_icon_box{
-/*    position: relative;*/
-}
-
-.icon{
-    width:7.5rem;
-}
-
-.tag{
-  text-align: left;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.5rem;
-
-}
-/*한세트*/
-.icon_1914{
-/*    position: absolute;*/
-    top: 8.5rem;
-    left: 0rem;
-/*    0.5가 중심, 4rem씩*/
-}
-
-.icon_1914 + span.tag {
-/*  position: absolute;*/
-  top: 30.8rem;
-  left: 17.5rem;
-  display: none;
-}
-
-.icon:hover + span.tag {
-  display: block;
-}
-
-
-/*한세트*/
-
-.icon_1917{
-    position: absolute;
-    top: 8.5rem;
-    left: 0;
-/*    0.5가 중심, 4rem씩*/
-}
-
-.icon_1917 + span.tag {
-  position: absolute;
-  top: 38.5rem;
-  left: 25.5rem;
-  display: none;
-}
-
-.icon:hover + span.tag {
-  display: block;
-}
-
-
-
-
-
-
-
-
-.history_meter_box{
-    text-align: left;
-   position: absolute;
-    top:5rem;
-    left: 0rem;
-
-
-}
-.history_meter{
-    position: absolute;
-    width:2.5rem;
-}
-
-/*firestore*/
-
-.collapsible {
-  background-color: transparent;
-  color: black;
-  border-top: 2rem solid black;
-  cursor: pointer;
-  padding: 0.2rem;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-weight: 400;
-}
-
-.active,
-.collapsible:hover {
-  background-color: black;
-  color: white;
-}
-
-.collapsible:hover .collapsible::after {
-  color: white;
-}
-/*안돼*/
-
-.collapsible:after {
-  content: "\002B";
-  color: black;
-  font-weight: 400;
-  float: right;
-  margin-left: 5px;
-  font-size: 1.8rem;
-  margin-top: -0.4rem;
-  margin-bottom: -1rem;
-}
-
-.active:after {
-  content: "\2212";
-  color: white;
-  font-size: 1.5rem;
-  margin-top: 0rem;
-  font-weight: bold;
-}
-/*  누르면 -로 되고 */
-
-/*
-  .collapsible:after {
-    content: "\25BE";
-    margin-top: -1.8rem;
-    margin-bottom: -3rem;
-    font-size: 3.3rem;
-    color: black;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-
-  .active:after {
-   content: "\25BE";
-
-  }
-*/
-
-
-
-
-
-input[type="checkbox"]{
-    display: none;
-}
-
-.content {
-  font-size: 1.5rem;
-  font-weight: 400;
-  padding: 0 0.2rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: transparent;
-  border-top: 0.1rem solid black;
-  border-bottom: 0.1rem solid black;
 }
 
 input[type="radio"] + label.elites_i {
@@ -1035,7 +833,9 @@ input[type="radio"] + label.elites_i {
   border-radius: 50%;
   display: inline-block;
 }
+/*원을 relative*/
 
+/*
 #section-history
   .history_legend
   input[type="radio"]:checked
@@ -1043,6 +843,7 @@ input[type="radio"] + label.elites_i {
   ~ .labelSpan {
   display: block;
 }
+*/
 
 .govern_i,
 .clergy_i,
@@ -1082,24 +883,43 @@ input[type="radio"] + label.govern_i {
   border-radius: 50%;
   display: inline-block;
 }
+
+input[type="radio"] + label.ajc_i:hover{
+    transform:rotate(90deg);
+}
+
 input[type="radio"] + label:hover {
   cursor: pointer;
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
 }
+
+
+
 input[type="radio"]:checked + label {
-  border: 3px dashed orangered;
-  /* outline: 1px solid orangered; */
+/*  border: 3px dashed orangered;*/
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
   cursor: pointer;
 }
 
 #section-history .history_legend input[type="radio"] ~ span {
   position: absolute;
-  width: 100px;
-  height: 100px;
+  width: 15rem;
+  text-align: left;
+  height: 11rem;
   right: 0px;
   top: 0px;
-  margin: 0px;
+  margin: 15px;
+  padding: 4px;
   display: none;
+  font-size: 2.1rem;
+    line-height: 2.7rem;
+    font-weight: 500;
+
 }
+
+
 /* 라디오 hover */
 #section-history .history_legend input[type="radio"]:hover ~ span {
   display: block;
@@ -1108,7 +928,8 @@ input[type="radio"]:checked + label {
   top: 0px;
   margin: 0px;
   z-index: 1001;
-  background-color: cyan;
+  background-color: rgb(255,255,255);
+  text-transform: uppercase;
 }
 /* 라디오 checked */
 #section-history .history_legend input[type="radio"]:checked ~ span {
@@ -1118,19 +939,287 @@ input[type="radio"]:checked + label {
   right: 0px;
   top: 0px;
   margin: 0px;
-  background-color: white;
+  background-color: rgb(255,255,255);
+  text-transform: uppercase;
 }
 
 /* 추가 */
+/*
 .ajc_wrapper {
   display: inline-block;
   padding-top: 22px;
   cursor: pointer;
-  background: orangered;
+  background: transperent;;
 }
 
-.open_toggles {
-    background: transparent;
+.heem_wrapper {
+  display: inline-block;
+  padding-top: 22px;
+  cursor: pointer;
+  background: transperent;;
+}
+
+.folk_wrapper {
+  display: inline-block;
+  padding-top: 22px;
+  cursor: pointer;
+  background: transperent;
+}
+*/
+
+.ajc_box,
+.heem_box,
+.folk_box {
+  /* position: relative; */
+  float: left;
+  height: 4rem;
+  width: 4rem;
+  margin-right: 2rem;
+  /* background-color: rgb(255, 139, 0); */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.ajc_box::after,
+.heem_box::after,
+.folk_box::after {
+  content: "";
+  display: table;
+  clear: both;
+/*    float: left;*/
+}
+
+
+.ajc_i {
+  width: 4.4rem;
+  height: 0.75rem;
+  background-color: rgb(0, 255, 0);
+  transform: rotate(-45deg);
+
+
+}
+.ajc_i,
+.ajc_i::before{
+  content: "";
+  position: absolute;
+  width: 4.4rem;
+  height: 0.75rem;
+  background-color: rgb(0, 255, 0);
+}
+.ajc_i::before {
+  transform: rotate(90deg);
+}
+
+/*
+.ajc_i::after {
+  transform: rotate(135deg);
+  left: 0rem;
+}
+*/
+
+
+.heem_i {
+  display: inline-block;
+  width: 4rem;
+  height: 0.8rem;
+  background-color: transparent;
+  position: relative;
+}
+
+.heem_i::before,
+.heem_i::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: rgb(0, 255, 0);
+}
+.heem_i::before {
+/*   transform: rotate(0deg);*/
+}
+.heem_i::after {
+  transform: rotate(90deg);
+  left: 0;
+}
+
+
+.folk_i {
+  width: 4rem;
+  height: 0.8rem;
+  background-color: transparent;
+  display: inline-block;
+}
+
+.folk_i::before {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: rgb(0, 255, 0);
+
+}
+
+.folk_i::before {
+  transform: rotate(0deg);
+}
+
+
+.raci_box,
+.social_box,
+.nazi_box,
+.national_box{
+  /* position: relative; */
+  float: left;
+  height: 8rem;
+  width: 4rem;
+  margin-right: 2rem;
+  /* background-color: rgb(255, 139, 0); */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.raci_box::after,
+.social_box::after,
+.nazi_box::after,
+.national_box::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.raci_i {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  /*  background-color: rgb(255,139,0);*/
+  border-radius: 50%;
+  border: rgb(199, 0, 255) solid 7px;
+  display: inline-block;
+}
+
+.social_i {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  /*  background-color: rgb(255,139,0);*/
+  border-radius: 50%;
+  border: rgb(255, 0, 255) solid 7px;
+  display: inline-block;
+
+}
+
+.nazi_i {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  /*  background-color: rgb(255,139,0);*/
+  border-radius: 50%;
+  border: rgb(255, 0, 0) solid 7px;
+  display: inline-block;
+
+}
+
+.national_i {
+  position: relative;
+  height: 4rem;
+  width: 4rem;
+  /*  background-color: rgb(255,139,0);*/
+  border-radius: 50%;
+  border: rgb(255, 103, 0) solid 7px;
+  display: inline-block;
+}
+
+
+
+
+/*firestore*/
+.year_title{
+    font-weight: 500;
+    font-size: 2.2rem;
+    margin-top: 15px;
+    display: inline-block;
+ content: "";
+  display: table;
+  clear: both;
+    bottom: -10px
+/*    float: left;*/
+
+
+}
+
+.collapsible:focus {
     border: none;
     outline: none;
 }
+
+.collapsible {
+  background-color: transparent;
+
+  color: black;
+  border-top: 2rem solid black;
+  cursor: pointer;
+  padding: 0.2rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  line-height: 2.8rem;
+}
+
+.active,
+.collapsible:hover {
+  background-color: black;
+  color: white;
+}
+
+.collapsible:hover .collapsible::after {
+  color: white;
+}
+/*안돼*/
+
+
+
+
+
+
+.collapsible:after {
+  content: "\002B";
+  color: black;
+  font-weight: 400;
+  float: right;
+  margin-left: 5px;
+  font-size: 1.8rem;
+  margin-top: -0.4rem;
+  margin-bottom: -1rem;
+
+
+}
+
+.active:after {
+  content: "\2212";
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 0rem;
+  font-weight: bold;
+}
+
+
+.content {
+  font-size: 1.9rem;
+  font-weight: 400;
+  padding: 0 0.2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: transparent;
+  border-top: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
+  line-height: 3rem;
+}
+
+

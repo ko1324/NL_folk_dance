@@ -111,6 +111,7 @@
                                 <div class="content">
                                 <p>${data.description}</p>
                                 <p>${data.quote}</p>
+
                                 </div>`
                             })
                         });
@@ -154,18 +155,18 @@
         <nav class="navigation__nav">
             <ul class="navigation__list">
                 <li class="navigation__item">
-                    <a href="#section-about" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="index.html" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
 
                         HOME</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#section-features" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="history_radio" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
                         History</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#section-tours" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="folk_dance.html" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
                         FOLK DANCE</a>
                 </li>
@@ -194,60 +195,63 @@
                     <div class="u-center-text u-margin-bottom-2">
                         <!--                           1.화살표 추가https://yeun.github.io/open-arrow/-->
                         <div class="history_comp_left">
-                        <div class="history_meter_box ">
-                        <img src="img/history_meter.png" alt="history_meter" class="history_meter" />
+                        <div class="history_meter_box">
+                        <img src="img/history_meter_03.png" alt="history_meter" class="history_meter" />
                         </div>
-                            <h3 class="history_comp_text">
+                            <h3 class="history_comp_text_02">
                                 NEGATIVE &#8226;&#8213;&#8213;&#8213;&#8213;&#8226; POSITIVE
                             </h3>
+                            <div class="senti">
+                                <img src="img/history_meter_senti.png" class="senti_img" alt="">
+                            </div>
                             <div class="history_comp_left_content">
 
-                            <button class="history_img_icon_box open_toggles" data-type="elites">
+                            <button class="history_button_1914 open_toggles history_img_icon_box" data-type="">
+                            <img src="img/icon-09.svg" alt="1914" class="icon icon_1914" />
+                            <span class="tag">1914<br>tone: -0.7</span></button>
 
-                             <img src="img/icon-09.svg" alt="1914" class="icon icon_1914" />
-                            <span class="tag"> 1914<br>tone:-0.7</span></button>
 
-
-                            <button class="history_img_icon_box">
+                            <button class="history_button_1917 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-10.svg" alt="1917" class="icon icon_1917" />
-                            <span class="tag"> 1917<br>tone:-0.5</span></button>
-                            <!--
-                            <div class="history_img_icon_box">
+                            <span class="tag">1917<br>tone: -0.5</span></button>
+
+                            <button class="history_button_1918 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-11.svg" alt="1918" class="icon icon_1918" />
-                            <span class="tag"> 1918<br>tone:0.2</span></div>
+                            <span class="tag">1918<br>tone:0.2</span></button>
 
-                            <div class="history_img_icon_box">
+                            <button class="history_button_1919 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-12.svg" alt="1919" class="icon icon_1919" />
-                            <span class="tag"> 1919<br>tone:0</span></div>
+                            <span class="tag">1919<br>tone:0</span></button>
 
-                             <div class="history_img_icon_box">
+                            <button class="history_button_1925 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-13.svg" alt="1925" class="icon icon_1925" />
-                            <span class="tag"> 1925<br>tone:0</span></div>
+                            <span class="tag">1925<br>tone:0</span></button>
 
-                             <div class="history_img_icon_box">
+                            <button class="history_button_1926 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-14.svg" alt="1926" class="icon icon_1926" />
-                            <span class="tag"> 1926<br>tone:-0.2</span></div>
+                            <span class="tag">1926<br>tone:-0.2</span></button>
 
-                             <div class="history_img_icon_box">
+                             <button class="history_button_1926_01 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-15.svg" alt="1926" class="icon icon_1926_01" />
-                            <span class="tag"> 1926<br>tone:-0.6</span></div>
+                            <span class="tag">1926<br>tone:-0.6</span></button>
 
-                            <div class="history_img_icon_box">
+                             <button class="history_button_1927 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-16.svg" alt="1927" class="icon icon_1927" />
-                            <span class="tag"> 1927<br>tone:-0.6</span></div>
+                            <span class="tag">1927<br>tone:-0.6</span></button>
 
-                            <div class="history_img_icon_box">
+                            <button class="history_button_1927_01 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-17.svg" alt="1927" class="icon icon_1927_01" />
-                            <span class="tag"> 1927<br>tone:-0.8</span></div>
+                            <span class="tag">1927<br>tone:-0.8</span></button>
 
-                            <div class="history_img_icon_box">
+                            <button class="history_button_1927_02 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-18.svg" alt="1927" class="icon icon_1927_02" />
-                            <span class="tag"> 1927<br>tone:-0.7</span></div>
+                            <span class="tag">1927<br>tone:-0.7</span></button>
 
-                            <div class="history_img_icon_box">
+                            <button class="history_button_1927_03 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-19.svg" alt="1927" class="icon icon_1927_03" />
-                            <span class="tag"> 1927<br>tone:-0.4</span></div>
+                            <span class="tag">1927<br>tone:-0.4</span></button>
 
+                           <!--
                             <div class="history_img_icon_box">
                              <img src="img/icon-20.svg" alt="1929" class="icon icon_1929" />
                             <span class="tag"> 1929<br>tone:-0.6</span></div>                                                 <div class="history_img_icon_box">
@@ -282,7 +286,7 @@
                              <img src="img/icon-30.svg" alt="1932-1945" class="icon icon_1932-1940" />
                             <span class="tag"> 1943-1945<br>tone:0</span></div>
 
-                            -->
+                           -->
 
                             </div>
 
@@ -300,7 +304,7 @@
                 <div class="col-3-of-8">
                     <div class="history_comp_right">
 
-                        <h3 class="history_comp_text">
+                        <h3 class="history_comp_text_01">
                             LEGEND
                         </h3>
                         <div class="history_legend">
@@ -337,51 +341,62 @@
                             </span>
 
                             <div class="history_legend_br">
-                                <label class="ajc_wrapper">
-                                    <span class="ajc_i">&nbsp;
-                                        <span class="ajc_i_hover">
-                                            <span class="i_des i_des_1">
-                                                AJC Movement
-                                            </span>
-                                        </span>
-                                    </span>
-                                </label>
 
-                                <span class="heem_i">&nbsp;
-                                    <span class="heem_i_hover">
-                                        <span class="i_des i_des_2">
-                                            Heemvaarts Movement
-                                        </span>
+                                <span class="ajc_box">
+                                 <input type="radio" name="toggles2" value="AJC" id="toggle4" />
+<!--                                   <label class="heem_wrapper">-->
+                                    <label for="toggle4" class="ajc_i">&nbsp;</label>
+ <!--                                   </label>-->
+                                    <span class="labelSpan">AJC Movement</span>
                                     </span>
 
-                                </span>
 
-                                <span class="folk_i">&nbsp;
-                                    <span class="folk_i_hover">
-                                        <span class="i_des i_des_3">
-                                            Folklorists Movement
-                                        </span>
+                                    <span class="heem_box">
+                                 <input type="radio" name="toggles2" value="Heemvaarts" id="toggle5" />
+<!--                                   <label class="heem_wrapper">-->
+                                    <label for="toggle5" class="heem_i">&nbsp;</label>
+<!--                                   </label>-->
+                                    <span class="labelSpan">Heemvaarts Movement</span>
                                     </span>
-                                </span>
+
+                                     <span class="folk_box">
+                                 <input type="radio" name="toggles2" value="folklorists" id="toggle6" />
+<!--                                   <label class="folk_wrapper">-->
+                                    <label for="toggle6" class="folk_i">&nbsp;</label>
+<!--                                   </label>-->
+                                    <span class="labelSpan">folklorists Movement</span>
+                                    </span>
+
                             </div>
 
-                            <span class="raci_i">
-                                <span class="i_des i_des_1">
+                             <span class="raci_box">
+                                <input type="radio" name="toggles" value="racism" id="toggle7" />
+                                   <label for="toggle7" class="raci_i"></label>
+                                <span class="labelSpan">
                                     Racism
                                 </span>
                             </span>
-                            <span class="social_i">
-                                <span class="i_des i_des_2">
-                                    Socializm
+
+                            <span class="social_box">
+                                <input type="radio" name="toggles" value="socialism" id="toggle8" />
+                                   <label for="toggle8" class="social_i"></label>
+                                <span class="labelSpan">
+                                    Socialism
                                 </span>
                             </span>
-                            <span class="nazi_i">
-                                <span class="i_des i_des_3">
+
+                            <span class="nazi_box">
+                                <input type="radio" name="toggles" value="nazism" id="toggle9" />
+                                   <label for="toggle9" class="nazi_i"></label>
+                                <span class="labelSpan">
                                     Nazism
                                 </span>
                             </span>
-                            <span class="national_i">
-                                <span class="i_des i_des_4">
+
+                            <span class="national_box">
+                                <input type="radio" name="toggles" value="nationalism" id="toggle10" />
+                                   <label for="toggle10" class="national_i"></label>
+                                <span class="labelSpan">
                                     Nationalizm
                                 </span>
                             </span>
