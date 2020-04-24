@@ -1275,4 +1275,132 @@ input[type="radio"]:checked + label {
   line-height: 3rem;
 }
 
+/*costume*/
+.costume_region_box{
+    margin-left: 0rem;
+}
+.costume_region{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color:black;
+    font-weight: 500;
 
+}
+
+.costume_region_each a{
+      text-decoration: none !important;
+}
+.costume_region:hover, .costume_region:active{
+    color:orangered;
+}
+
+.costume_village_name{
+    font-size: 3rem;
+    color:black;
+    font-weight: 500;
+}
+
+ #columns{
+        column-width:25rem;
+        column-gap: 1.5rem;
+      }
+      #columns a{
+        display: inline-block;
+
+        margin:0;
+        margin-bottom: 15px;
+
+
+      }
+      #columns a img{
+        width:100%;
+      }
+
+
+/* popup */
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 90000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.popup__content {
+  width: 75%;
+  height: 45rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  background: white;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+
+  display: table;
+  overflow: hidden;
+
+  opacity: 0;
+  transition: all 0.7s 0.2s;
+}
+
+.popup__left {
+  width:90%;
+  display: table-cell;
+  padding: 2rem 0rem 1rem 2.3rem;
+}
+
+.popup__img {
+  display: block;
+  width: 100%;
+ border-radius: 1rem;
+}
+
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup_close,
+.popup_close:link,
+.popup_close:visited {
+  color: black;
+  position: absolute;
+  top: -0.2rem;
+  right: 1.5rem;
+  font-size: 7rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.popup_close:hover {
+  color: orangered;
+}
+
+.popup:target .popup__content {
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.costume_popup_copywright a{
+    margin:.3rem;
+    display: inline-block;
+    text-decoration: none !important;
+    font-weight: 500;
+    color:black;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.costume_popup_copywright a:hover,.costume_popup_copywright a:active{
+    color:orangered;
+}
