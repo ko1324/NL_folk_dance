@@ -233,6 +233,46 @@ body {
 
 /*main*/
 /*section-main*/
+/*folk_dance_main*/
+
+.folk_dance_box{
+    position:relative;
+    padding: 0.8rem;
+}
+
+
+.folk_dance_name{
+
+    position: relative;
+    text-align: center;
+    top:43%;
+    left:5.5%;
+    font-size:2.1rem;
+}
+.folk_a{
+    background-color: black;
+    border-radius: 50%;
+    width:20rem;
+    height: 20rem;
+    text-decoration: none;
+    color:white;
+    display: inline-block;
+    transform: scale(0.95)
+}
+
+.folk_a:hover,.folk_a:active{
+    background-color: orangered;
+    color:white;
+    font-weight: 600;
+     transition: all 0.2s;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+
+
+
+/*folk_dance*/
 .section-main {
   height: 88vh;
   background-color: white;
@@ -439,15 +479,15 @@ iframe {
 }
 
 .row {
-  max-width: 114rem;
+/*  max-width: 114rem;*/
   /* background-color: #eee; */
   /* block element 사이에 (부모 - 자식) 가운데 위치로 브라우저가 잡아준다 */
   /* margin : 0 auto; */
-  margin: 0 auto;
+/*  margin: 0 auto;*/
 }
 
 .row:not(:last-child) {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .clearfix::after {
@@ -530,6 +570,19 @@ iframe {
 
 .row .col-3-of-8 {
   width: calc(((100% - 5rem) / 8) * 3);
+}
+
+/*folk_dance_main Layout*/
+.row .col-1-of-5-1 {
+  width: calc((100% - 2rem) / 6);
+}
+
+.row .col-1-of-5-1:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.row .col-4-of-5-2 {
+  width: calc(((100% - 2rem) / 6) * 5);
 }
 
 /* utility class */
