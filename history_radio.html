@@ -66,6 +66,7 @@
 
             var collapsibleContentArray = [];
             var stackArray = [];
+            /*1) 빈 배열 선언*/
             var originArray = ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'];
             var html = "";
 
@@ -76,9 +77,16 @@
                     .get()
                     .then(function (querySnapshot) {
                         querySnapshot.forEach(function (doc) {
-                            // console.log(doc.data());
+//                             console.log(doc.data());
                             if (!stackArray.includes(year)) {
+                                  /*1) 빈 배열이니까, year 없으면*/
                                 stackArray.push(year);
+                                /*1) year를 하나씩 하나씩 푸시해서 배열을 만들어라*/
+                                /*1) 즉 파이어베이스에서 하나하나하나 불러오는것*/
+                                /*1) 빈 배열인지 아닌지를 확인하려고 stackArray */
+                                /*2) stackArray를 기준으로 collapsibleContentArray 넣어줌 */
+//                                console.log(stackArray);
+                                console.log(collapsibleContentArray);
                                 collapsibleContentArray.push({
                                     [year]: [{
                                         name: doc.data().name,
@@ -93,6 +101,9 @@
                                 })
                             } else {
                                 const findIndex = stackArray.findIndex(data => data === year);
+                                /*2) 2:30/ 안에 year 가 있으면 이쪽으로 */
+                                /*2) year 가 있으면 content를 푸시 */
+                                /*2)findIndex는 1900가 몇번째 배열인지를 찾아서->0번째 인덱스에*/
                                 collapsibleContentArray[findIndex][year].push({
                                     name: doc.data().name,
                                     description: doc.data().description,
@@ -113,12 +124,13 @@
                         var historyHtml = "";
                         collapsibleContentArray.forEach(data => {
                             historyHtml += `<span class="year_title">${Object.keys(data)[0]}</span>`;
+                            /*3. ${Object.keys(data)[0]}:1900 각 객체가 가진 키값들을 뽑아서 배열로 만들어줌? collapsibleContentArray의 키값?*/
                             data[Object.keys(data)[0]].forEach(data => {
                                 historyHtml += `<button class="collapsible ${data.group && data.group.join(" ")}${data.movement && data.movement.join(" ")}${data.name}">${data.name}</button>
                                 <div class="content">
-                                <p>${data.description}</p>
+
+                                <p><img src="${data.image}" class="desc_image">${data.description}</p>
                                 <p>${data.quote}</p>
-                                <p>${data.ideologie}</p>
                                 </div>`
                             })
                         });

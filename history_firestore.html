@@ -60,10 +60,10 @@
                 //http://127.0.0.1:62867/history_firestore.html?name=1111&year=2014
                 console.log(window.location.search.split("=")[1]);
                 var year = window.location.search.split("=")[1];
-                if(!year) {
-                    window.location.href = "/";
-                    return;
-                }
+//                if(!year) {
+//                    window.location.href = "/";
+//                    return;
+//                }
 
                 firebase.initializeApp(firebaseConfig);
                 var firestore = firebase.firestore();
@@ -343,9 +343,9 @@
                 //아코디언 html 아래있던 스크립튼데 여기로 복붙(순서가 꼬이기 떄문에 깜빡거림.)
     </script>
 
-        <a href="http://127.0.0.1:62867/history_firestore.html?year=2014">2014</a>
-        <a href="http://127.0.0.1:62867/history_firestore.html?year=2019">2019</a>
-        <a href="http://127.0.0.1:62867/history_firestore.html?year=2020">2020</a>
+        <a href="http://127.0.0.1:57787/history_firestore.html?year=1900">1900</a>
+        <a href="http://127.0.0.1:57787/history_firestore.html?year=2019">2019</a>
+        <a href="http://127.0.0.1:57787/history_firestore.html?year=2020">2020</a>
         <div class="container">
             <div class="row">
                 <div class="col">
