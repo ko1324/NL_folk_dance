@@ -57,12 +57,12 @@
                 appId: "1:317855707149:web:47bc566b359ee0456be544",
                 measurementId: "G-8ZP99DRQPE"
             };
+
             firebase.initializeApp(firebaseConfig);
             var firestore = firebase.firestore();
             var docRef = firestore.doc("arts/history");
             var docColl = firestore.collection("arts");
             var docCollectionbyYear = docRef.collection("1900");
-
 
             var collapsibleContentArray = [];
             var stackArray = [];
@@ -70,6 +70,7 @@
             var html = "";
 
             /* 데이터 불러오기 */
+
             function loadDataFromCollection(year) {
                 docRef.collection(year)
                     .get()
@@ -86,7 +87,8 @@
                                         sentiment: doc.data().sentiment,
                                         image: doc.data().image,
                                         group: doc.data().group,
-                                        movement: doc.data().movement
+                                        movement: doc.data().movement,
+                                        ideologie: doc.data().ideologie
                                     }]
                                 })
                             } else {
@@ -98,20 +100,25 @@
                                     sentiment: doc.data().sentiment,
                                     image: doc.data().image,
                                     group: doc.data().group,
-                                    movement: doc.data().movement
+                                    movement: doc.data().movement,
+                                    ideologie: doc.data().ideologie
+
                                 });
                             }
                         })
+                    /* year_title 로 년도 클래스 제어->글씨크기*/
+                    /* 2.<button class="${data.ideologie} 방법 join하면 안나오고, 붙어나오고 1930, */
+                    /*button class name 1.버튼 타입값을 띄어쓰길 없애야되고(splite, join) 저 아래서 어떻게 쓰는지 모르곘음,2. 아래 조인 어떻게 쓴지 모르겠고,3.나치즘 앞에 띄어쓰기를 해야돼*/
                     }).then(() => {
                         var historyHtml = "";
                         collapsibleContentArray.forEach(data => {
                             historyHtml += `<span class="year_title">${Object.keys(data)[0]}</span>`;
                             data[Object.keys(data)[0]].forEach(data => {
-                                historyHtml += `<button class="collapsible ${data.group && data.group.join(" ")}${data.movement && data.movement.join(" ")}">${data.name}</button>
+                                historyHtml += `<button class="collapsible ${data.group && data.group.join(" ")}${data.movement && data.movement.join(" ")}${data.name}">${data.name}</button>
                                 <div class="content">
                                 <p>${data.description}</p>
                                 <p>${data.quote}</p>
-
+                                <p>${data.ideologie}</p>
                                 </div>`
                             })
                         });
@@ -129,9 +136,20 @@
                                 }
                             });
                         }
+                    /*레전드를 누르지 않아도 그냥 열리는것*/
+
+
+
+
+
+
+
+
                     }
                     )
             }
+
+
             // 1900 1914 1917 1918 1919 1920 1925 1926 1927 1930 1931 1932 1939-1945 1940 1944 1945 1950 1959
             ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'].forEach(function (year) {
                 loadDataFromCollection(year);
@@ -171,7 +189,7 @@
                         FOLK DANCE</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#section-stories" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="costume_main_utrecht.html" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
                         COSTUMES</a>
                 </li>
@@ -206,7 +224,7 @@
                             </div>
                             <div class="history_comp_left_content">
 
-                            <button class="history_button_1914 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1914 open_toggles history_img_icon_box" data-type="dorp">
                             <img src="img/icon-09.svg" alt="1914" class="icon icon_1914" />
                             <span class="tag">1914<br>tone: -0.7</span></button>
 
@@ -339,11 +357,12 @@
                                     government
                                 </span>
                             </span>
-
+<!--1. ajc 아이콘 왜저러는지, ajc 검사하면 elites랑 붙어있는거 있음, ajc만 안켜짐, 위에 toggles?-->
+<!--                           1:39-->
                             <div class="history_legend_br">
 
                                 <span class="ajc_box">
-                                 <input type="radio" name="toggles2" value="AJC" id="toggle4" />
+                                 <input type="radio" name="toggles" value="AJC" id="toggle4" />
 <!--                                   <label class="heem_wrapper">-->
                                     <label for="toggle4" class="ajc_i">&nbsp;</label>
  <!--                                   </label>-->
@@ -352,7 +371,7 @@
 
 
                                     <span class="heem_box">
-                                 <input type="radio" name="toggles2" value="Heemvaarts" id="toggle5" />
+                                 <input type="radio" name="toggles" value="Heemvaarts" id="toggle5" />
 <!--                                   <label class="heem_wrapper">-->
                                     <label for="toggle5" class="heem_i">&nbsp;</label>
 <!--                                   </label>-->
@@ -360,7 +379,7 @@
                                     </span>
 
                                      <span class="folk_box">
-                                 <input type="radio" name="toggles2" value="folklorists" id="toggle6" />
+                                 <input type="radio" name="toggles" value="folklorists" id="toggle6" />
 <!--                                   <label class="folk_wrapper">-->
                                     <label for="toggle6" class="folk_i">&nbsp;</label>
 <!--                                   </label>-->
@@ -419,11 +438,12 @@
             //라디오 버튼을 누르면
             //10? $('#exampleModalUpdate input[type=hidden][name=id]') 선택자 차이
             //input:type[name="toggles"]
+//            var checkValue = $(this).val();
             var checkValue = $(this).val().toLowerCase();
             console.log(checkValue);
             //checkValue는 어떻게 가져오냐
             //클릭이벤트를 바인딩을 해줬지.. 라디오버튼이 눌리면-> 라디오버튼의 의 벨류값을 가져온다
-            //위에 라디오버튼에 <input type="radio" name="toggles" value="data1">
+            //<input type="radio" name="toggles" value="data1"> 여기여기!!
             //-> 아코디언 버튼의 클래스이름이랑 맞춰줌
 
             for (i = 0; i < coll.length; i++) {
@@ -437,7 +457,6 @@
                 if (coll[i].classList.contains(checkValue)) {
                     //핵심은 위에 <button class="collapsible data1 data2"> 클래스 활용
                     //그 버튼의 클래스리스트 안에, 체크벨류가 있으면(data1 data2) 그 요소에 +active 를 추가하고 열어라
-
 
                     coll[i].classList.toggle("active");
                     var content = coll[i].nextElementSibling;
@@ -456,6 +475,7 @@
 
             }
         })
+
         $('.open_toggles').click(function () {
             var type = $(this).data("type").toLowerCase();
             console.log(type);
@@ -490,7 +510,9 @@
 
             // }
         })
+
         function openToggles(type) {
+            /*타입을 받아서 실행시키는*/
             for (i = 0; i < coll.length; i++) {
                 coll[i].classList.remove("active");
                 var content = coll[i].nextElementSibling;
@@ -521,6 +543,11 @@
 
             }
         }
+
+
+
+
+
     </script>
 </body>
 
