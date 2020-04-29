@@ -216,8 +216,11 @@ function deleteAlbum(albumName) {
 /** 관리자 화면에서 S3 업로드 기능추가 */
 function ImgfileUpload(name) {
   var names = window.location.search.split("=")[1] + "IMG";
-    /*관리자 화면에서*/
-  var files = document.getElementById("inputGroupFile02").files;
+  if (name === "update") {
+    var files = document.getElementById("inputGroupFile03").files;
+  } else {
+    var files = document.getElementById("inputGroupFile02").files;
+  }
   if (!files.length) {
     return alert("Please choose a file to upload first.");
   }
@@ -238,8 +241,13 @@ function ImgfileUpload(name) {
         return alert("There was an error uploading your photo: ", err.message);
       }
       console.log(data);
-      $("#formGroupExampleInput5").val(data.Location);
-      $("#inputGroupFile02Img").attr("src", data.Location);
+      if (name === "update") {
+        $("#updateImage").val(data.Location);
+        $("#inputGroupFile03Img").attr("src", data.Location);
+      } else {
+        $("#formGroupExampleInput5").val(data.Location);
+        $("#inputGroupFile02Img").attr("src", data.Location);
+      }
       alert("Successfully uploaded photo.");
       viewAlbum(names);
     }

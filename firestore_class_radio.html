@@ -28,6 +28,10 @@
             font-size: 1.5rem;
             font-weight: 500;
         }
+
+        input[type=checkbox] {
+            margin: 5px;
+        }
     </style>
 </head>
 
@@ -91,11 +95,22 @@
                 var quote = document.getElementById("formGroupExampleInput3").value;
                 var sentiment = document.getElementById("formGroupExampleInput4").value;
                 var image = document.getElementById("formGroupExampleInput5").value;
-                var group = document.getElementById("formGroupExampleInput6").value;
-                var movement = document.getElementById("formGroupExampleInput7").value;
-                var ideologie = document.getElementById("formGroupExampleInput8").value;
+                // var group = document.getElementsByName("formGroupExampleInput6");
+                var groups = $("input[name='formGroupExampleInput6']:checked");
+                // var movement = document.getElementById("formGroupExampleInput7").value;
+                var movements = $("input[name='formGroupExampleInput7']:checked");
+                // var ideologie = document.getElementById("formGroupExampleInput8").value;
+                var ideologies = $("input[name='formGroupExampleInput8']:checked");
                 //id:formGroupExampleInput에 유저가(내가) 창에 무언가를 입력하고서,입력된 값을 그대로 name 이라는 변수에 담아준다. string형태로 담아줌
-
+                var groupsArray = groups.map(function () {
+                    return $(this).val();
+                }).toArray();
+                var movementsArray = movements.map(function () {
+                    return $(this).val();
+                }).toArray();
+                var ideologiesArray = ideologies.map(function () {
+                    return $(this).val();
+                }).toArray();
                 //var docCollectionbyYear = docRef.collection('2019')여기에 add 함수에 객체형태로 넣어줌
                 //2019폴더 안에 소분류를 넣어줌, 앞에 들어간 키값(var name, var desc)이 그대로 들어간(키캆은 유저 인풋에서 받아온것을 넣어줄거고)
                 //객체라서 ,로 구분
@@ -105,9 +120,9 @@
                     quote: quote,
                     sentiment: sentiment,
                     image: image,
-                    group: group,
-                    movement: movement,
-                    ideologie: ideologie,
+                    group: groupsArray,
+                    movement: movementsArray,
+                    ideologie: ideologiesArray,
                     CreatedAt: firebase.firestore.Timestamp.fromDate(
                         new Date()
                     )
@@ -124,9 +139,9 @@
                     document.getElementById('formGroupExampleInput3').value = '';
                     document.getElementById('formGroupExampleInput4').value = '';
                     document.getElementById('formGroupExampleInput5').value = '';
-                    document.getElementById('formGroupExampleInput6').value = '';
-                    document.getElementById('formGroupExampleInput7').value = '';
-                    document.getElementById('formGroupExampleInput8').value = '';
+                    // document.getElementById('formGroupExampleInput6').value = '';
+                    // document.getElementById('formGroupExampleInput7').value = '';
+                    // document.getElementById('formGroupExampleInput8').value = '';
                 }).catch(function () {
                     console.log("error");
                 })
@@ -155,14 +170,14 @@
                         //add -> description: desc
                         //data-뒤에잇는이름 , 헷갈리니까 그냥 이름 전체 통일
                         querySnapshot.forEach(function (doc) {
-                            // console.log(doc.data());
+                            console.log(doc.data());
                             html += `<tr>
                                 <th scope="row">${doc.id}</th>
                                 <td>${doc.data().name}</td>
                                 <td>${doc.data().description}</td>
                                 <td>${doc.data().quote}</td>
                                 <td>${doc.data().sentiment}</td>
-                                <td>${doc.data().image}</td>
+                                <td><img src=${doc.data().image} style="width: 100px"/></td>
                                 <td>${doc.data().group}</td>
                                 <td>${doc.data().movement}</td>
                                 <td>${doc.data().ideologie}</td>
@@ -223,9 +238,33 @@
                 $("#updateSentiment").val(e.relatedTarget.dataset.sentiment);
                 $("#updateImage").val(e.relatedTarget.dataset.image);
                 $('#inputGroupFile03Img').attr('src', e.relatedTarget.dataset.image);
-                $("#updateGroup").val(e.relatedTarget.dataset.group);
-                $("#updateMovement").val(e.relatedTarget.dataset.movement);
-                $("#updateideologie").val(e.relatedTarget.dataset.ideologie);
+                // $("#updateGroup").val(e.relatedTarget.dataset.group);
+                // $("#updateMovement").val(e.relatedTarget.dataset.movement);
+                // $("#updateideologie").val(e.relatedTarget.dataset.ideologie);
+                e.relatedTarget.dataset.group.split(",").forEach(function (el) {
+                    $('input[name=updateGroup]').toArray().forEach(function (e) {
+                        if (el === $(e).val()) {
+                            $(e).attr('checked', true);
+                        }
+                    })
+                });
+                e.relatedTarget.dataset.movement.split(",").forEach(function (el) {
+                    $('input[name=updateMovement]').toArray().forEach(function (e) {
+                        if (el === $(e).val()) {
+                            $(e).attr('checked', true);
+                        }
+                    })
+                });
+                // console.log(e.relatedTarget.dataset.ideologie);
+                e.relatedTarget.dataset.ideologie.split(",").forEach(function (el) {
+                    $('input[name=updateIdeologie]').toArray().forEach(function (e) {
+                        // console.log(el);
+                        // console.log($(e).val());
+                        if (el === $(e).val()) {
+                            $(e).attr('checked', true);
+                        }
+                    })
+                });
             })
 
 
@@ -238,12 +277,25 @@
                 var quote = $("#updateQuote").val();
                 var sent = $("#updateSentiment").val();
                 var image = $("#updateImage").val();
-                var group = $("#updateGroup").val();
-                var movement = $("#updateMovement").val();
-                var ideo = $("#updateideologie").val();
-                updateDataFromcollection(id, name, desc, quote, sent, image, group, movement, ideo);
-
-
+                // var group = $("#updateGroup").val();
+                // var movement = $("#updateMovement").val();
+                // var ideo = $("#updateideologie").val();
+                var groups = $("input[name='updateGroup']:checked");
+                // var movement = document.getElementById("formGroupExampleInput7").value;
+                var movements = $("input[name='updateMovement']:checked");
+                // var ideologie = document.getElementById("formGroupExampleInput8").value;
+                var ideologies = $("input[name='updateIdeologie']:checked");
+                //id:formGroupExampleInput에 유저가(내가) 창에 무언가를 입력하고서,입력된 값을 그대로 name 이라는 변수에 담아준다. string형태로 담아줌
+                var groupsArray = groups.map(function () {
+                    return $(this).val();
+                }).toArray();
+                var movementsArray = movements.map(function () {
+                    return $(this).val();
+                }).toArray();
+                var ideologiesArray = ideologies.map(function () {
+                    return $(this).val();
+                }).toArray();
+                updateDataFromcollection(id, name, desc, quote, sent, image, groupsArray, movementsArray, ideologiesArray);
             })
 
             function updateDataFromcollection(docId, docName, docDesc, docQuote, docSent, docImage, docGroup, docMovement, docIdeo) {
@@ -359,7 +411,7 @@
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1925">1925</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1926">1926</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1927">1927</a></li>
-
+                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1929">1929</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1930">1930</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1931">1931</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1932">1932</a></li>
@@ -458,18 +510,49 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="formGroupExampleInput6">Group</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput6"
-                                            placeholder="Group input placeholder" />
+                                        <!-- <input type="text" class="form-control" id="formGroupExampleInput6"
+                                            placeholder="Group input placeholder" /> -->
+                                        <div class="input-group">
+                                            <input type="checkbox" value="ELITES" id="CHECK_ELITES"
+                                                name="formGroupExampleInput6" /><label for="CHECK_ELITES">ELITES</label>
+                                            <input type="checkbox" value="GOVERNMENT" id="CHECK_GOVERNMENT"
+                                                name="formGroupExampleInput6" /><label
+                                                for="CHECK_GOVERNMENT">GOVERNMENT</label>
+                                            <input type="checkbox" value="CLERGY" id="CHECK_CLERGY"
+                                                name="formGroupExampleInput6" /><label for="CHECK_CLERGY">CLERGY</label>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="formGroupExampleInput7">Movement</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput7"
-                                            placeholder="Movement input placeholder" />
+                                        <!-- <input type="text" class="form-control" id="formGroupExampleInput7"
+                                            placeholder="Movement input placeholder" /> -->
+                                        <div class="input-group">
+                                            <input type="checkbox" value="AJC" id="CHECK_AJC"
+                                                name="formGroupExampleInput7" /><label for="CHECK_AJC">AJC</label>
+                                            <input type="checkbox" value="HEEMVAARTS" id="CHECK_HEEMVAARTS"
+                                                name="formGroupExampleInput7" /><label
+                                                for="CHECK_HEEMVAARTS">HEEMVAARTS</label>
+                                            <input type="checkbox" value="FOLKLORISTS" id="CHECK_FOLKLORISTS"
+                                                name="formGroupExampleInput7" /><label
+                                                for="CHECK_FOLKLORISTS">FOLKLORISTS</label>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="formGroupExampleInput8">ideologie</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput8"
-                                            placeholder="ideologie input placeholder" />
+                                        <!-- <input type="text" class="form-control" id="formGroupExampleInput8"
+                                            placeholder="ideologie input placeholder" /> -->
+                                        <div class="input-group">
+                                            <input type="checkbox" value="RACISM" id="CHECK_RACISM"
+                                                name="formGroupExampleInput8" /><label for="CHECK_RACISM">RACISM</label>
+                                            <input type="checkbox" value="SOCIALISM" id="CHECK_SOCIALISM"
+                                                name="formGroupExampleInput8" /><label
+                                                for="CHECK_SOCIALISM">SOCIALISM</label>
+                                            <input type="checkbox" value="NAZISM" id="CHECK_NAZISM"
+                                                name="formGroupExampleInput8" /><label for="CHECK_NAZISM">NAZISM</label>
+                                            <input type="checkbox" value="NATIONALISM" id="CHECK_NATIONALISM"
+                                                name="formGroupExampleInput8" /><label
+                                                for="CHECK_NATIONALISM">NATIONALISM</label>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -534,14 +617,14 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="inputGroupFileAddon03"
-                                                    onclick="ImgfileUpload()">Upload</span>
+                                                    onclick="ImgfileUpload('update')">Upload</span>
                                             </div>
                                         </div>
                                         <div class="input-group mt-3">
                                             <img src="" alt="" class="img-thumbnail" id="inputGroupFile03Img">
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label for="updateGroup">Group</label>
                                         <input type="text" class="form-control" id="updateGroup"
                                             placeholder="Group input placeholder" />
@@ -555,6 +638,52 @@
                                         <label for="updateideologie">ideologie</label>
                                         <input type="text" class="form-control" id="updateideologie"
                                             placeholder="ideologie input placeholder" />
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput6">Group</label>
+                                        <!-- <input type="text" class="form-control" id="formGroupExampleInput6"
+                                            placeholder="Group input placeholder" /> -->
+                                        <div class="input-group">
+                                            <input type="checkbox" value="ELITES" id="UPDATE_CHECK_ELITES"
+                                                name="updateGroup" /><label for="UPDATE_CHECK_ELITES">ELITES</label>
+                                            <input type="checkbox" value="GOVERNMENT" id="UPDATE_CHECK_GOVERNMENT"
+                                                name="updateGroup" /><label
+                                                for="UPDATE_CHECK_GOVERNMENT">GOVERNMENT</label>
+                                            <input type="checkbox" value="CLERGY" id="CHECK_CLERGY"
+                                                name="updateGroup" /><label for="UPDATE_CHECK_CLERGY">CLERGY</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput7">Movement</label>
+                                        <!-- <input type="text" class="form-control" id="formGroupExampleInput7"
+                                            placeholder="Movement input placeholder" /> -->
+                                        <div class="input-group">
+                                            <input type="checkbox" value="AJC" id="UPDATE_CHECK_AJC"
+                                                name="updateMovement" /><label for="UPDATE_CHECK_AJC">AJC</label>
+                                            <input type="checkbox" value="HEEMVAARTS" id="UPDATE_CHECK_HEEMVAARTS"
+                                                name="updateMovement" /><label
+                                                for="UPDATE_CHECK_HEEMVAARTS">HEEMVAARTS</label>
+                                            <input type="checkbox" value="FOLKLORISTS" id="UPDATE_CHECK_FOLKLORISTS"
+                                                name="updateMovement" /><label
+                                                for="UPDATE_CHECK_FOLKLORISTS">FOLKLORISTS</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput8">ideologie</label>
+                                        <!-- <input type="text" class="form-control" id="formGroupExampleInput8"
+                                            placeholder="ideologie input placeholder" /> -->
+                                        <div class="input-group">
+                                            <input type="checkbox" value="RACISM" id="UPDATE_CHECK_RACISM"
+                                                name="updateIdeologie" /><label for="UPDATE_CHECK_RACISM">RACISM</label>
+                                            <input type="checkbox" value="SOCIALISM" id="UPDATE_CHECK_SOCIALISM"
+                                                name="updateIdeologie" /><label
+                                                for="UPDATE_CHECK_SOCIALISM">SOCIALISM</label>
+                                            <input type="checkbox" value="NAZISM" id="UPDATE_CHECK_NAZISM"
+                                                name="updateIdeologie" /><label for="UPDATE_CHECK_NAZISM">NAZISM</label>
+                                            <input type="checkbox" value="NATIONALISM" id="UPDATE_CHECK_NATIONALISM"
+                                                name="updateIdeologie" /><label
+                                                for="UPDATE_CHECK_NATIONALISM">NATIONALISM</label>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -571,10 +700,10 @@
                 </div>
                 <!-- Updte Modal -->
                 <div id="output">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-responsive-sm">
                         <thead>
                             <tr>
-                                <th scope="col">id</th>
+                                <th scope="col" width="30">id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Quote</th>
@@ -758,8 +887,12 @@
             if (data.target.files[0] && data.target.files[0].name) {
                 $("label[for='inputGroupFile02']").text(data.target.files[0].name);
             }
-        })
-
+        });
+        $('#inputGroupFile03').change(data => {
+            if (data.target.files[0] && data.target.files[0].name) {
+                $("label[for='inputGroupFile03']").text(data.target.files[0].name);
+            }
+        });
     </script>
 </body>
 

@@ -765,18 +765,11 @@ button.selected:focus .tag{
 
 
 
-.rule_1914 {
-    /*    transition: 1s ease-in-out;*/
+.rule_1914.selected {
+  transform: translate(1.3rem) scaleX(4);
+  transition: 0.4s ;
 }
 
-.history_comp_left_content:hover + #rule {
-    transition: all 1s;
-    /*    width:4rem;*/
-    /*    border-top: 0.3rem solid #000; */
-
-    transform: translate(2rem) scaleX(2);
-    /*    border-width: 20px;*/
-}
 
 ol,
 li {
@@ -819,7 +812,7 @@ li:last-child {
 
 .senti_img {
     width: 70rem;
-    display: block;
+    display: none;
 }
 .history_button_1914 {
     left: 5.5em;
@@ -932,10 +925,9 @@ li:last-child {
     opacity: 0.9;
 }
 
-/*left 수정 */
 .history_button_1930_01 {
-    left: 35.6rem;
-    top: 86.5rem;
+    left: 30rem;
+    top: 88rem;
     /*    -0.1 m*/
     opacity: 0.9;
 }
@@ -945,8 +937,8 @@ li:last-child {
 }
 
 .history_button_1930_02 {
-    left: 28.8rem;
-    top: 86.5rem;
+    left: 33.2rem;
+    top: 88rem;
     /*    0*/
     opacity: 0.9;
 }
@@ -956,8 +948,8 @@ li:last-child {
 }
 
 .history_button_1931 {
-    left: 0.8rem;
-    top: 90.5rem;
+    left: 5rem;
+    top: 92rem;
     /*    -0.8*/
     opacity: 0.9;
 }
@@ -967,8 +959,8 @@ li:last-child {
 }
 
 .history_button_1931_01 {
-    left: 30rem;
-    top: 90.5rem;
+    left: 40.1rem;
+    top: 92rem;
     /*    0.2 m */
     opacity: 0.9;
 }
@@ -978,9 +970,9 @@ li:last-child {
 }
 
 .history_button_1931_02 {
-    left: 4.5rem;
-    top: 90.5rem;
-    /*    -0.7 m */
+    left: 8.7rem;
+    top: 92rem;
+    /*    -0.3 */
     opacity: 0.9;
 }
 .history_button_1931_02:hover,.history_button_1931_02:focus {
@@ -989,8 +981,8 @@ li:last-child {
 }
 
 .history_button_1931_03 {
-    left: 4.5rem;
-    top: 90.5rem;
+    left: 22.8rem;
+    top: 92rem;
     /*    -0.7 m */
     opacity: 0.9;
 }

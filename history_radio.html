@@ -184,7 +184,7 @@
 
 
             // 1900 1914 1917 1918 1919 1920 1925 1926 1927 1930 1931 1932 1939-1945 1940 1944 1945 1950 1959
-            ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'].forEach(function (year) {
+            ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1929', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'].forEach(function (year) {
                 loadDataFromCollection(year);
             });
         }
@@ -305,46 +305,36 @@
                              <img src="img/icon-19.svg" alt="1927" class="icon icon_1927_03" />
                             <span class="tag">1927<br>tone:-0.4</span></button>
 
-                           <button class="history_button_1929 open_toggles history_img_icon_box" data-type="">
+                           <button class="history_button_1929 open_toggles history_img_icon_box" data-type="4TIGV2uRcBc3qa5IwIYU">
                              <img src="img/icon-20.svg" alt="1929" class="icon icon_1929" />
                             <span class="tag">1929<br>tone:-0.6</span></button>
 
-                          <button class="history_button_1930 open_toggles history_img_icon_box" data-type="">
+                          <button class="history_button_1930 open_toggles history_img_icon_box" data-type="ISSw61n6bl7impigaF34">
                              <img src="img/icon-21.svg" alt="1930" class="icon icon_1930" />
                             <span class="tag">1930<br>tone:-0.4</span></button>
 
-                           <button class="history_button_1930_01 open_toggles history_img_icon_box" data-type="">
+                           <button class="history_button_1930_01 open_toggles history_img_icon_box" data-type="wpAmuEJhAZKSruRQwDJD">
                              <img src="img/icon-22.svg" alt="1930" class="icon icon_1930_01" />
                             <span class="tag">1930<br>tone:-0.1</span></button>
 
-                            <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="wpAmuEJhAZKSruRQwDJD">
                              <img src="img/icon-23.svg" alt="1930" class="icon icon_1930_02" />
                             <span class="tag">1930<br>tone:0</span></button>
 
-                            <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="">
-                             <img src="img/icon-23.svg" alt="1930" class="icon icon_1930_02" />
-                            <span class="tag">1930<br>tone:0</span></button>
 
-<!--
-                            <div class="history_img_icon_box">
-                             <img src="img/icon-24.svg" alt="1930" class="icon icon_1930_03" />
-                            <span class="tag"> 1930<br>tone:0</span></div>
-
-
--->
-                            <button class="history_button_1931 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1931 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
                              <img src="img/icon-25.svg" alt="1931" class="icon icon_1931" />
                             <span class="tag">1931<br>tone:-0.8</span></button>
 
-                             <button class="history_button_1931_01 open_toggles history_img_icon_box" data-type="">
+                             <button class="history_button_1931_01 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
                              <img src="img/icon-26.svg" alt="1931" class="icon icon_1931_01" />
                             <span class="tag">1931<br>tone:0.2</span></button>
 
-                             <button class="history_button_1931_02 open_toggles history_img_icon_box" data-type="">
+                             <button class="history_button_1931_02 open_toggles history_img_icon_box" data-type="VxH3Gty6jDNPezoZI81T">
                              <img src="img/icon-27.svg" alt="1931" class="icon icon_1931_02" />
                             <span class="tag">1931<br>tone:-0.7</span></button>
 
-                              <button class="history_button_1931_03 open_toggles history_img_icon_box" data-type="">
+                              <button class="history_button_1931_03 open_toggles history_img_icon_box" data-type="mlWQFqSrJymoxc9hZ52v">
                              <img src="img/icon-28.svg" alt="1931" class="icon icon_1931_03" />
                             <span class="tag">1931<br>tone:-0.3</span></button>
 
@@ -501,6 +491,10 @@
     $('button').on('click', function(){
     $('button').removeClass('selected');
     $(this).addClass('selected');
+     console.log($(this).attr('class').split(" ")[0].split("_")[2]);
+            // button에 있는 class중에 연도정보를 가져올 수 있음
+            var barYear = 'rule_' + $(this).attr('class').split(" ")[0].split("_")[2];
+            $('.' + barYear).addClass('selected');
 });
     </script>
     <script>
