@@ -792,7 +792,7 @@ ol {
 }
 
 li {
-    height: 1cm;
+    height: 1.2cm;
     border-top: 2px solid #000;
     box-sizing: border-box;
     width: 1.3em;
@@ -800,7 +800,7 @@ li {
 }
 
 li:nth-child(5n) {
-    width: 2.4em;
+    width: 2.5em;
 }
 li:last-child {
     height: 0;
@@ -819,46 +819,47 @@ li:last-child {
 
 .senti_img {
     width: 70rem;
-    display: none;
+    display: block;
 }
 .history_button_1914 {
-    left: 4.3rem;
-    top: 13rem;
+    left: 5.5em;
+    top: 15.5rem;
+/*    0.7*/
 }
 
 .history_button_1917 {
-    left: 11.1rem;
-    top: 25rem;
-    /*0.5*/
+    left: 15.7rem;
+    top: 29rem;
+    /*-0.5*/
 }
 
 .history_button_1918 {
-    left: 35.6rem;
-    top: 36rem;
+    left: 40.2rem;
+    top: 33rem;
     /* 32rem중간*/
     /*    0.2*/
 }
 
 .history_button_1919 {
-    left: 28.8rem;
-    top: 39.5rem;
+    left: 33.2rem;
+    top: 38rem;
     /*0*/
 }
 
 .history_button_1925 {
-    left: 28.8rem;
-    top: 64.5rem;
+    left: 33.2rem;
+    top: 65rem;
     /* 29rem중간*/
     /*0*/
 }
 .history_button_1926 {
-    left: 21.7rem;
+    left: 26.2rem;
     top: 69.5rem;
     /*   -0.2 */
 }
 
 .history_button_1926_01 {
-    left: 7.8rem;
+    left: 12.3rem;
     top: 69.5rem;
     /*    -0.6*/
 }
@@ -868,8 +869,8 @@ li:last-child {
 }
 
 .history_button_1927 {
-    left: 7.8rem;
-    top: 73.5rem;
+    left: 12.3rem;
+    top: 74rem;
     /*    -0.6*/
     opacity: 0.9;
 }
@@ -882,15 +883,15 @@ li:last-child {
     opacity: 0.9;
 }
 .history_button_1927_01 {
-    left: 0.8rem;
-    top: 73.5rem;
+    left: 5.2rem;
+    top: 74rem;
     opacity: 0.9;
     z-index: 1;
     /*    -0.8*/
 }
 .history_button_1927_02 {
-    left: 4.5rem;
-    top: 73.5rem;
+    left: 9rem;
+    top: 74rem;
     opacity: 0.9;
     /*    -0.7*/
 }
@@ -900,16 +901,29 @@ li:last-child {
     opacity: 0.9;
 }
 .history_button_1927_03 {
-    left: 14.7rem;
-    top: 73.5rem;
+    left: 19.3rem;
+    top: 74rem;
     opacity: 0.9;
     z-index: 0;
     /*    -0.4*/
 }
 
+.history_button_1929 {
+    left: 12.5rem;
+    top: 83rem;
+    opacity: 0.9;
+    z-index: 0;
+    /*    -0.4*/
+}
+
+.history_button_1929:hover,.history_button_1929:focus {
+    z-index: 100;
+    opacity: 0.9;
+}
+
 .history_button_1930 {
-    left: 14.7rem;
-    top: 86.5rem;
+    left: 19.3rem;
+    top: 88rem;
     /*    -0.4*/
     opacity: 0.9;
 }
