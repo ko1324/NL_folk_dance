@@ -1316,9 +1316,9 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 /*firestore*/
 .desc_image {
     float: left;
-    width: 15rem;
-    padding-top: 0.8rem;
-    padding-right: 0.5rem;
+    width: 18rem;
+    padding: 0.8rem 1.3rem 1rem 0rem;
+
 }
 
 .desc_image::after {
@@ -1406,6 +1406,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 /*costume*/
+
 .costume_region_box {
     margin-left: 0rem;
 }
