@@ -86,7 +86,7 @@
                                 /*1) 빈 배열인지 아닌지를 확인하려고 stackArray */
                                 /*2) stackArray를 기준으로 collapsibleContentArray 넣어줌 */
 //                                console.log(stackArray);
-                                console.log(collapsibleContentArray);
+//                                console.log(collapsibleContentArray);
                                 collapsibleContentArray.push({
                                     [year]: [{
                                         id: doc.id,
@@ -136,7 +136,7 @@
                             historyHtml += `<span class="year_title">${Object.keys(data)[0]}</span>`;
                             /*3. ${Object.keys(data)[0]}:1900 각 객체가 가진 키값들을 뽑아서 배열로 만들어줌? collapsibleContentArray의 키값?*/
                             data[Object.keys(data)[0]].forEach(data => {
-                                console.log(data.group);
+//                                console.log(data.group);
 
                                 historyHtml += `<button class="collapsible ${data.group && data.group.join(" ").toLowerCase()} ${data.movement && data.movement.join(" ").toLowerCase()} ${data.id} ${data.ideologie && data.ideologie.join(" ").toLowerCase()} ">${data.name}</button>
 
@@ -351,8 +351,8 @@
 
                             </div>
 
-                             <ol id="rule"> <li></li> <li></li> <li></li> <li class="rule_1914"></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
-                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                             <ol id="rule"> <li></li> <li></li> <li></li> <li class="rule_1914"></li> <li></li> <li></li> <li class="rule_1917"></li> <li class="rule_1918"></li> <li class="rule_1919"></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li class="rule_1925"></li> <li class="rule_1926"></li> <li class="rule_1927"></li> <li></li> <li class="rule_1929"></li> <li class="rule_1930"></li>
+                            <li class="rule_1931"></li> <li></li> <li></li> <li></li> <li></li>
                             <li></li> <li></li> <li></li> <li></li> <li></li>
                             <li></li> <li></li> <li></li> <li></li> <li></li>
                             <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -489,13 +489,26 @@
      }, 50);
 
     $('button').on('click', function(){
+
+      console.log($(this).attr('class').split(" ")[0].split("_")[2]);
+     // button에 있는 class중에 연도정보를 가져올 수 있음
+      var barYear = 'rule_' + $(this).attr('class').split(" ")[0].split("_")[2];
+//     console.log( $('.' + barYear));
     $('button').removeClass('selected');
     $(this).addClass('selected');
-     console.log($(this).attr('class').split(" ")[0].split("_")[2]);
-            // button에 있는 class중에 연도정보를 가져올 수 있음
-            var barYear = 'rule_' + $(this).attr('class').split(" ")[0].split("_")[2];
-            $('.' + barYear).addClass('selected');
+
+    console.log( $(this).parent().siblings("#rule").children('.selected')[0]);
+    var barYearRomove = $(this).parent().siblings("#rule").children('.selected')[0];
+//    $('.' + barYearRomove).removeClass('selected');
+    $('.' + barYear).addClass('selected');
+
+
+
+
 });
+
+
+
     </script>
     <script>
         var coll = document.getElementsByClassName("collapsible");
@@ -545,7 +558,7 @@
 
         $('.open_toggles').click(function () {
             var type = $(this).data("type");
-            console.log(type);
+//            console.log(type);
             openToggles(type);
             // for (i = 0; i < coll.length; i++) {
             //     coll[i].classList.remove("active");
