@@ -21,6 +21,14 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <!-- 부트스트랩 js설정 붙여넣기-->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <script src="/s3uploader.js"></script>
+    <style>
+        #inputGroupFileAddon02 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,7 +61,7 @@
 
             // *년도별 분류법 1.html에다가 앵커를 넣고
             // *년도별 분류법 2.http://127.0.0.1:60137/firestore_class_copy.html?year=2014이 주소에서, window.location.search.split("=")[1] 이렇게 하면 콘솔에 년도만 불러오는것을 확인할 수 있다.
-            console.log(window.location.search.split("=")[1]);
+            // console.log(window.location.search.split("=")[1]);
 
             var year = window.location.search.split("=")[1];
             //그걸 year로 넣어서
@@ -136,7 +144,7 @@
                     // .orderBy("year", "desc")
                     .get()
                     .then(function (querySnapshot) {
-                        console.log(querySnapshot);
+                        // console.log(querySnapshot);
                         //get()일단 싹 긁어옴, querySnapshot(firebase에서 전달해주는 역할, 이 안에 데이터들이 다 들어있다 )
 
                         var html = "";
@@ -147,6 +155,7 @@
                         //add -> description: desc
                         //data-뒤에잇는이름 , 헷갈리니까 그냥 이름 전체 통일
                         querySnapshot.forEach(function (doc) {
+                            // console.log(doc.data());
                             html += `<tr>
                                 <th scope="row">${doc.id}</th>
                                 <td>${doc.data().name}</td>
@@ -172,7 +181,7 @@
                             <p>${doc.data().quote}</p>
                             </div>`;
 
-                            console.log(doc.id);
+                            // console.log(doc.id);
                         })
 
 
@@ -213,6 +222,7 @@
                 $("#updateQuote").val(e.relatedTarget.dataset.quote);
                 $("#updateSentiment").val(e.relatedTarget.dataset.sentiment);
                 $("#updateImage").val(e.relatedTarget.dataset.image);
+                $('#inputGroupFile03Img').attr('src', e.relatedTarget.dataset.image);
                 $("#updateGroup").val(e.relatedTarget.dataset.group);
                 $("#updateMovement").val(e.relatedTarget.dataset.movement);
                 $("#updateideologie").val(e.relatedTarget.dataset.ideologie);
@@ -283,7 +293,10 @@
 
 
         };
-
+        function getHtml(template) {
+            return template.join('\n');
+        }
+        listAlbums();
     </script>
     <script>
 
@@ -331,31 +344,33 @@
             });
     </script>
 
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1900">1900</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1914">1914</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1917">1917</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1918">1918</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1919">1919</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1920">1920</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1925">1925</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1926">1926</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1927">1927</a>
-
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1930">1930</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1931">1931</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1932">1932</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1939">1939-1945</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1940">1940</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1944">1944</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1945">1945</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1950">1950</a>
-    <a href="http://127.0.0.1:5500/firestore_class_radio.html?year=1959">1959</a>
-
-
     <!--       *년도별 분류법 1. 얘를 a태그로 년도로 나누고, window.onload로 -->
     <div class="container">
         <div class="row">
             <div class="col">
+                <div class="yearListContent">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1900">1900</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1914">1914</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1917">1917</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1918">1918</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1919">1919</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1920">1920</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1925">1925</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1926">1926</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1927">1927</a></li>
+
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1930">1930</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1931">1931</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1932">1932</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1939">1939-1945</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1940">1940</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1944">1944</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1945">1945</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1950">1950</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1959">1959</a></li>
+                    </ul>
+                </div>
                 <!-- Toast -->
                 <!-- Flexbox container for aligning the toasts -->
                 <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center"
@@ -388,7 +403,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">
-                                    Modal title
+                                    등록하기
                                 </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -425,7 +440,21 @@
                                     <div class="form-group">
                                         <label for="formGroupExampleInput5">Image</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput5"
-                                            placeholder="Image input placeholder" />
+                                            placeholder="Image input placeholder" readonly />
+                                        <div class="input-group mt-3">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                                <label class="custom-file-label" for="inputGroupFile02"
+                                                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="inputGroupFileAddon02"
+                                                    onclick="ImgfileUpload()">Upload</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <img src="" alt="" class="img-thumbnail" id="inputGroupFile02Img">
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="formGroupExampleInput6">Group</label>
@@ -464,7 +493,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalUpdateLabel">
-                                    Update Modal title
+                                    수정하기
                                 </h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -497,6 +526,20 @@
                                         <label for="updateImage">Image</label>
                                         <input type="text" class="form-control" id="updateImage"
                                             placeholder="Image input placeholder" />
+                                        <div class="input-group mt-3">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile03">
+                                                <label class="custom-file-label" for="inputGroupFile03"
+                                                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="inputGroupFileAddon03"
+                                                    onclick="ImgfileUpload()">Upload</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <img src="" alt="" class="img-thumbnail" id="inputGroupFile03Img">
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="updateGroup">Group</label>
@@ -536,9 +579,11 @@
                                 <th scope="col">Description</th>
                                 <th scope="col">Quote</th>
                                 <th scope="col">Sentiment</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Group</th>
                                 <th scope="col">Movement</th>
                                 <th scope="col">ideologie</th>
+                                <th scope="col">Edit</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -634,6 +679,7 @@
         </div>
     </div>
 
+    <div id="app"></div>
 
     <script>
         var coll = document.getElementsByClassName("collapsible")
@@ -708,7 +754,11 @@
 
             }
         })
-
+        $('#inputGroupFile02').change(data => {
+            if (data.target.files[0] && data.target.files[0].name) {
+                $("label[for='inputGroupFile02']").text(data.target.files[0].name);
+            }
+        })
 
     </script>
 </body>

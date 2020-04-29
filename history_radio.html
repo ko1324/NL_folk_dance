@@ -77,7 +77,7 @@
                     .get()
                     .then(function (querySnapshot) {
                         querySnapshot.forEach(function (doc) {
-//                             console.log(doc.data());
+//                             console.log(doc.id);
                             if (!stackArray.includes(year)) {
                                   /*1) 빈 배열이니까, year 없으면*/
                                 stackArray.push(year);
@@ -89,6 +89,7 @@
                                 console.log(collapsibleContentArray);
                                 collapsibleContentArray.push({
                                     [year]: [{
+                                        id: doc.id,
                                         name: doc.data().name,
                                         description: doc.data().description,
                                         quote: doc.data().quote,
@@ -105,6 +106,7 @@
                                 /*2) year 가 있으면 content를 푸시 */
                                 /*2)findIndex는 1900가 몇번째 배열인지를 찾아서->0번째 인덱스에*/
                                 collapsibleContentArray[findIndex][year].push({
+                                    id: doc.id,
                                     name: doc.data().name,
                                     description: doc.data().description,
                                     quote: doc.data().quote,
@@ -119,20 +121,39 @@
                         })
                     /* year_title 로 년도 클래스 제어->글씨크기*/
                     /* 2.<button class="${data.ideologie} 방법 join하면 안나오고, 붙어나오고 1930, */
-                    /*button class name 1.버튼 타입값을 띄어쓰길 없애야되고(splite, join) 저 아래서 어떻게 쓰는지 모르곘음,2. 아래 조인 어떻게 쓴지 모르겠고,3.나치즘 앞에 띄어쓰기를 해야돼*/
+                    /*button class name 1.버튼 타입값을 띄어쓰길 없애야되고(splite, join) 저 아래서 어떻게 쓰는지 모르곘음,2. 아래 조인 어떻게 쓴지 모르겠고,3.나치즘 앞에 띄어쓰기를 해야돼->모두 array로 확인*/
+                    /*string 시 ${data.name.split(" ").join("")}*/
+                    /*temp1.join("").lowercase()*/
+
+                    /*<div class="content">
+
+                                <p><img src="${data.image}"class="desc_image">${data.description}</p>
+                                <p>${data.quote}</p>
+                                </div>`*/
                     }).then(() => {
                         var historyHtml = "";
                         collapsibleContentArray.forEach(data => {
                             historyHtml += `<span class="year_title">${Object.keys(data)[0]}</span>`;
                             /*3. ${Object.keys(data)[0]}:1900 각 객체가 가진 키값들을 뽑아서 배열로 만들어줌? collapsibleContentArray의 키값?*/
                             data[Object.keys(data)[0]].forEach(data => {
-                                historyHtml += `<button class="collapsible ${data.group && data.group.join(" ")}${data.movement && data.movement.join(" ")}${data.name}">${data.name}</button>
-                                <div class="content">
+                                console.log(data.group);
 
-                                <p><img src="${data.image}" class="desc_image">${data.description}</p>
+                                historyHtml += `<button class="collapsible ${data.group && data.group.join(" ").toLowerCase()} ${data.movement && data.movement.join(" ").toLowerCase()} ${data.id} ${data.ideologie && data.ideologie.join(" ").toLowerCase()} ">${data.name}</button>
+
+
+
+
+                                <div class="content"><p>`;
+                                if (data.image) {
+                                    historyHtml += `<img src="${data.image}" class="desc_image" />`;
+                                }
+                                //얘는 이미지가 있을때만 실행되고
+                                historyHtml += `${data.description}</p>
                                 <p>${data.quote}</p>
                                 </div>`
+                                //얘는 항상 실행되고,
                             })
+
                         });
                         $('#collapsibleContent').html(historyHtml);
                         var coll = document.getElementsByClassName("collapsible");
@@ -225,43 +246,56 @@
                     <div class="u-center-text u-margin-bottom-2">
                         <!--                           1.화살표 추가https://yeun.github.io/open-arrow/-->
                         <div class="history_comp_left">
+<!--
                         <div class="history_meter_box">
-                        <img src="img/history_meter_03.png" alt="history_meter" class="history_meter" />
+                        <img src="img/history_meter_05.png" alt="history_meter" class="history_meter" />
                         </div>
+-->
+<!--
+                            <div class="history_meter_box">
+                         <div class="backimage history_meter"></div>
+                        </div>
+-->
+
                             <h3 class="history_comp_text_02">
                                 NEGATIVE &#8226;&#8213;&#8213;&#8213;&#8213;&#8226; POSITIVE
                             </h3>
                             <div class="senti">
                                 <img src="img/history_meter_senti.png" class="senti_img" alt="">
                             </div>
+
+
+
                             <div class="history_comp_left_content">
 
-                            <button class="history_button_1914 open_toggles history_img_icon_box" data-type="dorp">
+                            <button class="history_button_1914 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
                             <img src="img/icon-09.svg" alt="1914" class="icon icon_1914" />
-                            <span class="tag">1914<br>tone: -0.7</span></button>
+                            <span class="tag">1914<br>tone: -0.7</span>
+
+                            </button>
 
 
-                            <button class="history_button_1917 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1917 open_toggles history_img_icon_box" data-type="pSXSJPTJP8LvB4uSggO8">
                              <img src="img/icon-10.svg" alt="1917" class="icon icon_1917" />
                             <span class="tag">1917<br>tone: -0.5</span></button>
 
-                            <button class="history_button_1918 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1918 open_toggles history_img_icon_box" data-type="izfIbTQVhhLkJSCx4wLo">
                              <img src="img/icon-11.svg" alt="1918" class="icon icon_1918" />
                             <span class="tag">1918<br>tone:0.2</span></button>
 
-                            <button class="history_button_1919 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1919 open_toggles history_img_icon_box" data-type="XDW3cuMxD1MO4IAgq1x1">
                              <img src="img/icon-12.svg" alt="1919" class="icon icon_1919" />
                             <span class="tag">1919<br>tone:0</span></button>
 
-                            <button class="history_button_1925 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1925 open_toggles history_img_icon_box" data-type="zGeK1IcmRiEpzuAGGqgz">
                              <img src="img/icon-13.svg" alt="1925" class="icon icon_1925" />
                             <span class="tag">1925<br>tone:0</span></button>
 
-                            <button class="history_button_1926 open_toggles history_img_icon_box" data-type="">
+                            <button class="history_button_1926 open_toggles history_img_icon_box" data-type="3AeKU4dx2hODuKWR1pO2">
                              <img src="img/icon-14.svg" alt="1926" class="icon icon_1926" />
                             <span class="tag">1926<br>tone:-0.2</span></button>
 
-                             <button class="history_button_1926_01 open_toggles history_img_icon_box" data-type="">
+                             <button class="history_button_1926_01 open_toggles history_img_icon_box" data-type="GSK3fcmeg73JE3dp65Gr">
                              <img src="img/icon-15.svg" alt="1926" class="icon icon_1926_01" />
                             <span class="tag">1926<br>tone:-0.6</span></button>
 
@@ -280,47 +314,76 @@
                             <button class="history_button_1927_03 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-19.svg" alt="1927" class="icon icon_1927_03" />
                             <span class="tag">1927<br>tone:-0.4</span></button>
+<!--
 
-                           <!--
-                            <div class="history_img_icon_box">
+                           <button class="history_button_1929 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-20.svg" alt="1929" class="icon icon_1929" />
-                            <span class="tag"> 1929<br>tone:-0.6</span></div>                                                 <div class="history_img_icon_box">
+                            <span class="tag">1929<br>tone:-0.6</span></button>
+-->
+
+                          <button class="history_button_1930 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-21.svg" alt="1930" class="icon icon_1930" />
-                            <span class="tag"> 1930<br>tone:-0.4</span></div>
+                            <span class="tag">1930<br>tone:-0.4</span></button>
 
-                            <div class="history_img_icon_box">
+                           <button class="history_button_1930_01 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-22.svg" alt="1930" class="icon icon_1930_01" />
-                            <span class="tag"> 1930<br>tone:-0.1</span></div>                                                 <div class="history_img_icon_box">
-                             <img src="img/icon-23.svg" alt="1930" class="icon icon_1930_02" />
-                            <span class="tag"> 1930<br>tone:0</span></div>
+                            <span class="tag">1930<br>tone:-0.1</span></button>
 
+                            <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="">
+                             <img src="img/icon-23.svg" alt="1930" class="icon icon_1930_02" />
+                            <span class="tag">1930<br>tone:0</span></button>
+
+                            <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="">
+                             <img src="img/icon-23.svg" alt="1930" class="icon icon_1930_02" />
+                            <span class="tag">1930<br>tone:0</span></button>
+
+<!--
                             <div class="history_img_icon_box">
                              <img src="img/icon-24.svg" alt="1930" class="icon icon_1930_03" />
-                            <span class="tag"> 1930<br>tone:0</span></div>                                                 <div class="history_img_icon_box">
+                            <span class="tag"> 1930<br>tone:0</span></div>
+
+
+-->
+                            <button class="history_button_1931 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-25.svg" alt="1931" class="icon icon_1931" />
-                            <span class="tag"> 1931<br>tone:-0.8</span></div>
+                            <span class="tag">1931<br>tone:-0.8</span></button>
 
-                            <div class="history_img_icon_box">
+                             <button class="history_button_1931_01 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-26.svg" alt="1931" class="icon icon_1931_01" />
-                            <span class="tag"> 1931<br>tone:0.2</span></div>                                                 <div class="history_img_icon_box">
-                             <img src="img/icon-27.svg" alt="1931" class="icon icon_1931_02" />
-                            <span class="tag"> 1931<br>tone:-0.8</span></div>
+                            <span class="tag">1931<br>tone:0.2</span></button>
 
-                             <div class="history_img_icon_box">
+                             <button class="history_button_1931_02 open_toggles history_img_icon_box" data-type="">
+                             <img src="img/icon-27.svg" alt="1931" class="icon icon_1931_02" />
+                            <span class="tag">1931<br>tone:-0.7</span></button>
+
+                              <button class="history_button_1931_03 open_toggles history_img_icon_box" data-type="">
                              <img src="img/icon-28.svg" alt="1931" class="icon icon_1931_03" />
-                            <span class="tag"> 1931<br>tone:-0.3</span></div>
+                            <span class="tag">1931<br>tone:-0.3</span></button>
+
+<!--
 
                             <div class="history_img_icon_box">
                              <img src="img/icon-29.svg" alt="1932" class="icon icon_1932" />
                             <span class="tag"> 1932<br>tone:0</span></div>                                                  <div class="history_img_icon_box">
                              <img src="img/icon-30.svg" alt="1932-1945" class="icon icon_1932-1940" />
                             <span class="tag"> 1943-1945<br>tone:0</span></div>
+-->
 
-                           -->
+
 
                             </div>
 
-
+                             <ol id="rule"> <li></li> <li></li> <li></li> <li class="rule_1914"></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>
+                            <li></li> <li></li> <li></li> <li></li> <li></li>   </ol>
 
 
 
@@ -428,7 +491,7 @@
                                 <input type="radio" name="toggles" value="nationalism" id="toggle10" />
                                    <label for="toggle10" class="national_i"></label>
                                 <span class="labelSpan">
-                                    Nationalizm
+                                    Nationalism
                                 </span>
                             </span>
 
@@ -442,6 +505,16 @@
             </div>
         </section>
     </main>
+    <script>
+     setTimeout(function(){
+    $('.icon').addClass('scaleUp')
+     }, 50);
+
+    $('button').on('click', function(){
+    $('button').removeClass('selected');
+    $(this).addClass('selected');
+});
+    </script>
     <script>
         var coll = document.getElementsByClassName("collapsible");
         // 라디오 버튼 클릭시 해당하는 클래스가 있는지 체크하고 펼치기
@@ -489,7 +562,7 @@
         })
 
         $('.open_toggles').click(function () {
-            var type = $(this).data("type").toLowerCase();
+            var type = $(this).data("type");
             console.log(type);
             openToggles(type);
             // for (i = 0; i < coll.length; i++) {

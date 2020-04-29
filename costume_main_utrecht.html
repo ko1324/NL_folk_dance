@@ -158,11 +158,11 @@
                 <div class="folk_dance_right_box row col-8">
                   <span class="costume_village_name">Spakenburgse</span>
                   <div id="columns">
-                  <a href="#popup">
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg')">
                  <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg">
                   </a>
 
-                   <a href="#popup2">
+                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_02.jpg')">
                  <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_02.jpg">
                   </a>
 
@@ -177,7 +177,7 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg" alt="Tour photo" class="popup__img" />
+          <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg" alt="Tour photo" class="popup__img" id="popup__img--src" />
           <span class="costume_popup_copywright"><a href="https://flic.kr/p/f6i2wB">Ben Eekhof/</a><a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span>
         </div>
         <div class="popup__right">
@@ -185,5 +185,10 @@
         </div>
       </div>
     </div>
-
+<script>
+    function open__popup(img_url){
+        $('#popup__img--src').attr('src', img_url);
+        /*img_url로 바꾸겠다. */
+    }
+    </script>
 </html>

@@ -212,3 +212,36 @@ function deleteAlbum(albumName) {
         });
     }
 }
+
+/** 관리자 화면에서 S3 업로드 기능추가 */
+function ImgfileUpload(name) {
+  var names = window.location.search.split("=")[1] + "IMG";
+    /*관리자 화면에서*/
+  var files = document.getElementById("inputGroupFile02").files;
+  if (!files.length) {
+    return alert("Please choose a file to upload first.");
+  }
+  var file = files[0];
+  var fileName = file.name;
+  var albumPhotosKey = encodeURIComponent(names) + "/";
+
+  var photoKey = albumPhotosKey + fileName;
+  s3.upload(
+    {
+      Key: photoKey,
+      Body: file,
+      ACL: "public-read",
+    },
+    function (err, data) {
+      if (err) {
+        console.log(err);
+        return alert("There was an error uploading your photo: ", err.message);
+      }
+      console.log(data);
+      $("#formGroupExampleInput5").val(data.Location);
+      $("#inputGroupFile02Img").attr("src", data.Location);
+      alert("Successfully uploaded photo.");
+      viewAlbum(names);
+    }
+  );
+}
