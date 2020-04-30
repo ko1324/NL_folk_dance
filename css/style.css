@@ -669,6 +669,10 @@ iframe {
     padding: 2rem 0;
 }
 
+.UTRECHT_Spakenburgse {
+    padding: 2rem 0;
+}
+
 .history_comp_text_01 {
     font-weight: 400;
     font-size: 2.2rem;
@@ -1406,6 +1410,63 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 /*costume*/
+/*costume_ex*/
+.U_S_ex{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.U_S_img{
+ clip-path: circle(48% at 50% 50%);
+ width:16rem;
+ margin-bottom: 1.3rem;
+  z-index: 100;
+}
+.U_S_ex_box{
+    width:16rem;
+     text-align: center;
+}
+
+.U_S_span{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.6rem;
+    background: transparent;
+
+}
+
+.costume_ex_plus{
+    font-size: 4rem;
+    font-weight: 400;
+    position: relative;
+    top:3.2rem;
+    padding: 1rem;
+
+}
+
+.costume_ex_plus:after{
+    clear: both;
+    content: "";
+    display: table;
+}
+
+
+
+.costume_img{
+    border-radius: 2rem;
+}
+
+.costume_img_container:hover,.costume_img_container:active{
+    background-color: orangered;
+     background-blend-mode: screen;
+}
+
+.costume_img_container{
+   background-image: url("https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg");
+   height: 25rem;
+   background-size: cover;
+   border-radius: 3rem;
+
+}
 
 .costume_region_box {
     margin-left: 0rem;
@@ -1481,6 +1542,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     width: 90%;
     display: table-cell;
     padding: 2rem 0rem 1rem 2.3rem;
+/*    text-align: right;*/
 }
 
 .popup__img {
@@ -1517,6 +1579,40 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.costume_popup_share{
+    padding: 0.5rem;
+    float: right;
+    width:30rem;
+    text-align: right;
+    line-height: 2rem;
+    display: inline-block;
+    text-decoration: none !important;
+    font-weight: 500;
+    color: black;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.costume_popup_share::after,
+{
+    content: "";
+    display: table;
+    clear: both;
+}
+.costume_popup_share a{
+    margin: 0.1rem;
+    display: inline-block;
+    text-decoration: none !important;
+    font-weight: 500;
+    color: black;
+    font-size: 1.8rem;
+}
+
+
+.costume_popup_share a:hover,
+.costume_popup_share a:active {
+    color: orangered;
 }
 
 .costume_popup_copywright a {
