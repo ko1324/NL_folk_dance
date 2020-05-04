@@ -1411,35 +1411,43 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 /*costume*/
 /*costume_ex*/
-.U_S_ex{
+.costume_ex{
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
-.U_S_img{
+
+.costume_ex_num{
+    font-size: 2.3rem;
+    font-weight: 600;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+}
+.costume_ex_img{
  clip-path: circle(48% at 50% 50%);
  width:16rem;
  margin-bottom: 1.3rem;
   z-index: 100;
 }
-.U_S_ex_box{
+.costume_ex_box{
     width:16rem;
      text-align: center;
 }
 
-.U_S_span{
-    font-size: 1.5rem;
+.costume_ex_span{
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.6rem;
     background: transparent;
 
+
 }
 
 .costume_ex_plus{
-    font-size: 4rem;
-    font-weight: 400;
+    font-size: 3rem;
+    font-weight: 500;
     position: relative;
     top:3.2rem;
-    padding: 1rem;
+    padding: 1.2rem;
 
 }
 
@@ -1455,6 +1463,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     border-radius: 2rem;
 }
 
+/*
 .costume_img_container:hover,.costume_img_container:active{
     background-color: orangered;
      background-blend-mode: screen;
@@ -1467,6 +1476,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
    border-radius: 3rem;
 
 }
+*/
 
 .costume_region_box {
     margin-left: 0rem;
@@ -1493,7 +1503,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 #columns {
-    column-width: 25rem;
+    padding-left: 2.5rem;
+    column-width: 26rem;
     column-gap: 1.5rem;
 }
 #columns a {
