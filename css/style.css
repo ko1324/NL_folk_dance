@@ -1417,10 +1417,10 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 .costume_ex_num{
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     font-weight: 600;
     padding-left: 1.5rem;
-    padding-right: 1rem;
+    padding-right: 0.5rem;
 }
 .costume_ex_img{
  clip-path: circle(48% at 50% 50%);
@@ -1453,6 +1453,13 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 }
 
+.circle {
+      width: 100px;
+      height: 100px;
+      background: black;
+      border-radius: 50%
+    }
+
 .costume_ex_plus:after{
     clear: both;
     content: "";
@@ -1473,10 +1480,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
   border-radius: 50rem;
 /*  padding: 0.3rem;*/
 /*  border:2px solid black;*/
-
-
 /*    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);*/
-    border: 4px solid black;
+    border: 3px solid black;
     z-index: 1000;
     transition: all 0.4s;
 
@@ -1500,26 +1505,51 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 .costume_region_box {
     margin-left: 0rem;
+    display: flex;
+    flex-direction: column;
+
 }
-.costume_region {
-    font-size: 3rem;
+.costume_state {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: black;
+    font-weight: 300;
+
+}
+
+.costume_region{
+    font-size: 2.5rem;
     text-transform: uppercase;
     color: black;
     font-weight: 500;
 }
-
+.costume_region_each{
+    display: flex;
+    flex-direction: column;
+}
 .costume_region_each a {
     text-decoration: none !important;
 }
 .costume_region:hover,
 .costume_region:active {
     color: orangered;
+    font-weight: 600;
+}
+
+.costume_region_each a:last-child{
+    padding-bottom: 2rem;
 }
 
 .costume_village_name {
     font-size: 3rem;
     color: black;
     font-weight: 500;
+}
+.costume_village_hashtag{
+    font-size: 1.6rem;
+    color: black;
+    font-weight: 500;
+    font-style: italic;
 }
 
 #columns {
