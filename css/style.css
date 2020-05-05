@@ -660,6 +660,7 @@ iframe {
 #Layer_1 {
     width: 40rem;
 }
+
 #Layer_1 #path2894:hover {
     fill: red;
 }
@@ -669,7 +670,7 @@ iframe {
     padding: 2rem 0;
 }
 
-.UTRECHT_Spakenburgse {
+.costume_whole_box{
     padding: 2rem 0;
 }
 
@@ -677,6 +678,7 @@ iframe {
     font-weight: 400;
     font-size: 2.2rem;
 }
+
 .history_comp_text_02 {
     font-weight: 400;
     font-size: 2.2rem;
@@ -1420,7 +1422,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-size: 2.2rem;
     font-weight: 600;
     padding-left: 1.5rem;
-    padding-right: 0.5rem;
+    padding-right: 1rem;
 }
 .costume_ex_img{
  clip-path: circle(48% at 50% 50%);
@@ -1477,8 +1479,9 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 
 .costume_img:hover {
-  border-radius: 50rem;
-/*  padding: 0.3rem;*/
+  border-radius: 3rem;
+  padding: 1rem;
+  transform: scale(0.98);
 /*  border:2px solid black;*/
 /*    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);*/
     border: 3px solid black;
@@ -1690,3 +1693,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 .costume_popup_copywright a:active {
     color: orangered;
 }
+
+.popup__img-height{
+    width: 30%;
+}
+
