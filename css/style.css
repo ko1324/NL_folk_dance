@@ -320,13 +320,56 @@ body {
 .section-dance {
     /*    height: 20rem;*/
     background-color: white;
-
     padding: 0 3rem 25rem;
 }
 
+
+.controls[data-state=hidden] {
+/*   display:none;*/
+}
+
+.controls[data-state=visible] {
+/*   display:block;*/
+}
+.controls #play:focus,.controls #pause:focus{
+    outline:0;
+}
+
+.controls #play {
+   background-image: url('../img/player_play.png');
+    left:11.3rem;
+    top:74rem;
+}
+
+.controls #pause {
+   background-image: url('../img/player_stop.png');
+    left:6.3rem;
+    top:74rem;
+}
+
+.controls button{
+    background-size: cover;
+    width:4rem;
+    height:4rem;
+    position:absolute;
+     z-index: 1000;
+    border: none;
+    cursor: pointer;
+}
+
+.controls:hover ~.dance-video-1{
+    opacity: 0.3;
+}
+
+
+
+.button:focus {outline:0;}
+
+
+
 .arrow__left-box,
 .arrow__right-box {
-    width: 3.5rem;
+    width: 3rem;
     z-index: 1000;
     position: absolute;
     /*    right: 10px;*/
@@ -335,17 +378,27 @@ body {
 /*1.svg 소스 추가시 크기 변환*/
 
 .arrow__left-box {
-    left: 10px;
+    top:74rem;
+    right: 10rem;
 }
 
 .arrow__right-box {
-    right: 10px;
+    top:74rem;
+    right: 5rem;
+}
+.arrow__left-text, .arrow__right-text{
+    position:absolute;
+    left:0;
+    top:3.5rem;
+    font-weight: 400 !important;
+
 }
 
 .dance-video-1 {
     position: relative;
+    left:-3rem;
     top: -3rem;
-    width: 95%;
+    width: 107%;
     z-index: 100;
     /*    background-position: top;*/
 }
@@ -354,6 +407,8 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
+
 
 .heading-classify {
     font-size: 1.3rem;
@@ -374,6 +429,7 @@ body {
     color: black;
     line-height: 4rem;
     padding: 0 0 4rem;
+    margin-top: 0.9rem;
     /*  letter-spacing: 2px;*/
 }
 
@@ -451,6 +507,36 @@ p {
     justify-content: space-between;
 }
 
+.dance__area-text{
+    font-size: 3rem;
+    position:absolute;
+    top:40rem;
+    left:12rem;
+    font-weight: 500;
+    width:10rem;
+    line-height: 3rem;
+    text-transform: uppercase;
+
+
+}
+.dance__area{
+    position:relative;
+}
+.dance__area_map{
+    position:absolute;
+    left:5rem;
+    top:5.5rem;
+}
+
+#Layer_1 {
+    width: 34rem;
+}
+
+#Layer_1 #path2894:hover {
+    fill: orangered;
+}
+
+
 .flex-container {
     width: 48rem;
 }
@@ -471,13 +557,16 @@ p {
     width: 102%;
     height: 0;
     padding-bottom: 57.4%;
+    margin-bottom: 2rem;
+
 }
+
 
 iframe {
     position: absolute;
-
     width: 100%;
     height: 100%;
+    border-radius: 3rem;
 }
 
 .row {
@@ -657,13 +746,7 @@ iframe {
     float: right;
 }
 
-#Layer_1 {
-    width: 40rem;
-}
 
-#Layer_1 #path2894:hover {
-    fill: red;
-}
 
 /*history*/
 .section-history {
@@ -1586,7 +1669,6 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 .popup__content {
     width: 75%;
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1594,7 +1676,6 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     background: white;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
-
     display: table;
     overflow: hidden;
 

@@ -114,28 +114,40 @@
             <section class="section-dance" id="section-dance">
 
 
-                <div class="u-center-text u-margin-bottom-2">
+                <div class="u-center-text">
 
                    <div class="section-dance-video">
-                   <div class="arrow__left-box">
 
-                   <img src="img/arrow__left.svg" alt="arrow__left" class="arrow__left">
+                       <div class="dance__video-controls controls" data-state="hidden">
 
+                      <button id="play" type="button" data-state="play" class="dance__player" onclick="video_play()">
+                      </button>
+
+                       <button id="pause" type="button" data-state="hidden" class="dance__player" onclick="video_pause()">
+                      </button>
 
                    </div>
 
-                    <div class="video-container">
                         <video class="dance-video-1" autoplay loop>
                             <source
-                                src="img/dance-video-1.mp4"
+                                src="img/de_vleegerd.mp4"
                                 type="video/mp4"
                             />
                             Your browser is not supported!
                         </video>
-                    </div>
 
-                    <div class="arrow__right-box" onclick="video_play()">
+                   <div class="arrow__left-box">
+                   <img src="img/arrow__left.svg" alt="arrow__left" class="arrow__left">
+                   <h3 class="heading-classify arrow__left-text">
+                        PREV
+                    </h3>
+                   </div>
+
+                    <div class="arrow__right-box">
                        <img src="img/arrow__right.svg" alt="arrow__right" class="arrow__right">
+                   <h3 class="heading-classify arrow__right-text">
+                        NEXT
+                    </h3>
                    </div>
 
                 </div>
@@ -143,7 +155,7 @@
 
 
 
-                    <h3 class="heading-classify">
+                    <h3 class="heading-classify dance__name-tag">
                         name
                     </h3>
                     <div class="dance__name">
@@ -153,7 +165,8 @@
                     </div>
                 <div class="dance__detail">
                     <div class="dance__flex-1">
-                        <div class="dance__text">
+
+                             <div class="dance__text">
                             <div class="dance__description">
                                 <h3 class="heading-classify">
                                     Description
@@ -171,6 +184,7 @@
                                 <h3 class="heading-classify">
                                     Area
                                 </h3>
+                                <div class="dance__area_map">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 338 304.2" style="enable-background:new 0 0 338 304.2;" xml:space="preserve">
 <style type="text/css">
@@ -210,6 +224,7 @@
 	c2.9-0.3,5.2,1.2,7.6,1.9c3,0.9,4.9-1.1,7.2-2.4c1.6-0.9,3.2-2.9,4.3-3.8c1.1-1,2.9,0,4.3,0c2.1,0,3.3,2.6,5.2,3.3
 	c0.8,0.3,5.8-2.5,6.7-2.9c2.8-1.1,5.5-2,7.6-2.9C179,4.3,179.6,3.6,180.2,2.8z"/>
 </svg>
+                           </div>
                             </div>
                         </div>
 
@@ -220,7 +235,7 @@
 
                         <div class="dance__finder">
                             <h3 class="heading-classify">
-                                finder
+                                Auteurs
                             </h3>
                             <p class="paragraph u-margin-bottom-2">
                                 Mrs. A Sanson-Cats<br> &#38;Mr. A. de Koe
@@ -229,7 +244,7 @@
 
                          <div class="dance__year">
                             <h3 class="heading-classify" >
-                                THE YEAR OF DISCOVERY
+                                the year of publication
                             </h3>
                             <p class="paragraph__year u-margin-bottom-2">
                                 1928
@@ -247,7 +262,7 @@
                             </p>
                             <p class="paragraph">
 
-                            <a href="http://www.elschekorf.nl/pdf/Baonopstekker.pdf" class="btn btn--black">Cees Temple; NL</a>
+                            <a href="https://www.stichtingtoverbal.nl/hetvervolg/baonopstekker.pdf" class="btn btn--black">Cees Temple; NL</a>
                             </p>
 
                         </div>
@@ -280,6 +295,7 @@
             </section>
         </main>
 
+<!--
         <footer class="footer">
             <div class="row clearfix">
                 <div class="col-1-of-3-1">
@@ -330,6 +346,7 @@
                 </div>
             </div>
         </footer>
+-->
         <script>
             var video = document.querySelector('.dance-video-1')
 
@@ -337,11 +354,18 @@
 //                console.log(video.paused);
                 if(video.paused) {
                     video.play();
+
                 } else {
                     video.pause();
                 }
+            }
 
+            function video_pause() {
+//                console.log(video.paused);
+                if(video.play) {
+                    video.pause();
                 }
+            }
 
         </script>
     </body>
