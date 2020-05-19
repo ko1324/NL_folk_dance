@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="menu.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+
+
+        <!-- SNS 공유용 주소 연결 용 --> <script type="text/javascript" async>
+        var url_default_fb = "https://www.facebook.com/sharer/sharer.php?u=";
+        var url_default_tw_txt = "https://twitter.com/intent/tweet?text=";
+        var url_default_tw_url = "&url=";
+        var url_this_page = location.href;
+        var title_this_page = document.title;
+        var url_combine_ks = url_default_ks + url_this_page;
+        var url_combine_fb = url_default_fb + url_this_page;
+        var url_combine_tw = url_default_tw_txt + document.title + url_default_tw_url + url_this_page;
+        var url_combine_band = url_default_band + encodeURI(url_this_page)+ '%0A' + encodeURI(title_this_page)+'%0A' + '&route=tistory.com';
+        var url_combine_naver = url_default_naver + encodeURI(url_this_page) + title_default_naver + encodeURI(title_this_page); </script>
+
+
+    </head>
+
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="../../img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../history_radio.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../folk_dance_site/folk_dance_main.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="costume_utrecht_spakenburgse.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="#section-book"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="../img/logo.png" alt="Logo" class="header__logo" />
+            </div>
+        </header>
+        <main>
+            <section class="costume_whole_box" id="Spakenburgse">
+
+
+                <div class="col-sm-4">
+                    <div class="costume_region_box ">
+                    <div class="costume_region_each">
+                    <span class=costume_state><span class="circle"></span>Utrecht</span>
+                    <a href="costume_utrecht_spakenburgse.html"><span class=costume_region>SPAKENBURGSE</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>FRIESLAND</span>
+                    <a href="costume_friesland_friesland.html"><span class=costume_region>FRIESLAND</span></a>
+                    <a href="costume_west_friesland_friesland.html"><span class=costume_region>WEST_FRIESLAND</span></a>
+                    <a href="costume_friesland_hindeloopen.html"><span class=costume_region>hindeloopen</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>ZEELAND</span>
+                    <a href="costume_zeeland_walcheren.html"><span class=costume_region>WALCHEREN</span></a>
+                    <a href="costume_zeeland_zuidbeveland.html"><span class=costume_region>ZUID BEVELAND</span></a>
+                     <a href="costume_zeeland_middelburg.html"><span class=costume_region>MIDDELBURG</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>NOORD-HOLLAND</span>
+                    <a href="costume_noord_isle.html"><span class=costume_region>ISLE OF MARKEN</span></a>
+                    <a href="costume_noord_volendam.html"><span class=costume_region>VOLENDAM</span></a>
+                    <a href="costume_noord_huizen.html"><span class=costume_region>huizen</span></a>
+                    <a href="costume_noord_men.html"><span class=costume_region>NOORD _men</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>zuid-holland</span>
+                    <a href="costume_gro_gro.html"><span class=costume_region>scheveningen</span></a>
+                    <a href="costume_gro_gro.html"><span class=costume_region>Spijkenisse</span></a>
+                    <a href="costume_gro_gro.html"><span class=costume_region>katwijk</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>OVERIJSSEL</span>
+                    <a href="costume_over_staphorst.html"><span class=costume_region>STAPHORST</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>GELDERLAND</span>
+                    <a href="costume_geld_achter.html"><span class=costume_region>ACHTERHOEK</span></a>
+                     <a href="costume_geld_achter.html"><span class=costume_region>oldebroek</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>FLEVOLAND</span>
+                    <a href="costume_flevoland_urk.html"><span class=costume_region>URK</span></a>
+                    </div>
+                     <div class="costume_region_each">
+                    <span class=costume_state>Limburg</span>
+                    <a href="costume_gro_gro.html"><span class=costume_region>venray</span></a>
+                    </div>
+                </div>
+                </div>
+                
+                
+                <div class="costume_right_box row col-8">
+                  <span class="costume_village_name">Hindeloopen
+                  <div class="costume_village_hashtag">#klederdrachthindeloopen #hindeloopencostume #aaldhielpen</div>
+                  </span>
+
+
+                   <div class="costume_ex row">
+               <span class="costume_ex_num">1</span>
+               <div class="costume_ex_box">
+               <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_refer_check3.jpg" class="costume_ex_img" alt="costume_ex_img">
+               <span class="costume_ex_span">checked apron</span>
+               </div>
+                   <span class="costume_ex_plus">+</span>
+               <div class="costume_ex_box">
+               <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_refer_jacket.jpg" class="costume_ex_img" alt="costume_ex_img">
+               <span class="costume_ex_span">The chintz wentke(coat), a long overdress with floral motifs on white background</span>
+                   </div>
+               <span class="costume_ex_plus">+</span>
+               <div class="costume_ex_box">
+               <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_refer_hat2.jpg" class="costume_ex_img" alt="costume_ex_img">
+               <span class="costume_ex_span">a check-patterned stiff hat</span>
+                   </div>
+              
+               </div>
+
+
+
+
+
+                  <div id="columns">
+                    <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_01.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Friese_vrouwen_op_het_ijs_Herre_goe_zel_ji_so_klijd,_nu_Mok%C5%93rum_te_pikjen_Hoe_nu_zult_gij_z%C3%B3_gekleed,_naar_Molqueren_Sleeden_Quoi_avec_ces_beaux_habits,_vous_allez_en_tra%C3%AEneau_%C3%A0_Molqueren_(titel_op_object),_BI-B-FM-108-10.jpg','Rijksmuseum','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_01.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_02.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Vrouw_uit_Hindeloopen_Femme_de_Hindeloopen_(titel_op_object),_RP-P-1908-2263.jpg','Rijksmuseum','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_02.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+                  
+                <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_03.jpg'); popup__span('https://upload.wikimedia.org/wikipedia/commons/a/a1/Klederdracht_van_Hindeloopen_in_Friesland%2C_1857_Hindelopen._Provincie_Friesland_II_%28titel_op_object%29%2C_BI-B-FM-137-2.jpg','Rijksmuseum','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_03.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_04.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Klederdracht_van_Hindeloopen_in_Friesland,_1857_Provincie_Friesland._Hindelopen_XLIII_(titel_op_object),_BI-B-FM-137-43.jpg','Rijksmuseum','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_04.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_05.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Vrouw_in_de_klederdracht_van_Hindeloopen_Hindelopen_Prov_Friesland_(titel_op_object),_RP-F-F01127-BR.jpg','Rijksmuseum','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_05.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+        
+                  
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_07.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/13952362750/in/photolist-nfVvms-adPEG8-nxqddk-4W3WNq-4W3VUL-8trTPF-adnG5f-h6udNh-bwD7cT-bwD82z-bwDxiP-bwD98x-bwDxy4-bwD6it-bwDwFt-bwDagp-bwD7EF-bwD7qH-4VYCMg-4VYFUk-4W3Uad-4VYDgB-4VYCe4-4W3TEY-4W3VE9-4VYBr4-4W3V6J-4VYEtn-4W3Vjy-4W3RWm-6dwuW3-6dskd8-6dww4U-6dsmUZ-6dsmwz-6dwtV5-6dskri-6dsmYn-6dsoMz-6dsmAH-6dwwtm-6dwvCL-6dwvUy-6dwvjL-6dwvYG-6dskkn-4W3WsS-5osbr1-6dwuHG-bwDbJX','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_07.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_08.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Hindeloopen_(1924).jpg','Onbekend','https://creativecommons.org/publicdomain/mark/1.0/deed.nl','Public Domain Mark 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_08.jpg" class="costume_img">
+                   </div>
+                  </a>
+                  
+<!--
+                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_09.jpg'); popup__span('https://www.publicdomainpictures.net/en/view-image.php?image=48757&picture=entry-folklore-market-11','publicdomainpictures','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/hindeloopen/hindeloopen_09.jpg" class="costume_img">
+                   </div>
+                  </a>
+-->
+                  
+                  
+                </div>
+                
+                </div>
+                
+                
+
+
+            </section>
+        </main>
+    </body>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg" alt="Tour photo" class="popup__img" id="popup__img--src" />
+
+          <span class="costume_popup_copywright">
+          <a href="https://flic.kr/p/f6i2wB" id = 'name_a'>Ben Eekhof/</a>
+          <a href="https://creativecommons.org/licenses/by/2.0/" id='copyright_a'>CC BY 2.0</a>
+          </span>
+
+          <span class="costume_popup_share">
+          <!-- 페이스북 공유 버튼 --><a href="" onclick="window.open(url_combine_fb, '', 'scrollbars=no, width=600, height=600'); return false;">facebook</a>
+          <!-- 트위터 공유 버튼 --><a href="" onclick="window.open(url_combine_tw, '', 'scrollbars=no, width=600, height=600'); return false;">twitter</a>
+           <!-- SNS버튼 끝 -->
+          </span>
+
+        </div>
+        <div class="popup__right">
+            <a href="" class="popup_close">&times;</a>
+        </div>
+      </div>
+    </div>
+
+
+   <script>
+    function open__popup(img_url){
+        $('#popup__img--src').attr('src', img_url);
+        /*img_url로 바꾸겠다. */
+    }
+
+    function popup__span(name_a,name,copyright_a,copyright){
+        $('#name_a').attr('href',name_a);
+        $('#name_a').text(name+'/');
+        $('#copyright_a').attr('href',copyright_a);
+        $('#copyright_a').text(copyright);
+    }
+
+    </script>
+</html>

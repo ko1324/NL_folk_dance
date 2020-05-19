@@ -219,17 +219,17 @@
                         History</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="folk_dance_main.html" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="folk_dance_site/folk_dance_main.html" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
                         FOLK DANCE</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="costume_utrecht_spakenburgse.html" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="costume_site/costume_utrecht_spakenburgse.html" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
                         COSTUMES</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#section-book" class="navigation__link" onClick="gotoMenu(this)"><img
+                    <a href="other_groups.html" class="navigation__link" onClick="gotoMenu(this)"><img
                             src="img/menu_arrow.svg" alt="" class="menu__arrow" />
                         OTHER GROUPS</a>
                 </li>
@@ -496,15 +496,31 @@
      // button에 있는 class중에 연도정보를 가져올 수 있음
       var barYear = 'rule_' + $(this).attr('class').split(" ")[0].split("_")[2];
 //     console.log( $('.' + barYear));
-    $('button').removeClass('selected');
-    $(this).addClass('selected');
+
+        
+        $('button.open_toggles').each(function (i, el) {
+                $(el).removeClass('selected');
+            });
+        
+        
+        
+        //모두 리무브클래스 해주고 +더한다
+        
+        $(this).addClass('selected');
+        
 
     console.log( $(this).parent().siblings("#rule").children('.selected')[0]);
     var barYearRomove = $(this).parent().siblings("#rule").children('.selected')[0];
 //    $('.' + barYearRomove).removeClass('selected');
-    $('.' + barYear).addClass('selected');
+   
 
-
+        
+        $('#rule li').each(function (i, el) {
+                $(el).removeClass('selected');
+            });
+        
+         $('.' + barYear).addClass('selected');
+//모든것을 지우고+추가하는 방식으로
 
 
 });

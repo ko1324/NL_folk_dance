@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="menu.js"></script>
+    </head>
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="../img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="../index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../history_radio.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                        ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                     <li class="navigation__item">
+                        <a
+                            href="../folk_dance_site/folk_dance_main.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="costume_utrecht_spakenburgse.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../other_groups/other_groups.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="../img/logo.png" alt="Logo" class="header__logo" />
+            </div>
+        </header>
+
+        <main>
+            <section class="section-dance" id="section-dance">
+
+
+                <div class="u-center-text">
+
+                   <div class="section-dance-video">
+                  
+                       <div class="dance__video-controls controls" data-state="hidden">
+                   
+                       <button id="play" type="button" data-state="play" class="dance__player dance_btn" onclick="video_play()">
+                      </button>
+                      
+                       <button id="pause" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_pause()">
+                      </button>
+                      
+                      <button id="slow" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_slow()">
+                      </button>
+                      
+                      <button id="skipb" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipb()">
+                      </button>
+                      
+                      <button id="skipf" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipf()">
+                      </button>
+                      
+                   </div>
+                       
+                        <video class="dance-video-1" autoplay loop>
+                            <source
+                                src="../folk_dance_video/afk.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser is not supported!
+                        </video>
+                   <a href="../folk_dance_site/folk_dance_main.html" class="back__box back_a dance_btn">
+                   <img src="../img/back-white_2-34.svg" alt="arrow__left" class="back__img">
+                   <h3 class="back__text">
+                       BACK TO<br> DANCE LIST
+                    </h3>
+                   </a>
+                </div>
+                </div>
+
+
+
+                    <h3 class="heading-classify dance__name-tag">
+                        name
+                    </h3>
+                    <div class="dance__name">
+                        <h2 class="heading-dance-name u-margin-bottom-2">
+                            Afklappertje
+                        </h2>
+                    </div>
+                <div class="dance__detail">
+                    <div class="dance__flex-1">
+
+                             <div class="dance__text">
+                            <div class="dance__description">
+                                <h3 class="heading-classify">
+                                    Description
+                                </h3>
+                                <p class="paragraph u-margin-bottom-2">
+                                    According to "Nederlandse Volksdansvereniging" by A. Sanson-Catz & A.de Koe, every dance party was concluded with this dance on Terschelling.
+
+                                </p>
+                            </div>
+                            </div>
+                            
+                            <div class="dance__area">
+                                <h3 class="heading-classify">
+                                    Area
+                                </h3>
+                                
+                                <div class="dance__area_map">
+                                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.49 221.23"><title>folk_map_fri_tes</title><g id="g2487"><path id="path7043" d="M260.6.68c1.68-1.92-4.51,2.57-7,3.07-2.06.41-4.2,1.71-6.57,2.19a23.14,23.14,0,0,1-7,0c-1.92-.19-4.88.43-7,.43-2.79,0-4.29.77-6.13,1.32-.89.27-2.68,4.56-3.07,5.25-.56,1,.3,5.19.44,6.57.34,3.4,3.77,1.51,5.69,1.32.46,0,2.83-3.62,3.07-3.95,1.43-1.91,3.57-1.11,5.69-1.75s4.15-.48,6.13-.87c2.17-.44,3.68-1.56,5.26-2.19A24.64,24.64,0,0,0,254.9,9c1.76-1.16,2.36-1.5,4.38-2.63,1.69-.93,4.54-.43,6.57-.43,1.63,0-.58-3.21-.87-4.82C264.56-1.15,261.25.75,260.6.68Z"/><path id="path7041" d="M139.73,16.45c-.5-2.78-4.85.4-5.25.43-1.49.13-1.58,4.85-1.75,5.7-.3,1.46,2.18,4.9,2.62,5.69.93,1.68,5,2.17,6.57,2.63,2.67.8,3.69-1.13,5.26-1.75s2.95-2.32,3.94-3.07a36.69,36.69,0,0,1,4.38-2.63c1.93-1.07,3.68-1.26,6.13-1.75.22,0,6,1.72,6.13,1.75,1.77.36,5.82-1.07,7-1.31,1.56-.31,4.2-1.3,5.69-1.75,1.82-.55,3.63-.83,5.25-1.32,2-.6,4.76.26,6.57.44,1.53.15,4.58-.72,6.13-.87,2.1-.21,3.21-1.3,4.82-2.19,1.88-1-3.58-2.65-5.69-3.07-2.36-.47-4.62-.88-7-1.31s-4.8.21-7,.44c-1.94.19-4.39,1.31-6.56,1.75-2,.4-4.52,0-6.57,0a30.51,30.51,0,0,0-6.57.87c-2.17.44-4.17,2.22-5.69,3.07-2.38,1.32-5.6,1.81-8.32,2.63-2.39.71-5.11-.5-7-.88C140.47,19.48,141.29,18.23,139.73,16.45Z"/><path id="path7039" d="M120.47,23.89c.14-.81-2.52,2.18-3.43,2.89a15.74,15.74,0,0,1-7.69,4.57c-3.15.76-2.15,5-3.78,7.09-3.22.86-6.26-1.49-9.52-1.36a5.6,5.6,0,0,0-6.63,3.13c-1.61,2.83-5.23,2.66-8,3.63-4.26.8-8.57,1.38-12.68,2.82-3.67,1-5.36,3.15-9.06,4.13-3,.42-4.08,7.31-5.72,7.19-2.75,1.7-5.93-2.8-6.16-5,.9-2.5,2.24-5.67,4.71-7,5.58-3.44,9.74-8.11,16.25-9.75,4.17-1.5,8.34-3,12.63-4.1,4.67-1.6,9.73-1,14.5-2.16,3.22-.82,6.14-2.51,9.31-3.47,4.72-2.23,9.55-4.48,14.71-5.41C121.05,21.42,119.06,23.31,120.47,23.89Z"/><path id="path7037" d="M51.27,66.81c-3.48.16-2.84.72-3.94,4.38-1.39,4.64,2.48.41,2.63.43C53.33,72.19,51.09,67.74,51.27,66.81Z"/><path id="path7035" d="M73.61,80.38c1.74.29-2.19,3.06-2.19,4.82,0,4.22,4.31-2.1,4.38-2.19C77.05,81.34,73.85,80.67,73.61,80.38Z"/><path id="path7033" d="M36,65.49c.46-1.19-1.85.55-2.37.77-2.18,1.43-4.68,2.52-6.31,4.64-2,2.64-4.83,4.49-7.35,6.62-2.81,1.82-6.63,1.67-8.94,4.3-1.75,1.79-4,3-5.74,4.78C3.53,89.21,2,91.94,0,94.4c-.42,2,2.63,2.4,4.05,3,2.11.56,3.56-.1,5.66-1.29,3.16-2.47,3.94-2.08,4.82-3.87,3.53-3.33,2-3.78,4.34-5.36,1.77-.88,3.25-2.06,2.85-4.24.3-1.68-.31-3.66.78-5.11,1.87-.73,4-.43,5.95-1.33,2-.45,4.37-.35,5.7-2.19s3.25-3.07,4-5.22c1.21-1.31,1-2.82-1-2.87A6.3,6.3,0,0,1,36,65.49Z"/><path id="path3129" d="M252.21,55.74c.21-.55,3.86.11,4,.88.65,3.26,1.69,4.68,0,7.73C255,66.47,255,70.28,254,72.08c-1.48,2.67-2.1,4-3.86,6.62-1,1.47-4.57,3.68-3.87,7.18.34,1.69,2,7.09,1.66,8.29s-.85,4.51-2.21,6.07c-1.65,1.89-2.48,3.74-3.87,5.52-.71.92-4,3.3-3.86,5,.25,2.56-.38,4.59,2.21,7.18,1.92,1.93,3.9,5.09,6.07,5.53,3.23.64,7.87.62,9.94,1.65,2.75,1.38,3.81.35,6.07,4.42.83,1.49.36,2.07.95,2.88a26.09,26.09,0,0,0,4,3.19c2.29,1.72,5.39,2.65,6.08,6.08.51,2.55,1.88,5.45,1.66,7.73-.27,2.64-1.58,7,.55,9.39a31.27,31.27,0,0,0,7.18,6.62c2.5,1.67,5.86,1.92,4.42,5.53a42.18,42.18,0,0,1-2.77,6.07c-1.07,1.94-1.83,4.38-3.31,6.08-2.21,2.53-2.43,4.55-6.63,5-4,.4-4.41,1.48-7.73-1.11-1.89-1.47-3.56-5.67-7.18-3.86s-4,1.39-6.62,4.41c-1.63,1.87-3,2.61-5,4.42-1,.93-3.41,4.34-5.53,5-1.62.49-5.61.94-6.62,2.76a18.35,18.35,0,0,1-3.87,5.53,16.47,16.47,0,0,0-2.22,2.71,6.25,6.25,0,0,1-2.75,2.26c-2.45,1-5.64,2-8.83,3.31-1,.4-6.82,3.68-7.74,3.31-2.22-.89-3.67-3.86-6.07-3.86-1.66,0-3.73-1.1-5,0s-3.07,3.36-5,4.41c-2.63,1.47-4.81,3.81-8.28,2.77-2.79-.84-5.46-2.55-8.84-2.21-4.76.47-4.9-.58-6.75,3.36-1-1.54-2.72-4.45-4.14-5.61a61.44,61.44,0,0,0-6.67-5c-.91-.46-3-.62-4.46-1.09,4-.6-8.43-2.3-10.68-2.58-6.21-1.68-12.4.08-17.73,3.34-5.25,5.67-8.8-2-13.8-3.36-5.35-3.76-12.2.87-17.63-2.92-3.37-4.32-9.46-10.15-1.94-13.91,3.1-5.05,5-10.65,4.25-16.62-.56-3.57-.55-8.16-1.26-12-3.77-7.15,1.6-14.3-5.31-20-4.46-8.78,6.05-15.19,5.16-23.09,1.31-4.2,2.08-7.61,3.73-11.73s1.89-8.7,3.72-12.9c4.3-5.19,11.18-7.51,16-12.25,4-6.51,7.84-13.24,16.48-14.42,8.62-2.75,16-8.15,24.59-10.77,5.79-3.33,11.12-8.12,17.72-9.64,7.72,1.12,12.62-4.71,19-7.51,7.67-2.46,16-.59,23.53-3.56,11.06-4.69,13.19,10.19,12.25,17.83C237.24,56.13,246.56,55.71,252.21,55.74Z"/></g></svg>
+                          
+                           </div>
+                           
+                           <span class="dance__area-text">Friesland-Terschelling</span>
+                           
+                           
+                            </div>
+                        </div>
+
+                <div class="flex-container">
+                    <div class="dance__flex-2">
+                       <div class="dance__year-finder">
+
+
+                        <div class="dance__finder">
+                            <h3 class="heading-classify">
+                                Auteurs
+                            </h3>
+                            <p class="paragraph u-margin-bottom-2">
+                               Elise van der <br>Ven-ten Bensel
+                            </p>
+                        </div>
+
+                         <div class="dance__year">
+                            <h3 class="heading-classify" >
+                                the year of publication
+                            </h3>
+                            <p class="paragraph__year u-margin-bottom-2">
+                                1943
+                            </p>
+                        </div>
+                         </div>
+
+
+                       
+
+                         <div class="dance_related">
+                         <h3 class="heading-classify" "text-related">
+                                RELATED VIDEO
+                            </h3>
+
+                        
+                            <div class="video_wrap">
+                          <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fterschellingervolksdansen%2Fvideos%2F967266116666052%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+                          </div>
+                          <div class="video_wrap">
+                         <iframe src="http://in.beeldengeluid.nl/collectie/static/share.html?exid=4033895&guci=TERSCHELLINGE-FHD00Z030N0" width="400" height="400" frameborder="no" scrolling="no"></iframe>
+                          
+                        </div>
+                        </div>
+
+                </div>
+                </div>
+
+<!--
+                  <div class="dance__year">
+                            <h3 class="heading-classify" >
+                                THE YEAR OF DISCOVERY
+                            </h3>
+                            <p class="paragraph__year u-margin-bottom-2">
+                                1928
+                            </p>
+                        </div>
+-->
+
+
+                        </div>
+            </section>
+        </main>
+
+<!--
+        <footer class="footer">
+            <div class="row clearfix">
+                <div class="col-1-of-3-1">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >HISTORY</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >folk dance</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >costume</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2-of-3-2">
+                    <div class="footer__copyright">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Recusandae voluptatibus praesentium dignissimos.
+                        Repellendus dolor esse cupiditate fugiat dolores. Eum
+                        placeat, rem iusto fugit distinctio a architecto labore
+                        debitis amet accusantium hic, rerum voluptas modi
+                        asperiores quibusdam explicabo facere dicta quisquam id
+                        impedit. Aut magni, Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Veritatis, fuga!
+                    </div>
+                </div>
+            </div>
+        </footer>
+-->
+        <script>
+            var video = document.querySelector('.dance-video-1')
+
+            function video_play() {
+//                console.log(video.paused);
+                if(video.paused) {
+                    video.play();
+                    
+                } else {
+                    video.pause();
+                }
+            }
+            
+            function video_pause() {
+//                console.log(video.paused);
+                if(video.play) {
+                    video.pause();
+                }
+            }
+
+             function video_slow() {
+                 if(video.playbackRate === 1.0){
+                     video.playbackRate = 0.5	
+                      $('#slow').css('background-image', 'url(../img/player_orif.png)');
+                     
+                 } else {
+                    video.playbackRate = 1.0;
+                     $('#slow').css('background-image', 'url(../img/player_slow.png)');
+                };
+            }
+       
+              
+            function video_skipf() {
+                video.currentTime += 3;
+            }
+            
+              
+            function video_skipb() {
+                video.currentTime -= 3;
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="../menu.js"></script>
+    </head>
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="../img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="../index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../history_radio.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                        ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                     <li class="navigation__item">
+                        <a
+                            href="../folk_dance_site/folk_dance_main.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="costume_utrecht_spakenburgse.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../other_groups/other_groups.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="../img/logo.png" alt="Logo" class="header__logo" />
+            </div>
+        </header>
+
+        <main>
+            <section class="section-dance" id="section-dance">
+
+
+                <div class="u-center-text">
+
+                   <div class="section-dance-video">
+                  
+                       <div class="dance__video-controls controls" data-state="hidden">
+                   
+                      <button id="play" type="button" data-state="play" class="dance__player dance_btn" onclick="video_play()">
+                      </button>
+                      
+                       <button id="pause" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_pause()">
+                      </button>
+                      
+                      <button id="slow" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_slow()">
+                      </button>
+                      
+                      <button id="skipb" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipb()">
+                      </button>
+                      
+                      <button id="skipf" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipf()">
+                      </button>
+                      
+                       
+                      
+                      
+                   </div>
+                       
+                        <video class="dance-video-1" autoplay loop>
+                            <source
+                                src="../folk_dance_video/druiekusman.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser is not supported!
+                        </video>
+                   
+                     <a href="../folk_dance_site/folk_dance_main.html" class="back__box back_a dance_btn">
+                   <img src="../img/back-white_2-34.svg" alt="arrow__left" class="back__img">
+                   <h3 class="back__text">
+                       BACK TO<br> DANCE LIST
+                    </h3>
+                   </a>
+                   
+                </div>
+                </div>
+
+
+
+                    <h3 class="heading-classify dance__name-tag">
+                        name
+                    </h3>
+                    <div class="dance__name">
+                        <h2 class="heading-dance-name u-margin-bottom-2">
+                            druiekusman
+                        </h2>
+                    </div>
+                <div class="dance__detail">
+                    <div class="dance__flex-1">
+
+                             <div class="dance__text">
+                            <div class="dance__description">
+                                <h3 class="heading-classify">
+                                    Description
+                                </h3>
+                                <p class="paragraph u-margin-bottom-2">
+                                    One of those very old East Dutch dances. This song tells about the farmer's daughter that her parents did not like dating Driekus.  it all turned out well in the end. According to A. Sanaon-Catz, Music and text are very similar to that of a differently performed dance, described by Gertrud Meyer in “Tanzspiele und Volkstänze” under the name of “Vader und Moder” (Tecklenburg).
+                                </p>
+                            </div>
+                            </div>
+                            
+                            <div class="dance__area">
+                                <h3 class="heading-classify">
+                                    Area
+                                </h3>
+                                
+                                <div class="dance__area_map">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 338 304.2" style="enable-background:new 0 0 338 304.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#020203;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:11;stroke-miterlimit:10;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:#020203;stroke:#FFFFFF;stroke-width:4;}
+</style>
+<path id="path2894" sodipodi:nodetypes="cccccccccccccccccssccccccccccccccccccccsssscsscccccccccccccccccccccccc" class="st3" d="
+	M148.9,287.7c-0.3,0.1-1.4,0.4-2.5,0.7c-5.1,2.6-11,2.1-16.5,1.7c-5.9-0.4-9.7-6.2-13.3-10.3c-3.1-5.3-9.6-7.2-15.4-7
+	c-4.3,0.6-8.3,4-11.7-0.2c-5.1-5.5-6.9,7.3-11.8,1.8c-5.5-1.6-10,4.3-13.3,7.9c-4.9,2.6-1.9,10.7-8.1,11.4c-5.1,3-10.6,3.2-16.2,1.8
+	c-6.1,1.7-10-2.3-12.7-7.3c-2.5-7.3-8.8,0.6-13.1-3.7c-1.7-3.1-7.4-4.6-8.1-7.6c3.1-1.1,6.3-5.1,1.9-7.6c-1-2.2-4.6-6.3,0.4-5.5
+	c5.8,0.3,7.5-7.6,13.1-8.5c7,0.1,6.5-7.9,9-12.5c0.8-1.3,1.1-2.7,1.1-4c0-1.3-0.3-2.6-0.9-3.9c-0.5-1.3-1.2-2.5-1.9-3.7
+	c3.9,0.1,5.4,5.6,9.7,4.8c4.2,1.6,7-2.7,10.3-3.4c2.3,3.2,4.4,7.2,9.2,5.8c4.6,0.2,8.7-2.5,12.7-4.4c3.8-1.9,8.2-4,12.6-2.3
+	c4.3,0,7.2,3.3,10.5,5.5c3.8,2.9,8.4,4.6,13.1,4.8c2-2,1.9-6.4-0.2-9c-1.8-3.8-5.6-6.2-7.2-10.2c-2.3-3.7-3.6-7.9-3.6-12.4
+	c-0.3-3.8,0.8-10.6-5.1-8.5c-3.3,1.1-7.2,7.2-10.4,3.8c-3-4.6,3.1-6.4,4.4-10.1c0-3.1,0.9-7.9-3.1-8.7c-3.9-1.1-7.7-2.9-10.7-5.6
+	c0.7-2.8,5.9-4.4,2.1-7.4c-2.4-3.3-4.9-7-4.5-11.3l0.3-0.6l0-1.1c2.1,0,4.6,0,7.1-0.4c2.5-0.4,5-1.2,7.3-2.3
+	c2.3-1.1,4.6-2.7,6.6-4.5c2-1.9,3.9-4.1,5.5-6.7c1.6-2.6,3-5.5,4.1-8.7c3.8-4.1,9.2-8.2,15-12.6c5.7-4.3,11.8-8.9,16.7-14
+	c5-5.1,10.5-14.3,11.2-21c4.8,1.2,8.4,4.9,10.5,9c4.7,5.9,10.3,0.4,12.5-4.7c5.9-0.1,10.6,6.6,14.5,10.8c5.6,3.4-1.6,9.3,2.6,11.9
+	c8.5,1.8-0.2,8.3-1.6,12.7c-2.9,3.2-12.4,8-4.1,11c5.8,2.4,9.3,7.5,10.2,13.6c0,9.2,9.3,5.7,14.9,8.7c5.9,1.6,13.2,4.4,18.5-0.1
+	c2.3-5.5,13.4-8.8,13-0.1c2.1,5.9,7.2,11.5,13.6,12.6c6.2-2.4,12-0.6,17.3,2.3c6.5-5.7,9.5,3.2,9,8.7c2.7,6.1,11.7,1.9,15.4,7.1
+	c1.2,12.5-20.8,16.1,2.6,22.1c25.9,8.7,1.1,43.6-16.2,30.5c-12,11-30.4,14.2-43.6,16.7c1.4,12.3-32.4-11.1-42.3-11.9
+	c-11.5,5.7,22.1,19.7-5.7,11.3c-11.1,6.6-27.9,8.9-14.7,25.7c-3.3,2.9-4,3.4-2.9,4.6c-3.4-2.4-9.6,1.5-12.6-3.9
+	C152.5,288.5,149.8,287.8,148.9,287.7z"/>
+<path id="path2826" sodipodi:nodetypes="ccccccccccccccssssssccccccccccccccccccccccccccccccccssssssssc" class="st3" d="M180.2,2.8
+	c4,3.1,8.3,6.7,11.4,11.5c3.5,1.4,3.4,4.5,0.6,6.6c-2,3.8-7.9,3.6-8.5,8.4c0.4,3.7,0,8.1,2.2,11.3c1.7,3,4.6,5.2,8.1,5.6
+	c5.8,2.1,12.6,0.6,18,4.2c3,2.3,8.1,2.3,9.5,6.3c-0.4,3.5,1.3,6.8,5.4,5.4c3.7,0.5,6.9,4,10.8,2.4c4.7,1.7,6.8-1.9,6.2-6.2
+	c-0.2-4.5,2.3-7.3,6.3-8.8c3.1-2.5,7.5-3,11.2-1.5c5,2.8,10.1,5.4,14.7,8.8c-1.1,0.5-1.4,1.3-1.3,2.5c0.1,1.1,0.7,2.5,1.5,4
+	c0.8,1.5,1.8,3.2,2.8,4.9c1,1.7,1.9,3.4,2.6,5c0.7,1.6,1.1,3.1,1,4.4c-0.1,1.3-0.8,2.3-2.2,3c-1.4,0.7-3.6,1.1-6.8,1
+	c-2.7,23.9,30.3,29.1,44.3,23.5c15.4-5.8,21.2,32.7,13.6,46.1c14.3,11.7-11,15.4-14.4,23.4c-11.5,5.7-12.6,23.1-28.2,19.7
+	c-3.7-5.2-12.7-1-15.4-7.1c0.5-5.5-2.5-14.4-9-8.7c-5.3-2.9-11.1-4.7-17.3-2.3c-6.4-1.1-11.5-6.7-13.6-12.6c0.4-8.7-10.7-5.4-13,0.1
+	c-5.2,4.5-12.6,1.7-18.5,0.1c-5.6-2.9-14.9,0.5-14.9-8.7c-1-6.1-4.4-11.2-10.2-13.6c-8.3-3.1,1.3-7.8,4.1-11
+	c1.3-4.4,10.1-10.9,1.6-12.7c-4.2-2.7,3-8.6-2.6-11.9c-3.9-4.2-8.7-10.9-14.5-10.8c-2.2,5.1-7.8,10.6-12.5,4.7
+	c-2.1-4.2-5.7-7.8-10.5-9c0.1-5.1-0.3,0.2-0.3,0.2c0.4-5.4,0.3-9.6-4.4-17.5c-5.4-12.9,6.1-7,9-10c4.3-2.8,10.8,0.1,14.8-3.3
+	c4.5-1.8,3.6-10.2-2-8.9c-4.5,0-7.4-5.1-3.1-7.8c1.3-1.9,1.1-3.7,0.6-3.3c-1.6-1-3.7-3-4.7-4.6c-1.2-2.4-2.6-4.7-4.6-6.6
+	c-1.3-1.8-3-3.3-5.1-4.1c-2.6-1.2-4.8-3.3-7-5.1c-1.7-1-3.5-1.7-5.3-2.5c-1-1.2-0.9-1.4-1.6-2.8c1.7-3.4,1.8-2.5,5.9-2.9
+	c2.9-0.3,5.2,1.2,7.6,1.9c3,0.9,4.9-1.1,7.2-2.4c1.6-0.9,3.2-2.9,4.3-3.8c1.1-1,2.9,0,4.3,0c2.1,0,3.3,2.6,5.2,3.3
+	c0.8,0.3,5.8-2.5,6.7-2.9c2.8-1.1,5.5-2,7.6-2.9C179,4.3,179.6,3.6,180.2,2.8z"/>
+</svg>
+                          
+                           </div>
+                           
+                           <span class="dance__area-text">gelderland-overijssel</span>
+                           
+                           
+                            </div>
+                        </div>
+
+                <div class="flex-container">
+                    <div class="dance__flex-2">
+                       <div class="dance__year-finder">
+
+
+                        <div class="dance__finder">
+                            <h3 class="heading-classify">
+                                Auteurs
+                            </h3>
+                            <p class="paragraph u-margin-bottom-2">
+                                Mrs. A Sanson-Cats<br> &#38;Mr. A. de Koe
+                            </p>
+                        </div>
+
+                         <div class="dance__year">
+                            <h3 class="heading-classify" >
+                                the year of publication
+                            </h3>
+                            <p class="paragraph__year u-margin-bottom-2">
+                                1950
+                            </p>
+                        </div>
+                         </div>
+
+
+                        <div class="dance__pdf">
+                            <h3 class="heading-classify heading-note">
+                                NOTE(PDF)
+                            </h3>
+                            <p class="paragraph1">
+                                <a href="http://www.socalfolkdance.org/dances/D/Driekusman_B_Dutch.pdf" class="btn btn--black">SoCalFolkDance1; EN</a>
+                            </p>
+                            <p class="paragraph">
+                            <a href="http://www.socalfolkdance.org/dances/D/Driekusman_A_Dutch.pdf" class="btn btn--black">SoCalFolkDance2; EN</a>
+                            </p>
+                            
+
+                        </div>
+
+                         <div class="dance_related">
+                         <h3 class="heading-classify" "text-related">
+                                RELATED VIDEO
+                            </h3>
+
+                          <div class="video_wrap"> <iframe width="560" height="315" src="https://www.youtube.com/embed/7VVIhBBOelM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                           <div class="video_wrap">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/kASREG15oBM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                            <div class="video_wrap">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/m1NJ2VIKvTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                          
+                          <div class="video_wrap">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/O7uPl5nDAT8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                          
+                          <div class="video_wrap">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/M_5ttUCNUQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                          
+                          
+                        </div>
+
+                </div>
+                </div>
+
+<!--
+                  <div class="dance__year">
+                            <h3 class="heading-classify" >
+                                THE YEAR OF DISCOVERY
+                            </h3>
+                            <p class="paragraph__year u-margin-bottom-2">
+                                1928
+                            </p>
+                        </div>
+-->
+
+
+                        </div>
+            </section>
+        </main>
+
+<!--
+        <footer class="footer">
+            <div class="row clearfix">
+                <div class="col-1-of-3-1">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >HISTORY</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >folk dance</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >costume</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2-of-3-2">
+                    <div class="footer__copyright">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Recusandae voluptatibus praesentium dignissimos.
+                        Repellendus dolor esse cupiditate fugiat dolores. Eum
+                        placeat, rem iusto fugit distinctio a architecto labore
+                        debitis amet accusantium hic, rerum voluptas modi
+                        asperiores quibusdam explicabo facere dicta quisquam id
+                        impedit. Aut magni, Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Veritatis, fuga!
+                    </div>
+                </div>
+            </div>
+        </footer>
+-->
+        <script>
+            var video = document.querySelector('.dance-video-1')
+
+            function video_play() {
+//                console.log(video.paused);
+                if(video.paused) {
+                    video.play();
+                    
+                } else {
+                    video.pause();
+                }
+            }
+            
+            function video_pause() {
+//                console.log(video.paused);
+                if(video.play) {
+                    video.pause();
+                }
+            }
+            
+             function video_slow() {
+                 if(video.playbackRate === 1.0){
+                     video.playbackRate = 0.5	
+                      $('#slow').css('background-image', 'url(../img/player_orif.png)');
+                     
+                 } else {
+                    video.playbackRate = 1.0;
+                     $('#slow').css('background-image', 'url(../img/player_slow.png)');
+                };
+            }
+       
+              
+            function video_skipf() {
+                video.currentTime += 3;
+            }
+            
+              
+            function video_skipb() {
+                video.currentTime -= 3;
+            }
+            
+            
+           
+
+        </script>
+    </body>
+</html>

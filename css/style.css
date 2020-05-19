@@ -99,7 +99,7 @@ body {
 
 .navigation__list {
     position: absolute;
-    top: 45%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     list-style: none;
@@ -112,7 +112,7 @@ body {
 .navigation__link:visited {
     line-height: 0.9;
     display: inline-block;
-    font-size: 5rem;
+    font-size: 4.8rem;
     font-weight: 400;
     padding: 1rem 2rem;
     color: white;
@@ -238,14 +238,18 @@ body {
 .folk_dance_box {
     position: relative;
     padding: 0.8rem;
+    
 }
 
 .folk_dance_name {
     position: relative;
     text-align: center;
     top: 43%;
-    left: 5.5%;
+    left: 0%;
     font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    
 }
 
 .folk_a {
@@ -258,6 +262,7 @@ body {
     display: inline-block;
     transform: scale(0);
     /* transform: scale(0.95); */
+    text-align: center;
 }
 
 .folk_a.scaleUp {
@@ -265,15 +270,21 @@ body {
     transform: scale(1);
 }
 
+.folk_a:hover .folk_dance_name,
+.folk_a:active .folk_dance_name{
+    font-weight: 600;
+}
+
 .folk_a:hover,
 .folk_a:active {
     background-color: orangered;
     color: white;
-    font-weight: 600;
-    transition: all 0.2s;
+    font-weight: 700;
+    transition: all 0.1s;
     transform: scale(1.1);
     text-decoration: none;
 }
+
 
 /*folk_dance*/
 .section-main {
@@ -336,16 +347,38 @@ body {
 }
 
 .controls #play {
-   background-image: url('../img/player_play.png');
-    left:11.3rem;
-    top:74rem;
+   background-image: url('../img/player_play2.png');
+    left:6.3rem;
+    top:76rem;
 }
 
 .controls #pause {
    background-image: url('../img/player_stop.png');
-    left:6.3rem;
-    top:74rem;
+    left:11.3rem;
+    top:76rem;
 }
+
+.controls #slow {
+   background-image: url('../img/player_slow.png');
+    left:16.3rem;
+    top:76rem;
+}
+
+.controls #skipb {
+   background-image: url('../img/player_skipb.png');
+    left:21.3rem;
+    top:76rem;
+}
+
+.controls #skipf {
+   background-image: url('../img/player_skip.png');
+    left:26.3rem;
+    top:76rem;
+}
+
+
+
+
 
 .controls button{
     background-size: cover;
@@ -366,32 +399,54 @@ body {
 .button:focus {outline:0;}
 
 
+.back_a{
+    cursor: pointer;
+}
 
-.arrow__left-box,
-.arrow__right-box {
-    width: 3rem;
-    z-index: 1000;
+.dnace_btn{
+    transform: scale(1);
+    cursor: pointer;
+}
+.dance_btn:hover{
+     transform: scale(1.1);
+     transition:all 0.2s;
+     cursor: pointer;
+    
+}
+.back__box {
+    z-index: 500;
     position: absolute;
     /*    right: 10px;*/
     /*    비디오 앞에 올 순 없는건가..*/
+    top:76rem;
+    right: 5rem;
+    background-color: black;
+    width: 13.4rem;
+    height: 4.1rem;
+    border-radius: 3rem;
 }
 /*1.svg 소스 추가시 크기 변환*/
 
-.arrow__left-box {
-    top:74rem;
-    right: 10rem;
+.back__img{
+    width:2.6rem;
+    height: 3rem;
+    position: absolute;
+    right:9rem;
+    top:0.51rem;
+    
+    
 }
 
-.arrow__right-box {
-    top:74rem;
-    right: 5rem;
-}
-.arrow__left-text, .arrow__right-text{
+.back__text{
+    color:white;
     position:absolute;
-    left:0;
-    top:3.5rem;
-    font-weight: 400 !important;
-
+    top:-0.5rem;
+    left:5.3rem;
+    line-height: 1.3rem;
+     text-align: left;
+    font-size: 1.2rem !important;
+    font-weight: 500 !important;
+   
 }
 
 .dance-video-1 {
@@ -510,12 +565,13 @@ p {
 .dance__area-text{
     font-size: 3rem;
     position:absolute;
-    top:40rem;
+    top:36rem;
     left:12rem;
     font-weight: 500;
     width:10rem;
     line-height: 3rem;
     text-transform: uppercase;
+    text-align: center;
 
 
 }
@@ -524,23 +580,30 @@ p {
 }
 .dance__area_map{
     position:absolute;
-    left:5rem;
-    top:5.5rem;
+    left:4rem;
+    top:5rem;
 }
 
 #Layer_1 {
-    width: 34rem;
+    width: 33rem;
 }
 
 #Layer_1 #path2894:hover {
     fill: orangered;
 }
 
+#Layer_1 #path7039:hover {
+    fill: orangered;
+   
+}
+
 
 .flex-container {
     width: 48rem;
 }
-
+.dance__name-tag{
+    margin-top: 5rem;
+}
 .dance__flex-2 {
     display: flex;
     flex-direction: column;
@@ -575,6 +638,7 @@ iframe {
     /* block element 사이에 (부모 - 자식) 가운데 위치로 브라우저가 잡아준다 */
     /* margin : 0 auto; */
     /*  margin: 0 auto;*/
+    margin-left:-17px !important;
 }
 
 .row:not(:last-child) {
@@ -1406,7 +1470,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 .desc_image {
     float: left;
     width: 18rem;
-    padding: 0.8rem 1.3rem 1rem 0rem;
+    margin: 0.8rem 1.3rem 1rem 0rem;
+    border-radius: 3rem;
 
 }
 
@@ -1496,9 +1561,34 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 /*costume*/
 /*costume_ex*/
+
+.modal {
+            text-align: center;
+        }
+
+        @media screen and (min-width: 768px) {
+            .modal:before {
+                display: inline-block;
+                vertical-align: middle;
+                content: " ";
+                height: 100%;
+            }
+        }
+
+        .modal-dialog {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+        }
+
 .costume_ex{
     padding-top: 3rem;
     padding-bottom: 3rem;
+}
+
+.costume_ex_1{
+    padding-top: 3rem;
+    padding-bottom: 0;
 }
 
 .costume_ex_num{
@@ -1506,6 +1596,15 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-weight: 600;
     padding-left: 1.5rem;
     padding-right: 1rem;
+}
+
+.costume_ex_second{
+    margin-top:10rem;
+}
+
+.costume_wave{
+    width:80rem;
+    margin-bottom: 5rem;
 }
 .costume_ex_img{
  clip-path: circle(48% at 50% 50%);
@@ -1534,7 +1633,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-weight: 500;
     position: relative;
     top:3.2rem;
-    padding: 1.2rem;
+    padding: 1rem;
 
 }
 
@@ -1630,6 +1729,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-size: 3rem;
     color: black;
     font-weight: 500;
+    
+   
 }
 .costume_village_hashtag{
     font-size: 1.6rem;
@@ -1637,6 +1738,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-weight: 500;
     font-style: italic;
 }
+
 
 #columns {
     padding-left: 2.5rem;
@@ -1778,5 +1880,225 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 .popup__img-height{
     width: 30%;
+}
+
+/*dance move*/
+
+.toggle {
+   width:10rem;
+   height: 10rem;
+   
+   
+}
+.move__box:not(.selected) {
+  display: none;
+}
+
+input[type=radio]{
+    display:none;
+/*    margin:10px;*/
+}
+
+input[type=radio] + label.move__button{
+    display: inline-block;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: black;
+    border-radius: 10rem;
+    color: white;
+    margin-top:3rem;
+    text-align: center;
+}
+
+input[type=radio] + label.move__button .labelSpan{
+    position: relative;
+    display: inline-block;
+     font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.button_box{
+    margin-left: 1rem;
+}
+.button_group{
+    margin-left: 2rem;
+}
+
+.move__box{
+    border:4px solid black;
+    width:28rem;
+    height:40rem;
+    border-radius: 3rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-align: center;
+    
+    
+}
+
+.column_move{
+    margin-top: 2rem;
+    padding-left: 2.5rem;
+    column-width: 25rem !important;
+    column-gap: 0rem;
+    
+}
+
+
+#moves_01{
+    width:21rem;
+    margin-left: 3%;
+    margin-top: 8%;
+}
+
+#moves_02{
+    width:6rem;
+    margin: 6rem;
+    margin-top: 8rem; 
+}
+
+#moves_03{
+    width:4.3rem;
+    margin: 6rem;
+    margin-top: 8rem; 
+}
+
+#moves_04{
+   width:4.3rem;
+    margin: 2rem;
+    margin-top: 8rem;  
+}
+
+#moves_05{
+   width:20rem;
+    margin: 0rem;
+    
+}
+#moves_06{
+   width:20rem;
+   
+}
+
+#moves_06 .moves_06_01{
+    animation-name: moves_scale_01;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+}
+
+#moves_06 .moves_06_02{
+    animation-name: moves_scale_02;
+            animation-duration: 0.8s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+}
+
+ @keyframes moves_scale_01 {
+            0%   { transform: scale(1.3); }
+            50%  { transform: scale(1.0); }
+            100% { transform: scale(1.3); }
+        }
+
+@keyframes moves_scale_02 {
+            0%   { transform: scale(1.0); }
+            50%  { transform: scale(1.3); }
+            100% { transform: scale(1.0); }
+        }
+
+#moves_05 .moves_05_lefthand,#moves_05 .moves_05_leftline{
+     animation-name: moves_left_right;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+}
+
+#moves_05 .moves_05_02,#moves_05 .moves_05_01 {
+    animation-name: moves_opacity;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+    fill:black;
+    
+}
+
+ @keyframes moves_opacity {
+               0%   { opacity: 1; }
+            50%  { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
+
+
+#moves_05 .moves_05_rigthhand, #moves_05 .moves_05_rigthline{
+     animation-name: moves_right_left;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+}
+
+ @keyframes moves_left_right {
+            0%   { transform: translate(0, 0); }
+            50%  { transform: translate(-10px, -10px); }
+            100% { transform: translate(0, 0); }
+        }
+
+ @keyframes moves_right_left {
+            0%   { transform: translate(0, 0); }
+            50%  { transform: translate(10px, 10px); }
+            100% { transform: translate(0, 0); }
+        }
+
+
+#moves_01 {
+            animation-name: moves_rotation;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+        }
+
+#moves_02,#moves_03,#moves_04 {
+            animation-name: moves_rotation;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            transform-origin: 50% 50%;
+        }
+
+        @keyframes moves_rotation {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(720deg); }
+        }
+
+
+.moves_name{
+    margin-top: 2rem;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 2.5rem;
+    
+}
+
+.moves_des{
+/*    margin-top: 1rem;*/
+    display: inline-block;
+    padding: 0.5rem 3rem 0rem 3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+   
+}
+
+.moves_des a{
+    text-decoration: none;
+    color:black;
+    font-weight: 500;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.moves_des a:hover, .moves_des a:active{
+    color:orangered;
+    font-weight: 600;
+     text-decoration: none;
+    cursor: pointer;
 }
 
