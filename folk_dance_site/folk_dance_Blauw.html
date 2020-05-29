@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="menu.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+
+    </head>
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="../img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="../index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../history_radio.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="folk_dance_main.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+
+                    <li class="navigation__item">
+                        <a
+                            href="Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
+
+
+                    <li class="navigation__item">
+                        <a
+                            href="../costume_site/costume_utrecht_spakenburgse.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../other_groups.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <header class="header">
+            <div class="header__logo-box">
+                <a href="../index.html">
+                <img src="../img/logo.png" alt="Logo" class="header__logo" />
+                </a>
+            </div>
+        </header>
+        <main>
+            <section class="section-dance" id="section-dance">
+
+
+                <div class="u-center-text">
+
+                   <div class="section-dance-video">
+
+                       <div class="dance__video-controls controls" data-state="hidden">
+
+                       <button id="play" type="button" data-state="play" class="dance__player dance_btn" onclick="video_play()">
+                      </button>
+
+                       <button id="pause" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_pause()">
+                      </button>
+
+                      <button id="slow" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_slow()">
+                      </button>
+
+                      <button id="skipb" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipb()">
+                      </button>
+
+                      <button id="skipf" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipf()">
+                      </button>
+
+                   </div>
+
+                        <video class="dance-video-1" autoplay loop>
+                            <source
+                                src="../folk_dance_video/Blauw.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser is not supported!
+                        </video>
+                   <a href="../folk_dance_site/folk_dance_main.html" class="back__box back_a dance_btn">
+                   <img src="../img/back-white_2-34.svg" alt="arrow__left" class="back__img">
+                   <h3 class="back__text">
+                       BACK TO<br> DANCE LIST
+                    </h3>
+                   </a>
+                </div>
+                </div>
+
+
+
+                    <h3 class="heading-classify dance__name-tag">
+                        name
+                    </h3>
+                    <div class="dance__name">
+                        <h2 class="heading-dance-name u-margin-bottom-2">
+                           Blauw garen en koperdraad
+                        </h2>
+                    </div>
+                <div class="dance__detail">
+                    <div class="dance__flex-1">
+
+                             <div class="dance__text">
+                            <div class="dance__description">
+                                <h3 class="heading-classify">
+                                    Description
+                                </h3>
+                                <p class="paragraph u-margin-bottom-2">
+
+a newly made-up dance by Marita Kruijswijk to the melody from farm straws and contra dances. "Blauw garen en koperdraad(Blue yarn and copper wire)" is a Dutch folk dance from the 17th century and the melody is recorded between 1700 and 1716 in the bundle: "Oude en Nieuwe Hollantse Boerenlieties en Contredansen". A reprint of this music collection was published in 1974. Taken from 'Hopsa', by Marita Kruijswijk with illustrations by Aafje Dijkhuizen.
+
+
+                                </p>
+                            </div>
+                            </div>
+
+                            <div class="dance__area">
+                                <h3 class="heading-classify">
+                                    Area
+                                </h3>
+
+                                <div class="dance__area_map">
+                                 <svg id="map_nl" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500.47 583.04"><title>map_nl</title><path d="M241.47,494.36c1.89-10.82,1.89-10.82-9.34-17.61-3.09,4.15-6.38,8.28-9.33,12.64-1.68,2.48-3.57,3.64-6.59,3.3-4.29-.48-8.6-.71-13.75-1.11,1.44-4.26,2.78-8.18,4.58-13.49-8.32,2.83-15.47,5.16-22.52,7.78-.88.33-1.48,2.08-1.75,3.28-1.23,5.32-2.3,10.68-3.52,16.48l-5.36-.3c-.26.19-.74.37-.75.58-.5,8.59-6.21,11.2-13.58,11.66-6.17.39-10.64,3.1-13.54,8.58-2.82,5.32-7.27,8-13.26,9.28-8.76,1.83-17.37,4.45-26,6.91-2.93.83-4.65.23-5.89-2.67-1.58-3.66-3.88-7-5.27-10.75s-4-4.87-7.6-5.12c-6.14-.44-12.25-1.3-18.38-1.52-1.51-.06-3.59,1.3-4.5,2.63-1.75,2.55-2.85,5.54-4.47,8.87-4.9-4.39-10.74-7.62-13.4-12.57s-2.06-11.46-2.67-17.32c0-.46,1.65-1.39,2.65-1.63,5.82-1.38,11.63-2.82,17.52-3.81a15.06,15.06,0,0,1,6.79.78c10,3.25,19.8,6.86,29.79,10,2.32.72,5.57,1,7.56-.1,12.76-6.88,25.82-5.78,39.16-2.5,4,1,8.09,1.4,12.07,2.07,2.46-8.17,1.64-10.25-5.81-10.46a34.89,34.89,0,0,1-21.83-8.05c-6-4.75-8.38-3.7-13.13,2.58-5.64,7.46-3.07,7.63-12.37,3.3-6.33-2.94-12.83-5.58-19-8.87-4.62-2.47-9-3.17-13.71-.85-2.88,1.4-4.78.54-6.43-2.33-3-5.16-6.4-10.08-9.76-15.3,9.44-7.74,19.14-13.88,31.81-13.44a70.11,70.11,0,0,0,12.92-1c4.45-.68,6.41,1.18,6.87,5.34.12,1.13.37,2.25.59,3.55-9.33,2.09-18.37,3.06-27-2.73l-.78,1.26c1.8,3.23,3.45,6.57,5.51,9.64.5.75,2.33.84,3.55.85,10.78.06,21.55,0,32.33.09a6.93,6.93,0,0,1,3.53,1.52,20.05,20.05,0,0,1,4.08,3.66c7.1,8.9,17.19,11.19,27.65,12.83,6.1,1,7.14-4.94,11.32-7a52.07,52.07,0,0,0-3.3-4.64c-2.15-2.36-2.59-4.78-2.36-8.1s-1.43-7-2.43-10.45c-.69-2.37-1.67-4.66-2.74-7.6,2.83-.68,5.3-1.7,7.81-1.81,6.9-.32,11.84-3.3,15.31-9.31.72-1.23,3.58-2.43,4.8-2,11,4.23,20.89.46,30.62-3.94,5.45-2.47,10.72-3.09,16.28-.78,3.46,1.43,5.75,1,6-3.48.13-2.42.89-4.8,1.51-7.92-9.1-.36-17.87-4.78-25.37,3.94-1.81,2.1-5.72,3.23-8.71,3.32-8.64.24-17.32-.06-25.95-.61A14.74,14.74,0,0,1,174.4,427q-15.63-12-30.83-24.61a10.71,10.71,0,0,1-3.39-5.57c-1.46-6.75-2.45-13.6-3.78-21.36,10.19,7.07,19.49,13.75,29.08,20a16.24,16.24,0,0,0,8.68,2.54c9.27-.21,18.52-1,27.78-1.63l.61-1.55c-1.56-1.07-3-2.7-4.71-3.08A43.42,43.42,0,0,0,187,390.48c-11,.36-19-5.85-27.23-11.87-8-5.88-8.08-5.78-3.35-14.37,1.28-2.33,2.71-4.6,3.79-7,5.87-13.19,13.73-24.59,27.1-31.3,5.63-2.83,7.2-8.5,8.91-13.88,2.38-7.45,4.77-14.76,9.86-21,2-2.44,2.89-6,3.54-9.17.84-4.22,1.48-8.21,8.5-9.23-7.69-2.11-7-6-6-10.87,2.38-11.54,3.75-23.29,6.11-34.83,2-9.75,4.89-19.3,7.22-29,1.44-6,2.8-12,3.77-18,.54-3.43,1.52-6.51,5.13-6.92,2-.23,4.64.93,6.3,2.3,9,7.35,8.89,7.44,19.31,1.95,2.2-1.16,4.42-2.27,6.78-3.49,7.93,11.67,12.17,24,9.44,38.53,4.88,0,9,.45,13.05-.11,5.87-.82,7,3.77,8.51,7.26.7,1.61-.41,4.58-1.6,6.32-2.9,4.23-6.32,8.1-9.4,12-.76-.16-1.16-.12-1.39-.3-7.61-6.23-7.5-6.07-15.87-.81-2.91,1.83-3.11,3.83-2.44,6.66,2,8.57,4.1,17.13,5.8,25.76a7.5,7.5,0,0,1-1.44,5.54A105.77,105.77,0,0,1,261,285.3c-2.83,2.54-3.77,5.25-2.81,8.86a21.51,21.51,0,0,1,.56,4.94c0,3.4,1.39,5,5.06,5.29,5.63.38,11.47.56,16.75,2.27a76.33,76.33,0,0,1,17.74,8.6c5.62,3.64,11.14,5.33,17.73,4,3.4-.68,7.05-.35,10.36-1.29,2.46-.71,4.54-2.72,6.79-4.17a1,1,0,0,0,.26-.42c7.37-15.16,18.5-26.06,35-30.91,3.45-1,4.64-3.3,5.05-7,.9-8.24,2.57-16.38,3.9-24.57.56-3.5,2.25-5.69,6-6.06a27.81,27.81,0,0,0,4.77-1.39c6.9-2,7.31-2.74,5.25-10.68-9,2.05-18.11,3.89-27.07,6.25-4.1,1.07-7.48.91-10.56-2.11a6.85,6.85,0,0,0-2-1.43c-9.06-3.89-9.88-12.06-10.34-20.25-.11-1.81.83-3.84,1.74-5.52,2.43-4.5,5.12-8.87,8-13.79-3.33-2.22-6.2-4.52-9.43-6.06-1.25-.6-3.61.08-5,1-4.07,2.57-7.89,2.93-12.68,1.5-5.09-1.52-11,0-15.65-3.7-.52-.41-1.09-.76-2.1-1.45,2.4-3.6,4.43-7.42,7.2-10.6a12.09,12.09,0,0,0,2.54-12c-4.77-16.51,1-32.24,3.37-48.2.18-1.16,1.62-2.41,2.78-3.11q31.69-19,63.51-37.83a14.18,14.18,0,0,1,6.56-2c32.65-.88,65-5,97.2-10,2.12-.32,4.3-.33,7-.53.81,5.12,1.71,10.13,2.35,15.18.5,3.9,1.93,6.6,5.94,8.17,10.32,4,19.66,9.42,26.36,18.84,1.62,2.27,5.67,2.81,9.22,4.43-.26-.42.12,0,.05.13-5.45,13.77.6,26.75,2.55,40a17.34,17.34,0,0,1-1.35,9.3A89.4,89.4,0,0,1,535,173.68c-4.39,6.1-5.65,12.9-6.21,20.11-.85,10.94-1.95,21.86-2.95,32.79a16.19,16.19,0,0,1-.16,2c-1.24,5.49-5.2,7.82-9.8,5-4.87-3-9.45-2.06-14.33-.85s-11.49.83-14.61,3.91-2.79,9.49-3.8,14.48c-.86,4.23-1.5,8.51-2.19,12.77-.93,5.77,6.15,14.22,12,14.41,6.48.21,13,.38,19.45.64,8.68.34,14.86,7,14.34,15.51-.46,7.47-.91,15-1.89,22.37a11.17,11.17,0,0,1-3.63,6.46C508.49,334,495.52,344.43,482.63,355c-1.12.91-2.11,2-3.67,3.47l20.11,11.27c-3.39,6-6.49,11.71-9.78,17.28a3.6,3.6,0,0,1-2.75,1.59c-11.09-1.31-20.5,4-29.93,8.21-7.86,3.5-15.15,2.14-22.76.65s-15-3.15-22.49-4.4a12.37,12.37,0,0,0-6.7.81c-5.63,2.47-11,5.5-16.58,8.09-2.75,1.28-3.67,3.14-3.09,6a9.27,9.27,0,0,1,.42,2.95c-1.94,13.63,6.24,22.44,14.17,31.88,11.21,13.33,17.47,29,19.48,46.5.91,8-1,14.49-4.07,21.47-4.63,10.46-8.17,21.39-12.51,32-1.62,3.93-.36,5.44,3.24,6.36,2.4.62,4.72,1.54,7.83,2.57L390.5,575.74l-8.82-7.32c-2.49,3.57-6,6.57-6.64,10.09-.72,3.84.83,8.3,2.21,12.19.31.88,4,.51,6.15.81,1.43.21,3.05.25,4.22,1,4.11,2.49,8.07,5.23,12.46,8.12-5.06,9.89-9.88,19.53-15,29a5.21,5.21,0,0,1-4,2c-6.48-.08-13-.49-19.44-.84a4.46,4.46,0,0,1-2.3-.69c-5.12-3.71-7.66-12.46-5.4-18.32q9.57-24.9,19.13-49.82c.29-.78.64-1.54.88-2.33,2.91-9.67,2.06-10.61-7.59-13a204.78,204.78,0,0,1-22.67-7.41c-1.56-.59-2.92-3-3.44-4.79-1.6-5.59-2.63-11.22-8.39-14.56-2.34-1.35-4.06-2.15-6.1-.11-4.08,4.07-8.94,4.47-14.32,3.58a39.19,39.19,0,0,0-10-.42c-6.89.65-11.95-3.49-17.61-6.12a3.42,3.42,0,0,1-1.37-1.35c-2.14-3.68-3.85-7.69-6.42-11-3.38-4.4-5.81-8.83-4.84-14.57.68-4-1.46-4.61-5-5.32-7.39-1.48-11,3.59-15.08,7.62C248.29,494.92,245.42,495.79,241.47,494.36Z" transform="translate(-44.59 -48.56)"/><path d="M281.1,286.29c9.51-4.42,18.08-8.6,26.82-12.4,11-4.81,18.41-13.35,24.55-23.23,2-3.26,4.16-4.86,8.48-3.57,5.53,1.65,11.42,2.06,17.06,3.42a13.94,13.94,0,0,1,5.75,3.35c3.74,3.41,3.59,7.13,1.78,11.94-2.69,7.13-6.59,12.45-13.78,15.22-1.69.65-3.14,1.92-4.82,2.6-6.58,2.67-11.09,7-12.21,14.32-.66,4.25-3.27,6-7.41,6.51-3.44.4-6.8,1.77-10.24,2a27.08,27.08,0,0,1-10-1c-5.65-1.9-10.88-5.12-16.58-6.78C283.39,296.54,281.84,291.37,281.1,286.29Z" transform="translate(-44.59 -48.56)"/><path d="M240.09,119.7c9.5,1.87,9.62,1.86,10.38,10.36a101.22,101.22,0,0,1,.18,12.44,6.63,6.63,0,0,1-1.54,3.95c-4,4.45-8,8.85-12.35,13-.93.88-3.25,1.07-4.59.6-2.6-.93-5-2.55-8-4.18l8-18.17C234.77,131.77,237.38,125.87,240.09,119.7Z" transform="translate(-44.59 -48.56)"/><path d="M284.69,87.76c-.2-2-.34-3.26-.45-4.55-.88-10.72-.9-11,9.7-11.81,10.07-.73,18.83-4.86,27.71-9,7.55-3.51,7.59-3.43,12.17,2.52-4.43,3.81-8.77,7.59-13.18,11.31a13.35,13.35,0,0,1-3,1.69,17,17,0,0,1-2.35.78Z" transform="translate(-44.59 -48.56)"/><path d="M168,441.05c-7.28-1.33-14.13-1.63-20.12-4.06-3.47-1.41-6.52-5.86-8-9.64-2.65-6.63-7.93-10-13.32-13.54-2.62-1.72-5.38-3.21-9.15-5.44,6.86-1.31,12.15-3.6,18.29.18C150.76,417.86,161.53,428.08,168,441.05Z" transform="translate(-44.59 -48.56)"/><path d="M90.67,441.25c1.42-12.64,4.36-15.31,16.27-14.76a9.19,9.19,0,0,1,3.64,1.45c8.17,4.47,16.39,8.84,24.38,13.61a6.32,6.32,0,0,1,2.41,5.07c-.08,1.09-2.63,2-4.09,3-.12.08-.34,0-.49.05-8.75,2.43-14.95.09-17.72-9.17-1-3.4-3.34-3.2-6.3-2.08C98.4,442.33,97.66,442.34,90.67,441.25Z" transform="translate(-44.59 -48.56)"/><path d="M344,67.76c.59-3.7,1.05-6,1.31-8.29.33-2.88,2.05-3.46,4.57-3.11,9.53,1.35,19.08,2.56,28.58,4.08a4.4,4.4,0,0,1,3,3c.09,1.42-.83,3.86-1.92,4.27-10.35,4-20.75,8.71-32,3.07A16.18,16.18,0,0,1,344,67.76Z" transform="translate(-44.59 -48.56)"/><path d="M279.08,97.58c-5.76,3.79-10.05,7.77-10.73,14.36-.07.69-2.47,1.82-3.57,1.6-5.6-1.12-11.13-2.62-18.15-4.34,7.38-6.44,13.49-11.88,19.77-17.11.67-.55,2.51-.22,3.53.28C272.73,93.75,275.38,95.44,279.08,97.58Z" transform="translate(-44.59 -48.56)"/><path d="M403.43,60c.52-2.66,1-5.2,1.51-7.73l.76,1.37c5.36-1.44,10.73-2.79,16.06-4.32,6.66-1.91,11.4-.41,14,5.26C425,57,415.88,66.42,403.43,60Z" transform="translate(-44.59 -48.56)"/><path d="M130.87,460.41c6.45-3.24,12.9-8.36,19.31-2.63,3.14,2.79,3.61,8.56,5.25,12.86C143.42,474.75,137,468.47,130.87,460.41Z" transform="translate(-44.59 -48.56)"/></svg>
+
+                           </div>
+
+                           <span class="dance__area-text">All over the netherlands </span>
+
+
+                            </div>
+                        </div>
+
+                <div class="flex-container">
+                    <div class="dance__flex-2">
+                       <div class="dance__year-finder">
+
+
+                        <div class="dance__finder">
+                            <h3 class="heading-classify">
+                                Auteurs
+                            </h3>
+                            <p class="paragraph u-margin-bottom-2">
+                                Marita Kruijswijk
+                            </p>
+                        </div>
+
+                         <div class="dance__year">
+                            <h3 class="heading-classify" >
+                                the year of publication
+                            </h3>
+                            <p class="paragraph__year u-margin-bottom-2">
+                                1700 and 1716
+                            </p>
+                        </div>
+                         </div>
+
+
+                        <div class="dance__pdf">
+                            <h3 class="heading-classify heading-note">
+                                Related link
+                            </h3>
+                            <p class="paragraph">
+                                <a href="https://agmgunth.home.xs4all.nl/dans/blauw-garen-en-koperdraad-dansbeschr.pdf" class="btn btn--black">Agmgunthl; NL</a>
+                            </p>
+
+
+
+                        </div>
+
+                         <div class="dance_related">
+                         <h3 class="heading-classify" "text-related">
+                                RELATED VIDEO
+                            </h3>
+
+
+                           <div class="video_wrap">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/WWnZ_e6JC-0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                            <div class="video_wrap">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/dFk0x6L9gk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+
+
+
+                        </div>
+
+                </div>
+                </div>
+
+<!--
+                  <div class="dance__year">
+                            <h3 class="heading-classify" >
+                                THE YEAR OF DISCOVERY
+                            </h3>
+                            <p class="paragraph__year u-margin-bottom-2">
+                                1928
+                            </p>
+                        </div>
+-->
+
+
+                        </div>
+            </section>
+        </main>
+
+<!--
+        <footer class="footer">
+            <div class="row clearfix">
+                <div class="col-1-of-3-1">
+                    <div class="footer__navigation">
+                        <ul class="footer__list">
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >HISTORY</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >folk dance</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >costume</a
+                                >
+                            </li>
+                            <li class="footer__item">
+                                <a
+                                    href="javascript:void();"
+                                    class="footer__link"
+                                    >contact</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2-of-3-2">
+                    <div class="footer__copyright">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Recusandae voluptatibus praesentium dignissimos.
+                        Repellendus dolor esse cupiditate fugiat dolores. Eum
+                        placeat, rem iusto fugit distinctio a architecto labore
+                        debitis amet accusantium hic, rerum voluptas modi
+                        asperiores quibusdam explicabo facere dicta quisquam id
+                        impedit. Aut magni, Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit. Veritatis, fuga!
+                    </div>
+                </div>
+            </div>
+        </footer>
+-->
+        <script>
+            var video = document.querySelector('.dance-video-1')
+
+            function video_play() {
+//                console.log(video.paused);
+                if(video.paused) {
+                    video.play();
+
+                } else {
+                    video.pause();
+                }
+            }
+
+            function video_pause() {
+//                console.log(video.paused);
+                if(video.play) {
+                    video.pause();
+                }
+            }
+
+             function video_slow() {
+                 if(video.playbackRate === 1.0){
+                     video.playbackRate = 0.5
+                      $('#slow').css('background-image', 'url(../img/player_orif.png)');
+
+                 } else {
+                    video.playbackRate = 1.0;
+                     $('#slow').css('background-image', 'url(../img/player_slow.png)');
+                };
+            }
+
+
+            function video_skipf() {
+                video.currentTime += 3;
+            }
+
+
+            function video_skipb() {
+                video.currentTime -= 3;
+            }
+
+        </script>
+    </body>
+</html>

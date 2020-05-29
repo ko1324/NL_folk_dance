@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <title>MOVE AROUND</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="menu.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"
+        ></script>
+
+
+
+    </head>
+
+    <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
+
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="../../img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
+
+            <div class="navigation__background">&nbsp;</div>
+           <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="../index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../history_radio.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../folk_dance_site/folk_dance_main.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+
+                    <li class="navigation__item">
+                        <a
+                            href="../folk_dance_site/Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
+
+
+                    <li class="navigation__item">
+                        <a
+                            href="costume_utrecht_spakenburgse.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="../other_groups.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </div>
+       <header class="header">
+            <div class="header__logo-box">
+               <a href="../index.html">
+                <img src="../img/logo.png" alt="Logo" class="header__logo" />
+                </a>
+            </div>
+        </header>
+        <main>
+            <section class="costume_whole_box" id="Spakenburgse">
+
+
+               <div class="col-sm-4">
+                    <div class="costume_region_box ">
+                    <div class="costume_region_each">
+                    <span class=costume_state><span class="circle"></span>Utrecht</span>
+                    <a href="costume_utrecht_spakenburgse.html"><span class=costume_region>SPAKENBURGSE</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>FRIESLAND</span>
+                    <a href="costume_friesland_friesland.html"><span class=costume_region>FRIESLAND</span></a>
+                    <a href="costume_friesland_westfriesland.html"><span class=costume_region>WEST_FRIESLAND</span></a>
+                    <a href="costume_friesland_hindeloopen.html"><span class=costume_region>hindeloopen</span></a>
+                    <a href="costume_friesland_Terschelling.html"><span class=costume_region>Terschelling</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>ZEELAND</span>
+                    <a href="costume_zeeland_walcheren.html"><span class=costume_region>WALCHEREN</span></a>
+                    <a href="costume_zeeland_zuidbeveland.html"><span class=costume_region>ZUID BEVELAND</span></a>
+<!--                     <a href="costume_zeeland_middelburg.html"><span class=costume_region>MIDDELBURG</span></a>-->
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>NOORD-HOLLAND</span>
+                    <a href="costume_noord_isle.html"><span class=costume_region>ISLE OF MARKEN</span></a>
+                    <a href="costume_noord_volendam.html"><span class=costume_region>VOLENDAM</span></a>
+                    <a href="costume_noord_huizen.html"><span class=costume_region>huizen</span></a>
+                    <a href="costume_noord_enkhuizen.html"><span class=costume_region>enkhuizen</span></a>
+
+                    <a href="costume_noord_men.html"><span class=costume_region>NOORD _men</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>zuid-holland</span>
+                    <a href="costume_zuidholland_scheveningen.html"><span class=costume_region>scheveningen</span></a>
+                    <a href="costume_zuidholland_spijkenisse.html"><span class=costume_region>Spijkenisse</span></a>
+                    <a href="costume_zuidholland_katwijk.html"><span class=costume_region>katwijk</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>OVERIJSSEL</span>
+                    <a href="costume_overijssel_staphorst.html"><span class=costume_region>STAPHORST</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>GELDERLAND</span>
+                    <a href="costume_gelderland_achterhoek.html"><span class=costume_region>ACHTERHOEK</span></a>
+                     <a href="costume_gelderland_oldebroek.html"><span class=costume_region>oldebroek</span></a>
+                       <a href="costume_gelderland_nunspeet.html"><span class=costume_region>nunspeet</span></a>
+                    </div>
+                    <div class="costume_region_each">
+                    <span class=costume_state>FLEVOLAND</span>
+                    <a href="costume_flevoland_urk.html"><span class=costume_region>URK</span></a>
+                    </div>
+                     <div class="costume_region_each">
+                    <span class=costume_state>Limburg</span>
+                    <a href="costume_limburg_venray.html"><span class=costume_region>venray</span></a>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="costume_right_box row col-8">
+                  <span class="costume_village_name">oldebroek
+                  <div class="costume_village_hashtag">#klederdrachtOldebroek #OldebroekCostume #KlederdrachtenMuseumOldebroek</div>
+                  </span>
+
+
+                   <div class="costume_ex row">
+               <span class="costume_ex_num">1</span>
+               <div class="costume_ex_box">
+               <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_refer_hat_01.jpg" class="costume_ex_img" alt="costume_ex_img">
+               <span class="costume_ex_span">A lace hat with a round, rigid shape on either side of the head, and a shaped lace ribbon around the neck.</span>
+               </div>
+                   <span class="costume_ex_or">or</span>
+               <div class="costume_ex_box">
+               <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_refer_hat_02.jpg" class="costume_ex_img" alt="costume_ex_img">
+               <span class="costume_ex_span">In addition, they may wear short lace hats on both sides of their ears, or long lace hats, or with decorations.</span>
+                   </div>
+
+
+               </div>
+
+
+
+
+
+                  <div id="columns">
+
+                    <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_02.jpg'); popup__span('https://www.flickr.com/photos/gerardstolk/14250430868/','Gerard Stolk','https://creativecommons.org/licenses/by-nc/2.0/','CC0 2.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_02.jpg" class="costume_img up-on-scroll">
+                   </div>
+                  </a>
+
+                    <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_01.jpg'); popup__span('https://www.publicdomainpictures.net/en/view-image.php?image=48966&picture=folklore-costume-market-08','publicdomainpictures','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_01.jpg" class="costume_img up-on-scroll">
+                   </div>
+                  </a>
+
+
+
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_03.jpg'); popup__span('https://www.needpix.com/photo/download/1340460/people-group-groups-activities-tourist-tradition-market-costumes-folklore','needpix','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_03.jpg" class="costume_img up-on-scroll">
+                   </div>
+                  </a>
+
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_04.jpg'); popup__span('https://www.needpix.com/photo/1340445/people-group-groups-activities-tourist-tradition-market-costumes-folklore','needpix','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/oldebroek/oldebroek_04.jpg" class="costume_img up-on-scroll">
+                   </div>
+                  </a>
+
+
+
+
+
+                </div>
+
+                </div>
+
+
+
+             <div id="loading">
+                </div>
+                <div class="loading_box">
+                </div>
+            </section>
+        </main>
+    </body>
+
+
+       <div class="modal fade" id="img-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog popup__img" role="document">
+        <div class="modal-content popup__img">
+<!--
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+
+            </div>
+-->
+            <div class="modal-body popup__img">
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="modal_close">&times;</span>
+                </button>
+
+                <img src="" class="costume_img_popup" style="display: block; max-height:78vh; max-width:110vh;" />
+                <span class="costume_popup_copywright">
+                    <a href="https://flic.kr/p/f6i2wB" id='name_a'>Ben Eekhof/</a>
+                    <a href="https://creativecommons.org/licenses/by/2.0/" id='copyright_a'>CC BY 2.0</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <script>
+
+ var windowHeight = window.innerHeight;
+
+      function open__popup(e, img_url) {
+        console.log($(e).children().find('img')[0].naturalHeight);
+        $('#img-modal').modal('show');
+        $('#img-modal img').attr('src', img_url);
+        if (window.screen.availHeight < $(e).children().find('img')[0].naturalHeight) {
+            $('#img-modal img').css('height', '80%');
+        }
+    }
+
+    function popup__span(name_a,name,copyright_a,copyright){
+        $('#name_a').attr('href',name_a);
+        $('#name_a').text(name+'/');
+        $('#copyright_a').attr('href',copyright_a);
+        $('#copyright_a').text(copyright);
+    }
+
+          function isElementUnderBottom(elem, triggerDiff) {
+  const { top } = elem.getBoundingClientRect();
+  const { innerHeight } = window;
+  return top > innerHeight + (triggerDiff || 0);
+}
+
+function handleScroll() {
+  const elems = document.querySelectorAll('.up-on-scroll');
+  elems.forEach(elem => {
+    if (isElementUnderBottom(elem, -20)) {
+      elem.style.opacity = "0";
+      elem.style.transform = 'translateY(100px)';
+    } else {
+      elem.style.opacity = "1";
+      elem.style.transform = 'translateY(0px)';
+    }
+  })
+
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
+       //loading
+       function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+        }
+        }, 500);
+       }
+
+        function setVisible(selector, visible) {
+          document.querySelector(selector).style.display = visible ? 'block' : 'none';
+        }
+
+        onReady(function() {
+          setVisible('.costume_whole_box', true);
+          setVisible('.loading_box', false);
+          setVisible('#loading', false);
+        });
+    </script>
+</html>

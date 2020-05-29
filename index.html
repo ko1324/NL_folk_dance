@@ -57,7 +57,7 @@
                 <ul class="navigation__list">
                     <li class="navigation__item">
                         <a
-                            href="../index.html"
+                            href="index.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -71,7 +71,7 @@
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="../history_radio.html"
+                            href="history_radio.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -84,7 +84,7 @@
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="../folk_dance_site/folk_dance_main.html"
+                            href="folk_dance_site/folk_dance_main.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -95,9 +95,22 @@
                             FOLK DANCE</a
                         >
                     </li>
+                     <li class="navigation__item">
+                        <a
+                            href="folk_dance_site/Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
                     <li class="navigation__item">
                         <a
-                            href="costume_utrecht_spakenburgse.html"
+                            href="costume_site/costume_utrecht_spakenburgse.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -126,7 +139,9 @@
         </div>
         <header class="header">
             <div class="header__logo-box">
+                 <a href="index.html">
                 <img src="img/logo.png" alt="Logo" class="header__logo" />
+                </a>
             </div>
         </header>
          <section class="section-main" id="section-main">
@@ -134,7 +149,7 @@
                     <div class="header__main-box">
                         <video class="header__main-video" autoplay muted loop>
                             <!--                       controls 붙이고 muted지우면 한번 됐는데 또 안돼고 루프 안됌..-->
-                            <source src="img/main_video.mp4" type="video/mp4" />
+                            <source src="img/main_video_5.mp4" type="video/mp4" />
                             Your browser is not supported!
                         </video>
                     </div>
@@ -144,42 +159,42 @@
                     <img
                         src="img/logo_sti.png"
                         alt="Full logo"
-                        class="header__logo-2"
+                        class="header__logo-2  up-on-scroll"
                     />
                 </div>
             </section>
        
-        <footer class="footer">
+        <footer class="footer up-on-scroll">
             <div class="row clearfix">
                 <div class="col-1-of-3-1">
                     <div class="footer__navigation">
                         <ul class="footer__list">
                             <li class="footer__item">
                                 <a
-                                    href="javascript:void();"
+                                    href="history_radio.html"
                                     class="footer__link"
                                     >HISTORY</a
                                 >
                             </li>
                             <li class="footer__item">
                                 <a
-                                    href="javascript:void();"
+                                    href="folk_dance_site/folk_dance_main.html"
                                     class="footer__link"
                                     >folk dance</a
                                 >
                             </li>
                             <li class="footer__item">
                                 <a
-                                    href="javascript:void();"
+                                    href="folk_dance_site/Dance_moves.html"
                                     class="footer__link"
-                                    >costume</a
+                                    >dance moves</a
                                 >
                             </li>
                             <li class="footer__item">
                                 <a
-                                    href="javascript:void();"
+                                    href="other_groups.html"
                                     class="footer__link"
-                                    >contact</a
+                                    >other groups</a
                                 >
                             </li>
                         </ul>
@@ -187,18 +202,34 @@
                 </div>
                 <div class="col-2-of-3-2">
                     <div class="footer__copyright">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Recusandae voluptatibus praesentium dignissimos.
-                        Repellendus dolor esse cupiditate fugiat dolores. Eum
-                        placeat, rem iusto fugit distinctio a architecto labore
-                        debitis amet accusantium hic, rerum voluptas modi
-                        asperiores quibusdam explicabo facere dicta quisquam id
-                        impedit. Aut magni, Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Veritatis, fuga!
+                        MOVE ROUND is a non-profit site with integrated information on Dutch folk dance. It originated from a digitalization project that made information about Dutch folk dances accessible to anyone. The project was funded by Stimuleringfonds.<a href="https://sook.today/" class="footer_sook">'sook.today'</a> implemented the project.
                     </div>
                 </div>
             </div>
         </footer>
     </body>
-  
+
+  <script>
+   function isElementUnderBottom(elem, triggerDiff) {
+  const { top } = elem.getBoundingClientRect();
+  const { innerHeight } = window;
+  return top > innerHeight + (triggerDiff || 0);
+}
+
+function handleScroll() {
+  const elems = document.querySelectorAll('.up-on-scroll');
+  elems.forEach(elem => {
+    if (isElementUnderBottom(elem, -20)) {
+      elem.style.opacity = "0";
+      elem.style.transform = 'translateY(100px)';
+    } else {
+      elem.style.opacity = "1";
+      elem.style.transform = 'translateY(0px)';
+    }
+  })
+
+}
+
+window.addEventListener('scroll', handleScroll);
+    </script>
 </html>

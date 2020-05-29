@@ -11,8 +11,16 @@
         <title>MOVE AROUND</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="menu.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+
     </head>
-    <body>
+   <body>
         <div class="navigation">
             <input
                 type="checkbox"
@@ -53,7 +61,7 @@
                             href="../history_radio.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                        ><img
+                            ><img
                                 src="../img/menu_arrow.svg"
                                 alt=""
                                 class="menu__arrow"
@@ -61,9 +69,9 @@
                             History</a
                         >
                     </li>
-                     <li class="navigation__item">
+                    <li class="navigation__item">
                         <a
-                            href="../folk_dance_site/folk_dance_main.html"
+                            href="folk_dance_main.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -74,9 +82,25 @@
                             FOLK DANCE</a
                         >
                     </li>
+
                     <li class="navigation__item">
                         <a
-                            href="costume_utrecht_spakenburgse.html"
+                            href="Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
+
+
+                    <li class="navigation__item">
+                        <a
+                            href="../costume_site/costume_utrecht_spakenburgse.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -89,7 +113,7 @@
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="../other_groups/other_groups.html"
+                            href="../other_groups.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -103,10 +127,11 @@
                 </ul>
             </nav>
         </div>
-
         <header class="header">
             <div class="header__logo-box">
+                <a href="../index.html">
                 <img src="../img/logo.png" alt="Logo" class="header__logo" />
+                </a>
             </div>
         </header>
 
@@ -120,29 +145,36 @@
 
                        <div class="dance__video-controls controls" data-state="hidden">
 
-                      <button id="play" type="button" data-state="play" class="dance__player dance_btn" onclick="video_play()">
+                       <button id="play" type="button" data-state="play" class="dance__player dance_btn" onclick="video_play()">
                       </button>
 
                        <button id="pause" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_pause()">
+                      </button>
+
+                      <button id="slow" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_slow()">
+                      </button>
+
+                      <button id="skipb" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipb()">
+                      </button>
+
+                      <button id="skipf" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipf()">
                       </button>
 
                    </div>
 
                         <video class="dance-video-1" autoplay loop>
                             <source
-                                src="../img/de_vleegerd.mp4"
+                                src="../folk_dance_video/bono.m4v"
                                 type="video/mp4"
                             />
                             Your browser is not supported!
                         </video>
-
-                     <a href="../folk_dance_site/folk_dance_main.html" class="back__box back_a dance_btn">
+                   <a href="../folk_dance_site/folk_dance_main.html" class="back__box back_a dance_btn">
                    <img src="../img/back-white_2-34.svg" alt="arrow__left" class="back__img">
                    <h3 class="back__text">
                        BACK TO<br> DANCE LIST
                     </h3>
                    </a>
-
                 </div>
                 </div>
 
@@ -169,6 +201,7 @@
                                     pubs. Before the actual dance could start
                                     the room had to be cleared of people and
                                     furniture.
+
                                 </p>
                             </div>
                             </div>
@@ -177,6 +210,7 @@
                                 <h3 class="heading-classify">
                                     Area
                                 </h3>
+
                                 <div class="dance__area_map">
                                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 338 304.2" style="enable-background:new 0 0 338 304.2;" xml:space="preserve">
@@ -217,7 +251,12 @@
 	c2.9-0.3,5.2,1.2,7.6,1.9c3,0.9,4.9-1.1,7.2-2.4c1.6-0.9,3.2-2.9,4.3-3.8c1.1-1,2.9,0,4.3,0c2.1,0,3.3,2.6,5.2,3.3
 	c0.8,0.3,5.8-2.5,6.7-2.9c2.8-1.1,5.5-2,7.6-2.9C179,4.3,179.6,3.6,180.2,2.8z"/>
 </svg>
+
                            </div>
+
+                           <span class="dance__area-text">gelderland-overijssel</span>
+
+
                             </div>
                         </div>
 
@@ -248,25 +287,49 @@
 
                         <div class="dance__pdf">
                             <h3 class="heading-classify heading-note">
-                                NOTE(PDF)
+                                Related link
                             </h3>
-                            <p class="paragraph1">
+                             <p class="paragraph1">
                                 <a href="http://www.elschekorf.nl/pdf/Baonopstekker.pdf" class="btn btn--black">Elsche Korf; EN</a>
                             </p>
                             <p class="paragraph">
 
                             <a href="https://www.stichtingtoverbal.nl/hetvervolg/baonopstekker.pdf" class="btn btn--black">Cees Temple; NL</a>
                             </p>
-
                         </div>
 
                          <div class="dance_related">
                          <h3 class="heading-classify" "text-related">
-                                RELATED VIDEO
+                                RELATED LINK
                             </h3>
 
-                          <div class="video_wrap"> <iframe src="https://www.youtube.com/embed/syzykXzQuKo" frameborder="0" allow="accelerometer; autoplay loop; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="video_wrap">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/RCXxJ1Tl09o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </div>
+
+
+                            <div class="video_wrap">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/syzykXzQuKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                          </div>
+
+                          <div class="video_wrap">
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/0A1VzMfoimk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+
+                          <div class="video_wrap">
+                         <iframe width="560" height="315" src="https://www.youtube.com/embed/bOyQ-YLXjDU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+
+                           <div class="video_wrap">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LZHjXZFOO9s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+
+
+
+
+
+
                         </div>
 
                 </div>
@@ -358,6 +421,27 @@
                 if(video.play) {
                     video.pause();
                 }
+            }
+
+             function video_slow() {
+                 if(video.playbackRate === 1.0){
+                     video.playbackRate = 0.5
+                      $('#slow').css('background-image', 'url(../img/player_orif.png)');
+
+                 } else {
+                    video.playbackRate = 1.0;
+                     $('#slow').css('background-image', 'url(../img/player_slow.png)');
+                };
+            }
+
+
+            function video_skipf() {
+                video.currentTime += 3;
+            }
+
+
+            function video_skipb() {
+                video.currentTime -= 3;
             }
 
         </script>

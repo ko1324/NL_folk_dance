@@ -34,7 +34,7 @@
 
     <style>
         #section-history .history_legend .elites_i {
-            z-index: 1000;
+/*            z-index: 10;*/
         }
 
         #section-history .history_legend input[type=radio] {
@@ -67,7 +67,7 @@
             var collapsibleContentArray = [];
             var stackArray = [];
             /*1) 빈 배열 선언*/
-            var originArray = ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'];
+            var originArray = ['1900s', '1914', '1917', '1918', '1919', '1920s~1930s', '1920', '1925', '1926', '1927', '1929', '1930', '1931', '1932', '1940s', '1941', '1943', '1944', '1945', '1946', '1947', '1948', '1950s', '1954', '1959', '1960s~'];
             var html = "";
 
             /* 데이터 불러오기 */
@@ -93,6 +93,7 @@
                                         name: doc.data().name,
                                         description: doc.data().description,
                                         quote: doc.data().quote,
+                                        refer: doc.data().refer,
                                         sentiment: doc.data().sentiment,
                                         image: doc.data().image,
                                         group: doc.data().group,
@@ -110,6 +111,7 @@
                                     name: doc.data().name,
                                     description: doc.data().description,
                                     quote: doc.data().quote,
+                                    refer: doc.data().refer,
                                     sentiment: doc.data().sentiment,
                                     image: doc.data().image,
                                     group: doc.data().group,
@@ -133,25 +135,28 @@
                     }).then(() => {
                         var historyHtml = "";
                         collapsibleContentArray.forEach(data => {
-                            historyHtml += `<span class="year_title">${Object.keys(data)[0]}</span>`;
+                            historyHtml += `<span class="year_title up-on-scroll_history ">${Object.keys(data)[0]}</span>`;
                             /*3. ${Object.keys(data)[0]}:1900 각 객체가 가진 키값들을 뽑아서 배열로 만들어줌? collapsibleContentArray의 키값?*/
                             data[Object.keys(data)[0]].forEach(data => {
 //                                console.log(data.group);
 
-                                historyHtml += `<button class="collapsible ${data.group && data.group.join(" ").toLowerCase()} ${data.movement && data.movement.join(" ").toLowerCase()} ${data.id} ${data.ideologie && data.ideologie.join(" ").toLowerCase()} ">${data.name}</button>
+                                historyHtml += `<button class="up-on-scroll_history collapsible ${data.group && data.group.join(" ").toLowerCase()} ${data.movement && data.movement.join(" ").toLowerCase()} ${data.id} ${data.ideologie && data.ideologie.join(" ").toLowerCase()} ">${data.name}</button>
 
-
-
-
-                                <div class="content"><p>`;
+                                <div class="content up-on-scroll_history"><p class="history_desc">`;
                                 if (data.image) {
                                     historyHtml += `<img src="${data.image}" class="desc_image" />`;
                                 }
 
 
+
+
                                 //얘는 이미지가 있을때만 실행되고
                                 historyHtml += `${data.description}</p>
                                 <p>${data.quote}</p>
+                                <p class="history_refer">${data.refer}</p>
+
+
+
                                 </div>`
                                 //얘는 항상 실행되고,
                             })
@@ -186,61 +191,124 @@
 
 
             // 1900 1914 1917 1918 1919 1920 1925 1926 1927 1930 1931 1932 1939-1945 1940 1944 1945 1950 1959
-            ['1900', '1914', '1917', '1918', '1919', '1920', '1925', '1926', '1927', '1929', '1930', '1931', '1932', '1939-1945', '1940', '1944', '1945', '1950', '1959'].forEach(function (year) {
+            ['1900s', '1914', '1917', '1918', '1919', '1920s~1930s', '1920', '1925', '1926', '1927', '1929', '1930', '1931', '1932', '1940s', '1941', '1943', '1944', '1945', '1946', '1947', '1948', '1950s', '1954', '1959', '1960s~'].forEach(function (year) {
                 loadDataFromCollection(year);
             });
         }
     </script>
 </head>
 
-<body>
-    <div class="navigation">
-        <input type="checkbox" class="navigation__checkbox" id="navi--toggle" />
+ <body>
+        <div class="navigation">
+            <input
+                type="checkbox"
+                class="navigation__checkbox"
+                id="navi--toggle"
+            />
 
-        <label for="navi--toggle" class="navigation__button">
-            <div class="navigation__menu-box ">
-                <img src="img/menu.png" alt="menu" class="navigation__menu" />
-            </div>
-            <span class="navigation__icon">&nbsp;</span>
-        </label>
+            <label for="navi--toggle" class="navigation__button">
+                <div class="navigation__menu-box ">
+                    <img
+                        src="img/menu.png"
+                        alt="menu"
+                        class="navigation__menu"
+                    />
+                </div>
+                <span class="navigation__icon">&nbsp;</span>
+            </label>
 
-        <div class="navigation__background">&nbsp;</div>
-        <nav class="navigation__nav">
-            <ul class="navigation__list">
-                <li class="navigation__item">
-                    <a href="index.html" class="navigation__link" onClick="gotoMenu(this)"><img
-                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
+            <div class="navigation__background">&nbsp;</div>
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item">
+                        <a
+                            href="index.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
 
-                        HOME</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="history_radio.html" class="navigation__link" onClick="gotoMenu(this)"><img
-                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
-                        History</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="folk_dance_site/folk_dance_main.html" class="navigation__link" onClick="gotoMenu(this)"><img
-                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
-                        FOLK DANCE</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="costume_site/costume_utrecht_spakenburgse.html" class="navigation__link" onClick="gotoMenu(this)"><img
-                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
-                        COSTUMES</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="other_groups.html" class="navigation__link" onClick="gotoMenu(this)"><img
-                            src="img/menu_arrow.svg" alt="" class="menu__arrow" />
-                        OTHER GROUPS</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <header class="header">
-        <div class="header__logo-box">
-            <img src="img/logo.png" alt="Logo" class="header__logo" />
+                            HOME</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="history_radio.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            History</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="folk_dance_site/folk_dance_main.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            FOLK DANCE</a
+                        >
+                    </li>
+                     <li class="navigation__item">
+                        <a
+                            href="folk_dance_site/Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="costume_site/costume_utrecht_spakenburgse.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            COSTUMES</a
+                        >
+                    </li>
+                    <li class="navigation__item">
+                        <a
+                            href="other_groups.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            OTHER GROUPS</a
+                        >
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </header>
+        <header class="header">
+            <div class="header__logo-box">
+                 <a href="index.html">
+                <img src="img/logo.png" alt="Logo" class="header__logo" />
+                </a>
+            </div>
+        </header>
     <main>
         <section class="section-history" id="section-history">
             <div class="row clearfix">
@@ -248,6 +316,22 @@
                     <div class="u-center-text u-margin-bottom-2">
                         <!--                           1.화살표 추가https://yeun.github.io/open-arrow/-->
                         <div class="history_comp_left">
+
+                             <div class="history_detail_box">
+                           <span class="history_comp_text_01">TONE OF WRITING
+
+                           </span>
+
+                            <span class="history_detail">+ When you click on a legend icon, the relevant results unfold at once, and click each of the tone icons to open the corresponding information.</span>
+
+                            <span class="history_detail"> + Through Google Sentiment API, you can observe the tone of dutch people about dance at that time.</span>
+
+                            <span class="history_detail">+ You can read more about this history at the link of <a href="https://pdfs.semanticscholar.org/f868/bb723e7805d2c78a409574f1773da26ac183.pdf?_ga=2.117054662.1399747757.1590657882-1603809728.1590657882" class="history_detail_thesis">Rob van Ginkel.</a></span>
+
+
+                            </div>
+
+
 
                             <h3 class="history_comp_text_02">
                                 NEGATIVE &#8226;&#8213;&#8213;&#8213;&#8213;&#8226; POSITIVE
@@ -258,94 +342,95 @@
 
 
 
+
                             <div class="history_comp_left_content">
 
                             <button class="history_button_1914 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
-                            <img src="img/icon-09.svg" alt="1914" class="icon icon_1914" />
+                            <img src="img/icon-09.svg" alt="1914" class="icon up-on-scroll_history icon_1914" />
                             <span class="tag">1914<br>tone: -0.7</span>
 
                             </button>
 
 
                             <button class="history_button_1917 open_toggles history_img_icon_box" data-type="pSXSJPTJP8LvB4uSggO8">
-                             <img src="img/icon-10.svg" alt="1917" class="icon icon_1917" />
+                             <img src="img/icon-10.svg" alt="1917" class="icon up-on-scroll_history icon_1917" />
                             <span class="tag">1917<br>tone: -0.5</span></button>
 
                             <button class="history_button_1918 open_toggles history_img_icon_box" data-type="izfIbTQVhhLkJSCx4wLo">
-                             <img src="img/icon-11.svg" alt="1918" class="icon icon_1918" />
+                             <img src="img/icon-11.svg" alt="1918" class="icon up-on-scroll_history icon_1918" />
                             <span class="tag">1918<br>tone:0.2</span></button>
 
                             <button class="history_button_1919 open_toggles history_img_icon_box" data-type="XDW3cuMxD1MO4IAgq1x1">
-                             <img src="img/icon-12.svg" alt="1919" class="icon icon_1919" />
+                             <img src="img/icon-12.svg" alt="1919" class="icon up-on-scroll_history icon_1919" />
                             <span class="tag">1919<br>tone:0</span></button>
 
                             <button class="history_button_1925 open_toggles history_img_icon_box" data-type="zGeK1IcmRiEpzuAGGqgz">
-                             <img src="img/icon-13.svg" alt="1925" class="icon icon_1925" />
+                             <img src="img/icon-13.svg" alt="1925" class="icon up-on-scroll_history icon_1925" />
                             <span class="tag">1925<br>tone:0</span></button>
 
                             <button class="history_button_1926 open_toggles history_img_icon_box" data-type="3AeKU4dx2hODuKWR1pO2">
-                             <img src="img/icon-14.svg" alt="1926" class="icon icon_1926" />
+                             <img src="img/icon-14.svg" alt="1926" class="icon up-on-scroll_history icon_1926" />
                             <span class="tag">1926<br>tone:-0.2</span></button>
 
                              <button class="history_button_1926_01 open_toggles history_img_icon_box" data-type="GSK3fcmeg73JE3dp65Gr">
-                             <img src="img/icon-15.svg" alt="1926" class="icon icon_1926_01" />
+                             <img src="img/icon-15.svg" alt="1926" class="icon up-on-scroll_history icon_1926_01" />
                             <span class="tag">1926<br>tone:-0.6</span></button>
 
                              <button class="history_button_1927 open_toggles history_img_icon_box" data-type="ONK9FPvxRp1QpuPql5KW">
-                             <img src="img/icon-16.svg" alt="1927" class="icon icon_1927" />
+                             <img src="img/icon-16.svg" alt="1927" class="icon up-on-scroll_history icon_1927" />
                             <span class="tag">1927<br>tone:-0.6</span></button>
 
                             <button class="history_button_1927_01 open_toggles history_img_icon_box" data-type="chVndjsG9fw96C1OSZFy">
-                             <img src="img/icon-17.svg" alt="1927" class="icon icon_1927_01" />
+                             <img src="img/icon-17.svg" alt="1927" class="icon up-on-scroll_history icon_1927_01" />
                             <span class="tag">1927<br>tone:-0.8</span></button>
 
                             <button class="history_button_1927_02 open_toggles history_img_icon_box" data-type="mt0iu6uJXJqQyxdEsgvY">
-                             <img src="img/icon-18.svg" alt="1927" class="icon icon_1927_02" />
+                             <img src="img/icon-18.svg" alt="1927" class="icon up-on-scroll_history icon_1927_02" />
                             <span class="tag">1927<br>tone:-0.7</span></button>
 
                             <button class="history_button_1927_03 open_toggles history_img_icon_box" data-type="XMBhQHNXEgRQzsV35zqO">
-                             <img src="img/icon-19.svg" alt="1927" class="icon icon_1927_03" />
+                             <img src="img/icon-19.svg" alt="1927" class="icon up-on-scroll_history icon_1927_03" />
                             <span class="tag">1927<br>tone:-0.4</span></button>
 
                            <button class="history_button_1929 open_toggles history_img_icon_box" data-type="4TIGV2uRcBc3qa5IwIYU">
-                             <img src="img/icon-20.svg" alt="1929" class="icon icon_1929" />
+                             <img src="img/icon-20.svg" alt="1929" class="icon up-on-scroll_history icon_1929" />
                             <span class="tag">1929<br>tone:-0.6</span></button>
 
                           <button class="history_button_1930 open_toggles history_img_icon_box" data-type="ISSw61n6bl7impigaF34">
-                             <img src="img/icon-21.svg" alt="1930" class="icon icon_1930" />
+                             <img src="img/icon-21.svg" alt="1930" class="icon up-on-scroll_history icon_1930" />
                             <span class="tag">1930<br>tone:-0.4</span></button>
 
                            <button class="history_button_1930_01 open_toggles history_img_icon_box" data-type="wpAmuEJhAZKSruRQwDJD">
-                             <img src="img/icon-22.svg" alt="1930" class="icon icon_1930_01" />
+                             <img src="img/icon-22.svg" alt="1930" class="icon up-on-scroll_history icon_1930_01" />
                             <span class="tag">1930<br>tone:-0.1</span></button>
 
                             <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="wpAmuEJhAZKSruRQwDJD">
-                             <img src="img/icon-23.svg" alt="1930" class="icon icon_1930_02" />
+                             <img src="img/icon-23.svg" alt="1930" class="icon up-on-scroll_history icon_1930_02" />
                             <span class="tag">1930<br>tone:0</span></button>
 
 
                             <button class="history_button_1931 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
-                             <img src="img/icon-25.svg" alt="1931" class="icon icon_1931" />
+                             <img src="img/icon-25.svg" alt="1931" class="icon up-on-scroll_history icon_1931" />
                             <span class="tag">1931<br>tone:-0.8</span></button>
 
                              <button class="history_button_1931_01 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
-                             <img src="img/icon-26.svg" alt="1931" class="icon icon_1931_01" />
+                             <img src="img/icon-26.svg" alt="1931" class="icon up-on-scroll_history icon_1931_01" />
                             <span class="tag">1931<br>tone:0.2</span></button>
 
                              <button class="history_button_1931_02 open_toggles history_img_icon_box" data-type="VxH3Gty6jDNPezoZI81T">
-                             <img src="img/icon-27.svg" alt="1931" class="icon icon_1931_02" />
+                             <img src="img/icon-27.svg" alt="1931" class="icon up-on-scroll_history icon_1931_02" />
                             <span class="tag">1931<br>tone:-0.7</span></button>
 
                               <button class="history_button_1931_03 open_toggles history_img_icon_box" data-type="mlWQFqSrJymoxc9hZ52v">
-                             <img src="img/icon-28.svg" alt="1931" class="icon icon_1931_03" />
+                             <img src="img/icon-28.svg" alt="1931" class="icon up-on-scroll_history icon_1931_03" />
                             <span class="tag">1931<br>tone:-0.3</span></button>
 
 <!--
 
                             <div class="history_img_icon_box">
-                             <img src="img/icon-29.svg" alt="1932" class="icon icon_1932" />
+                             <img src="img/icon-29.svg" alt="1932" class="icon up-on-scroll_history icon_1932" />
                             <span class="tag"> 1932<br>tone:0</span></div>                                                  <div class="history_img_icon_box">
-                             <img src="img/icon-30.svg" alt="1932-1945" class="icon icon_1932-1940" />
+                             <img src="img/icon-30.svg" alt="1932-1945" class="icon up-on-scroll_history icon_1932-1940" />
                             <span class="tag"> 1943-1945<br>tone:0</span></div>
 -->
 
@@ -353,6 +438,7 @@
 
                             </div>
 
+<!--
                              <ol id="rule"> <li></li> <li></li> <li></li> <li class="rule_1914"></li> <li></li> <li></li> <li class="rule_1917"></li> <li class="rule_1918"></li> <li class="rule_1919"></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li class="rule_1925"></li> <li class="rule_1926"></li> <li class="rule_1927"></li> <li></li> <li class="rule_1929"></li> <li class="rule_1930"></li>
                             <li class="rule_1931"></li> <li></li> <li></li> <li></li> <li></li>
                             <li></li> <li></li> <li></li> <li></li> <li></li>
@@ -364,6 +450,7 @@
                             <li></li> <li></li> <li></li> <li></li> <li></li>
                             <li></li> <li></li> <li></li> <li></li> <li></li>
                             <li></li> <li></li> <li></li> <li></li> <li></li>   </ol>
+-->
 
 
 
@@ -475,7 +562,13 @@
                                 </span>
                             </span>
 
+
+
                         </div>
+
+
+
+
                         <div id="collapsibleContent">
 <!--                        로딩 이미지 ,부트스트랩 loading-->
                         </div>
@@ -483,6 +576,12 @@
                 </div>
 
             </div>
+
+            <div id="loading">
+                </div>
+                <div class="loading_box">
+                </div>
+
         </section>
     </main>
     <script>
@@ -641,6 +740,64 @@
 
             }
         }
+
+ //loading
+       function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+        }
+        }, 1000);
+       }
+
+        function setVisible(selector, visible) {
+          document.querySelector(selector).style.display = visible ? 'block' : 'none';
+        }
+
+        onReady(function() {
+          setVisible('.section-history', true);
+          setVisible('.loading_box', false);
+          setVisible('#loading', false);
+        });
+
+
+        //scroll
+         function isElementUnderBottom(elem, triggerDiff) {
+  const { top } = elem.getBoundingClientRect();
+  const { innerHeight } = window;
+  return top > innerHeight + (triggerDiff || 0);
+}
+
+function handleScroll() {
+  const elems = document.querySelectorAll('.up-on-scroll_history');
+  elems.forEach(elem => {
+    if (isElementUnderBottom(elem, -20)) {
+      elem.style.opacity = "0";
+      elem.style.transform = 'translateY(70px)';
+    } else {
+      elem.style.opacity = "1";
+      elem.style.transform = 'translateY(0px)';
+    }
+  })
+
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
+        //rule
+
+//         $('#rule li').each(function(){
+//       $(this).addClass('up-on-scroll_history');
+//    });
+
+//
+//       $('#rule li').each(function(i){
+//            $(this).addClass("rule_"+(i+1911));
+//
+//    });
+
 
 
 

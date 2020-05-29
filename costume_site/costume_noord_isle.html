@@ -69,7 +69,7 @@
             </label>
 
             <div class="navigation__background">&nbsp;</div>
-            <nav class="navigation__nav">
+             <nav class="navigation__nav">
                 <ul class="navigation__list">
                     <li class="navigation__item">
                         <a
@@ -111,6 +111,22 @@
                             FOLK DANCE</a
                         >
                     </li>
+
+                    <li class="navigation__item">
+                        <a
+                            href="../folk_dance_site/Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
+
+
                     <li class="navigation__item">
                         <a
                             href="costume_utrecht_spakenburgse.html"
@@ -126,7 +142,7 @@
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="../other_groups/other_groups.html"
+                            href="../other_groups.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -140,9 +156,11 @@
                 </ul>
             </nav>
         </div>
-        <header class="header">
+       <header class="header">
             <div class="header__logo-box">
+               <a href="../index.html">
                 <img src="../img/logo.png" alt="Logo" class="header__logo" />
+                </a>
             </div>
         </header>
         <main>
@@ -158,36 +176,40 @@
                     <div class="costume_region_each">
                     <span class=costume_state>FRIESLAND</span>
                     <a href="costume_friesland_friesland.html"><span class=costume_region>FRIESLAND</span></a>
-                    <a href="costume_west_friesland_friesland.html"><span class=costume_region>WEST_FRIESLAND</span></a>
+                    <a href="costume_friesland_westfriesland.html"><span class=costume_region>WEST_FRIESLAND</span></a>
                     <a href="costume_friesland_hindeloopen.html"><span class=costume_region>hindeloopen</span></a>
+                    <a href="costume_friesland_Terschelling.html"><span class=costume_region>Terschelling</span></a>
                     </div>
                     <div class="costume_region_each">
                     <span class=costume_state>ZEELAND</span>
                     <a href="costume_zeeland_walcheren.html"><span class=costume_region>WALCHEREN</span></a>
                     <a href="costume_zeeland_zuidbeveland.html"><span class=costume_region>ZUID BEVELAND</span></a>
-                     <a href="costume_zeeland_middelburg.html"><span class=costume_region>MIDDELBURG</span></a>
+<!--                     <a href="costume_zeeland_middelburg.html"><span class=costume_region>MIDDELBURG</span></a>-->
                     </div>
                     <div class="costume_region_each">
                     <span class=costume_state>NOORD-HOLLAND</span>
                     <a href="costume_noord_isle.html"><span class=costume_region>ISLE OF MARKEN</span></a>
                     <a href="costume_noord_volendam.html"><span class=costume_region>VOLENDAM</span></a>
-                    <a href="costume_noord_volendam.html"><span class=costume_region>huizen</span></a>
+                    <a href="costume_noord_huizen.html"><span class=costume_region>huizen</span></a>
+                    <a href="costume_noord_enkhuizen.html"><span class=costume_region>enkhuizen</span></a>
+
                     <a href="costume_noord_men.html"><span class=costume_region>NOORD _men</span></a>
                     </div>
                     <div class="costume_region_each">
                     <span class=costume_state>zuid-holland</span>
-                    <a href="costume_gro_gro.html"><span class=costume_region>scheveningen</span></a>
-                    <a href="costume_gro_gro.html"><span class=costume_region>Spijkenisse</span></a>
-                    <a href="costume_gro_gro.html"><span class=costume_region>katwijk</span></a>
+                    <a href="costume_zuidholland_scheveningen.html"><span class=costume_region>scheveningen</span></a>
+                    <a href="costume_zuidholland_spijkenisse.html"><span class=costume_region>Spijkenisse</span></a>
+                    <a href="costume_zuidholland_katwijk.html"><span class=costume_region>katwijk</span></a>
                     </div>
                     <div class="costume_region_each">
                     <span class=costume_state>OVERIJSSEL</span>
-                    <a href="costume_over_staphorst.html"><span class=costume_region>STAPHORST</span></a>
+                    <a href="costume_overijssel_staphorst.html"><span class=costume_region>STAPHORST</span></a>
                     </div>
                     <div class="costume_region_each">
                     <span class=costume_state>GELDERLAND</span>
-                    <a href="costume_geld_achter.html"><span class=costume_region>ACHTERHOEK</span></a>
-                     <a href="costume_geld_achter.html"><span class=costume_region>oldebroek</span></a>
+                    <a href="costume_gelderland_achterhoek.html"><span class=costume_region>ACHTERHOEK</span></a>
+                     <a href="costume_gelderland_oldebroek.html"><span class=costume_region>oldebroek</span></a>
+                       <a href="costume_gelderland_nunspeet.html"><span class=costume_region>nunspeet</span></a>
                     </div>
                     <div class="costume_region_each">
                     <span class=costume_state>FLEVOLAND</span>
@@ -195,7 +217,7 @@
                     </div>
                      <div class="costume_region_each">
                     <span class=costume_state>Limburg</span>
-                    <a href="costume_gro_gro.html"><span class=costume_region>venray</span></a>
+                    <a href="costume_limburg_venray.html"><span class=costume_region>venray</span></a>
                     </div>
                 </div>
                 </div>
@@ -257,130 +279,130 @@
 
 
                   <div id="columns">
-                    <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_02.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614630700/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                    <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_02.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614630700/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_02.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_02.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
 
-                  <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_03.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8613522089/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                  <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_03.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8613522089/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_03.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_03.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                   
-                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_04.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614629376/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_04.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614629376/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_04.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_04.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                   
-                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_05.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614627698/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_05.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614627698/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_05.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_05.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
-                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_06.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8613519331/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_06.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8613519331/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_06.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_06.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
-                       <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_07.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614626638/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                       <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_07.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8614626638/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_07.jpg" class="costume_img">
-                   </div>
-                  </a>
-                  
-                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_08.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Girls_from_the_isle_of_Marken_in_traditional_costume_around_1900.jpg','Detroit Publishing Co.','https://creativecommons.org/publicdomain/mark/1.0/deed.nl','Public Domain Mark 1.0')">
-                 <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_08.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_07.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                   
-                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_09.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Muts_en_mouwen_Marken.jpg','Onbekend','https://creativecommons.org/publicdomain/zero/1.0/deed.nl','CC0 1.0')">
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_08.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Girls_from_the_isle_of_Marken_in_traditional_costume_around_1900.jpg','Detroit Publishing Co.','https://creativecommons.org/publicdomain/mark/1.0/deed.nl','Public Domain Mark 1.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_09.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_08.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                   
-                   <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_10.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Eiland_Marken_-_Visser_1900.jpg','Onbekend','https://creativecommons.org/publicdomain/mark/1.0/deed.nl','Public Domain Mark 1.0')">
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_09.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Muts_en_mouwen_Marken.jpg','Onbekend','https://creativecommons.org/publicdomain/zero/1.0/deed.nl','CC0 1.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_10.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_09.jpg" class="costume_img up-on-scroll">
+                   </div>
+                  </a>
+                  
+                   <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_10.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Eiland_Marken_-_Visser_1900.jpg','Onbekend','https://creativecommons.org/publicdomain/mark/1.0/deed.nl','Public Domain Mark 1.0')">
+                 <div class="costume_img_container">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_10.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_12.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/6684975681','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_12.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/6684975681','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_12.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_12.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_13.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/6684976985/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_13.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/6684976985/in/photostream/','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_13.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_13.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_14.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Jonge_bruiloftsgast_in_klederdracht_met_pijp_op_de_achtergrond_toeschouwers,_Bestanddeelnr_254-1945.jpg','Poll, Willem van de','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_14.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Jonge_bruiloftsgast_in_klederdracht_met_pijp_op_de_achtergrond_toeschouwers,_Bestanddeelnr_254-1945.jpg','Poll, Willem van de','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_14.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_14.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_15.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8452034872','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_15.jpg'); popup__span('https://www.flickr.com/photos/8725928@N02/8452034872','janwillemsen','https://creativecommons.org/licenses/by-nc-sa/2.0/','CC BY-NC-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_15.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_15.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_16.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Marken_Klederdracht_DSC1010.jpg','Hnapel','https://creativecommons.org/licenses/by-sa/4.0/deed.nl','CC BY-SA 4.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_16.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Marken_Klederdracht_DSC1010.jpg','Hnapel','https://creativecommons.org/licenses/by-sa/4.0/deed.nl','CC BY-SA 4.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_16.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_16.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_17.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Marken_Klederdracht_IMG0022.jpg','Hnapel','https://creativecommons.org/licenses/by-sa/4.0/deed.nl','CC BY-SA 4.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_17.jpg'); popup__span('https://nl.m.wikipedia.org/wiki/Bestand:Marken_Klederdracht_IMG0022.jpg','Hnapel','https://creativecommons.org/licenses/by-sa/4.0/deed.nl','CC BY-SA 4.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_17.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_17.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_18.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Marken_Klederdracht_DSC1091.jpg','Hnapel','https://creativecommons.org/licenses/by-sa/4.0/deed.nl','CC BY-SA 4.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_18.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Marken_Klederdracht_DSC1091.jpg','Hnapel','https://creativecommons.org/licenses/by-sa/4.0/deed.nl','CC BY-SA 4.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_18.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_18.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                     <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_19.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Portret_van_een_meisje_in_Marker_klederdracht,_Bestanddeelnr_252-0704.jpg','Willem van de Poll','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                     <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_19.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Portret_van_een_meisje_in_Marker_klederdracht,_Bestanddeelnr_252-0704.jpg','Willem van de Poll','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_19.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_19.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                       
-                      <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_20.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Dansen_in_klederdracht_op_Marken_op_het_ijs,_Bestanddeelnr_906-2871.jpg','Noske, J.D.','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                      <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_20.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Dansen_in_klederdracht_op_Marken_op_het_ijs,_Bestanddeelnr_906-2871.jpg','Noske, J.D.','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_20.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_20.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                      
-                      <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_21.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Dansen_in_klederdracht_op_Marken_op_het_ijs,_Bestanddeelnr_906-2878.jpg','Noske, J.D.','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
+                      <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_21.jpg'); popup__span('https://commons.wikimedia.org/wiki/File:Dansen_in_klederdracht_op_Marken_op_het_ijs,_Bestanddeelnr_906-2878.jpg','Noske, J.D.','https://creativecommons.org/publicdomain/zero/1.0/deed.en','CC0 1.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_21.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_21.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
-                      <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_22.jpg'); popup__span('https://www.flickr.com/photos/haroldkuiper/503132576/','Harold Kuiper','https://creativecommons.org/licenses/by/2.0/','CC BY 2.0')">
+                      <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_22.jpg'); popup__span('https://www.flickr.com/photos/haroldkuiper/503132576/','Harold Kuiper','https://creativecommons.org/licenses/by/2.0/','CC BY 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_22.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_22.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
-                      <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_23.jpg'); popup__span('https://www.flickr.com/photos/iisg/6947459378/','Ben van Meerendonk','https://creativecommons.org/licenses/by-sa/2.0/','CC BY-SA 2.0')">
+                      <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_23.jpg'); popup__span('https://www.flickr.com/photos/iisg/6947459378/','Ben van Meerendonk','https://creativecommons.org/licenses/by-sa/2.0/','CC BY-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_23.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_23.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
-                      <a href="#popup" onClick="open__popup('https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_24.jpg'); popup__span('https://www.flickr.com/photos/iisg/6947459466/','Ben van Meerendonk','https://creativecommons.org/licenses/by-sa/2.0/','CC BY-SA 2.0')">
+                      <a href="javascript:void(0)" onClick="open__popup(this,'https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_24.jpg'); popup__span('https://www.flickr.com/photos/iisg/6947459466/','Ben van Meerendonk','https://creativecommons.org/licenses/by-sa/2.0/','CC BY-SA 2.0')">
                  <div class="costume_img_container">
-                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_24.jpg" class="costume_img">
+                 <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume/marken/Isle+of+Marken_Volendam_24.jpg" class="costume_img up-on-scroll">
                    </div>
                   </a>
                       
@@ -399,39 +421,51 @@
                 </div>
                 
 
-
+             <div id="loading">
+                </div>
+                <div class="loading_box">
+                </div>
             </section>
         </main>
     </body>
 
-    <div class="popup" id="popup">
-      <div class="popup__content">
-        <div class="popup__left">
-          <img src="https://s3.ap-northeast-2.amazonaws.com/t2est.com/NL_costume%2FUtrecht_01.jpg" alt="Tour photo" class="popup__img" id="popup__img--src" />
+     <div class="modal fade" id="img-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog popup__img" role="document">
+        <div class="modal-content popup__img">
+<!--
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New message</h5>
 
-          <span class="costume_popup_copywright">
-          <a href="https://flic.kr/p/f6i2wB" id = 'name_a'>Ben Eekhof/</a>
-          <a href="https://creativecommons.org/licenses/by/2.0/" id='copyright_a'>CC BY 2.0</a>
-          </span>
+            </div>
+-->
+            <div class="modal-body popup__img">
 
-          <span class="costume_popup_share">
-          <!-- 페이스북 공유 버튼 --><a href="" onclick="window.open(url_combine_fb, '', 'scrollbars=no, width=600, height=600'); return false;">facebook</a>
-          <!-- 트위터 공유 버튼 --><a href="" onclick="window.open(url_combine_tw, '', 'scrollbars=no, width=600, height=600'); return false;">twitter</a>
-           <!-- SNS버튼 끝 -->
-          </span>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="modal_close">&times;</span>
+                </button>
 
+                <img src="" class="costume_img_popup" style="display: block; max-height:78vh; max-width:110vh;" />
+                <span class="costume_popup_copywright">
+                    <a href="https://flic.kr/p/f6i2wB" id='name_a'>Ben Eekhof/</a>
+                    <a href="https://creativecommons.org/licenses/by/2.0/" id='copyright_a'>CC BY 2.0</a>
+                </span>
+            </div>
         </div>
-        <div class="popup__right">
-            <a href="" class="popup_close">&times;</a>
-        </div>
-      </div>
     </div>
+</div>
 
 
    <script>
-    function open__popup(img_url){
-        $('#popup__img--src').attr('src', img_url);
-        /*img_url로 바꾸겠다. */
+     var windowHeight = window.innerHeight;
+
+      function open__popup(e, img_url) {
+        console.log($(e).children().find('img')[0].naturalHeight);
+        $('#img-modal').modal('show');
+        $('#img-modal img').attr('src', img_url);
+        if (window.screen.availHeight < $(e).children().find('img')[0].naturalHeight) {
+            $('#img-modal img').css('height', '80%');
+        }
     }
 
     function popup__span(name_a,name,copyright_a,copyright){
@@ -440,6 +474,47 @@
         $('#copyright_a').attr('href',copyright_a);
         $('#copyright_a').text(copyright);
     }
+        function isElementUnderBottom(elem, triggerDiff) {
+  const { top } = elem.getBoundingClientRect();
+  const { innerHeight } = window;
+  return top > innerHeight + (triggerDiff || 0);
+}
 
+function handleScroll() {
+  const elems = document.querySelectorAll('.up-on-scroll');
+  elems.forEach(elem => {
+    if (isElementUnderBottom(elem, -20)) {
+      elem.style.opacity = "0";
+      elem.style.transform = 'translateY(100px)';
+    } else {
+      elem.style.opacity = "1";
+      elem.style.transform = 'translateY(0px)';
+    }
+  })
+
+}
+
+window.addEventListener('scroll', handleScroll);
+
+
+       //loading
+       function onReady(callback) {
+        var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+        }
+        }, 2500);
+       }
+
+        function setVisible(selector, visible) {
+          document.querySelector(selector).style.display = visible ? 'block' : 'none';
+        }
+
+        onReady(function() {
+          setVisible('.costume_whole_box', true);
+          setVisible('.loading_box', false);
+          setVisible('#loading', false);
+        });
     </script>
 </html>

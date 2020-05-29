@@ -93,6 +93,7 @@
                 var name = document.getElementById("formGroupExampleInput").value;
                 var desc = document.getElementById("formGroupExampleInput2").value;
                 var quote = document.getElementById("formGroupExampleInput3").value;
+                 var refer = document.getElementById("formGroupExampleInput33").value;
                 var sentiment = document.getElementById("formGroupExampleInput4").value;
                 var image = document.getElementById("formGroupExampleInput5").value;
                 // var group = document.getElementsByName("formGroupExampleInput6");
@@ -118,6 +119,7 @@
                     name: name,
                     description: desc,
                     quote: quote,
+                    refer: refer,
                     sentiment: sentiment,
                     image: image,
                     group: groupsArray,
@@ -137,6 +139,7 @@
                     document.getElementById('formGroupExampleInput').value = '';
                     document.getElementById('formGroupExampleInput2').value = '';
                     document.getElementById('formGroupExampleInput3').value = '';
+                    document.getElementById('formGroupExampleInput33').value = '';
                     document.getElementById('formGroupExampleInput4').value = '';
                     document.getElementById('formGroupExampleInput5').value = '';
                     // document.getElementById('formGroupExampleInput6').value = '';
@@ -176,6 +179,7 @@
                                 <td>${doc.data().name}</td>
                                 <td>${doc.data().description}</td>
                                 <td>${doc.data().quote}</td>
+                                <td>${doc.data().refer}</td>
                                 <td>${doc.data().sentiment}</td>
                                 <td><img src=${doc.data().image} style="width: 100px"/></td>
                                 <td>${doc.data().group}</td>
@@ -183,7 +187,7 @@
                                 <td>${doc.data().ideologie}</td>
 
 
-                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-refer="${doc.data().refer}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
 
                     <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
 
@@ -194,6 +198,7 @@
                             <div class="content">
                             <p>${doc.data().description}</p>
                             <p>${doc.data().quote}</p>
+
                             </div>`;
 
                             // console.log(doc.id);
@@ -235,6 +240,7 @@
                 $("#updateName").val(e.relatedTarget.dataset.name);
                 $("#updateDescription").val(e.relatedTarget.dataset.description);
                 $("#updateQuote").val(e.relatedTarget.dataset.quote);
+                 $("#updateRefer").val(e.relatedTarget.dataset.refer);
                 $("#updateSentiment").val(e.relatedTarget.dataset.sentiment);
                 $("#updateImage").val(e.relatedTarget.dataset.image);
                 $('#inputGroupFile03Img').attr('src', e.relatedTarget.dataset.image);
@@ -275,6 +281,7 @@
                 var name = $("#updateName").val();
                 var desc = $("#updateDescription").val();
                 var quote = $("#updateQuote").val();
+                 var refer = $("#updateRefer").val();
                 var sent = $("#updateSentiment").val();
                 var image = $("#updateImage").val();
                 // var group = $("#updateGroup").val();
@@ -295,15 +302,16 @@
                 var ideologiesArray = ideologies.map(function () {
                     return $(this).val();
                 }).toArray();
-                updateDataFromcollection(id, name, desc, quote, sent, image, groupsArray, movementsArray, ideologiesArray);
+                updateDataFromcollection(id, name, desc, quote, refer, sent, image, groupsArray, movementsArray, ideologiesArray);
             })
 
-            function updateDataFromcollection(docId, docName, docDesc, docQuote, docSent, docImage, docGroup, docMovement, docIdeo) {
+            function updateDataFromcollection(docId, docName, docDesc, docQuote, docRefer, docSent, docImage, docGroup, docMovement, docIdeo) {
                 docCollectionbyYear.doc(docId).update({
                     //?4 어디 아이디값을 받아서 , docCollectionbyYear얘는 년도인데..
                     name: docName,
                     description: docDesc,
                     quote: docQuote,
+                    refer: docRefer,
                     sentiment: docSent,
                     image: docImage,
                     group: docGroup,
@@ -402,12 +410,14 @@
             <div class="col">
                 <div class="yearListContent">
                     <ul class="list-group list-group-horizontal">
-                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1900">1900</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1900s">1900s</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1914">1914</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1917">1917</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1918">1918</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1919">1919</a></li>
-                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1920">1920</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1920s~1930s">1920s~1930s</a></li>
+
+
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1925">1925</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1926">1926</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1927">1927</a></li>
@@ -415,12 +425,21 @@
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1930">1930</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1931">1931</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1932">1932</a></li>
-                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1939">1939-1945</a></li>
-                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1940">1940</a></li>
+                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1940s">1940s</a></li>
+
+
+                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1941">1941</a></li>
+                          <li class="list-group-item"><a href="/firestore_class_radio.html?year=1943">1943</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1944">1944</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1945">1945</a></li>
-                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1950">1950</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1946">1946</a></li>
+                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1947">1947</a></li>
+                          <li class="list-group-item"><a href="/firestore_class_radio.html?year=1948">1948</a></li>
+                          <li class="list-group-item"><a href="/firestore_class_radio.html?year=1950s">1950s</a></li>
+
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1954">1954</a></li>
                         <li class="list-group-item"><a href="/firestore_class_radio.html?year=1959">1959</a></li>
+                        <li class="list-group-item"><a href="/firestore_class_radio.html?year=1960s~">1960s~</a></li>
                     </ul>
                 </div>
                 <!-- Toast -->
@@ -488,6 +507,16 @@
                                         <textarea rows="3" class="form-control" id="formGroupExampleInput3"></textarea>
 
                                     </div>
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput33">Refer</label>
+<!--
+                                        <input type="text" class="form-control" id="formGroupExampleInput3"
+                                            placeholder="Quote input placeholder" />
+-->
+                                        <textarea rows="3" class="form-control" id="formGroupExampleInput33"></textarea>
+
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="formGroupExampleInput4">Sentiment</label>
                                         <input type="text" class="form-control" id="formGroupExampleInput4"
@@ -596,15 +625,27 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="updateDescription">Description</label>
+<!--
                                         <input type="text" class="form-control" id="updateDescription"
                                             placeholder="Description input placeholder" />
-<!--                                        <textarea rows="4" class="form-control" id="formGroupExampleInput2"></textarea>-->
+-->
+                                        <textarea rows="4" class="form-control" id="updateDescription"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="updateQuote">Quote</label>
+<!--
                                         <input type="text" class="form-control" id="updateQuote"
                                             placeholder="Quote input placeholder" />
-<!--                                            <textarea rows="4" class="form-control" id="formGroupExampleInput2"></textarea>-->
+-->
+                                            <textarea rows="4" class="form-control" id="updateQuote"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="updateRefer">Refer</label>
+<!--
+                                        <input type="text" class="form-control" id="updateRefer"
+                                            placeholder="Refer input placeholder" />
+-->
+                                            <textarea rows="4" class="form-control" id="updateRefer"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="updateSentiment">Sentiment</label>
@@ -713,6 +754,7 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Quote</th>
+                                <th scope="col">Refer</th>
                                 <th scope="col">Sentiment</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Group</th>

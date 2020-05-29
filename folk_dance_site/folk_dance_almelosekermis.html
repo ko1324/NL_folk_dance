@@ -11,6 +11,14 @@
         <title>MOVE AROUND</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="menu.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous"
+        />
+
+
     </head>
     <body>
         <div class="navigation">
@@ -53,7 +61,7 @@
                             href="../history_radio.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
-                        ><img
+                            ><img
                                 src="../img/menu_arrow.svg"
                                 alt=""
                                 class="menu__arrow"
@@ -61,9 +69,9 @@
                             History</a
                         >
                     </li>
-                     <li class="navigation__item">
+                    <li class="navigation__item">
                         <a
-                            href="../folk_dance_site/folk_dance_main.html"
+                            href="folk_dance_main.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -74,9 +82,25 @@
                             FOLK DANCE</a
                         >
                     </li>
+
                     <li class="navigation__item">
                         <a
-                            href="costume_utrecht_spakenburgse.html"
+                            href="Dance_moves.html"
+                            class="navigation__link"
+                            onClick="gotoMenu(this)"
+                            ><img
+                                src="../img/menu_arrow.svg"
+                                alt=""
+                                class="menu__arrow"
+                            />
+                            Dance moves</a
+                        >
+                    </li>
+
+
+                    <li class="navigation__item">
+                        <a
+                            href="../costume_site/costume_utrecht_spakenburgse.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -89,7 +113,7 @@
                     </li>
                     <li class="navigation__item">
                         <a
-                            href="../other_groups/other_groups.html"
+                            href="../other_groups.html"
                             class="navigation__link"
                             onClick="gotoMenu(this)"
                             ><img
@@ -103,10 +127,11 @@
                 </ul>
             </nav>
         </div>
-
         <header class="header">
             <div class="header__logo-box">
+                <a href="../index.html">
                 <img src="../img/logo.png" alt="Logo" class="header__logo" />
+                </a>
             </div>
         </header>
 
