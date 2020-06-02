@@ -1,3 +1,13 @@
+/* MEDIA QUERY MANAGER */
+/* Desktop first MODE
+0 - 600px: PHONE
+600 - 900px: tablet Portrait
+900 - 1200px: tablet LandScape
+1200 - 1800px: Normal Desktop
+1800px +: Big Desktop Screen
+*/
+
+@media (max-width: 1200px) {
 *::after,
 *::before {
     margin: 0;
@@ -238,7 +248,7 @@ body {
 .folk_dance_box {
     position: relative;
     padding: 0.8rem;
-    
+
 }
 
 
@@ -250,7 +260,7 @@ body {
     font-size: 2.1rem;
     font-weight: 500;
     text-transform: uppercase;
-    
+
 }
 
 .folk_dance_name_2 {
@@ -444,7 +454,7 @@ body {
      transform: scale(1.1);
      transition:all 0.2s;
      cursor: pointer;
-    
+
 }
 .back__box {
     z-index: 500;
@@ -466,8 +476,8 @@ body {
     position: absolute;
     right:9rem;
     top:0.51rem;
-    
-    
+
+
 }
 
 .back__text{
@@ -479,7 +489,7 @@ body {
      text-align: left;
     font-size: 1.2rem !important;
     font-weight: 500 !important;
-   
+
 }
 
 .dance-video-1 {
@@ -634,7 +644,7 @@ p {
 
 #Layer_1 #path7039:hover {
     fill: orangered;
-   
+
 }
 
 
@@ -1897,8 +1907,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-weight: 500;
     text-transform: capitalize;
     display: block;
-    
-   
+
+
 }
 .costume_village_hashtag{
     font-size: 1.6rem;
@@ -2055,8 +2065,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 .toggle {
    width:10rem;
    height: 10rem;
-   
-   
+
+
 }
 
 .move__box:not(.selected) {
@@ -2103,8 +2113,8 @@ input[type=radio] + label.move__button .labelSpan{
     margin-bottom: 2rem;
     text-align: center;
     background-color: white;
-    
-    
+
+
 }
 
 .column_move{
@@ -2112,7 +2122,7 @@ input[type=radio] + label.move__button .labelSpan{
     padding-left: 2.5rem;
     column-width: 25rem !important;
     column-gap: 0rem;
-    
+
 }
 
 
@@ -2146,7 +2156,7 @@ input[type=radio] + label.move__button .labelSpan{
 #moves_05{
    width:20rem;
     margin: 0rem;
-    
+
 }
 #moves_06{
    width:20rem;
@@ -2471,7 +2481,7 @@ width:23rem;
             animation-iteration-count: infinite;
             transform-origin: 50% 50%;
     fill:black;
-    
+
 }
 
  @keyframes moves_opacity {
@@ -2528,7 +2538,7 @@ width:23rem;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 2.5rem;
-    
+
 }
 
 .moves_des{
@@ -2538,7 +2548,7 @@ width:23rem;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.8rem;
-   
+
 }
 
 .moves_des a{
@@ -2583,7 +2593,6 @@ width:23rem;
     text-transform: capitalize;
     font-weight: 400;
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
 }
 
 .other__name:hover, .other__name:active{
@@ -2639,6 +2648,4 @@ width:23rem;
 .up-on-scroll {
     transition: transform 0.5s, opacity 1s;
   }
-
-
-
+}

@@ -1,0 +1,15 @@
+/* MEDIA QUERY MANAGER */
+/* Desktop first MODE
+0 - 600px: PHONE
+600 - 900px: tablet Portrait
+900 - 1200px: tablet LandScape
+1200 - 1800px: Normal Desktop
+1800px +: Big Desktop Screen
+*/
+
+@media(max-width:600px) {
+
+    body {
+    background-color: lightblue;
+    }
+}

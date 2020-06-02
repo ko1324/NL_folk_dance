@@ -1,4 +1,14 @@
-*::after,
+/* MEDIA QUERY MANAGER */
+/* Desktop first MODE
+0 - 600px: PHONE
+600 - 900px: tablet Portrait
+900 - 1200px: tablet LandScape
+1200 - 1800px: Normal Desktop
+1800px +: Big Desktop Screen
+*/
+
+@media (max-width: 1200px) {
+    *::after,
 *::before {
     margin: 0;
     padding: 0;
@@ -21,7 +31,7 @@ body {
 
 /* Navigation */
 .navigation__menu {
-    height: 6.2rem;
+    height: 8.2rem;
     z-index: 2500;
     opacity: 1;
 }
@@ -50,8 +60,8 @@ body {
 .navigation__button {
     background-color: transparent;
 
-    height: 6.5rem;
-    width: 6.5rem;
+    height: 7.5rem;
+    width: 7.5rem;
     position: fixed;
     top: 3rem;
     right: 5rem;
@@ -68,12 +78,12 @@ body {
 }
 
 .navigation__checkbox:checked ~ .navigation__background {
-    transform: scale(25);
+    transform: scale(32);
     background-color: black;
 }
 
 .navigation__checkbox:checked ~ .navigation__button {
-    border: 6px solid white;
+    border: 7px solid white;
 }
 
 .navigation__checkbox:checked ~ .navigation__nav {
@@ -83,7 +93,7 @@ body {
 }
 
 .navigation__nav {
-    height: 100vh;
+    height: 90vh;
     width: 0%;
     position: fixed;
     top: 0;
@@ -99,8 +109,8 @@ body {
 
 .navigation__list {
     position: absolute;
-    top: 48%;
-    left: 50%;
+    top: 51%;
+    left: 56%;
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
@@ -112,7 +122,7 @@ body {
 .navigation__link:visited {
     line-height: 0.9;
     display: inline-block;
-    font-size: 4.8rem;
+    font-size: 6rem;
     font-weight: 400;
     padding: 1rem 2rem;
     color: white;
@@ -163,8 +173,8 @@ body {
 .navigation__icon::before,
 .navigation__icon::after {
     opacity: 0;
-    width: 5.7rem;
-    height: 7px;
+    width: 6.7rem;
+    height: 8px;
     background-color: white;
     display: inline-block;
 }
@@ -228,17 +238,21 @@ body {
 }
 
 .header__logo {
-    height: 11.5rem;
+    height: 14.5rem;
 }
 
 /*main*/
 /*section-main*/
 /*folk_dance_main*/
 
+
+
+
+
 .folk_dance_box {
     position: relative;
     padding: 0.8rem;
-    
+
 }
 
 
@@ -247,10 +261,10 @@ body {
     text-align: center;
     top: 43%;
     left: 0%;
-    font-size: 2.1rem;
+    font-size: 2.7rem;
     font-weight: 500;
     text-transform: uppercase;
-    
+
 }
 
 .folk_dance_name_2 {
@@ -258,7 +272,7 @@ body {
     text-align: center;
     top: 35%;
     left: 0%;
-    font-size: 2.1rem;
+    font-size: 2.7rem;
     font-weight: 500;
     text-transform: uppercase;
 
@@ -269,23 +283,26 @@ body {
     text-align: center;
     top: 26%;
     left: 0%;
-    font-size: 2.1rem;
+    font-size: 2.7rem;
     font-weight: 500;
     text-transform: uppercase;
 
 }
-
+.folk_dance_right_box{
+    padding-left: 5rem !important;
+}
 .folk_a {
     background-color: black;
     border-radius: 50%;
-    width: 20rem;
-    height: 20rem;
+    width: 28rem;
+    height: 28rem;
     text-decoration: none;
     color: white;
     display: inline-block;
     transform: scale(0);
     /* transform: scale(0.95); */
     text-align: center;
+    margin:0.5rem;
 }
 
 .folk_a.scaleUp {
@@ -333,20 +350,19 @@ body {
 
 .header__main-video {
     position: relative;
-    top: -5rem;
-    width: 90rem;
+    top: -10rem;
+    width: 120rem;
     background-position: top;
     clip-path: circle(34.6% at 50% 50%);
-     -webkit-clip-path: circle(34.6% at 50% 50%);
 }
 
 .header__logo-box-2 {
     position: relative;
-    top: 58rem;
+    top: 80rem;
 }
 
 .header__logo-2 {
-    width: 20rem;
+    width: 24rem;
     /*  height: auto;*/
 }
 
@@ -373,31 +389,31 @@ body {
 .controls #play {
    background-image: url('../img/player_play2.png');
     left:6.3rem;
-    top:76rem;
+    top:103rem;
 }
 
 .controls #pause {
    background-image: url('../img/player_stop.png');
-    left:11.3rem;
-    top:76rem;
+    left:12.3rem;
+    top:103rem;
 }
 
 .controls #slow {
    background-image: url('../img/player_slow.png');
-    left:16.3rem;
-    top:76rem;
+    left:18.3rem;
+    top:103rem;
 }
 
 .controls #skipb {
    background-image: url('../img/player_skipb.png');
-    left:21.3rem;
-    top:76rem;
+    left:24.3rem;
+    top:103rem;
 }
 
 .controls #skipf {
    background-image: url('../img/player_skip.png');
-    left:26.3rem;
-    top:76rem;
+    left:30.3rem;
+    top:103rem;
 }
 
 
@@ -406,10 +422,10 @@ body {
 
 .controls button{
     background-size: cover;
-    width:4rem;
-    height:4rem;
+    width:5rem;
+    height:5rem;
     position:absolute;
-    z-index: 101;
+    z-index: 1000;
     background-color: transparent !important;
    border-color: transparent !important;
 
@@ -444,49 +460,47 @@ body {
      transform: scale(1.1);
      transition:all 0.2s;
      cursor: pointer;
-    
+
 }
 .back__box {
     z-index: 500;
     position: absolute;
     /*    right: 10px;*/
     /*    비디오 앞에 올 순 없는건가..*/
-    top:76rem;
+    top:103rem;
     right: 5rem;
     background-color: black;
-    width: 13.4rem;
-    height: 4.1rem;
-    border-radius: 3rem;
+    width: 15.9rem;
+    height: 5.1rem;
+    border-radius: 5rem;
 }
 /*1.svg 소스 추가시 크기 변환*/
 
 .back__img{
-    width:2.6rem;
-    height: 3rem;
+    width:3.2rem;
+    height: 5rem;
     position: absolute;
-    right:9rem;
-    top:0.51rem;
-    
-    
+    right:10.4rem;
+    top:0.1rem;
 }
 
 .back__text{
     color:white;
     position:absolute;
-    top:0.7rem;
-    left:5.3rem;
-    line-height: 1.3rem;
+    top:1.2rem;
+    left:6.5rem;
+    line-height: 1.4rem;
      text-align: left;
-    font-size: 1.2rem !important;
+    font-size: 1.4rem !important;
     font-weight: 500 !important;
-   
+
 }
 
 .dance-video-1 {
     position: relative;
     left:-3rem;
-    top: -3rem;
-    width: 107%;
+    top: -10rem;
+    width: 98%;
     z-index: 100;
     /*    background-position: top;*/
 }
@@ -499,7 +513,7 @@ body {
 
 
 .heading-classify {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 100;
     display: inline-block;
@@ -509,24 +523,24 @@ body {
 }
 
 .heading-dance-name {
-    font-size: 5.5rem;
+    font-size: 7.5rem;
     margin-left: -0.37rem;
     text-transform: uppercase;
     font-weight: 500;
     display: inline-block;
     color: black;
-    line-height: 4rem;
+    line-height: 6rem;
     padding: 0 0 4rem;
     margin-top: 0.9rem;
     /*  letter-spacing: 2px;*/
 }
 
 .paragraph {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     font-weight: 500;
-    line-height: 3.5rem;
+    line-height: 3.8rem;
     text-transform: uppercase;
-    padding: 0 0 4rem;
+    padding: 0 0 5rem;
 }
 
 p {
@@ -581,12 +595,7 @@ p {
     display: flex;
     /*    flex-direction:*/
 }
-.dance__flex-1 {
-    display: flex;
-    flex: 0 0 48%;
-    flex-direction: column;
-    margin-right: 5rem;
-}
+
 
 .dance__text {
     display: flex;
@@ -600,8 +609,8 @@ p {
 .dance__area-text{
     font-size: 3rem;
     position:absolute;
-    top:36rem;
-    left:12rem;
+    top:45rem;
+    left:29%;
     font-weight: 500;
     width:10rem;
     line-height: 3rem;
@@ -615,8 +624,8 @@ p {
 }
 .dance__area_map{
     position:absolute;
-    left:4rem;
-    top:5rem;
+    left:20%;
+    top:7rem;
 }
 
 #map_nl{
@@ -625,7 +634,7 @@ p {
 }
 
 #Layer_1 {
-    width: 33rem;
+    width: 40rem;
 }
 
 #Layer_1 #path2894:hover {
@@ -634,12 +643,19 @@ p {
 
 #Layer_1 #path7039:hover {
     fill: orangered;
-   
+
 }
 
+.dance__flex-1 {
+    display: flex;
+    flex: 0 0 50%;
+    flex-direction: column;
+    margin-right: 5rem;
+}
 
 .flex-container {
-    width: 48rem;
+    width: 65rem;
+    margin-left: 5rem;
 }
 .dance__name-tag{
     margin-top: 5rem;
@@ -805,10 +821,10 @@ iframe {
 /* footer */
 .footer {
     background-color: black;
-    padding: 1rem 3rem 10rem;
-    font-size: 1.4rem;
-    line-height: 2rem;
-}
+    padding: 1rem 3rem 28rem;
+        font-size: 1.9rem;
+        line-height: 3rem;
+    }
 
 .footer__navigation {
     padding-top: 2rem;
@@ -878,18 +894,12 @@ iframe {
 
 .history_comp_text_01 {
     font-weight: 400;
-    font-size: 2.2rem;
-}
-
-.history_comp_text_legend{
-    font-weight: 400;
-    font-size: 2.2rem;
-
+    font-size: 2.5rem;
 }
 
 .history_comp_text_02 {
     font-weight: 400;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
 /*    position: absolute;*/
     left: 23rem;
 /*    z-index: 3000;*/
@@ -1224,9 +1234,9 @@ li {
 }
 
 .history_detail{
-    line-height: 2.9rem;
+    line-height: 3.1rem;
     font-weight: 400;
-    font-size: 1.9rem;
+    font-size: 2rem;
 /*    margin-bottom: 1.3rem;*/
     margin-top:1.1rem;
     display: block;
@@ -1238,7 +1248,7 @@ li {
     text-align: left;
     margin-left: 3rem;
     margin-top: 0.5rem;
-    margin-right: 5rem;
+    margin-right: 10rem;
 
 }
 .history_legend_br {
@@ -1343,7 +1353,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 #section-history .history_legend input[type="radio"] ~ span {
     position: absolute;
-    width: 15rem;
+    width: 20rem;
     text-align: left;
     height: 11rem;
     right: 0px;
@@ -1351,19 +1361,19 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     margin: 15px;
     padding: 4px;
     display: none;
-    font-size: 2.1rem;
+    font-size: 2.4rem;
     line-height: 2.7rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 /* 라디오 hover */
 #section-history .history_legend input[type="radio"]:hover ~ span {
     display: block;
     position: absolute;
-    right: 0px;
+    right: 12rem;
     top: 0px;
     margin: 0px;
-    z-index: 1001;
+    z-index: 1010;
     background-color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
@@ -1372,7 +1382,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     display: block;
     position: absolute;
 /*    z-index: 1000;*/
-    right: 0px;
+    right: 12rem;
     top: 0px;
     margin: 0px;
     background-color: rgb(255, 255, 255);
@@ -1561,13 +1571,13 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     margin-top:1rem;
 }
 .history_refer{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-style: italic;
     text-align: right;
     line-height: 1.5rem;
-    margin-top: 1rem;
+    margin-top: 1.6rem;
     margin-bottom: 1.5rem;
-    font-weight: 400;
+    font-weight: 500;
 
 }
 
@@ -1587,7 +1597,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 .year_title {
     font-weight: 500;
-    font-size: 2.2rem;
+    font-size: 2.7rem;
     margin-top: 15px;
     display: inline-block;
     content: "";
@@ -1613,11 +1623,11 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 1.9rem;
+    font-size:2.1rem;
     text-transform: uppercase;
     font-weight: 400;
 
-    line-height: 2.8rem;
+    line-height:3rem;
 }
 
 .active,
@@ -1651,7 +1661,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 .content {
-    font-size: 1.9rem;
+    font-size: 2rem;
     font-weight: 400;
     padding: 0 0.2rem;
     max-height: 0;
@@ -1660,7 +1670,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     background-color: transparent;
     border-top: 0.1rem solid black;
     border-bottom: 0.1rem solid black;
-    line-height: 3rem;
+    line-height: 2.8rem;
 }
 
 /*costume*/
@@ -1731,10 +1741,19 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     opacity: 100 !important;
 }
 
+
+
 .costume_ex{
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
 }
+
+ @media (min-width: 768px){
+.modal-dialog {
+    max-width: 120rem !important;
+    }
+}
+
 
 .modal.show .modal-dialog {
     width:200rem !important;
@@ -1757,47 +1776,44 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 .costume_wave{
+
     width:100%;
     margin-bottom: 5rem;
 }
 .costume_ex_img{
  clip-path: circle(48% at 50% 50%);
- -webkit-clip-path: circle(48% at 50% 50%);
- width:16rem;
+ width:20rem;
  margin-bottom: 1.3rem;
   z-index: 100;
 }
 
 
 .costume_ex_box{
-    width:16rem;
+    width:20rem;
      text-align: center;
 }
 
 .costume_ex_span{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.8rem;
     background: transparent;
-
-
-
 }
 
 .costume_ex_plus{
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 500;
     position: relative;
-    top:3.2rem;
-    padding: 1rem;
+    top:5.5rem;
+    padding: 2rem;
 
 }
 .costume_ex_or{
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 600;
     position: relative;
-    top:4rem;
-    padding: 1.3rem;
+    top:6.5rem;
+    padding: 2.2rem;
 
 }
 .circle {
@@ -1859,7 +1875,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 }
 .costume_state {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
     color: black;
     font-weight: 300;
@@ -1867,7 +1883,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 .costume_region{
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     text-transform: uppercase;
     color: black;
     font-weight: 500;
@@ -1892,19 +1908,20 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 }
 
 .costume_village_name {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: black;
     font-weight: 500;
     text-transform: capitalize;
-    display: block;
-    
-   
+    width:100%
+
+
 }
 .costume_village_hashtag{
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     color: black;
     font-weight: 400;
     font-style: italic;
+
 }
 
 
@@ -2055,8 +2072,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 .toggle {
    width:10rem;
    height: 10rem;
-   
-   
+
+
 }
 
 .move__box:not(.selected) {
@@ -2096,23 +2113,24 @@ input[type=radio] + label.move__button .labelSpan{
 
 .move__box{
     border:4px solid black;
-    width:28rem;
-    height:40rem;
+    width:30rem;
+    height:43rem;
     border-radius: 3rem;
     display: inline-block;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     text-align: center;
     background-color: white;
-    
-    
+
+
 }
 
 .column_move{
-    margin-top: 2rem;
+    margin-top:3rem;
     padding-left: 2.5rem;
     column-width: 25rem !important;
-    column-gap: 0rem;
-    
+    column-gap: 6rem;
+    padding-right: 25rem;
+
 }
 
 
@@ -2146,7 +2164,7 @@ input[type=radio] + label.move__button .labelSpan{
 #moves_05{
    width:20rem;
     margin: 0rem;
-    
+
 }
 #moves_06{
    width:20rem;
@@ -2471,7 +2489,7 @@ width:23rem;
             animation-iteration-count: infinite;
             transform-origin: 50% 50%;
     fill:black;
-    
+
 }
 
  @keyframes moves_opacity {
@@ -2524,21 +2542,21 @@ width:23rem;
 .moves_name{
     margin-top: 2rem;
     display: inline-block;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 2.5rem;
-    
+
 }
 
 .moves_des{
 /*    margin-top: 1rem;*/
     display: inline-block;
     padding: 0.5rem 3rem 0rem 3rem;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 1.8rem;
-   
+    line-height: 2rem;
+
 }
 
 .moves_des a{
@@ -2566,7 +2584,7 @@ width:23rem;
 
 .other__name-area{
 
-    font-size:1.3rem;
+    font-size:1.4rem;
     text-transform: uppercase;
     margin-bottom: 0.4rem;
     font-weight: 500;
@@ -2576,14 +2594,13 @@ width:23rem;
     text-decoration: none;
     color:black;
     border:2px solid black;
-    font-size: 2.3rem;
-    padding: 0rem 1rem 0.2rem 1rem;
+    font-size: 2.6rem;
+    padding: 0rem 1.8rem 0.3rem 1.8rem;
     display: inline-block;
     border-radius: 4rem;
     text-transform: capitalize;
     font-weight: 400;
     margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
 }
 
 .other__name:hover, .other__name:active{
@@ -2611,12 +2628,12 @@ width:23rem;
     opacity: 1 !important;
     position: absolute;
     left: 45%;
-    top: 40%;
+    top: 36%;
     z-index: 1;
-    width: 30rem;
-    height: 30rem;
+    width: 40rem;
+    height: 40rem;
     margin: -75px 0 0 -75px;
-    border: 1.5rem solid transparent;
+    border: 1.8rem solid transparent;
     border-radius: 50%;
     border-top: 1.5rem solid orangered;
     -webkit-animation: spin 1.5s linear infinite;
@@ -2639,6 +2656,4 @@ width:23rem;
 .up-on-scroll {
     transition: transform 0.5s, opacity 1s;
   }
-
-
-
+}

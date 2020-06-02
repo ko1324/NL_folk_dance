@@ -2,11 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
         <link
             href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
             rel="stylesheet"
         />
+         <link rel="stylesheet" media="(max-width:1200px)" href="../css/responsive1200_style.css" />
+        <link rel="stylesheet" media="(max-width:900px)" href="../css/style.css" />
+        <link rel="stylesheet" media="screen and (max-device-width: 600px)" href="css/responsive600.css" />
+        <link rel="stylesheet" media="(max-width:1800px)" href="../css/responsive1200_style.css" />
+
         <link rel="stylesheet" href="css/style.css" />
         <title>MOVE AROUND</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -33,6 +40,22 @@
             crossorigin="anonymous"
         ></script>
     </head>
+<!--
+    <style>
+     @media(max-width:600px) {
+
+    body {
+    background-color: lightblue;
+    }
+}
+    </style>
+-->
+
+   <style>
+
+
+
+    </style>
     <body>
         <div class="navigation">
             <input
@@ -137,6 +160,8 @@
                 </ul>
             </nav>
         </div>
+
+
         <header class="header">
             <div class="header__logo-box">
                  <a href="index.html">
@@ -146,6 +171,10 @@
         </header>
          <section class="section-main" id="section-main">
                 <div class="header__main">
+
+
+
+
                     <div class="header__main-box">
                         <video class="header__main-video" autoplay muted loop>
                             <!--                       controls 붙이고 muted지우면 한번 됐는데 또 안돼고 루프 안됌..-->
@@ -231,5 +260,45 @@ function handleScroll() {
 }
 
 window.addEventListener('scroll', handleScroll);
+
+
+(function() {
+    var hidden = "hidden";
+
+    // Standards:
+    if (hidden in document)
+        document.addEventListener("visibilitychange", onchange);
+    else if ((hidden = "mozHidden") in document)
+        document.addEventListener("mozvisibilitychange", onchange);
+    else if ((hidden = "webkitHidden") in document)
+        document.addEventListener("webkitvisibilitychange", onchange);
+    else if ((hidden = "msHidden") in document)
+        document.addEventListener("msvisibilitychange", onchange);
+    // IE 9 and lower:
+    else if ('onfocusin' in document)
+        document.onfocusin = document.onfocusout = onchange;
+    // All others:
+    else
+        window.onpageshow = window.onpagehide
+            = window.onfocus = window.onblur = onchange;
+
+    function onchange (evt) {
+        var v = 'sg-tab-bust-visible', h = 'sg-tab-bust-hidden',
+            evtMap = {
+                focus:v, focusin:v, pageshow:v, blur:h, focusout:h, pagehide:h
+            };
+
+        evt = evt || window.event;
+        if (evt.type in evtMap)
+            document.body.className = evtMap[evt.type];
+        else
+            document.body.className = this[hidden] ? "sg-tab-bust-hidden" : "sg-tab-bust-visible";
+    }
+})();
+
+
+
+
+
     </script>
 </html>
