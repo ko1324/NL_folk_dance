@@ -1,33 +1,5 @@
-/* MEDIA QUERY MANAGER */
-/* Desktop first MODE
-0 - 600px: PHONE
-600 - 900px: tablet Portrait
-900 - 1200px: tablet LandScape
-1200 - 1800px: Normal Desktop
-1800px +: Big Desktop Screen
-*/
+@media (max-width: 1299px) {
 
-@media (max-width: 1200px) {
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    /* font-size: 10px; */
-    font-size: 62.5%;
-}
-
-body {
-    font-family: "Ubuntu" !important;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.7;
-    color: rgb(0);
-    padding: 30px;
-}
 
 /* Navigation */
 .navigation__menu {
@@ -110,7 +82,7 @@ body {
 .navigation__list {
     position: absolute;
     top: 48%;
-    left: 50%;
+    left: 51%;
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
@@ -241,6 +213,10 @@ body {
     height: 11.5rem;
 }
 
+.section-main{
+    height: 120vh;
+}
+
 /*main*/
 /*section-main*/
 /*folk_dance_main*/
@@ -248,7 +224,7 @@ body {
 .folk_dance_box {
     position: relative;
     padding: 0.8rem;
-
+    
 }
 
 
@@ -260,9 +236,10 @@ body {
     font-size: 2.1rem;
     font-weight: 500;
     text-transform: uppercase;
-
+    
 }
 
+    
 .folk_dance_name_2 {
     position: relative;
     text-align: center;
@@ -320,7 +297,7 @@ body {
 
 
 /*folk_dance*/
-.section-main {
+.section-main-dance {
     height: 88vh;
     background-color: white;
     background-size: cover;
@@ -343,8 +320,8 @@ body {
 
 .header__main-video {
     position: relative;
-    top: -5rem;
-    width: 90rem;
+    top:4rem;
+    width: 94rem;
     background-position: top;
     clip-path: circle(34.6% at 50% 50%);
      -webkit-clip-path: circle(34.6% at 50% 50%);
@@ -369,48 +346,50 @@ body {
 }
 
 
-.controls[data-state=hidden] {
-/*   display:none;*/
-}
 
-.controls[data-state=visible] {
-/*   display:block;*/
-}
 .controls #play:focus,.controls #pause:focus{
     outline:0;
 }
 
 .controls #play {
    background-image: url('../img/player_play2.png');
-    left:6.3rem;
-    top:76rem;
+    
 }
 
 .controls #pause {
    background-image: url('../img/player_stop.png');
-    left:11.3rem;
-    top:76rem;
+ 
 }
 
 .controls #slow {
    background-image: url('../img/player_slow.png');
-    left:16.3rem;
-    top:76rem;
+
 }
 
 .controls #skipb {
    background-image: url('../img/player_skipb.png');
-    left:21.3rem;
-    top:76rem;
+
 }
 
 .controls #skipf {
    background-image: url('../img/player_skip.png');
-    left:26.3rem;
-    top:76rem;
+
+}
+
+.controls #back {
+   background-image: url('../img/player_back-39.png');
+
 }
 
 
+.dance__video-controls{
+    display: flex;
+    z-index: 200;
+    width:100%;
+    justify-content: space-between;
+    position: relative;
+    top:30%;
+}
 
 
 
@@ -418,20 +397,21 @@ body {
     background-size: cover;
     width:4rem;
     height:4rem;
-    position:absolute;
     z-index: 101;
     background-color: transparent !important;
-   border-color: transparent !important;
-
+    border-color: transparent !important;
     border-style: none;
-
+    margin-right: 0.4rem;
 }
 
-    cursor: pointer;
+.controls #back{
+    width:14rem;
 }
-.controls button:focus{
-/*     outline: none !important!;*/
-}
+
+
+   
+
+
 
 .controls:hover ~.dance-video-1{
     opacity: 0.3;
@@ -454,7 +434,7 @@ body {
      transform: scale(1.1);
      transition:all 0.2s;
      cursor: pointer;
-
+    
 }
 .back__box {
     z-index: 500;
@@ -470,35 +450,14 @@ body {
 }
 /*1.svg 소스 추가시 크기 변환*/
 
-.back__img{
-    width:2.6rem;
-    height: 3rem;
-    position: absolute;
-    right:9rem;
-    top:0.51rem;
 
-
-}
-
-.back__text{
-    color:white;
-    position:absolute;
-    top:0.7rem;
-    left:5.3rem;
-    line-height: 1.3rem;
-     text-align: left;
-    font-size: 1.2rem !important;
-    font-weight: 500 !important;
-
-}
 
 .dance-video-1 {
-    position: relative;
-    left:-3rem;
-    top: -3rem;
-    width: 107%;
+
+    width: 103%;
     z-index: 100;
-    /*    background-position: top;*/
+   
+    padding-right: 3rem;
 }
 .section-dance-video {
     display: flex;
@@ -644,7 +603,7 @@ p {
 
 #Layer_1 #path7039:hover {
     fill: orangered;
-
+   
 }
 
 
@@ -1597,7 +1556,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 
 .year_title {
     font-weight: 500;
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     margin-top: 15px;
     display: inline-block;
     content: "";
@@ -1623,11 +1582,11 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     border: none;
     text-align: left;
     outline: none;
-    font-size: 1.9rem;
+    font-size: 2rem;
     text-transform: uppercase;
     font-weight: 400;
 
-    line-height: 2.8rem;
+    line-height: 3.1rem;
 }
 
 .active,
@@ -1907,8 +1866,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-weight: 500;
     text-transform: capitalize;
     display: block;
-
-
+    
+   
 }
 .costume_village_hashtag{
     font-size: 1.6rem;
@@ -2020,12 +1979,13 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-size: 1rem;
     text-transform: uppercase;
 }
-.costume_popup_share::after,
+.costume_popup_share::after
 {
     content: "";
     display: table;
     clear: both;
 }
+
 .costume_popup_share a{
     margin: 0.1rem;
     display: inline-block;
@@ -2065,8 +2025,8 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 .toggle {
    width:10rem;
    height: 10rem;
-
-
+   
+   
 }
 
 .move__box:not(.selected) {
@@ -2093,7 +2053,7 @@ input[type=radio] + label.move__button .labelSpan{
     display: inline-block;
      font-size: 2rem;
     position: relative;
-    left: -2%;
+    left: -5%;
     text-transform: uppercase;
 }
 
@@ -2106,23 +2066,26 @@ input[type=radio] + label.move__button .labelSpan{
 
 .move__box{
     border:4px solid black;
-    width:28rem;
+    width:27rem;
     height:40rem;
     border-radius: 3rem;
     display: inline-block;
     margin-bottom: 2rem;
     text-align: center;
     background-color: white;
-
-
+    
 }
 
 .column_move{
     margin-top: 2rem;
     padding-left: 2.5rem;
-    column-width: 25rem !important;
-    column-gap: 0rem;
-
+    column-width: 23rem !important;
+    column-gap: 1rem;
+    padding-left: 2.5rem;
+    margin-right: 0rem;
+   
+    margin-top: 2rem;
+    
 }
 
 
@@ -2156,7 +2119,7 @@ input[type=radio] + label.move__button .labelSpan{
 #moves_05{
    width:20rem;
     margin: 0rem;
-
+    
 }
 #moves_06{
    width:20rem;
@@ -2481,7 +2444,7 @@ width:23rem;
             animation-iteration-count: infinite;
             transform-origin: 50% 50%;
     fill:black;
-
+    
 }
 
  @keyframes moves_opacity {
@@ -2538,7 +2501,7 @@ width:23rem;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 2.5rem;
-
+    
 }
 
 .moves_des{
@@ -2548,7 +2511,7 @@ width:23rem;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.8rem;
-
+   
 }
 
 .moves_des a{
@@ -2593,6 +2556,7 @@ width:23rem;
     text-transform: capitalize;
     font-weight: 400;
     margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .other__name:hover, .other__name:active{
@@ -2648,4 +2612,7 @@ width:23rem;
 .up-on-scroll {
     transition: transform 0.5s, opacity 1s;
   }
+
+
 }
+

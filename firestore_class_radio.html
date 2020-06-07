@@ -96,6 +96,7 @@
                  var refer = document.getElementById("formGroupExampleInput33").value;
                 var sentiment = document.getElementById("formGroupExampleInput4").value;
                 var image = document.getElementById("formGroupExampleInput5").value;
+                var si = document.getElementById("formGroupExampleInput6").value;
                 // var group = document.getElementsByName("formGroupExampleInput6");
                 var groups = $("input[name='formGroupExampleInput6']:checked");
                 // var movement = document.getElementById("formGroupExampleInput7").value;
@@ -122,6 +123,7 @@
                     refer: refer,
                     sentiment: sentiment,
                     image: image,
+                    si: si,
                     group: groupsArray,
                     movement: movementsArray,
                     ideologie: ideologiesArray,
@@ -182,12 +184,13 @@
                                 <td>${doc.data().refer}</td>
                                 <td>${doc.data().sentiment}</td>
                                 <td><img src=${doc.data().image} style="width: 100px"/></td>
+                                <td><img src=${doc.data().si} style="width: 100px"/></td>
                                 <td>${doc.data().group}</td>
                                 <td>${doc.data().movement}</td>
                                 <td>${doc.data().ideologie}</td>
 
 
-                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-refer="${doc.data().refer}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
+                                <td><button type="button" class="btn btn-success btn-sm class="btn btn-primary mt-3 mb-3" data-id=${doc.id} data-name="${doc.data().name}" data-description="${doc.data().description}" data-quote="${doc.data().quote}" data-refer="${doc.data().refer}" data-sentiment="${doc.data().sentiment}" data-image="${doc.data().image}" data-si="${doc.data().si}" data-group="${doc.data().group}" data-movement="${doc.data().movement}" data-ideologie="${doc.data().ideologie}" data-toggle="modal" data-target="#exampleModalUpdate">Update</button>
 
                     <button type="button" class="btn btn-danger btn-sm deleteItem" data-id=${doc.id}>Delete</button></td>
 
@@ -244,9 +247,15 @@
                 $("#updateSentiment").val(e.relatedTarget.dataset.sentiment);
                 $("#updateImage").val(e.relatedTarget.dataset.image);
                 $('#inputGroupFile03Img').attr('src', e.relatedTarget.dataset.image);
+
+                $("#updateSI").val(e.relatedTarget.dataset.si);
+                $('#inputGroupFile05Img').attr('src', e.relatedTarget.dataset.si);
+                 //++
                 // $("#updateGroup").val(e.relatedTarget.dataset.group);
                 // $("#updateMovement").val(e.relatedTarget.dataset.movement);
                 // $("#updateideologie").val(e.relatedTarget.dataset.ideologie);
+
+
                 e.relatedTarget.dataset.group.split(",").forEach(function (el) {
                     $('input[name=updateGroup]').toArray().forEach(function (e) {
                         if (el === $(e).val()) {
@@ -284,6 +293,7 @@
                  var refer = $("#updateRefer").val();
                 var sent = $("#updateSentiment").val();
                 var image = $("#updateImage").val();
+                var si = $("#updateSI").val();
                 // var group = $("#updateGroup").val();
                 // var movement = $("#updateMovement").val();
                 // var ideo = $("#updateideologie").val();
@@ -314,6 +324,7 @@
                     refer: docRefer,
                     sentiment: docSent,
                     image: docImage,
+                    si: docSI,
                     group: docGroup,
                     movement: docMovement,
                     ideologie: docIdeo,
@@ -534,13 +545,35 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="inputGroupFileAddon02"
-                                                    onclick="ImgfileUpload()">Upload</span>
+                                                    onclick="ImgfileUpload('updateorigin')">Upload</span>
                                             </div>
                                         </div>
                                         <div class="input-group mt-3">
                                             <img src="" alt="" class="img-thumbnail" id="inputGroupFile02Img">
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput6">SI</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput6"
+                                            placeholder="SI input placeholder" readonly />
+                                        <div class="input-group mt-3">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile04">
+                                                <label class="custom-file-label" for="inputGroupFile04"
+                                                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="inputGroupFileAddon02"
+                                                    onclick="ImgfileUpload('update2origin')">Upload</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <img src="" alt="" class="img-thumbnail" id="inputGroupFile04Img">
+                                        </div>
+                                    </div>
+
+
                                     <div class="form-group">
                                         <label for="formGroupExampleInput6">Group</label>
                                         <!-- <input type="text" class="form-control" id="formGroupExampleInput6"
@@ -671,6 +704,26 @@
                                             <img src="" alt="" class="img-thumbnail" id="inputGroupFile03Img">
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="updateSI">SI</label>
+                                        <input type="text" class="form-control" id="updateSI"
+                                            placeholder="SI input placeholder" />
+                                        <div class="input-group mt-3">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile05">
+                                                <label class="custom-file-label" for="inputGroupFile05"
+                                                    aria-describedby="inputGroupFileAddon02">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text" id="inputGroupFileAddon05"
+                                                    onclick="ImgfileUpload('update2')">Upload</span>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mt-3">
+                                            <img src="" alt="" class="img-thumbnail" id="inputGroupFile05Img">
+                                        </div>
+                                    </div>
                                     <!-- <div class="form-group">
                                         <label for="updateGroup">Group</label>
                                         <input type="text" class="form-control" id="updateGroup"
@@ -757,6 +810,7 @@
                                 <th scope="col">Refer</th>
                                 <th scope="col">Sentiment</th>
                                 <th scope="col">Image</th>
+                                <th scope="col">SI</th>
                                 <th scope="col">Group</th>
                                 <th scope="col">Movement</th>
                                 <th scope="col">ideologie</th>
@@ -941,6 +995,20 @@
                 $("label[for='inputGroupFile03']").text(data.target.files[0].name);
             }
         });
+
+        $('#inputGroupFile04').change(data => {
+            if (data.target.files[0] && data.target.files[0].name) {
+                $("label[for='inputGroupFile04']").text(data.target.files[0].name);
+            }
+        });
+        $('#inputGroupFile05').change(data => {
+            if (data.target.files[0] && data.target.files[0].name) {
+                $("label[for='inputGroupFile05']").text(data.target.files[0].name);
+            }
+        });
+
+
+
     </script>
 </body>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,6 @@
             href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="../css/style.css" />
 
         <title>MOVE AROUND</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -19,6 +18,12 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet"  href="../css/style.css" />
+        <link rel="stylesheet" href="../css/responsive2000.css" />
+        <link rel="stylesheet" href="../css/responsive1440.css" />
+        <link rel="stylesheet" href="../css/responsive1300.css" />
+        <link rel="stylesheet"  href="../css/responsive600.css" />
+
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -34,8 +39,79 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"
         ></script>
-    </head>
-    <body>
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+          function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'nl', includedLanguages:'nl,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+        }
+
+    $('document').ready(function () {
+
+
+        // RESTYLE THE DROPDOWN MENU
+    $('#google_translate_element').on("click", function () {
+
+        // Change font family and color
+        $("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *")
+            .css({
+                'color': 'black',
+                'font-family': 'Ubuntu',
+                'margin-top': '-3px',
+                'margin-left': '-2px',
+                'text-align': 'center',
+
+                'font-size': '1rem',
+                'font-weight': '600'
+
+            });
+        // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
+
+                // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2').css ('padding', '0px');
+
+        // Change the padding of the languages
+        $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '20px');
+
+        // Change the width of the languages
+        $("iframe").contents().find('.goog-te-menu2-item').css('width', '1%');
+        $("iframe").contents().find('td').css('width', '1%');
+
+        // Change hover effects
+        $("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
+            $(this).css('background-color', 'black').find('span.text').css('color', 'white');
+        }, function () {
+            $(this).css('background-color', 'white').find('span.text').css('color', '#544F4B');
+        });
+
+        // Change Google's default blue border
+        $("iframe").contents().find('.goog-te-menu2').css('border', 'none');
+
+        // Change the iframe's box shadow
+        $(".goog-te-menu-frame").css('box-shadow', '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)');
+
+
+
+        // Change the iframe's size and position?
+        $(".goog-te-menu-frame").css({
+            'height': '6%',
+            'width': '6.5%',
+            'top': '13rem',
+            'right': '9rem'
+        });
+        // Change iframes's size
+        $("iframe").contents().find('.goog-te-menu2').css({
+            'height': '100%',
+            'width': '100%'
+        });
+    });
+});
+</script>
+</head>
+
+ <body>
+       <div id="google_translate_element"></div>
+
         <div class="navigation">
             <input
                 type="checkbox"
@@ -68,8 +144,7 @@
                                 class="menu__arrow"
                             />
 
-                            HOME</a
-                        >
+                            HOME</a>
                     </li>
                     <li class="navigation__item">
                         <a
@@ -94,8 +169,7 @@
                                 alt=""
                                 class="menu__arrow"
                             />
-                            FOLK DANCE</a
-                        >
+                            FOLK DANCE</a>
                     </li>
 
                     <li class="navigation__item">
@@ -162,8 +236,7 @@
                                 href="folk_dance_almelosekermis.html"
                                 class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >almelosekermis</span
-                                >
+                                    >almelosekermis</span>
                             </a>
 
                             <audio class="beep-one" loop>
@@ -176,9 +249,7 @@
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_afk.html" class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >Afklappertje</span
-                                ></a
-                            >
+                                    >Afklappertje</span></a>
 
                             <audio class="beep-one" loop>
                                 <source
@@ -192,17 +263,27 @@
                                 href="folk_dance_boanopstekker.html"
                                 class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >BOANOPSTEKKER</span
-                                ></a
-                            >
+                                    >BOANOPSTEKKER</span></a>
+                                 <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/boano.mp3"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_Blauw.html" class="folk_a"
                                 ><span class="folk_dance_name_3"
                                     >Blauw<br />garen en koperdraad</span
-                                ></a
-                            >
+                                ></a>
+
+                                 <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/Blauw.mp3"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
@@ -210,24 +291,37 @@
                                 href="folk_dance_de%20vleegerd.html"
                                 class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >de vleegerd</span
-                                ></a
-                            >
+                                    >de vleegerd</span></a>
+
+                                  <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/de%20vleegerd_main.mp3"
+                                />
+                            </audio>
                         </div>
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_druiekusman.html" class="folk_a"
                                 ><span class="folk_dance_name"
                                     >druiekusman</span
-                                ></a
-                            >
+                                ></a>
+                                 <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/driekusman.mp3"
+                                />
+                            </audio>
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_slaapmuts.html" class="folk_a">
                                 <span class="folk_dance_name"
-                                    >de slaapmuts</span
-                                >
+                                    >de slaapmuts</span>
                             </a>
+                             <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/slaapmuts.mp4"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
@@ -237,6 +331,12 @@
                                     Polka</span
                                 >
                             </a>
+                             <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/Larense.mp3"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
@@ -245,30 +345,48 @@
                                     >Keppelse Quadrille</span
                                 >
                             </a>
+                             <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/Keppelse.mp3"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_riepegarste.html" class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >riepe garste</span
-                                ></a
-                            >
+                                    >riepe garste</span></a>
+                            <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/Riepe%20Garste.mp3"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_lotisdood.html" class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >lot is dood</span
-                                ></a
-                            >
+                                    >lot is dood</span></a>
+                            <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/lotisdood.mp3"
+                                />
+                            </audio>
+
                         </div>
 
                         <div class="folk_dance_box up-on-scroll_history">
                             <a href="folk_dance_Zevensprong.html" class="folk_a"
                                 ><span class="folk_dance_name"
-                                    >Zevensprong</span
-                                ></a
-                            >
+                                    >Zevensprong</span></a>
+                            <audio class="beep-one" loop>
+                                <source
+                                    src="../folk_dance_video/Zevensprong.mp3"
+                                />
+                            </audio>
+
                         </div>
                     </div>
                 </div>
@@ -318,10 +436,13 @@
         $(document).ready(function() {
             $(".folk_a")
                 .on("mouseover", function(event) {
-                    beepOne.play();
+//                    beepOne.play();
+                console.log($(this).siblings()[0]);
+                $(this).siblings()[0].play();
                 })
                 .on("mouseout", function(event) {
-                    beepOne.pause();
+//                    beepOne.pause();
+                 $(this).siblings()[0].pause();
                 });
         });
     </script>

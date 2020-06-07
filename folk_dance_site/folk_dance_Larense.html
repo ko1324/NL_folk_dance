@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
             href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="../css/style.css" />
+
         <title>MOVE AROUND</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="menu.js"></script>
@@ -18,9 +18,84 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
             crossorigin="anonymous"
         />
+       <link rel="stylesheet"  href="../css/style.css" />
+        <link rel="stylesheet" href="../css/responsive2000.css" />
+        <link rel="stylesheet" href="../css/responsive1440.css" />
+        <link rel="stylesheet" href="../css/responsive1300.css" />
+        <link rel="stylesheet"  href="../css/responsive600.css" />
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+          function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'nl', includedLanguages:'nl,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+        }
 
-    </head>
-    <body>
+    $('document').ready(function () {
+
+
+        // RESTYLE THE DROPDOWN MENU
+    $('#google_translate_element').on("click", function () {
+
+        // Change font family and color
+        $("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *")
+            .css({
+                'color': 'black',
+                'font-family': 'Ubuntu',
+                'margin-top': '-3px',
+                'margin-left': '-2px',
+                'text-align': 'center',
+
+                'font-size': '1rem',
+                'font-weight': '600'
+
+            });
+        // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
+
+                // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2').css ('padding', '0px');
+
+        // Change the padding of the languages
+        $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '20px');
+
+        // Change the width of the languages
+        $("iframe").contents().find('.goog-te-menu2-item').css('width', '1%');
+        $("iframe").contents().find('td').css('width', '1%');
+
+        // Change hover effects
+        $("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
+            $(this).css('background-color', 'black').find('span.text').css('color', 'white');
+        }, function () {
+            $(this).css('background-color', 'white').find('span.text').css('color', '#544F4B');
+        });
+
+        // Change Google's default blue border
+        $("iframe").contents().find('.goog-te-menu2').css('border', 'none');
+
+        // Change the iframe's box shadow
+        $(".goog-te-menu-frame").css('box-shadow', '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)');
+
+
+
+        // Change the iframe's size and position?
+        $(".goog-te-menu-frame").css({
+            'height': '6%',
+            'width': '6.5%',
+            'top': '13rem',
+            'right': '9rem'
+        });
+        // Change iframes's size
+        $("iframe").contents().find('.goog-te-menu2').css({
+            'height': '100%',
+            'width': '100%'
+        });
+    });
+});
+</script>
+</head>
+
+ <body>
+       <div id="google_translate_element"></div>
+
         <div class="navigation">
             <input
                 type="checkbox"
@@ -139,12 +214,22 @@
             <section class="section-dance" id="section-dance">
 
 
-                <div class="u-center-text">
-
                    <div class="section-dance-video">
+                        <video class="dance-video-1" autoplay loop>
+                            <source
+                                src="../folk_dance_video/Larense.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser is not supported!
+                        </video>
+
+                    </div>
+
+                <div class="section-dance-player">
 
                        <div class="dance__video-controls controls" data-state="hidden">
 
+                       <div class="dance__player_section">
                        <button id="play" type="button" data-state="play" class="dance__player dance_btn" onclick="video_play()">
                       </button>
 
@@ -159,24 +244,15 @@
 
                       <button id="skipf" type="button" data-state="hidden" class="dance__player dance_btn" onclick="video_skipf()">
                       </button>
+                       </div>
 
+                      <div class="dance__video_section">
+                      <button id="back" onclick="location.href='../folk_dance_site/folk_dance_main.html'" type="button" class="dance__player dance_btn">
+                      </button>
+                      </div>
+
+                       </div>
                    </div>
-
-                        <video class="dance-video-1" autoplay loop>
-                            <source
-                                src="../folk_dance_video/Larense.mp4"
-                                type="video/mp4"
-                            />
-                            Your browser is not supported!
-                        </video>
-                   <a href="../folk_dance_site/folk_dance_main.html" class="back__box back_a dance_btn">
-                   <img src="../img/back-white_2-34.svg" alt="arrow__left" class="back__img">
-                   <h3 class="back__text">
-                       BACK TO<br> DANCE LIST
-                    </h3>
-                   </a>
-                </div>
-                </div>
 
 
 

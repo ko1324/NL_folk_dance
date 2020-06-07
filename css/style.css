@@ -22,7 +22,7 @@ body {
 /* Navigation */
 .navigation__menu {
     height: 6.2rem;
-    z-index: 2500;
+    z-index: 100;
     opacity: 1;
 }
 
@@ -99,8 +99,8 @@ body {
 
 .navigation__list {
     position: absolute;
-    top: 48%;
-    left: 50%;
+    top: 45%;
+    left: 57%;
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
@@ -231,6 +231,10 @@ body {
     height: 11.5rem;
 }
 
+.section-main{
+    height: 110vh;
+}
+
 /*main*/
 /*section-main*/
 /*folk_dance_main*/
@@ -310,7 +314,7 @@ body {
 
 
 /*folk_dance*/
-.section-main {
+.section-main-dance {
     height: 88vh;
     background-color: white;
     background-size: cover;
@@ -333,16 +337,15 @@ body {
 
 .header__main-video {
     position: relative;
-    top: -5rem;
-    width: 90rem;
+   top: 14rem;
+    width: 95rem;
     background-position: top;
     clip-path: circle(34.6% at 50% 50%);
      -webkit-clip-path: circle(34.6% at 50% 50%);
 }
 
 .header__logo-box-2 {
-    position: relative;
-    top: 58rem;
+
 }
 
 .header__logo-2 {
@@ -359,48 +362,50 @@ body {
 }
 
 
-.controls[data-state=hidden] {
-/*   display:none;*/
-}
 
-.controls[data-state=visible] {
-/*   display:block;*/
-}
 .controls #play:focus,.controls #pause:focus{
     outline:0;
 }
 
 .controls #play {
    background-image: url('../img/player_play2.png');
-    left:6.3rem;
-    top:76rem;
+
 }
 
 .controls #pause {
    background-image: url('../img/player_stop.png');
-    left:11.3rem;
-    top:76rem;
+
 }
 
 .controls #slow {
    background-image: url('../img/player_slow.png');
-    left:16.3rem;
-    top:76rem;
+
 }
 
 .controls #skipb {
    background-image: url('../img/player_skipb.png');
-    left:21.3rem;
-    top:76rem;
+
 }
 
 .controls #skipf {
    background-image: url('../img/player_skip.png');
-    left:26.3rem;
-    top:76rem;
+
+}
+
+.controls #back {
+   background-image: url('../img/player_back-39.png');
+
 }
 
 
+.dance__video-controls{
+    display: flex;
+    z-index: 200;
+    width:100%;
+    justify-content: space-between;
+    position: relative;
+    top:30%;
+}
 
 
 
@@ -408,20 +413,20 @@ body {
     background-size: cover;
     width:4rem;
     height:4rem;
-    position:absolute;
     z-index: 101;
     background-color: transparent !important;
-   border-color: transparent !important;
-
+    border-color: transparent !important;
     border-style: none;
-
+    margin-right: 0.4rem;
 }
 
-    cursor: pointer;
+.controls #back{
+    width:14rem;
 }
-.controls button:focus{
-/*     outline: none !important!;*/
-}
+
+
+
+
 
 .controls:hover ~.dance-video-1{
     opacity: 0.3;
@@ -460,35 +465,14 @@ body {
 }
 /*1.svg 소스 추가시 크기 변환*/
 
-.back__img{
-    width:2.6rem;
-    height: 3rem;
-    position: absolute;
-    right:9rem;
-    top:0.51rem;
-    
-    
-}
 
-.back__text{
-    color:white;
-    position:absolute;
-    top:0.7rem;
-    left:5.3rem;
-    line-height: 1.3rem;
-     text-align: left;
-    font-size: 1.2rem !important;
-    font-weight: 500 !important;
-   
-}
 
 .dance-video-1 {
-    position: relative;
-    left:-3rem;
-    top: -3rem;
-    width: 107%;
+
+    width: 103%;
     z-index: 100;
-    /*    background-position: top;*/
+
+    padding-right: 3rem;
 }
 .section-dance-video {
     display: flex;
@@ -662,8 +646,15 @@ p {
     padding-bottom: 57.4%;
     margin-bottom: 2rem;
     margin-top:1.3rem;
-
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    overflow: hidden;
+    z-index: 1;
 }
+
+
 
 
 iframe {
@@ -671,6 +662,11 @@ iframe {
     width: 100%;
     height: 100%;
     border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -o-border-radius: 3rem;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .row {
@@ -782,6 +778,10 @@ iframe {
 }
 
 /* utility class */
+
+
+
+
 .u-center-text {
     text-align: center;
 }
@@ -862,6 +862,133 @@ iframe {
 
 
 
+
+
+/*translator*/
+
+* {box-sizing: border-box;}
+/*html, body {height:100%;}*/
+
+
+#google_translate_element {
+  position: fixed;
+  top: 9rem;
+/*    높이*/
+  right: 5rem!important;
+    z-index: 1000;
+
+}
+.goog-te-gadget {
+  font-family: Ubuntu, 'Ubuntu', sans-serif!important;
+  text-transform: uppercase;
+  background-repeat:no-repeat;
+  color:black;
+
+
+}
+
+/*버튼->이미지삽입*/
+.goog-te-gadget-simple  {
+    background-repeat:no-repeat;
+  background-color: transparent !important;
+  background-image: url(../img/nl-40.png);
+  background-size: cover;
+    width:9.4rem;
+  height: 3.3rem;
+  border: 0px solid rgba(255,255,255,0.50) !important;
+  padding: 0.6rem!important;
+  border-radius: 0px!important;
+  font-size: 1rem!important;
+    color:transparent !important;
+  line-height:2rem!important;
+  display: inline-block;
+  cursor: pointer;
+  zoom: 1;
+}
+
+ .goog-te-menu-frame{
+
+        height:4.9% !important;
+        width:6.5% !important;
+        top:13rem;
+        right:9rem;
+        color: black !important;
+
+    }
+
+/*?*/
+.goog-te-menu2 {
+    /* width:20% !important;
+    height:3% !important; */
+}
+
+/*언어선택글씨*/
+.goog-te-menu-value {
+    color: transparent !important;
+    opacity: 0%;
+    /* &::before {
+    font-family: 'Ubuntu';
+    content: "\E927";
+    margin-right: 16px;
+    font-size: 2rem;
+    vertical-align: -10px;
+  }  */
+}
+
+
+
+.goog-te-menu-value span:nth-child(5) {
+  display:none;
+}
+
+/*?*/
+.goog-te-menu-value span:nth-child(3) {
+  border:none!important;
+  font-family: 'Ubuntu';
+  /* &:after {
+    font-family: 'Ubuntu';
+    content: "\E5C5";
+    font-size: 2rem;
+    vertical-align: -6px;
+  }   */
+}
+
+/*?*/
+.goog-te-gadget-icon {
+    /* background-image: url(../img/back-33.svg)!important; */
+    background-position: 0px 0px;
+    height: 5rem!important;
+    width: 5rem!important;
+    margin-right: 8px!important;
+    display: none;
+}
+/*?*/
+
+.goog-te-banner-frame.skiptranslate {display: none!important;}
+body {top: 0px!important;}
+
+
+    #google_translate_element {
+/*
+        bottom: calc(100% - 50% - 53px);
+        left: 16px!important;
+        width: 100%!important;
+*/
+        /* .goog-te-gadget {
+            width:10% !important;
+        }
+        .skiptranslate {
+            width:0% !important;
+        }
+        .goog-te-gadget-simple {
+            width: calc(100% - 32px)!important;
+            text-align: center;
+        }    */
+    }
+
+
+
+
 /*history*/
 
 .history_comp_left .history_text{
@@ -890,42 +1017,40 @@ iframe {
 .history_comp_text_02 {
     font-weight: 400;
     font-size: 2.2rem;
-/*    position: absolute;*/
-    left: 23rem;
-/*    z-index: 3000;*/
-    /* background: rgb(255,255,255,0.5);*/
+
+}
+
+.history_nega{
+    width:10rem;
 }
 
 /*history_comp_left_content*/
 /*button*/
 
-.icon {
-    width: 7rem;
-    transform: scale(0);
-}
 
-.icon.scaleUp {
-    transition: all 0.5s;
-    transform: scale(1);
-}
 
 .tag {
     font-weight: 600;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     line-height: 2rem;
     position: absolute;
-    left: 6rem;
-    top: -0.1rem;
-    text-align: left;
-    width: 10rem;
-    height: 7rem;
+    left: 8.6rem;
+    top: -0.3rem;
+    text-align: center;
+    width: 7rem;
+    height: 8rem;
     z-index: 1000;
     background: rgb(255, 255, 255, 0.8);
-    border-radius: 20rem;
+    border-radius: 30rem;
     /*  text-shadow: -1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white;*/
 
-    padding: 1.5rem 1rem 2rem 1.5rem ;
+    padding: 1rem 1rem 2rem 1.5rem ;
     transition: 1s ease-in-out;
+}
+
+.history_img_icon_box span.tag {
+
+    display: none;
 }
 
 .open_toggles:focus {
@@ -934,30 +1059,9 @@ iframe {
     outline: none;
 }
 
-.history_comp_left_content {
-    position: relative;
-}
-
-.history_img_icon_box {
-    position: absolute;
-    padding: 0;
-    display: inline-block;
-}
-
-.history_img_icon_box span.tag {
-    display: none;
-}
-
-.icon:hover{
-    transition: all 0.5s;
-    transform: scale(1.2) !important;
-}
-
-.history_img_icon_box:hover span.tag {
-    display: block;
-
-    transition: all 0.5s;
-    transform: translate(1.5rem);
+.open_toggles{
+ background: transparent;
+    border: none;
 }
 
 button.selected:focus .icon{
@@ -966,7 +1070,6 @@ button.selected:focus .icon{
 }
 button.selected:focus .tag{
     display: block;
-
     transform: translate(1.5rem);
     transition: all 0.5s;
 }
@@ -1016,197 +1119,211 @@ li {
     height: 0;
 }
 
-.history_comp_left_content button.history_img_icon_box {
-    background: transparent;
-    border: none;
-}
+
 
 .senti {
     position: fixed;
     z-index: 100000;
     left: 3rem;
+
 }
 
 .senti_img {
-    width: 70rem;
-    display: none;
-}
-.history_button_1914 {
-    left: 5.5em;
-    top: 15.5rem;
-/*    0.7*/
+    width: 81rem;
+
+    display: block;
 }
 
-.history_button_1917 {
-    left: 15.7rem;
-    top: 29rem;
-    /*-0.5*/
+
+
+
+
+.history_img_icon_box:hover span.tag {
+    display: block;
+    transition: all 0.5s;
+    transform: translate(1.5rem);
 }
 
-.history_button_1918 {
-    left: 40.2rem;
-    top: 33rem;
-    /* 32rem중간*/
-    /*    0.2*/
+.history_img_icon_box{
+    position:absolute;
 }
 
-.history_button_1919 {
-    left: 33.2rem;
-    top: 38rem;
-    /*0*/
+.history_left_button{
+    position: relative;
 }
 
-.history_button_1925 {
-    left: 33.2rem;
-    top: 65rem;
-    /* 29rem중간*/
-    /*0*/
-}
-.history_button_1926 {
-    left: 26.2rem;
-    top: 69.5rem;
-    /*   -0.2 */
+.icon {
+    width: 8.2rem;
+    transform: scale(0);
+
 }
 
-.history_button_1926_01 {
-    left: 12.3rem;
-    top: 69.5rem;
-    /*    -0.6*/
-}
-.history_button_1926_01:hover,.history_button_1926_01:focus {
-    z-index: 100;
-    opacity: 0.9;
+
+
+.icon_up_01:hover, icon_up_01:focus{
+    z-index: 200;
 }
 
-.history_button_1927 {
-    left: 12.3rem;
-    top: 74rem;
-    /*    -0.6*/
-    opacity: 0.9;
-}
-.history_button_1927:hover,.history_button_1927:focus {
-    z-index: 100;
-    opacity: 0.9;
-}
-.history_button_1927_01:hover,.history_button_1927_01:focus {
-    z-index: 100;
-    opacity: 0.9;
-}
-.history_button_1927_01 {
-    left: 5.2rem;
-    top: 74rem;
-    opacity: 0.9;
-    z-index: 1;
-    /*    -0.8*/
-}
-.history_button_1927_02 {
-    left: 9rem;
-    top: 74rem;
-    opacity: 0.9;
-    /*    -0.7*/
+.icon.scaleUp {
+    transition: all 0.5s;
+    transform: scale(1);
 }
 
-.history_button_1927_02:hover,.history_button_1927_02:focus {
-    z-index: 100;
-    opacity: 0.9;
-}
-.history_button_1927_03 {
-    left: 19.3rem;
-    top: 74rem;
-    opacity: 0.9;
-    z-index: 0;
-    /*    -0.4*/
+.icon:hover{
+    transition: all 0.5s;
+    transform: scale(1.2) !important;
 }
 
-.history_button_1929 {
-    left: 12.5rem;
-    top: 83rem;
-    opacity: 0.9;
-    z-index: 0;
-    /*    -0.4*/
+
+
+.history_comp_left_content button {
+    position: relative;
+    padding: 0;
+    display: inline-block;
+
 }
 
-.history_button_1929:hover,.history_button_1929:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_01_p{
+    left: 43.4rem;
 }
 
-.history_button_1930 {
-    left: 19.3rem;
-    top: 88rem;
-    /*    -0.4*/
-    opacity: 0.9;
+.icon_00{
+   left: 39.5rem;
 }
-.history_button_1930:hover,.history_button_1930:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_01{
+    left: 35.5rem;
 }
 
-.history_button_1930_01 {
-    left: 30rem;
-    top: 88rem;
-    /*    -0.1 m*/
-    opacity: 0.9;
-}
-.history_button_1930_01:hover,.history_button_1930_01:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_02{
+    left: 31.5rem;
 }
 
-.history_button_1930_02 {
-    left: 33.2rem;
-    top: 88rem;
-    /*    0*/
-    opacity: 0.9;
-}
-.history_button_1930_02:hover,.history_button_1930_02:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_03{
+    left: 27.5rem;
 }
 
-.history_button_1931 {
-    left: 5rem;
-    top: 92rem;
-    /*    -0.8*/
-    opacity: 0.9;
-}
-.history_button_1931:hover,.history_button_1931:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_04{
+    left:23.5rem;
 }
 
-.history_button_1931_01 {
-    left: 40.1rem;
-    top: 92rem;
-    /*    0.2 m */
-    opacity: 0.9;
-}
-.history_button_1931_01:hover,.history_button_1931_01:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_05{
+    left:19.5rem;
 }
 
-.history_button_1931_02 {
-    left: 8.7rem;
-    top: 92rem;
-    /*    -0.3 */
-    opacity: 0.9;
-}
-.history_button_1931_02:hover,.history_button_1931_02:focus {
-    z-index: 100;
-    opacity: 0.9;
+.icon_05_p{
+    left:59.6rem;
 }
 
-.history_button_1931_03 {
-    left: 22.8rem;
-    top: 92rem;
-    /*    -0.7 m */
-    opacity: 0.9;
+.icon_06{
+    left:15.5rem;
 }
-.history_button_1931_03:hover,.history_button_1931_03:focus {
-    z-index: 100;
-    opacity: 0.9;
+
+.icon_07{
+    left:11.5rem;
 }
+.icon_07_p{
+    left:67.7rem;
+
+}
+.icon_08{
+    left:7.5rem;
+}
+
+.icon_09{
+    left:3.2rem;
+}
+
+.icon_1914{
+    top:8rem;
+}
+
+.icon_1917{
+    top:16rem;
+}
+
+.icon_1918{
+    top:25rem;
+}
+
+.icon_1919{
+    top:39rem;
+}
+
+.icon_1920s{
+   top:58rem;
+}
+
+.icon_1925{
+    top:75rem
+}
+
+.icon_1926{
+    top:90rem;
+}
+
+.icon_1927{
+    top:111rem;
+}
+
+.icon_1929{
+    top:130rem;
+    }
+
+.icon_1930{
+    top:148rem;
+}
+
+.icon_1931{
+    top:170rem;
+}
+
+.icon_1932{
+    top:190rem;
+}
+
+.icon_1940s{
+    top:205rem;
+}
+
+.icon_1941{
+    top:216rem;
+}
+
+.icon_1943{
+     top:230rem;
+}
+
+.icon_1944{
+    top:241rem;
+}
+
+.icon_1945{
+    top:256rem;
+}
+
+.icon_1946{
+    top:272rem;
+}
+
+.icon_1947{
+    top:286.5rem;
+}
+
+.icon_1948{
+    top:296rem;
+}
+
+.icon_1950s{
+    top:309rem;
+}
+
+.icon_1959{
+    top:327rem;
+}
+
+
+
+
 
 
 
@@ -1372,7 +1489,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     display: block;
     position: absolute;
 /*    z-index: 1000;*/
-    right: 0px;
+    right: 0rem;
     top: 0px;
     margin: 0px;
     background-color: rgb(255, 255, 255);
@@ -1667,7 +1784,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
 /*costume_ex*/
 
 .modal {
-
+            z-index: 100000;
             text-align: center;
         }
 
@@ -2010,7 +2127,7 @@ input[type="radio"]:checked + label[for="toggle4"]:hover {
     font-size: 1rem;
     text-transform: uppercase;
 }
-.costume_popup_share::after,
+.costume_popup_share::after
 {
     content: "";
     display: table;

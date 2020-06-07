@@ -2,19 +2,15 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link
             href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
             rel="stylesheet"
         />
-         <link rel="stylesheet" media="(max-width:1200px)" href="../css/responsive1200_style.css" />
-        <link rel="stylesheet" media="(max-width:900px)" href="../css/style.css" />
-        <link rel="stylesheet" media="screen and (max-device-width: 600px)" href="css/responsive600.css" />
-        <link rel="stylesheet" media="(max-width:1800px)" href="../css/responsive1200_style.css" />
 
-        <link rel="stylesheet" href="css/style.css" />
+
+
         <title>MOVE AROUND</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="menu.js"></script>
@@ -24,6 +20,14 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
             crossorigin="anonymous"
         />
+
+        <link rel="stylesheet"  href="css/style.css" />
+        <link rel="stylesheet" href="css/responsive2000.css" />
+        <link rel="stylesheet" href="css/responsive1300.css" />
+        <link rel="stylesheet" href="css/responsive1440.css" />
+        <link rel="stylesheet"  href="css/responsive600.css" />
+        <!-- <link rel="stylesheet" href="css/responsive1800.css" /> -->
+
         <script
             src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
             integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -39,24 +43,80 @@
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"
         ></script>
-    </head>
-<!--
-    <style>
-     @media(max-width:600px) {
 
-    body {
-    background-color: lightblue;
-    }
-}
-    </style>
--->
+        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+          function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'nl', includedLanguages:'nl,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+        }
 
-   <style>
+    $('document').ready(function () {
 
 
+        // RESTYLE THE DROPDOWN MENU
+    $('#google_translate_element').on("click", function () {
 
-    </style>
-    <body>
+        // Change font family and color
+        $("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *")
+            .css({
+                'color': 'black',
+                'font-family': 'Ubuntu',
+                'margin-top': '-3px',
+                'margin-left': '-2px',
+                'text-align': 'center',
+
+                'font-size': '1rem',
+                'font-weight': '600'
+
+            });
+        // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
+
+                // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2').css ('padding', '0px');
+
+        // Change the padding of the languages
+        $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '20px');
+
+        // Change the width of the languages
+        $("iframe").contents().find('.goog-te-menu2-item').css('width', '1%');
+        $("iframe").contents().find('td').css('width', '1%');
+
+        // Change hover effects
+        $("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
+            $(this).css('background-color', 'black').find('span.text').css('color', 'white');
+        }, function () {
+            $(this).css('background-color', 'white').find('span.text').css('color', '#544F4B');
+        });
+
+        // Change Google's default blue border
+        $("iframe").contents().find('.goog-te-menu2').css('border', 'none');
+
+        // Change the iframe's box shadow
+        $(".goog-te-menu-frame").css('box-shadow', '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)');
+
+
+
+        // Change the iframe's size and position?
+        // $(".goog-te-menu-frame").css({
+        //     'height': '6%',
+        //     'width': '6.5%',
+        //     'top': '13rem',
+        //     'right': '9rem'
+        // });
+        // Change iframes's size
+        $("iframe").contents().find('.goog-te-menu2').css({
+            'height': '100%',
+            'width': '100%'
+        });
+    });
+});
+</script>
+</head>
+
+ <body>
+       <div id="google_translate_element"></div>
+
         <div class="navigation">
             <input
                 type="checkbox"
@@ -160,8 +220,6 @@
                 </ul>
             </nav>
         </div>
-
-
         <header class="header">
             <div class="header__logo-box">
                  <a href="index.html">
@@ -169,29 +227,33 @@
                 </a>
             </div>
         </header>
-         <section class="section-main" id="section-main">
-                <div class="header__main">
 
 
+                    <div class="section-main header__main-box">
 
-
-                    <div class="header__main-box">
-                        <video class="header__main-video" autoplay muted loop>
+                       <div class="header__main-content">
+                        <video class="header__main-video" autoplay muted loop playsinline>
                             <!--                       controls 붙이고 muted지우면 한번 됐는데 또 안돼고 루프 안됌..-->
                             <source src="img/main_video_5.mp4" type="video/mp4" />
                             Your browser is not supported!
                         </video>
-                    </div>
-                </div>
-
-                <div class="header__logo-box-2">
+                        </div>
+                        <div class="header__main-sti">
+                     <div class="header__logo-box-2">
                     <img
                         src="img/logo_sti.png"
                         alt="Full logo"
                         class="header__logo-2  up-on-scroll"
                     />
-                </div>
-            </section>
+                   </div>
+                   </div>
+
+
+
+
+
+
+
        
         <footer class="footer up-on-scroll">
             <div class="row clearfix">
@@ -236,6 +298,7 @@
                 </div>
             </div>
         </footer>
+        </div>
     </body>
 
   <script>
@@ -295,6 +358,9 @@ window.addEventListener('scroll', handleScroll);
             document.body.className = this[hidden] ? "sg-tab-bust-hidden" : "sg-tab-bust-visible";
     }
 })();
+
+
+
 
 
 

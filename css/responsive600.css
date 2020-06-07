@@ -7,9 +7,825 @@
 1800px +: Big Desktop Screen
 */
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
+    /*    index*/
 
-    body {
-    background-color: lightblue;
+    body{
+        padding-left: 2.5rem;
     }
+
+   main{
+       margin-left: -1rem;
+   }
+
+    .header{
+            height: 10vh;
+    }
+   .header__logo {
+     height: 7.5rem;
+ }
+
+ .header__logo-box {
+    top:-1rem;
+
+ }
+    .dance-video-1{
+
+        width:115%;
+
+    }
+
+
+    .section-main{
+      position: relative;
+
+
+
+    }
+
+    .header__main-content{
+        margin-left: 0rem;
+        height:95vh;
+    }
+
+ .header__main-video {
+    top:40vh;
+    width:180%;
+    position: absolute;
+    left:-38%;
+    height: auto;
+     clip-path: circle(34.6% at 50% 50%);
+     -webkit-clip-path: circle(34.6% at 50% 50%);
+
+ }
+
+ .header__logo-box-2 {
+
+ }
+ .header__main-sti{
+    margin-left: 0;
+
+ }
+
+ .header__logo-2 {
+     width: 14rem;
+     /*  height: auto;*/
+ }
+
+     .footer {
+        padding: 0rem 0rem 5rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+     }
+
+     .footer__list{
+         padding-left:2rem;
+     }
+
+     .footer__copyright{
+         margin-right:1rem;
+     }
+
+
+     .navigation__menu {
+         height: 4rem;
+     }
+
+     .navigation__menu-box {
+         /* top: -1rem;
+         right: -2.5rem; */
+     }
+
+     .section-main {
+         height: 60vh;
+
+
+     }
+
+/*    translate*/
+
+#google_translate_element {
+  top: 6rem;
+  right: 2.6rem!important;
 }
+
+.goog-te-gadget-simple  {
+
+    width:7.5rem;
+  height: 2.6rem;
+  padding: 0.6rem!important;
+
+}
+
+    .goog-te-menu-frame{
+
+        height:6% !important;
+        width:21%  !important;
+        top:9rem !important;
+        right:0rem !important;
+        color:black !important;
+    }
+
+    .goog-te-menu2{
+        height:150%;
+        width:200%;
+    }
+
+    .goog-te-gadget{
+  background-color: transparent !important;
+    }
+
+    .goog-te-gadget-simple  {
+
+
+      }
+
+
+ /*    navigation*/
+
+
+ .navigation__checkbox:checked ~ .navigation__background {
+     transform: scale(40);
+
+ }
+
+ .navigation__nav {
+      height: 90vh;
+     }
+
+     .navigation__link,
+ .navigation__link:link,
+ .navigation__link:visited {
+        font-size: 4rem;
+     }
+
+     .navigation__list {
+     position: absolute;
+     top: 50%;
+     left: -2rem;
+     width: 40rem;
+
+     }
+
+  .navigation__nav {
+
+    width: 0%;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* left로 바꾸면 왼쪽에서 메뉴가 나오는 효과가난다 */
+    /* left: 0; */
+    z-index: 1500;
+
+    opacity: 0;
+    /*    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);*/
+    /*    2.들어가는거, 나오는거 제어하려면 어떻게???*/
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+    width: 150%;
+    opacity: 1;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__checkbox:checked ~ .navigation__button {
+    border: 6px solid white;
+
+    height: 6.5rem;
+    width: 6.5rem;
+}
+
+.navigation__background {
+    background: 6rem;
+
+    border-radius: 50%;
+    position: fixed;
+
+    height: 3.8rem;
+    width: 12rem;
+    position: fixed;
+    top: 2.1rem;
+    right:3rem;
+    background-color: transparent;
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    /*     transform: scale(50); */
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+    height: 6.5rem;
+    width:6.5rem;
+}
+
+
+
+
+.navigation__button {
+    background-color: transparent;
+
+    height: 3.8rem;
+    width: 12rem;
+    position: fixed;
+    top: 2.1rem;
+    right:3rem;
+
+    border-radius: 50%;
+    z-index: 2000;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+ /*    history*/
+
+
+ .history_detail_box{
+     width:100%;
+    margin-bottom: 5rem;
+     text-align: center;
+     margin-left: 0rem;
+     margin-top: 0rem;
+     margin-right: 0rem;
+ }
+
+ .history_detail{
+     line-height: 1.9rem;
+     font-size: 1.5rem;
+     display: none;
+ }
+
+     .row .col-5-of-8{
+          width: 100%;
+     }
+     .row .col-5-of-8:not(:last-child) {
+      margin-right: 0rem;
+ }
+
+
+     .history_comp_text_01 {
+    font-size: 1.9rem;
+    display:none;
+     }
+
+     .history_comp_text_02 {
+             display:none;
+     }
+
+     .history_legend {
+
+         /* display:none; */
+
+     }
+    .row .col-3-of-8 {
+     width: 100%;
+ }
+
+
+    .history_comp_text_legend{
+        /* display: none; */
+    }
+
+    .history_left_button{
+        display: none;
+    }
+
+ .history_comp_right{
+ position: relative;
+     top:0rem;
+ }
+
+
+ .icon{
+     width:6rem;
+ }
+ /* 여기까지 */
+
+
+
+
+
+     .year_title {
+
+     font-size: 2.1rem;
+     }
+
+     .content {
+     font-size: 1.8rem;
+     line-height: 2.5rem;
+     }
+
+     .history_refer {
+     font-size: 1.2rem;
+     font-weight: 500;
+         margin-top: 1.6rem;
+     }
+
+     .collapsible {
+
+     /* font-size: 2rem; */
+         line-height: 2rem;
+     }
+
+     #section-history .history_legend input[type="radio"] ~ span {
+     font-size: 2rem;
+     font-weight: 500;
+
+     /* width: 20rem; */
+
+     height: 10rem;
+     }
+
+     #section-history .history_legend input[type="radio"]:checked ~ span {
+
+     right: -3rem;
+     line-height: 2.5rem;
+     }
+
+     #section-history .history_legend input[type="radio"]:hover ~ span {
+        right: -3rem;
+          z-index: 1010;
+          line-height: 2.5rem;
+     }
+
+ /*    folkdance_main*/
+
+     .folk_dance_right_box{
+     padding-left: 5% !important;
+     padding-right: 0 !important;
+
+    }
+
+    .row{
+        margin-left:0rem !important;
+        margin-right:0rem !important;
+/*        flex-direction: column;*/
+    }
+
+    .folk_dance_name{
+        font-size: 1.5rem;
+    }
+
+    .folk_dance_name_2{
+        font-size: 1.5rem;
+    }
+    .folk_dance_name_3{
+        font-size: 1.5rem;
+    }
+
+    .folk_dance_box{
+        padding: 0rem;
+    }
+
+    .folk_a{
+        width:15rem;
+        height:15rem;
+    }
+
+
+    .section-main-dance{
+
+    }
+
+ .col-sm-9{
+     width:34rem;
+ }
+
+
+
+
+ /*    folkdance_contents*/
+
+
+    .dance__player_section button{
+        width:3.2rem;
+        height:3.2rem;
+    }
+
+
+
+    .dance__video-controls{
+        margin-top:1rem;
+
+    }
+
+    .controls #back{
+    width:11.1rem;
+    height:3.2rem;
+    margin-right:-1rem;
+}
+
+
+ .heading-classify {
+     font-size: 1.1rem;
+     width: 15rem;
+     }
+
+     .section-dance{
+             padding: 0rem;
+
+     }
+     /* .u-margin-bottom-2{
+         0rem !important;
+     } */
+
+     .heading-dance-name{
+         font-size: 3rem;
+          margin-top: 0rem;
+         padding: 0 0 0rem;
+     }
+
+
+     .dance__detail{
+         flex-direction: column;
+     }
+
+     .flex-container {
+     width: 100%;
+     margin-left: 0rem;
+ }
+
+     .dance__area{
+     position:relative;
+ }
+ .dance__area_map{
+     position:relative;
+     margin-bottom: 1rem;
+ }
+
+ .dance__area-text{
+
+    font-size: 1.7rem;
+    position: absolute;
+    top:14.5rem;
+    left:21.5rem;
+    line-height: 2rem;
+     text-align: left;
+
+
+ }
+
+ .btn,
+ .btn:link,
+     .btn:visited{
+         font-size: 1.8rem;
+          margin-bottom: 0.4rem;
+     }
+
+
+
+ .back__box {
+
+     top:37rem;
+     right:0rem;
+
+     width: 10rem;
+     height: 3rem;
+
+ }
+
+
+ .back__img{
+      width:2rem;
+    height: 3rem;
+    position: absolute;
+    right:7rem;
+    top:0rem;
+ }
+
+ .back__text{
+     position:absolute;
+      top:0.2rem;
+     left:3.5rem;
+     line-height: 1.4rem;
+     font-size: 1rem !important;
+
+ }
+
+ .dance__name-tag{
+     margin-top: 5rem;
+ }
+
+ .heading-classify {
+     font-size: 1.1rem;
+
+ }
+
+
+
+     .paragraph {
+     font-size: 1.7rem;
+     line-height: 2.1rem;
+     padding: 0rem;
+     font-weight: 500;
+ }
+     .paragraph__year{
+         font-size: 2rem;
+     }
+
+
+     #Layer_1 {
+     width: 20rem;
+ }
+
+     #map_nl{
+     width: 20rem;
+
+ }
+     .dance__flex-1 {
+    flex: 0 0 100%;
+         margin-right:0rem;
+ }
+
+    .dance__flex-2{
+        margin-top: 0rem;
+    }
+
+ .flex-container {
+    width: 100%;
+ }
+
+
+ .dance__area_map{
+     position:relative;
+     margin-bottom: 3rem;
+     left:0;
+     top:0;
+
+ }
+
+
+ /*    dance moves*/
+
+input[type=radio] + label.move__button {
+         margin-top:0.2rem;
+
+
+     }
+    input[type=radio] + label.move__button .labelSpan{
+        font-size: 1em;
+        position: relative;
+        left: -4%;
+    }
+
+
+
+     .column_move{
+
+     /* margin-top: 2rem;
+     margin-left: 11%;
+     column-width: 25rem !important; */
+     padding-left: 0;
+     margin-right:0;
+     text-align:center;
+
+ }
+     .move__box{
+         width:30rem
+
+ }
+
+
+     .moves_name{
+     font-size: 2.2rem;
+     line-height: 2.5rem;
+ }
+
+
+     .button_group{
+      margin-bottom: 0rem;
+          margin-top: 1.5rem;
+         display: inline-block;
+      margin-left: 0;
+      text-align: center;
+
+ }
+
+ .video_wrap:before{
+
+        content: '';
+        z-index: 2;
+        position: absolute;
+        width: 560px;
+        height: 315px;
+        pointer-events: none;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+
+}
+
+ /*    costume*/
+
+
+ .costume_wave{
+
+     width:100%;
+     margin-bottom: 5rem;
+ }
+
+ .costume_region{
+     font-size: 1.5rem;
+     line-height: 2.2rem;
+
+
+ }
+ .costume_region_each a:last-child{
+    padding-bottom: 1.5rem;
+ }
+ .costume_region_each{
+     z-index: 1;
+ }
+
+ .costume_region_box {
+     text-align: left;
+ }
+ .col-sm-4{
+     padding:0 !important;
+     width:40%!important;
+ }
+
+
+
+ .costume_right_box{
+
+     margin-left: 16rem !important;
+ }
+
+ .costume_ex_img{
+
+     width:15rem;
+     -webkit-clip-path: circle(48% at 50% 50%);
+     clip-path: circle(48% at 50% 50%);
+
+    }
+
+     .costume_village_name {
+
+         font-size: 2.2rem;
+ }
+
+
+ .costume_village_hashtag{
+     font-size: 1.3rem;
+
+ }
+
+ .costume_ex{
+     padding-top: 3rem;
+     padding-bottom: 3rem;
+     /* margin-left: 22% !important; */
+     width:10rem;
+     line-height: 0.5;
+ }
+
+ .costume_ex_span{
+     font-size:1.3rem;
+     line-height: 1.8rem;
+     font-weight: 500;
+ }
+
+ .costume_ex_plus{
+     font-size: 2rem;
+     top: 0rem;
+     padding: 1.5rem;
+     left:5.5rem;
+ }
+
+ .costume_ex_or{
+    font-size: 1.5rem;
+     top: 0rem;
+     padding: 2rem;
+     left:4.5rem;
+}
+
+
+ .costume_ex_num{
+     font-size: 2rem;
+     padding:0;
+ }
+
+ .costume_img_container{
+     float:left;
+     width:185%;
+     margin-left:-2rem;
+
+ }
+ .row:not(:last-child){
+     margin-bottom: 8rem;
+ }
+
+ .costume_img_container::after
+ {
+    content: "";
+    display: table;
+    clear: both;
+    /*    float: left;*/
+ }
+
+
+
+ .costume_wave{
+     width:500%;
+     height: 2rem;
+     margin-left:-15rem;
+     margin-bottom: 5rem;
+ }
+
+ .costume_wave::after
+ {
+    content: "";
+    display: table;
+    clear: both;
+    /*    float: left;*/
+ }
+
+ #columns{
+padding-left: 0;
+column-width:100rem;
+column-gap:0;
+    position: relative;
+    left: -13rem;
+    right:0;
+ }
+  #columns a{
+     margin-right: 2rem;
+
+ }
+ #columns a img{
+     widows: 100%;
+ }
+
+  .modal{
+    z-index: 100000;
+    top:10rem;
+  }
+  .modal-open .modal{
+      z-index: 100000;
+      top:10rem;
+  }
+ .modal-dialog {
+     max-width: 45rem !important;
+     }
+
+     .costume_popup_copywright a{
+         font-size: 1.5rem;
+     }
+ .modal-dialog .modal-content{
+padding:0;
+ }
+
+ .modal.show .modal-dialog{
+     width:95% !important;
+ }
+
+     .costume_state {
+     font-size: 1.2rem;
+     }
+
+     .costume_img_popup{
+         border-radius: 2rem;
+         width:90%;
+    }
+
+     .col-8{
+     max-width: 60% !important;
+     padding: 0 !important;
+ }
+
+
+
+ /*    other groups*/
+     .other__name-area{
+     font-size:1.4rem;
+ }
+
+ .other__name{
+         margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+     line-height: 2.1rem;
+ }
+     .other__name-area{
+
+     font-size:1.2rem;
+     }
+
+    .other__name_box{
+        margin-top:2.5rem;
+    }
+
+
+     #loading{
+
+     }
+
+     .loading_box{
+
+        }
+
+
+
+
+ }

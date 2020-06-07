@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1"/>
-
-        <link rel="stylesheet" href="css/responsive1200.css" />
-        <link rel="stylesheet" href="css/responsive900.css" />
-        <link rel="stylesheet" href="css/responsive600.css" />
-        <link rel="stylesheet" href="css/responsive1800.css" />
-        <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap"
         rel="stylesheet" />
 
     <title>MOVE AROUND</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="menu.js"></script>
+
     <link rel="stylesheet" href="css/icon-font.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="css/responsive2000.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsive1440.css" />
+        <link rel="stylesheet" href="css/responsive1300.css" />
+        <link rel="stylesheet" href="css/responsive600.css" />
     <!-- 부트스트랩 css 설정 붙여넣기-->
 
-    <link rel="stylesheet" href="css/style.css" />
+
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -202,9 +202,80 @@
             });
         }
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+          function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'nl', includedLanguages:'nl,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+        }
+
+    $('document').ready(function () {
+
+
+        // RESTYLE THE DROPDOWN MENU
+    $('#google_translate_element').on("click", function () {
+
+        // Change font family and color
+        $("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *")
+            .css({
+                'color': 'black',
+                'font-family': 'Ubuntu',
+                'margin-top': '-3px',
+                'margin-left': '-2px',
+                'text-align': 'center',
+                'font-size': '1rem',
+                'font-weight': '600'
+
+            });
+        // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2-item-selected').css ('display', 'none');
+
+                // Change menu's padding
+        $("iframe").contents().find('.goog-te-menu2').css ('padding', '0px');
+
+        // Change the padding of the languages
+        $("iframe").contents().find('.goog-te-menu2-item div').css('padding', '20px');
+
+        // Change the width of the languages
+        $("iframe").contents().find('.goog-te-menu2-item').css('width', '1%');
+        $("iframe").contents().find('td').css('width', '1%');
+
+        // Change hover effects
+        $("iframe").contents().find(".goog-te-menu2-item div").hover(function () {
+            $(this).css('background-color', 'black').find('span.text').css('color', 'white');
+        }, function () {
+            $(this).css('background-color', 'white').find('span.text').css('color', '#544F4B');
+        });
+
+        // Change Google's default blue border
+        $("iframe").contents().find('.goog-te-menu2').css('border', 'none');
+
+        // Change the iframe's box shadow
+        $(".goog-te-menu-frame").css('box-shadow', '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3)');
+
+
+
+        // Change the iframe's size and position?
+//        $(".goog-te-menu-frame").css({
+//            'height': '6%',
+//            'width': '6.5%',
+//            'top': '13rem',
+//            'right': '9rem'
+//        });
+        // Change iframes's size
+        $("iframe").contents().find('.goog-te-menu2').css({
+            'height': '100%',
+            'width': '100%'
+        });
+    });
+});
+</script>
 </head>
 
  <body>
+       <div id="google_translate_element"></div>
+
+
+
         <div class="navigation">
             <input
                 type="checkbox"
@@ -315,6 +386,7 @@
                 </a>
             </div>
         </header>
+<!--        프레임 제거-->
     <main>
         <section class="section-history" id="section-history">
             <div class="row clearfix">
@@ -340,109 +412,259 @@
 
 
                             <h3 class="history_comp_text_02">
-                                NEGATIVE &#8226;&#8213;&#8213;&#8213;&#8213;&#8226; POSITIVE
+                               <span class="history_comp_text_02">
+                                NEGATIVE
+                                </span>
+
+                               <img src="img/neg-39.png" class="history_nega" alt="">
+                                <span class="history_comp_text_02">
+                                  POSITIVE
+                                  </span>
                             </h3>
-                            <div class="senti">
-                                <img src="img/history_meter_senti.png" class="senti_img" alt="">
-                            </div>
-
-
-
-
-                            <div class="history_comp_left_content">
-
-                            <button class="history_button_1914 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
-                            <img src="img/icon-09.svg" alt="1914" class="icon up-on-scroll_history icon_1914" />
-                            <span class="tag">1914<br>tone: -0.7</span>
-
-                            </button>
-
-
-                            <button class="history_button_1917 open_toggles history_img_icon_box" data-type="pSXSJPTJP8LvB4uSggO8">
-                             <img src="img/icon-10.svg" alt="1917" class="icon up-on-scroll_history icon_1917" />
-                            <span class="tag">1917<br>tone: -0.5</span></button>
-
-                            <button class="history_button_1918 open_toggles history_img_icon_box" data-type="izfIbTQVhhLkJSCx4wLo">
-                             <img src="img/icon-11.svg" alt="1918" class="icon up-on-scroll_history icon_1918" />
-                            <span class="tag">1918<br>tone:0.2</span></button>
-
-                            <button class="history_button_1919 open_toggles history_img_icon_box" data-type="XDW3cuMxD1MO4IAgq1x1">
-                             <img src="img/icon-12.svg" alt="1919" class="icon up-on-scroll_history icon_1919" />
-                            <span class="tag">1919<br>tone:0</span></button>
-
-                            <button class="history_button_1925 open_toggles history_img_icon_box" data-type="zGeK1IcmRiEpzuAGGqgz">
-                             <img src="img/icon-13.svg" alt="1925" class="icon up-on-scroll_history icon_1925" />
-                            <span class="tag">1925<br>tone:0</span></button>
-
-                            <button class="history_button_1926 open_toggles history_img_icon_box" data-type="3AeKU4dx2hODuKWR1pO2">
-                             <img src="img/icon-14.svg" alt="1926" class="icon up-on-scroll_history icon_1926" />
-                            <span class="tag">1926<br>tone:-0.2</span></button>
-
-                             <button class="history_button_1926_01 open_toggles history_img_icon_box" data-type="GSK3fcmeg73JE3dp65Gr">
-                             <img src="img/icon-15.svg" alt="1926" class="icon up-on-scroll_history icon_1926_01" />
-                            <span class="tag">1926<br>tone:-0.6</span></button>
-
-                             <button class="history_button_1927 open_toggles history_img_icon_box" data-type="ONK9FPvxRp1QpuPql5KW">
-                             <img src="img/icon-16.svg" alt="1927" class="icon up-on-scroll_history icon_1927" />
-                            <span class="tag">1927<br>tone:-0.6</span></button>
-
-                            <button class="history_button_1927_01 open_toggles history_img_icon_box" data-type="chVndjsG9fw96C1OSZFy">
-                             <img src="img/icon-17.svg" alt="1927" class="icon up-on-scroll_history icon_1927_01" />
-                            <span class="tag">1927<br>tone:-0.8</span></button>
-
-                            <button class="history_button_1927_02 open_toggles history_img_icon_box" data-type="mt0iu6uJXJqQyxdEsgvY">
-                             <img src="img/icon-18.svg" alt="1927" class="icon up-on-scroll_history icon_1927_02" />
-                            <span class="tag">1927<br>tone:-0.7</span></button>
-
-                            <button class="history_button_1927_03 open_toggles history_img_icon_box" data-type="XMBhQHNXEgRQzsV35zqO">
-                             <img src="img/icon-19.svg" alt="1927" class="icon up-on-scroll_history icon_1927_03" />
-                            <span class="tag">1927<br>tone:-0.4</span></button>
-
-                           <button class="history_button_1929 open_toggles history_img_icon_box" data-type="4TIGV2uRcBc3qa5IwIYU">
-                             <img src="img/icon-20.svg" alt="1929" class="icon up-on-scroll_history icon_1929" />
-                            <span class="tag">1929<br>tone:-0.6</span></button>
-
-                          <button class="history_button_1930 open_toggles history_img_icon_box" data-type="ISSw61n6bl7impigaF34">
-                             <img src="img/icon-21.svg" alt="1930" class="icon up-on-scroll_history icon_1930" />
-                            <span class="tag">1930<br>tone:-0.4</span></button>
-
-                           <button class="history_button_1930_01 open_toggles history_img_icon_box" data-type="wpAmuEJhAZKSruRQwDJD">
-                             <img src="img/icon-22.svg" alt="1930" class="icon up-on-scroll_history icon_1930_01" />
-                            <span class="tag">1930<br>tone:-0.1</span></button>
-
-                            <button class="history_button_1930_02 open_toggles history_img_icon_box" data-type="wpAmuEJhAZKSruRQwDJD">
-                             <img src="img/icon-23.svg" alt="1930" class="icon up-on-scroll_history icon_1930_02" />
-                            <span class="tag">1930<br>tone:0</span></button>
-
-
-                            <button class="history_button_1931 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
-                             <img src="img/icon-25.svg" alt="1931" class="icon up-on-scroll_history icon_1931" />
-                            <span class="tag">1931<br>tone:-0.8</span></button>
-
-                             <button class="history_button_1931_01 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
-                             <img src="img/icon-26.svg" alt="1931" class="icon up-on-scroll_history icon_1931_01" />
-                            <span class="tag">1931<br>tone:0.2</span></button>
-
-                             <button class="history_button_1931_02 open_toggles history_img_icon_box" data-type="VxH3Gty6jDNPezoZI81T">
-                             <img src="img/icon-27.svg" alt="1931" class="icon up-on-scroll_history icon_1931_02" />
-                            <span class="tag">1931<br>tone:-0.7</span></button>
-
-                              <button class="history_button_1931_03 open_toggles history_img_icon_box" data-type="mlWQFqSrJymoxc9hZ52v">
-                             <img src="img/icon-28.svg" alt="1931" class="icon up-on-scroll_history icon_1931_03" />
-                            <span class="tag">1931<br>tone:-0.3</span></button>
-
 <!--
+                            <div class="senti">
 
-                            <div class="history_img_icon_box">
-                             <img src="img/icon-29.svg" alt="1932" class="icon up-on-scroll_history icon_1932" />
-                            <span class="tag"> 1932<br>tone:0</span></div>                                                  <div class="history_img_icon_box">
-                             <img src="img/icon-30.svg" alt="1932-1945" class="icon up-on-scroll_history icon_1932-1940" />
-                            <span class="tag"> 1943-1945<br>tone:0</span></div>
+                                <img src="img/history_meter_senti.png" class="senti_img" alt="">
+
+                                </div>
 -->
 
 
+                            <div class="history_left_button">
 
-                            </div>
+                            <button class="icon_07 icon_1914 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <img src="img/icon_1914-0.7:van.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1914<br>tone: -0.7</span>
+                            </button>
+
+                            <button class="icon_1917 icon_05 open_toggles history_img_icon_box" data-type="pSXSJPTJP8LvB4uSggO8">
+                            <img src="img/icon_1917-0.5:tucht.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1917<br>tone: -0.5</span>
+                            </button>
+
+                            <button class="icon_1918 icon_02 open_toggles history_img_icon_box" data-type="izfIbTQVhhLkJSCx4wLo">
+                            <img src="img/icon_1918-0.2:ajc.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1918<br>tone: -0.2</span>
+                            </button>
+
+                            <button class="icon_1919 icon_00 open_toggles history_img_icon_box" data-type="AOUvLLLD3Ybxj7pQpIM4">
+                            <img src="img/icon_1919-0:festi.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1919<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1920s icon_01 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <img src="img/icon_1920s-0.1:omr.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1920s<br>tone: -0.1</span>
+                            </button>
+
+                            <button class="icon_1920s icon_02 open_toggles history_img_icon_box" data-type="Psib0fEtsGeHyn2TgTc4">
+                            <img src="img/icon_1920s-0.2:youth.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1920s<br>tone: -0.2</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1920s icon_06 open_toggles history_img_icon_box" data-type="xkoCpkOAZXa20jSyQuwj">
+                            <img src="img/icon_1920s-0.6:willem.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1920s<br>tone: -0.6</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1920s icon_07 open_toggles history_img_icon_box" data-type="kWy7L8kQmFGk4eZ2Y0df">
+                            <img src="img/icon_1920s-0.7:jonker.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1920s<br>tone: -0.7</span>
+                            </button>
+
+                                <button class="icon_1920s icon_08 open_toggles history_img_icon_box" data-type="XWTqG0JNxAY0U6EOuZya">
+                            <img src="img/icon_1920s-0.8:knulst.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1920s<br>tone: -0.8</span>
+                            </button>
+
+                                <button class="icon_1925 icon_04 open_toggles history_img_icon_box" data-type="zGeK1IcmRiEpzuAGGqgz">
+                            <img src="img/icon_1925-0.4:catz.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1925<br>tone: -0.4</span>
+                            </button>
+
+                            <button class="icon_1926  icon_02 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <img src="img/icon_1926-0.2:journ.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1926<br>tone: -0.2</span>
+                            </button>
+
+                                <button class="icon_1926 icon_06 open_toggles history_img_icon_box" data-type="3AeKU4dx2hODuKWR1pO2">
+                            <img src="img/icon_1926-0.6.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1926<br>tone: -0.6</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1927 icon_04 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <img src="img/icon_1927-0.4:van.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1927<br>tone: -0.4</span>
+                            </button>
+
+                                <button class="icon_up_01 icon_1927 icon_06 open_toggles history_img_icon_box" data-type="3BwNzZptLxe4rKL3TNmm">
+                            <img src="img/icon_1927-0.6:roep.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1927<br>tone: -0.6</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1927 icon_07 open_toggles history_img_icon_box" data-type="UwFiKseGjXhEOV9rb8QU">
+                            <img src="img/icon_1927-0.7:brom.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1927<br>tone: -0.7</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1927 icon_08 open_toggles history_img_icon_box" data-type="chVndjsG9fw96C1OSZFy">
+                            <img src="img/icon_1927-0.8:poll.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1927<br>tone: -0.8</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1927 icon_09 open_toggles history_img_icon_box" data-type="mt0iu6uJXJqQyxdEsgvY">
+                            <img src="img/icon_1927-0.9:henri.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1927<br>tone: -0.9</span>
+                            </button>
+
+
+
+
+                                <button class="icon_1929 icon_06 open_toggles history_img_icon_box" data-type="4TIGV2uRcBc3qa5IwIYU">
+                            <img src="img/icon_1929-0.6:josephine.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1929<br>tone: -0.6</span>
+                            </button>
+
+                                <button class="icon_1929 icon_00 open_toggles history_img_icon_box" data-type="8H9zV9PnxVuLojjxt9NL">
+                            <img src="img/icon_1929-0:wunder.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1929<br>tone: 0</span>
+                            </button>
+
+                                <button class="icon_1930 icon_04 open_toggles history_img_icon_box" data-type="ISSw61n6bl7impigaF34">
+                            <img src="img/icon_1929-0.4:hooy.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1930<br>tone: -0.4</span>
+                            </button>
+
+
+                                <button class="icon_up_01 icon_1930 icon_00 open_toggles history_img_icon_box" data-type="UTfkwFGW1fGr4MuZLYRX">
+                            <img src="img/icon_1930-0:folk.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1930<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1930 icon_01_p open_toggles history_img_icon_box" data-type="Ugn1aHoTWqq2SqLVP1oV">
+                            <img src="img/icon_1930_0.1:govern.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1930<br>tone: 0.1</span>
+                            </button>
+
+                                <button class="icon_up_01 icon_1931 icon_03 open_toggles history_img_icon_box" data-type="ZwQFv4oO8vVDOOjOBMJe">
+                            <img src="img/icon_1931-0.3:ven.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1931<br>tone: -0.3</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1931 icon_05 open_toggles history_img_icon_box" data-type="VxH3Gty6jDNPezoZI81T">
+                            <img src="img/icon_1931-0.5:rappor.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1931<br>tone: -0.5</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1931 icon_07 open_toggles history_img_icon_box" data-type="sDFlLQ5h6xIkJ2bTlXgp">
+                            <img src="img/icon_1931-0.7:ruys.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1931<br>tone: -0.7</span>
+                            </button>
+
+
+
+
+                            <button class="icon_1931 icon_08 open_toggles history_img_icon_box" data-type="m5bm2c9PI0QHaFLltz2s">
+                            <img src="img/icon_1931-0.8:dieren.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1931<br>tone: -0.8</span>
+                            </button>
+
+                            <button class="icon_1932 icon_00 open_toggles history_img_icon_box" data-type="2vvWrHyahIsXrfupYYME">
+                            <img src="img/icon_1932-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1932<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_1940s icon_05 open_toggles history_img_icon_box" data-type="5b8tP8rzsfLTgek2qbIw">
+                            <img src="img/icon_1940s-0.5.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1940s<br>tone: -0.5</span>
+                            </button>
+
+                            <button class="icon_1940s icon_00 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <img src="img/icon_1940s-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1940s<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_1941 icon_03 open_toggles history_img_icon_box" data-type="v53f2P28WBH76j3S78lN">
+                            <img src="img/icon_1941-0.3.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1941<br>tone: 0.3</span>
+                            </button>
+
+                            <button class="icon_1943 icon_04 open_toggles history_img_icon_box" data-type="6Km53EckbDCkkuhdYDP8">
+                            <img src="img/icon_1943-0.4.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1943<br>tone: -0.4</span>
+                            </button>
+
+                            <button class="icon_1943 icon_00 open_toggles history_img_icon_box" data-type="tEjWGyOigc2wAZFUcCVi">
+                            <img src="img/icon_1943-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1943<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_1944 icon_00 open_toggles history_img_icon_box" data-type="7L3NWpXSQ4plXoHuw4DV">
+                            <img src="img/icon_1944-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1944<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1945 icon_01 open_toggles history_img_icon_box" data-type="lSCJ0Ee1OY130y7IEDqn">
+                            <img src="img/icon_1945-0.1:leeuw.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1945<br>tone: -0.1</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1945 icon_00 open_toggles history_img_icon_box" data-type="qHQGfebwezwY1N0ZgSZl">
+                            <img src="img/icon_1945-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1945<br>tone: 0</span>
+                            </button>
+
+                            <button class="icon_1945 icon_07_p open_toggles history_img_icon_box" data-type="XPmbkP3YHrcidCMrNHhc">
+                            <img src="img/icon_1945_0.7:national.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1945<br>tone: 0.7</span>
+                            </button>
+
+
+
+
+                            <button class="icon_up_01 icon_1946 icon_07 open_toggles history_img_icon_box" data-type="EZsUaixFx23yAhLOKVmZ">
+                            <img src="img/icon_1946-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1946<br>tone: -0.7</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1946 icon_05_p open_toggles history_img_icon_box" data-type="RQQmitsbwzWfJjndB6De">
+                            <img src="img/icon_1946_0.5:poll.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1946<br>tone: 0.5</span>
+                            </button>
+
+                            <button class="icon_up_01 icon_1946 icon_06 open_toggles history_img_icon_box" data-type="PKKrxgfqNfFZxHcjsJ7m">
+                            <img src="img/icon_1946-0.6:national.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1946<br>tone: -0.6</span>
+                            </button>
+
+
+                            <button class="icon_1947 icon_01_p open_toggles history_img_icon_box" data-type="dyl17fzJMoNmTJ2mzfqa">
+                            <img src="img/icon_1947_0.1.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1947<br>tone: 0.1</span>
+                            </button>
+
+                            <button class="icon_1947 icon_07_p open_toggles history_img_icon_box" data-type="bJr6fqjemuhKLZUe73Vw">
+                            <img src="img/icon_1947_0.7:poll.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1947<br>tone: 0.7</span>
+                            </button>
+
+                            <button class="icon_1948 icon_04 open_toggles history_img_icon_box" data-type="dsEGcr1G4ueTi2j6dJjf">
+                            <img src="img/icon_1948-0.4.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1948<br>tone: -0.4</span>
+                            </button>
+
+                            <button class="icon_1950s icon_06 open_toggles history_img_icon_box" data-type="F4snAeO4gfbYOJANbnFZ">
+                            <img src="img/icon_1950s-0.8.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1950s<br>tone: -0.8</span>
+                            </button>
+
+                            <button class="icon_1959 icon_00 open_toggles history_img_icon_box" data-type="ofUr4quqSxfFH66XGwYF">
+                            <img src="img/icon_1959-0.svg" alt="1914" class="icon up-on-scroll_history" />
+                            <span class="tag">1959<br>tone: 0</span>
+                            </button>
+                                </div>
+
+
 
 <!--
                              <ol id="rule"> <li></li> <li></li> <li></li> <li class="rule_1914"></li> <li></li> <li></li> <li class="rule_1917"></li> <li class="rule_1918"></li> <li class="rule_1919"></li> <li></li> <li></li> <li></li> <li></li> <li></li> <li class="rule_1925"></li> <li class="rule_1926"></li> <li class="rule_1927"></li> <li></li> <li class="rule_1929"></li> <li class="rule_1930"></li>
@@ -592,7 +814,7 @@
     </main>
     <script>
      setTimeout(function(){
-    $('.icon').addClass('scaleUp')
+    $('').addClass('scaleUp')
      }, 50);
 
     $('button').on('click', function(){

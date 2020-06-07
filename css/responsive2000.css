@@ -1,0 +1,357 @@
+/* MEDIA QUERY MANAGER */
+/* Desktop first MODE
+0 - 600px: PHONE
+600 - 900px: tablet Portrait
+900 - 1200px: tablet LandScape
+1200 - 1800px: Normal Desktop
+1800px +: Big Desktop Screen
+*/
+
+
+/*1300_myscreen*/
+/*1440_big macbook*/
+/**/
+/**/
+
+@media (max-width: 2000px) {
+
+/*    index*/
+/*    basic screen*/
+
+/*
+    body{
+        background-color: blue;
+    }
+*/
+    .section-main{
+        height: 120vh;
+    }
+  .header__logo {
+    height: 14.2rem;
+}
+
+  .navigation__menu {
+    height: 8rem;
+}
+
+  .header__main-video {
+    top: -8rem;
+    width: 120rem;
+}
+
+.header__logo-box-2 {
+
+}
+
+    .header__logo-2 {
+    width: 24rem;
+    }
+
+    .footer {
+    background-color: black;
+    padding: 1rem 3rem 28rem;
+        font-size: 1.9rem;
+        line-height: 3rem;
+    }
+
+/*    navigation*/
+.navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(32);
+
+}
+
+.navigation__nav {
+     height: 90vh;
+    }
+
+    .navigation__link,
+.navigation__link:link,
+.navigation__link:visited {
+       font-size: 6rem;
+    }
+
+
+    .navigation__button {
+
+    height: 7.5rem;
+    width:  7.5rem;
+        top: 4rem;
+    }
+
+   .navigation__icon,
+    .navigation__icon::before,
+    .navigation__icon::after{
+
+    width: 6.7rem;
+    height: 8px;
+
+    }
+
+    .navigation__list {
+    position: absolute;
+    top: 40%;
+    left: 57%;
+    }
+
+    .navigation__checkbox:checked ~ .navigation__button {
+    border: 7px solid white;
+}
+
+/*    history*/
+    .history_comp_text_01 {
+
+    font-size: 2.5rem;
+    }
+
+    .history_comp_text_02 {
+
+    font-size: 2.5rem;
+    }
+    .history_detail {
+    line-height: 3.1rem;
+
+    font-size: 2rem;
+    }
+    .year_title {
+
+    font-size: 2.7rem;
+    }
+
+    .content {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    }
+
+    .history_refer {
+    font-size: 1.2rem;
+    font-weight: 500;
+        margin-top: 1.6rem;
+    }
+
+    .collapsible {
+
+    font-size: 2.1rem;
+        line-height: 3rem;
+    }
+
+    #section-history .history_legend input[type="radio"] ~ span {
+    font-size: 2.4rem;
+        font-weight: 400;
+            width: 20rem;
+
+    height: 15rem;
+    }
+
+
+
+    #section-history .history_legend input[type="radio"]:hover ~ span {
+       right: 12rem;
+         z-index: 1010;
+        line-height: 3.1rem;
+    }
+
+/*    folkdance_main*/
+    .folk_a {
+    background-color: black;
+    border-radius: 50%;
+    width: 28rem;
+    height: 28rem;
+        margin: 0.5rem;
+    }
+
+    .folk_dance_name {
+
+    font-size: 2.7rem;
+
+}
+
+.folk_dance_name_2 {
+    font-size: 2.7rem;
+}
+
+.folk_dance_name_3 {
+    font-size: 2.7rem;
+}
+
+    .folk_dance_right_box{
+    padding-left: 5rem !important;
+}
+
+
+
+
+
+/*    folkdance_contents*/
+
+
+
+
+.controls button{
+    width:5rem;
+    height:5rem;
+}
+
+
+.heading-classify {
+    font-size: 1.4rem;
+}
+
+.heading-dance-name {
+    font-size: 7.5rem;
+
+    line-height: 6rem;
+
+    /*  letter-spacing: 2px;*/
+}
+
+    .paragraph {
+    font-size: 2.7rem;
+
+    line-height: 3.8rem;
+
+}
+
+    .dance__flex-1 {
+    display: flex;
+    flex: 0 0 50%;
+    flex-direction: column;
+    margin-right: 5rem;
+}
+
+.flex-container {
+    width: 65rem;
+    margin-left: 5rem;
+}
+
+    .dance__area-text{
+   top:45rem;
+    left:29%;
+
+}
+.dance__area_map{
+    position:absolute;
+    left:20%;
+    top:7rem;
+}
+    #Layer_1 {
+    width: 40rem;
+}
+
+/*    dance moves*/
+    .column_move{
+    padding-right: 25rem;
+
+         margin-top:5rem;
+
+}
+    .move__box{
+
+    width:30rem;
+    height:43rem;
+    margin-bottom: 2.5rem;
+
+
+}
+    .moves_name{
+
+    font-size: 2.2rem;
+
+
+}
+    .moves_name{
+
+    font-size: 2.2rem;
+
+    line-height: 2.5rem;
+
+}
+
+/*    costume*/
+    .costume_village_name {
+    font-size: 3.5rem;
+    width:100%
+
+
+}
+.costume_village_hashtag{
+    font-size: 1.7rem;
+}
+
+    .costume_ex_img{
+
+ width:20rem;
+
+}
+
+
+.costume_ex_box{
+    width:20rem;
+
+}
+
+   .costume_ex_plus{
+    font-size: 3.5rem;
+     top:5.5rem;
+    padding: 2rem;
+
+}
+.costume_ex_or{
+    font-size: 2.3rem;
+     top:6.5rem;
+    padding: 2.2rem;
+
+}
+    .costume_ex_span{
+    font-size: 1.6rem;
+}
+    .costume_wave{
+
+    width:100%;
+    margin-bottom: 5rem;
+}
+    .costume_ex{
+    padding-bottom: 4rem;
+}
+
+ @media (min-width: 768px){
+.modal-dialog {
+    max-width: 120rem !important;
+    }
+}
+    .costume_popup_copywright a{
+        font-size: 2rem;
+    }
+
+   .costume_region {
+    font-size: 2.9rem;
+    }
+
+    .costume_state {
+    font-size: 1.4rem;
+    }
+
+/*    other groups*/
+    .other__name-area{
+    font-size:1.4rem;
+}
+
+.other__name{
+    font-size: 2.6rem;
+    padding: 0rem 1.8rem 0.3rem 1.8rem;
+}
+
+
+
+#loading {
+
+    left: 45%;
+    top: 36%;
+    z-index: 1;
+    width: 40rem;
+    height: 40rem;
+}
+
+
+
+}
+
