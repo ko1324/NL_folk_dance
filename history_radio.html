@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/responsive1440.css" />
         <link rel="stylesheet" href="css/responsive1300.css" />
+        <link rel="stylesheet" href="css/responsive800.css" />
         <link rel="stylesheet" href="css/responsive600.css" />
     <!-- 부트스트랩 css 설정 붙여넣기-->
 
@@ -102,6 +103,7 @@
                                         refer: doc.data().refer,
                                         sentiment: doc.data().sentiment,
                                         image: doc.data().image,
+                                        si: doc.data().si,
                                         group: doc.data().group,
                                         movement: doc.data().movement,
                                         ideologie: doc.data().ideologie
@@ -120,6 +122,7 @@
                                     refer: doc.data().refer,
                                     sentiment: doc.data().sentiment,
                                     image: doc.data().image,
+                                    si: doc.data().si,
                                     group: doc.data().group,
                                     movement: doc.data().movement,
                                     ideologie: doc.data().ideologie
@@ -146,7 +149,7 @@
                             data[Object.keys(data)[0]].forEach(data => {
 //                                console.log(data.group);
 
-                                historyHtml += `<button class="up-on-scroll_history collapsible ${data.group && data.group.join(" ").toLowerCase()} ${data.movement && data.movement.join(" ").toLowerCase()} ${data.id} ${data.ideologie && data.ideologie.join(" ").toLowerCase()} ">${data.name}</button>
+                                historyHtml += `<button class="up-on-scroll_history collapsible ${data.group && data.group.join(" ").toLowerCase()} ${data.movement && data.movement.join(" ").toLowerCase()} ${data.id} ${data.ideologie && data.ideologie.join(" ").toLowerCase()} ">${data.name} ${data.si}"></button>
 
                                 <div class="content up-on-scroll_history"><p class="history_desc">`;
                                 if (data.image) {
@@ -421,13 +424,13 @@
                                   POSITIVE
                                   </span>
                             </h3>
-<!--
-                            <div class="senti">
+
+                            <!-- <div class="senti">
 
                                 <img src="img/history_meter_senti.png" class="senti_img" alt="">
 
-                                </div>
--->
+                                </div> -->
+
 
 
                             <div class="history_left_button">
@@ -452,7 +455,7 @@
                             <span class="tag">1919<br>tone: 0</span>
                             </button>
 
-                            <button class="icon_up_01 icon_1920s icon_01 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <button class="icon_up_01 icon_1920s icon_01 open_toggles history_img_icon_box" data-type="U266gUzkBcAXjLvlohtO">
                             <img src="img/icon_1920s-0.1:omr.svg" alt="1914" class="icon up-on-scroll_history" />
                             <span class="tag">1920s<br>tone: -0.1</span>
                             </button>
@@ -482,7 +485,7 @@
                             <span class="tag">1925<br>tone: -0.4</span>
                             </button>
 
-                            <button class="icon_1926  icon_02 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <button class="icon_1926  icon_02 open_toggles history_img_icon_box" data-type="3BwNzZptLxe4rKL3TNmm">
                             <img src="img/icon_1926-0.2:journ.svg" alt="1914" class="icon up-on-scroll_history" />
                             <span class="tag">1926<br>tone: -0.2</span>
                             </button>
@@ -492,7 +495,7 @@
                             <span class="tag">1926<br>tone: -0.6</span>
                             </button>
 
-                            <button class="icon_up_01 icon_1927 icon_04 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <button class="icon_up_01 icon_1927 icon_04 open_toggles history_img_icon_box" data-type="daHWG2BfGLibFNSe9Esw">
                             <img src="img/icon_1927-0.4:van.svg" alt="1914" class="icon up-on-scroll_history" />
                             <span class="tag">1927<br>tone: -0.4</span>
                             </button>
@@ -579,7 +582,7 @@
                             <span class="tag">1940s<br>tone: -0.5</span>
                             </button>
 
-                            <button class="icon_1940s icon_00 open_toggles history_img_icon_box" data-type="DvFbFEtaQ56s6wuO6wLi">
+                            <button class="icon_1940s icon_00 open_toggles history_img_icon_box" data-type="v53f2P28WBH76j3S78lN">
                             <img src="img/icon_1940s-0.svg" alt="1914" class="icon up-on-scroll_history" />
                             <span class="tag">1940s<br>tone: 0</span>
                             </button>

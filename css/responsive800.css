@@ -1,0 +1,354 @@
+/* MEDIA QUERY MANAGER */
+/* Desktop first MODE
+0 - 600px: PHONE
+600 - 900px: tablet Portrait
+900 - 1200px: tablet LandScape
+1200 - 1800px: Normal Desktop
+1800px +: Big Desktop Screen
+*/
+
+@media (max-width: 800px) {
+
+
+
+/* index */
+    /*    navigation*/
+
+    /* body{
+        background-color: blue;
+    } */
+
+ .navigation__checkbox:checked ~ .navigation__background {
+    transform: scale(40);
+
+}
+
+.navigation__nav {
+     height: 90vh;
+    }
+
+    .navigation__link,
+.navigation__link:link,
+.navigation__link:visited {
+       font-size: 5rem;
+    }
+
+    .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    width: 50rem;
+
+    }
+
+ .navigation__nav {
+
+   width: 0%;
+   position: fixed;
+   top: 0;
+   right: -100%;
+   /* left로 바꾸면 왼쪽에서 메뉴가 나오는 효과가난다 */
+   /* left: 0; */
+   z-index: 1500;
+
+   opacity: 0;
+   /*    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);*/
+   /*    2.들어가는거, 나오는거 제어하려면 어떻게???*/
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+   width: 150%;
+   opacity: 1;
+   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation__checkbox:checked ~ .navigation__button {
+   border: 6px solid white;
+
+   height: 6.5rem;
+   width: 6.5rem;
+}
+
+.navigation__background {
+   background: 6rem;
+
+   border-radius: 50%;
+   position: fixed;
+
+   height: 3.8rem;
+   width: 12rem;
+   position: fixed;
+   top: 2.1rem;
+   right:3rem;
+   background-color: transparent;
+   z-index: 1000;
+   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+   /*     transform: scale(50); */
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+   height: 6.5rem;
+   width:6.5rem;
+}
+
+
+
+
+.navigation__button {
+   background-color: transparent;
+   height: 3.8rem;
+   width: 12rem;
+   position: fixed;
+   /* top: 2.1rem;
+   right:3rem; */
+
+   border-radius: 50%;
+   z-index: 2000;
+
+   text-align: center;
+   cursor: pointer;
+}
+
+
+.header__main-video {
+    top:25vh;
+    width:70%;
+    height: auto;
+     clip-path: circle(50% at 50% 50%);
+     -webkit-clip-path: circle(50% at 50% 50%);
+ }
+
+/* translator */
+
+.goog-te-menu-frame{
+
+    height:5% !important;
+    width:12%  !important;
+    top:12.5rem !important;
+    right:0rem !important;
+    color:black !important;
+}
+
+/* history */
+
+.icon{
+    width: 6rem;
+}
+
+
+.icon_01_p{
+    left: 20rem;
+}
+
+.icon_00{
+   left: 18rem;
+}
+.icon_01{
+    left: 16.5rem;
+}
+
+.icon_02{
+    left: 14.2rem;
+}
+
+.icon_03{
+    left: 12rem;
+}
+
+.icon_04{
+    left:10rem;
+}
+
+.icon_05{
+    left:8.2rem;
+}
+
+.icon_05_p{
+    left:28rem;
+}
+
+.icon_06{
+    left:6.2rem;
+}
+
+.icon_07{
+    left:4.5rem;
+}
+.icon_07_p{
+    left:32.5rem;
+
+}
+.icon_08{
+    left:2.4rem;
+}
+
+.icon_09{
+    left:0rem;
+}
+
+.history_detail{
+    line-height: 2.3rem;
+
+    font-size: 1.6rem;
+}
+
+.history_detail_box{
+    margin-bottom: 3rem;
+
+    margin-right: 0rem;
+}
+
+.history_comp_text_02{
+    margin-bottom: 5rem;
+}
+
+#section-history .history_legend input[type="radio"] ~ span {
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    width: 11rem;
+
+    height: 10rem;
+    }
+
+    #section-history .history_legend input[type="radio"]:checked ~ span {
+
+    right: -1rem;
+    line-height: 2rem;
+    }
+
+    #section-history .history_legend input[type="radio"]:hover ~ span {
+       right: -1rem;
+         z-index: 1010;
+         line-height: 2rem;
+    }
+
+    .govern_i, .clergy_i, .elites_i{
+        margin-right:1.2rem;
+    }
+    .ajc_box, .heem_box, .folk_box{
+        margin-right: 1.2rem;
+    }
+    .raci_box, .social_box, .nazi_box, .national_box{
+        margin-right: 1.2rem;
+    }
+
+
+.tag {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    position: absolute;
+    left: 5.8rem;
+    top: -0.8rem;
+    text-align: center;
+    width: 7rem;
+    height: 8rem;
+    z-index: 1000;
+    background: rgb(255, 255, 255, 0.8);
+    border-radius: 30rem;
+    /*  text-shadow: -1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white;*/
+
+    padding: 1rem 1rem 2rem 1.5rem ;
+    transition: 1s ease-in-out;
+}
+
+/* folk dance */
+.dance__player_section button{
+    width:3.5rem;
+    height:3.5rem;
+}
+
+.controls #back{
+    width:12rem;
+    height:3.4rem;
+    margin-right:-1rem;
+}
+
+.dance-video-1{
+    width:105%;
+}
+.section-dance{
+    padding:0 1rem 2rem 1rem
+}
+
+.heading-dance-name{
+    font-size: 4.3rem;
+    margin-top:-0.1rem;
+}
+
+.heading-classify{
+    font-size:1.2rem;
+    line-height: 1.4rem;
+
+}
+
+.paragraph{
+    font-size: 2rem;
+    line-height: 2.8rem;
+}
+
+.dance__flex-1{
+    margin-right: 0;;
+}
+.paragraph__year{
+    font-size: 2.5rem;
+}
+
+
+.dance__year{
+    margin-left:1rem;
+}
+
+.btn, .btn:link, .btn:visited{
+    font-size: 2rem;
+}
+#Layer_1{
+    width: 25rem;
+}
+
+#map_nl{
+    width: 25rem;
+
+}
+
+.dance__area-text {
+    font-size: 2rem;
+    top: 30rem;
+    left: 10rem;
+    line-height: 2.6rem;
+
+}
+
+/* dance moves */
+.column_move{
+    column-width: 10rem !important;
+    column-gap: 16rem;
+}
+
+/* costume */
+
+.costume_ex{
+    width:93%;
+}
+
+.costume_ex_box{
+    margin-bottom: 2rem;
+}
+
+.col-8{
+    margin-left: 2rem !important;
+}
+
+.costume_ex_img{
+    /* width:13rem; */
+}
+
+.costume_region {
+    font-size: 2.1rem;
+}
+body{
+    /* background-color: gold; */
+}
+ }

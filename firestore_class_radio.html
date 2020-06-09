@@ -312,10 +312,10 @@
                 var ideologiesArray = ideologies.map(function () {
                     return $(this).val();
                 }).toArray();
-                updateDataFromcollection(id, name, desc, quote, refer, sent, image, groupsArray, movementsArray, ideologiesArray);
+                updateDataFromcollection(id, name, desc, quote, refer, sent, image, si, groupsArray, movementsArray, ideologiesArray);
             })
 
-            function updateDataFromcollection(docId, docName, docDesc, docQuote, docRefer, docSent, docImage, docGroup, docMovement, docIdeo) {
+            function updateDataFromcollection(docId, docName, docDesc, docQuote, docRefer, docSent, docImage, docSI, docGroup, docMovement, docIdeo) {
                 docCollectionbyYear.doc(docId).update({
                     //?4 어디 아이디값을 받아서 , docCollectionbyYear얘는 년도인데..
                     name: docName,
@@ -545,7 +545,7 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="inputGroupFileAddon02"
-                                                    onclick="ImgfileUpload('updateorigin')">Upload</span>
+                                                    onclick="ImgfileUpload()">Upload</span>
                                             </div>
                                         </div>
                                         <div class="input-group mt-3">
@@ -554,8 +554,8 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="formGroupExampleInput6">SI</label>
-                                        <input type="text" class="form-control" id="formGroupExampleInput6"
+                                        <label for="formGroupExampleInput66">SI</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput66"
                                             placeholder="SI input placeholder" readonly />
                                         <div class="input-group mt-3">
                                             <div class="custom-file">
@@ -565,7 +565,7 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="inputGroupFileAddon02"
-                                                    onclick="ImgfileUpload('update2origin')">Upload</span>
+                                                    onclick="ImgfileUpload2()">Upload</span>
                                             </div>
                                         </div>
                                         <div class="input-group mt-3">
@@ -714,10 +714,11 @@
                                                 <input type="file" class="custom-file-input" id="inputGroupFile05">
                                                 <label class="custom-file-label" for="inputGroupFile05"
                                                     aria-describedby="inputGroupFileAddon02">Choose file</label>
-                                            </div>
+
+                                                </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="inputGroupFileAddon05"
-                                                    onclick="ImgfileUpload('update2')">Upload</span>
+                                                    onclick="ImgfileUpload2('update')">Upload</span>
                                             </div>
                                         </div>
                                         <div class="input-group mt-3">

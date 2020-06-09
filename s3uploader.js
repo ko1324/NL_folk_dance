@@ -284,4 +284,51 @@ function ImgfileUpload(name) {
 
 }
 
+function ImgfileUpload2(name) {
+  var names = window.location.search.split("=")[1] + "IMG";
+  if (name === "update") {
+    var files = document.getElementById("inputGroupFile05").files;
+  } else {
+    var files = document.getElementById("inputGroupFile04").files;
+  }
+
+  //66:라벨, 인풋 , 04: 이미지띄우는 - 등록하기  //updateSI, 05: -수정하기
+  if (!files.length) {
+    return alert("Please choose a file to upload first.");
+  }
+
+  var file = files[0];
+  var fileName = file.name;
+  var albumPhotosKey = encodeURIComponent(names) + "/";
+
+  var photoKey = albumPhotosKey + fileName;
+
+  s3.upload(
+    {
+      Key: photoKey,
+      Body: file,
+      ACL: "public-read",
+    },
+    function (err, data) {
+      if (err) {
+        console.log(err);
+        return alert("There was an error uploading your photo: ", err.message);
+      }
+      console.log(data);
+      if (name === "update") {
+        $("#updateSI").val(data.Location);
+        $("#inputGroupFile05Img").attr("src", data.Location);
+      } else {
+        $("#formGroupExampleInput66").val(data.Location);
+        $("#inputGroupFile04Img").attr("src", data.Location);
+      }
+      //등록하기
+      alert("Successfully uploaded photo.");
+      viewAlbum(names);
+
+    }
+  );
+
+
+}
 

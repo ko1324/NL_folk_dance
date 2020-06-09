@@ -337,11 +337,17 @@ body {
 
 .header__main-video {
     position: relative;
-   top: 14rem;
-    width: 95rem;
+   top: 15rem;
+    width: 53rem;
     background-position: top;
-    clip-path: circle(34.6% at 50% 50%);
-     -webkit-clip-path: circle(34.6% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+}
+
+
+.header-video{
+    width: 10rem;
+
 }
 
 .header__logo-box-2 {
@@ -1129,8 +1135,8 @@ li {
 }
 
 .senti_img {
-    width: 81rem;
-
+    /* width: 81rem; */
+/* width: 40rem; */
     display: block;
 }
 
